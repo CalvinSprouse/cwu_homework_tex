@@ -1,0 +1,58 @@
+% LaTeX Document made from HomeworkTemplate
+% Last Updated: 2023 november 17
+
+% document style header
+\documentclass[a4paper, 12pt]{../../config/homework}
+
+% import default packages
+\usepackage{../../config/defpackages}
+
+% import fun symbol packages (and coffee)
+% \usepackage{.config/sympack}
+
+% import custom math commands
+\usepackage{../../config/domath}
+
+% end preamble
+\begin{document}
+
+% document title
+\noindent
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
+Calvin Sprouse & MATH314 Lab 7 & Due 2023 Nov 29 1700\\\hline
+\end{tabularx}
+
+% homework problems begin
+\noindent \textit{Part I:} Preform a chi-square test to check whether there is a statistically significant difference in low birth weight from nonsmoking mothers and smoking mothers. Make sure to state your hypotheses, include appropriate results from the test, and clearly state your conclusions.
+\\Our null and alternative hypothesis are
+\begin{enumerate}
+\item[$H_0:$] there is no statistically significant difference in low birth weight from nonsmoking mothers and smoking mothers,
+\item[$H_1:$] there is a statistically significant difference in low birth weight from nonsmoking mothers and smoking mothers.
+\end{enumerate}
+The $p$-val for this chi-square test, as determine by R, is $\pval = 0.27$.
+Since $\alpha=0.05$, $\pval>\alpha$ thus we fail to reject the null and must conclude that there is no statistically significant difference in low birth weight from nonsmoking mothers and smoking mothers.
+
+\vspace{2\singlelineheight} \noindent
+\textit{Part II:} Give a 90\% confidence interval for the weight gained by mother during pregnancy and interpret it in context.
+\\A 90\% confidence interval for the weight gained by mother during pregnancy is given by
+\[\bar{x} \pm t^* \frac{s}{\sqrt{n}}.\]
+From R, this calculation gives the interval
+\[\left(29.74, 30.91\right).\]
+We can state that we are 90\% certain that the true value for the average weight gained by a mother during pregnancy falls within $29.74$ and $30.91$ pounds.
+
+\pagebreak \noindent
+\textit{Part III:} An old article wrote that the typical length of pregnancies is 39 weeks. Can we claim that the typical length of pregnancies is now less than 39 weeks? Use the \textbf{nc} data set to conduct a hypothesis test to verify the claim. As always, state your hypotheses, include appropriate results from the test, and clearly state your conclusions.
+\\Our null and alternative hypothesis are
+\[H_0:\mu = 39, \quad H_1:\mu < 39.\]
+From R, the $p$-val for this hypothesis test is given by
+\[\pval = \expnumber{7.31}{-13}.\]
+For $\alpha = 0.05$, $\pval < \alpha$ thus we accept the alternative hypothesis. There is enough evidence to conclude that the typical length of pregnancies is less than 39 weeks.
+
+\vspace{2\singlelineheight} \noindent
+\textit{Bonus Question (i.e. Extra Credit):} Conduct a hypothesis test evaluating whether the average weight gained by younger mothers is different that then average weight gained by mature mothers.
+\\Let $\mu_\text{y}$ be the average weight gain of younger mothers and $\mu_\text{m}$ the average weight gain of mature mothers. Our null and alternative hypothesis are given by
+\[H_0:\mu_\text{y} = \mu_\text{m}, \quad H_1 : \mu_\text{y} \ne \mu_\text{m}.\]
+The $p$-val for this hypothesis is given by R as
+\[\pval = 0.17.\]
+For $\alpha = 0.05$, $\pval > \alpha$ so we fail to reject the null. There is not enough evidence to indicate there is a difference in weight gain between young mothers and mature mothers.
+\end{document}

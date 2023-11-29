@@ -1,0 +1,193 @@
+% LaTeX Document made from HomeworkTemplate
+% Last Updated: 2023 november 08
+
+% document style header
+\documentclass[a4paper, 12pt]{../../config/homework}
+
+% import default packages
+\usepackage{../../config/defpackages}
+
+% import fun symbol packages (and coffee)
+% \usepackage{.config/sympack}
+
+% import custom math commands
+\usepackage{../../config/domath}
+
+% end preamble
+\begin{document}
+
+% document title
+\noindent
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
+Calvin Sprouse & Book Problems 8 & Due 2023 Dec 01 1600\\\hline
+\end{tabularx}
+
+% homework problems begin
+\section*{\S 2.6 problems.}
+% S2.6: 2,4,6,9,11,16(a,b)
+\begin{enumerate}
+\item[2.] Prove Theorem 1: For all integers, $a, b, c, x$ and $y$, if $a|b$ and $b|c,$ then $a|(bx+cy)$.
+\[\forall a, b, c, x, y\in\ints\left(\left(a|b\land a|c\right) \rightarrow a|(bx+cy)\right).\]
+\begin{proof}
+Let $a, b, c, x,$ and $y$ be given as arbitrary integers. Assume that $a|b$ and $a|c$. By the definition of divides there exist $w,u\in\ints$ such that
+\begin{align*}
+aw &= b,\\
+au &= c.
+\end{align*}
+Let $k\in\ints$ be defined as
+\[k=wx+uy.\]
+Then
+\begin{align*}
+    bx+cy &= awx + auy,
+    \\&= a(wx+uy),
+    \\&= ak.
+\end{align*}
+Thus, by definition, $a|(bx+cy)$. Therefore, for $a, b, c, x, y\in\ints$, if $a|b$ and $b|c$, then $a|(bx+cy)$.
+\end{proof}
+
+\pagebreak
+\item[4.] Let $m,n\in\ints, n\neq0$. Prove that if $n^2x^2-2mnx+m^2=n^2$, then $x$ is irrational.
+\[\forall m,n\in\ints\left(\left((n\neq0) \land (n^2x^2-2mnx+m^2=n^2)\right) \rightarrow \left(\forall a\in\ints,b\in\ints^+\,x\neq\frac{a}{b}\right)\right).\]
+
+\pagebreak
+\item[6.] Use the contrapositive to prove the following statement. For all $x\in\reals^+$ if $x$ is irrational, then $\sqrt{x}$ is irrational. You will need to use the following consequence of the Closure Properties for the Rational Numbers: If $x$ is rational, then $x^2$ is rational.
+\[\forall\,x\in\reals^+\left((x\nirat) \rightarrow (\sqrt{x} \nirat)\right).\]
+\begin{proof}
+Let $x\in\reals^+$ be given. We proceed with a proof by the contrapositive:
+\[(\sqrt{x}\irat) \rightarrow (x \irat).\]
+Assume $\sqrt{x}$ is rational, that is, there exist $a,b\in\ints$ such that
+\[\sqrt{x} = \frac{a}{b}.\]
+Then
+\begin{align*}
+\sqrt{x} &= \frac{a}{b},\\
+x &= \frac{a^2}{b^2}.
+\end{align*}
+By the Closure Properties of the Rational Numbers $a^2/b^2$ is rational, that is, there exist $c,d\in\ints$ such that
+\[\frac{a^2}{b^2} = \frac{c}{d}.\]
+This is a contradiction, I think (check this later, it just feeeeeels like one).
+Thus our assumption must be wrong; $\sqrt{x}$ is irrational. Therefore if $x$ is irrational then $\sqrt{x}$ is irrational.
+\end{proof}
+
+\pagebreak
+\item[9.] Prove or disprove the following statement. For all $x,y\in\reals$, if $x$ and $y$ are irrational, then $xy$ is irrational.
+\[\forall x,y\in\reals\left(\left(\left(x\ \text{is irrational}\right)\land\left(y\ \text{is irrational}\right)\right)\rightarrow\left(xy\ \text{is irrational}\right)\right).\]
+\textit{Counterexample.} Suppose $x=\sqrt{2}$ and $y=\sqrt{2}$. As proven in class, $\sqrt{2}$ is irrational. Then
+\begin{align*}
+xy &= \sqrt{2}\cdot\sqrt{2},\\
+&= \sqrt{2\cdot 2},\\
+&= \sqrt{4},\\
+&= 2.
+\end{align*}
+Thus for two particular irrational numbers, $x$ and $y$, their product, $xy$ is rational. This disproves the statement
+\[\forall x,y\in\reals\left(\left(\left(x\ \text{is irrational}\right)\land\left(y\ \text{is irrational}\right)\right)\rightarrow\left(xy\ \text{is irrational}\right)\right).\]
+
+\vspace{2\singlelineheight}
+\item[11.] Prove, for all integers $x$ and $y$, $14x+36y\neq 51.$
+\[\forall x,y\in\ints\ 14x+36y\neq51.\]
+\begin{proof}
+We proceed with a proof by contradiction:
+\[\exists\,x,y\in\ints\,14x+36y=51.\]
+If there are two integers, $x$ and $y$ such that $14x+36y=51$ then they can be found by re-arrangement. That is
+\begin{align*}
+14x + 36y &= 51,\\
+14x &= 51 - 36y,\\
+x &= \frac{51-36y}{14},\\
+&= \frac{51}{14} - \frac{36}{14}y.
+\end{align*}
+This is a contradiction since $x,y\in\ints$ but integers are not closed under division. Thus,
+\[\forall x,y\in\ints\ 14x+36y\neq51.\]
+\end{proof}
+
+\pagebreak
+\item[16]
+\begin{enumerate}
+\item[a)] Use the contrapositive to prove, for all $x\in\ints$, that if $3|x^2$, then $3|x$. There will be two cases, namely $x\mod3=1$ and $x\mod3=2$.
+\item[b)] Use part a) of this exercise to prove that the square root of $3$, $\sqrt{3}$, is irrational.
+\end{enumerate}
+\end{enumerate}
+
+\pagebreak
+\section*{\S 2.7 problems.}
+% S2.7: 2,3,4
+\begin{enumerate}
+\item[2.] Prove $\log_{32}16\nirat$.
+
+\pagebreak
+\item[3.] Prove $\log_{10}7\nirat$.
+
+\pagebreak
+\item[4.] Prove $\log_4{5}\nirat$.
+\end{enumerate}
+
+\pagebreak
+\section*{\S 3.2 problems.}
+% S3.2: 2,3,5,9,10(d,k),14,24
+\begin{enumerate}
+\item[2.] Let $A,B,$ and $C$ be sets, $x$ an object, and $p$ and $q$ statements. For each expression given below, determine whether it makes sense (yes) or it does not make sense (no). If your answer is yes, state whether the expression is a statement or a set. If the answer is no, briefly explain why.
+\begin{enumerate}[label=\alph*)]
+\item $x\in A$.
+\\Yes. This is a statement.
+\item $p\in\ints$.
+\\No. A statement does not belong to the set of integers.
+\item $A\in q$.
+\\No. A set does not belong to a statement.
+\item $\neg A$.
+\\No. There is no meaning to the negation of a set.
+\item $x\in A \land B$.
+\\No. While $x\in A$ is a statement that makes sense $B$ is not a statement.
+\item $x\in A \lor q$.
+\\Yes. This is a statement.
+\item $(A \cup B) \cap C$.
+\\Yes. This is a set.
+\item $(A\cup B) \subseteq C$.
+\\Yes. This is a statement.
+\item $(x\in A)^c$.
+\\No. $x\in A$ is a statement and there is no meaning to the complement of a statement.
+\item $x\in A^c$.
+\\Yes. This is a statement.
+\item $\neg (x\in A) \cap B$.
+\\No. $\neg (x\in A)$ is a statement and there is no meaning to the intersect of a statement and a set.
+\item $\neg (x \in (A \cap B))$.
+\\Yes. This is a statement.
+\end{enumerate}
+
+\pagebreak
+\item[3.] Let $S = \left\{x\in\ints:\exists\,k\in\ints, x=2k-1\right\}$ and $T=\left\{x\in\ints:x\ \text{is odd}\right\}.$ Prove that $S=T$.
+\begin{proof}
+Let $x\in\ints$ be given. We proceed with a proof by cases
+\begin{enumerate}[label=(\roman*).]
+\item $x\in S$,
+\item $x\in T$.
+\end{enumerate}
+\textit{Case (i).} Suppose $x\in S$, that is, $x=2k-1$ for some $k\in\ints$.
+\\\textit{Case (ii).} Suppose $x\in T$, that is, x is odd. Then, by definition, there exists $q\in\ints$ such that $x=2q + 1$.
+\end{proof}
+
+\pagebreak
+\item[5.] Let $S=\left\{x\in\ints:x\mod12=8\right\}$ and $T=\left\{x\in\ints:4|x\right\}.$ Prove that $S\subseteq T$, but $T\nsubseteq S.$
+
+\pagebreak
+\item[9.] Let $S=\left\{x\in\ints:\exists\,r,s\in\ints,x=9r+6s\right\}$ and $T=\left\{x\in\ints:3|x\right\}.$
+\begin{enumerate}[label=\alph*)]
+\item Prove that $S\subseteq T$.
+\item Prove that $T \subseteq S$.
+% hint: 9n + 6(-n) = 3n.
+\end{enumerate}
+
+\pagebreak
+\item[10.] Let $A,B,$ and $C$ be subsets of a universal set $\mathcal{U}$. Prove each of the following set theory theorems using a sequence of logically equivalent compound forms.
+\begin{enumerate}
+\item[d.] $A \cap \left(B \cup C\right) = \left(A \cap B\right)\cup\left(A\cap C\right).$
+\item[k.] $A\cap A^c=\emptyset.$
+\end{enumerate}
+
+\pagebreak
+\item[14.] Prove that, if $A\cap B^c=\emptyset$, then $A\subseteq B$.
+
+\pagebreak
+\item[24.] Find the mistake in the \say{proof} of the following \say{proposition.} Is this \say{proposition} true? If not, find a counterexample.
+\\\say{\textbf{Proposition.}} Let $A,B,$ and $C$ be sets and suppose that $A\subseteq (B \cup C)$. Then $A\subseteq B$ or $A\subseteq C$.
+\\\say{\textit{proof.}} Let $x$ be any object and suppose that $x\in A$. Then $x\in (B\cup C)$ since $A\subseteq (B \cup C).$ Thus, by the definition of union, $x\in B$ or $x\in C$. Therefore, for all objects $x$, if $x\in A$, then $x\in B$ or, for all objects $x$, if $x\in A$, then $x\in C.$
+\\Hence, by the definition of subset, $A\subseteq B$ or $A\subseteq C$.
+\end{enumerate}
+\end{document}

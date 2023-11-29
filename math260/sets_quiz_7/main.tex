@@ -1,0 +1,172 @@
+% LaTeX Document made from HomeworkTemplate
+% Last Updated: 2023 november 21
+
+% document style header
+\documentclass[a4paper, 12pt]{../../config/homework}
+
+% import default packages
+\usepackage{../../config/defpackages}
+
+% import fun symbol packages (and coffee)
+% \usepackage{.config/sympack}
+
+% import custom math commands
+\usepackage{../../config/domath}
+
+% end preamble
+\begin{document}
+
+% document title
+\noindent
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
+Calvin Sprouse & MATH260 Quiz 7 & Due 2023 Nov 30 1600\\\hline
+\end{tabularx}
+
+% homework problems begin
+\begin{enumerate}
+\item Use induction to prove that $\sum_{k=1}^{n}{k^3} = \frac{n^2 (n+1)^2}{4}$ for all $n\in\ints^+$.
+\[\forall\, n \in \ints^+ \, \sum_{k=1}^{n}{k^3} = \frac{n^2 (n+1)^2}{4}.\]
+\begin{proof}
+Let $P(n)$ be the statement
+\[\sum_{k=1}^{n}{k^3} = \frac{n^2(n+1)^2}{4},\]
+for all $n\in\ints^+$.
+We proceed with a proof by induction on $n$.
+\\\textit{Base case:} $P(1)$ is the statement
+\[\sum_{k=1}^{1}k^3 = \frac{1^2(1+1)^2}{4}.\]
+Then
+\begin{align*}
+\sum_{k=1}^{1}k^3 &= 1,
+\end{align*}
+and
+\begin{align*}
+\frac{1^2 (1+1)^2}{4} &= \frac{1 (2)^2}{4},
+\\&= \frac{4}{4},
+\\&= 1.
+\end{align*}
+Thus, $P(1)$ is true.
+\\\textit{Induction step:} Suppose $P(n)$, that is,
+\[\sum_{k=1}^{n}k^3 = \frac{n^2(n+1)^2}{4}.\]
+Then
+\begin{align*}
+\sum_{k=1}^{n+1}k^3 &= \sum_{k=1}^{n}k^3 + (n+1)^3,\\
+&= \frac{n^2(n+1)^2}{4} + (n+1)^3,\\
+&= \frac{n^2(n+1)^2 + 4(n+1)^3}{4},\\
+&= \frac{n^4+6 n^3+13 n^2+12 n+4}{4},\\
+&= \frac{(n+1)^2(n+2)^2}{4},\\
+&= \frac{(n+1)^2(n+1+1)^2}{4}.
+\end{align*}
+Thus, from $P(n)$ we have proven $P(n+1)$. Therefore, by induction,\\$\sum_{k=1}^{n}{k^3} = \frac{n^2 (n+1)^2}{4}$ for all $n\in\ints^+$.
+\end{proof}
+
+\pagebreak
+\item Prove that $4|(6^n - 2^n)$ for all $n\in\ints$.
+\[\forall\,n\in\ints^+\,4|(6^n - 2^n).\]
+\begin{proof}
+Let $P(n)$ be the statement
+\[4|(6^n - 2^n),\]
+for all $n\in\ints^+$.
+We proceed with a proof by induction on $n$.
+\\\textit{Base case:} $P(1)$ is the statement
+\[4|(6^1 - 2^1).\]
+Let $k\in\ints$ be defined as
+\[k=1.\]
+Then
+\begin{align*}
+6^1 - 2^1 &= 6 - 2,
+\\&= 4,
+\\&= 4(1),
+\\&= 4k.
+\end{align*}
+Thus, $4|(6^1 - 2^1)$, $P(1)$ is true.
+\\\textit{Induction step:} Suppose $P(n)$, that is
+\[4|(6^n - 2^n),\]
+that there exists $k\in\ints$ such that
+\[4k = 6^n - 2^n.\]
+Then $P(n+1)$ is the statement
+\[4|(6^{n+1} - 2^{n+1}).\]
+Let $q\in\ints$ be defined as
+\[q = 6^n + 2k.\]
+Then
+\begin{align*}
+6^{n+1}-2^{n+1} &= 6\cdot6^n - 2\cdot2^n,\\
+&= (4+2)6^n - 2\cdot2^n,\\
+&= 4\cdot6^n + 2\cdot6^n -2\cdot2^n,\\
+&= 4\cdot6^n + 2(6^n-2^n),\\
+&= 4\cdot6^n + 2(4k),\\
+&= 4(6^n + 2k),\\
+&= 4q.
+\end{align*}
+Thus, $4|(6^{n+1} - 2^{n+1})$. Therefore, from $P(n)$ we have proven $P(n+1)$. Thusly, by induction, $4|(6^n - 2^n)$ for all $n\in\ints^+$.
+\end{proof}
+
+\pagebreak
+\item Let $r\ne 1$ be a real number. Use induction to show that for any $m\in\ints^+$,\\$\sum_{k=m}^{n}{r^k} = \frac{r^m - r^{m+1}}{1-r}$ for all $n\in\ints^+$ with $n \ge m$.
+\[\forall\, r\in\reals \left((r\neq 1) \rightarrow \forall\, n,m\in\ints^+\,\left((n \geq m) \rightarrow \left( \sum_{k=m}^{n}{r^k} = \frac{r^m - r^{n+1}}{1-r} \right)\right)\right).\]
+\begin{proof}
+Let $r\in\reals$ be given such that $r\ne 1$.
+We proceed with a proof by induction on $n$.
+\\\textit{Base case:} We will prove $P(1)$, that is $n=1$.
+There is only one $m\in\ints^+$ such that $n \geq m$, that is $m=1$.
+Then, $P(1)$ is the statement
+\[\sum_{k=1}^{1} r^k = \frac{r^1 - r^{1+1}}{1-r}.\]
+Then
+\[\sum_{k=1}^{1} r^k = r,\]
+and
+\begin{align*}
+\frac{r^1 - r^{1+1}}{1-r} &= \frac{r(1-r)}{1-r},\\
+&= r.
+\end{align*}
+Thus, we have proven $P(1)$.
+\\\textit{Induction step:} Suppose $P(n)$, that is
+\[\sum_{k=m}^{n} r^k = \frac{r^m - r^{n+1}}{1-r}.\]
+Then $P(n+1)$ is the statement
+\[\sum_{k=m}^{n+1}{r^k} = \frac{r^m - r^{n+2}}{1-r}.\]
+Then
+\begin{align*}
+\sum_{k=m}^{n+1}{r^k} &= \sum{k=m}^n r^k + r^{n+1},\\
+&= \frac{r^m - r^{n+1}}{1-r} + r^{n+1},\\
+&= \frac{r^m - r^{n+1}}{1-r} + \frac{(1-r)}{(1-r)}r^{n+1},\\
+&= \frac{r^m - r^{n+1} + (1-r)r^{n+1}}{1-r},\\
+&= \frac{r^m - r^{n+1} + r^{n+1} - r\cdot r^{n+1}}{1-r},\\
+&= \frac{r^m - r^{n+1+1}}{1-r},\\
+&= \frac{r^m - r^{n+2}}{1-r}.
+\end{align*}
+Thus we have proven $P(n+1)$ by supposing $P(n)$. Therefore, by induction, we prove
+\[\forall\, r\in\reals \left((r\neq 1) \rightarrow \forall\, n,m\in\ints^+\,\left((n \geq m) \rightarrow \left( \sum_{k=m}^{n}{r^k} = \frac{r^m - r^{n+1}}{1-r} \right)\right)\right).\]
+\end{proof}
+\textit{I couldn't think of an elegant way to restate it.}
+
+\pagebreak
+\item Let $A=\left\{ x\in\ints : x\mod 15 = 10\right\}$ and $B=\left\{ x\in\ints : x\mod 3 =1 \right\}$.
+\begin{enumerate}[label=(\alph*)]
+\item Prove $A \subseteq B$.
+\[\forall\,x \in \ints\,\left(x\in A \rightarrow x\in B\right).\]
+\begin{proof}
+Let $x\in\ints$ be given. Suppose $x\in A$, that is, $x\mod15=10$. Then, by definition, there exists $q\in\ints$ such that
+\[x = 15q + 10.\]
+Let $k\in\ints$ be defined as
+\[k = 5q + 9.\]
+Then
+\begin{align*}
+x &= 15q + 10,
+\\&= 15q + 9 + 1,
+\\&= 3(5q + 9) + 1,
+\\&= 3k + 1.
+\end{align*}
+Thus, $x\mod3 = 1$. Therefore, if $x\in A$ then $x\in B$. Thus, $A \subseteq B$.
+\end{proof}
+\item Either show that $B\subseteq A$, or explain why $B \nsubseteq A$.
+\\$B\nsubseteq A$. Suppose $x = 1$. Then $1\mod3 = 1$ but $1\mod15\neq 10$. Thus, $\forall x \in \ints\, (x\in B \rightarrow x \in A)$ is not true, so $B \nsubseteq A$.
+\end{enumerate}
+
+\pagebreak
+\item Suppose $A$ and $B$ are subsets of a universe $\mathcal{U}$. Show that if $A\subseteq B^c$, then $A\cap B = \emptyset$.
+\begin{proof}
+Let $A$ and $B$ be subsets of a universe $\mathcal{U}$. Suppose $A\subseteq B^c$. Then
+\begin{align*}
+A \subseteq B^c &\equiv 
+\end{align*}
+\end{proof}
+
+\end{enumerate}
+\end{document}

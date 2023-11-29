@@ -1,0 +1,78 @@
+% LaTeX Document made from HomeworkTemplate
+% Last Updated: 2023 november 05
+
+% document style header
+\documentclass[a4paper, 12pt]{../../config/homework}
+
+% import default packages
+\usepackage{../../config/defpackages}
+
+% import fun symbol packages (and coffee)
+% \usepackage{.config/sympack}
+
+% import custom math commands
+\usepackage{../../config/domath}
+
+% custom commands reminder:
+% \matr                 easy matrices
+% \reals                real numbers
+% \zero                 zero vector/matrix
+% \field                mathbb{F}
+% \ip                   brackets (like \braket)
+% \vspan                the span 'function'
+% \rcurs                script-r (also br and hr for vectors}
+% \el                   Euler-Lagrange L
+% \given                prints \left( #1 | #2 \right)
+% \midpipe              prints (and spaces) a pipe character
+% \singlelineheight     the height of a line
+% \bint                 bounded integral: integrand, lower, upper, variable
+% \pvec                 primed vector: symbol, subscript
+% \drinkproof           proof ender with the double ravens
+
+% end preamble
+\begin{document}
+\begin{center}
+\begin{tabularx}{\textwidth}{| >{\raggedright\arraybackslash}X |}
+\hline
+\textbf{Teacher:} Calvin Sprouse
+\\\hline
+
+\textbf{Date:} 2023 December 01
+\\\hline
+
+\textbf{Subject / Grade level:} PHYS 183
+\\\hline
+
+\textbf{Topic:} The Pendulum Circuit
+\\\hline
+
+\textbf{Materials:}
+\\\hline
+
+\textbf{Lesson Objective(s):}
+\begin{itemize}
+\item Students will learn basic circuit design and component selection to achieve a purpose.
+\item Students will learn about physics analogues: situations where two seemingly unrelated physical systems are governed by the same equations.
+\end{itemize}
+\\\hline
+
+\textbf{ENGAGEMENT:} Students will be presented with a theoretical pendulum and calculate the period and velocity as a function of time.
+\\\hline
+
+\textbf{EXPLORATION:} Students will then be presented with the schematic of a voltage divider circuit. Given an AC input students will need to find a pair of resistors such that the graph of output voltage is identical to their theoretical pendulum (they can configure the period of the AC source).
+\\\hline
+
+\textbf{EXPLANATION:} Students will then build the pendulum and circuit (does the cart software do circuits? if so they can do the graphs on the same window! Otherwise most software can to a csv export and they can use excel to plot the curves over one another? The goal here is just to demonstrate that it works.
+\\\hline
+
+\textbf{ELABORATION:} Students will then find an equation the relates their pendulum mass and length to a resistor value such that for any length and mass pendulum they can pick a resistor pair to make an analogous circuit.
+\\\hline
+
+\textbf{EVALUATION:} Students will be given a new mass and length and must build a circuit and demonstrate they are analogues.
+\\\hline
+
+\end{tabularx}
+\end{center}
+
+I know theres a lot here and I have no idea if this goes above and beyond the 183 level. I really wanted to touch on analagous physical systems because I think they are tremendously important and highlight the power of both physics and math. I also wanted to do something with EM since I think its a really fun topic and the more students can link it to real life experience the easier it will be. I had another idea of having students build a rope out of a series of magnets and plastic spacers. Students could figure out that the rope could theoretically pull an infinite force (in a frictionless world). By giving them a surface with particular friction students could be tasked with figuring out what length spacer is the maximum allowed to pull a certain mass. Both are fun ideas!
+\end{document}
