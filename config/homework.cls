@@ -5,7 +5,7 @@
 \NeedsTeXFormat{LaTeX2e}
 
 % make sure the name matches the file hierarchy used
-\ProvidesClass{.config/homework}[2023/10/04 Custom Homework Class]
+\ProvidesClass{../../config/homework}[2023/10/04 Custom Homework Class]
 
 % Define a base class (article in this case) and pass options to it
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
