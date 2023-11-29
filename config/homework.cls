@@ -1,5 +1,4 @@
 % a custom document class used for homework
-% last updated: 2023 october 12
 
 % custom class header
 \NeedsTeXFormat{LaTeX2e}
