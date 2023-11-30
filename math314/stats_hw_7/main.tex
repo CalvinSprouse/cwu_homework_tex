@@ -137,10 +137,6 @@ t^* &\overset{R}{=} \text{qt}(0.9, n-1),\\
 \end{align*}
 Thus
 \[77 = \mu + \neptune = \mu + t^*\frac{s}{\sqrt{n}}, \quad 65 = \mu - \neptune = \mu - t^*\frac{s}{\sqrt{n}}.\]
-% \begin{align*}
-% 77 &= \mu + \neptune = \mu + t^*\frac{s}{\sqrt{n}},\\
-% 65 &= \mu - \neptune = \mu - t^*\frac{s}{\sqrt{n}}.
-% \end{align*}
 Thusly
 \begin{align*}
 77 - 65 &= \mu + \neptune - (\mu - \neptune),\\
@@ -162,30 +158,70 @@ Thusmoreover
 \end{align*}
 
 \pagebreak
-\item[\textbf{7.12}] \textbf{Auto exhaust and lead exposure.} Researchers interested in lead exposure due to car exhaust sampled the blood of 52 police officers subjected to constant inhalation of automobile exhaust fumes while working traffic enforcement in a primarily urban environment. The blood samples of these officers had an average lead concentration of \(124.32\,\mu\text{g}/\text{l}\) and a SD of \(37.74\,\mu\text{g}/\text{l}\); a previous study of individuals fro a nearby suburb, with no history of exposure, found an average blood level concentration of \(35\,\mu\text{g}/\text{l}\).
+\item[\textbf{7.12}] \textbf{Auto exhaust and lead exposure.} Researchers interested in lead exposure due to car exhaust sampled the blood of 52 police officers subjected to constant inhalation of automobile exhaust fumes while working traffic enforcement in a primarily urban environment. The blood samples of these officers had an average lead concentration of \(124.32\,\mu\text{g}/\text{l}\) and a SD of \(37.74\,\mu\text{g}/\text{l}\); a previous study of individuals from a nearby suburb, with no history of exposure, found an average blood level concentration of \(35\,\mu\text{g}/\text{l}\).
 \begin{enumerate}[label=(\alph*)]
 \item Write down the hypothesis that would be appropriate for testing if the police officers appear to have been exposed to a different concentration of lead.
-\\Let \(\mu_{\text{o}}\) be the mean lead concentration of officers blood and \(\mu_{\text{p}}\) be the lead concentration of blood of people in a nearby suburb. Similarly \(\sigma_{\text{o}}\) and \(\sigma_{\text{p}}\) are the standard deviation of lead concentration of blood in officers and people in a nearby suburb respectively. The null and alternative hypothesis are then
-\[H_0 : \mu_{\text{o}} = \mu_{\text{p}}, \quad H_1 : \mu_{\text{o}} \ne \mu_{\text{p}}.\]
+\\The null and alternative hypothesis are
+\begin{enumerate}
+\item[\(H_0 : \)] The officers were exposed to the same concentration of lead.
+\item[\(H_1 : \)] The officers were exposed to a difference concentration of lead.
+\end{enumerate}
 
 \item Explicitly state and check all conditions necessary for inference on these data.
+\\We assume a simple random sample was preformed since it is not stated otherwise. Since \(n \ge 30\) the data is nearly normal barring extreme outliers. Since we are not given the actual data we will assume there are no extreme outliers.
+
 \item Regardless of your answers in part (b), test the hypothesis that the downtown police officers have a higher lead exposure than the group in the previous study. Interpret your results in context.
+\\The test statistic \(t\) is given by
+\begin{align*}
+t &= \frac{124.32\frac{\mu\text{g}}{\text{l}} - 35\frac{\mu\text{g}}{\text{l}}}{\frac{s}{\sqrt{n}}},\\
+% &= \frac{124.32\frac{\mu\text{g}}{\text{l}} - 35\frac{\mu\text{g}}{\text{l}}}{\frac{35\frac{\mu\text{g}}{\text{l}}}{\sqrt{52}}},\\
+&= 18.4027.
+\end{align*}
+With \(\text{dof}=52-1\),
+\begin{align*}
+\text{p-val} &= 2P(T > |t|),\\
+&= 2P(T > 18.4027),\\
+&= 2P(T < -18.4027),\\
+&\overset{R}{=} 2*\text{pt}(-18.4027, 51),\\
+&\overset{R}{=} \expnumber{1.798}{-24}.
+\end{align*}
+For \(\alpha=0.05\) \(\text{p-val}<\alpha \). Thus, we reject the null and accept the alternative: the officers were exposed to a difference concentration of lead.
 \end{enumerate}
 
 \pagebreak
 \item[\textbf{7.14}] \textbf{SAT scores.} The standard deviation of SAT scores for students at a particular Ivy League college is 250 points. Two statistics students, Raina and Luke, want to estiate the average SAT score of studens at this college as part of a class project. They want their margin of error to be no more than 25 points.
 \begin{enumerate}[label=(\alph*)]
 \item Raine wants to use a 90\% confidence interval. How large a sample should she collect?
+\\Let \(n\) be the size of Raines sample. Then
+\begin{align*}
+25 &\le t^*_{0.9} \frac{s}{\sqrt{n}},\\
+\frac{1}{10} &\le \frac{t^*_{0.9}}{\sqrt{n}},\\
+\frac{1}{10} &\overset{R}{\le} \frac{\text{qt}(0.95, n-1)}{\sqrt{n}},\\
+273 &\overset{R}{\le} n.
+\end{align*}
 \item Luke wants to use a 99\% confidence interval. Without calculating the actual sample size, determine whether his sample should be larger or smaller than Raina's, and explain your reasoning.
+\\The sample size for Luke's confidence interval must be larger. Geometrically, by increasing the confidence interval width there is a greater area under the distribution and so \(n\) must increase to reduce the overall quantity.
 \item Calculate the minimum required sample size for Luke.
+\begin{align*}
+25 &\le t^*_{0.99} \frac{s}{\sqrt{n}},\\
+\frac{1}{10} &\overset{R}{\le} \frac{\text{qt}(0.995, n-1)}{\sqrt{n}},\\
+668 &\overset{R}{\le} n.
+\end{align*}
 \end{enumerate}
 
 \pagebreak
-\item[\textbf{7.22}] \textbf{High school and beyond, Part II.} We considered the difference between the reading and writing scores of a random sample of 200 students who took the High School and Beyond Survey in Exercise 7.20. The mean and standard deviation of the differences are \(\bar{x}_{\text{read-write}}=-0.545\) and 8.887 points.
+\item[\textbf{7.22}] \textbf{High school and beyond, Part II.} We considered the difference between the reading and writing scores of a random sample of \(n=200\) students who took the High School and Beyond Survey in Exercise 7.20. The mean and standard deviation of the differences are \(\bar{x}_{\text{read-write}}=-0.545\) and \(s=8.887\) points.
 \begin{enumerate}[label=(\alph*)]
 \item Calculate a 95\% confidence interval for the average difference between the reading and writing scores of all students.
+\begin{align*}
+\bar{x}_{\text{read-write}} \pm t^*_{0.95} \frac{s}{\sqrt{n}} &\overset{R}{=} -0.545 \pm \text{qt}(0.955, 200-1)\frac{8.887}{200}.
+\end{align*}
+Thus the confidence interval is
+\[(-0.621, -0.469).\]
 \item Interpret this interval in context.
+\\We are 95\% confident that the true value for the difference between reading and writing scores of students who took the High School and Beyond Survey lies between -0.621 and -0.469 quantile.
 \item Does the confidence interval provide convincing evidence that there is a real difference in the average scores? Explain.
+\\Since the confidence interval is entirely negative we are 95\% confident that the mean writing score is higher than the mean reading score.
 \end{enumerate}
 \end{enumerate}
 \end{document}
