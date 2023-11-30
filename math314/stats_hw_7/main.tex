@@ -1,0 +1,191 @@
+% document style header
+\documentclass[a4paper, 12pt]{../../config/homework}
+
+% import default packages
+\usepackage{../../config/defpackages}
+
+% import custom math commands
+\usepackage{../../config/domath}
+
+% for joined cell tables
+\usepackage{multirow}
+
+% end preamble
+\begin{document}
+
+% document title
+\noindent
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
+\toprule
+Calvin Sprouse & MATH314 HW7 & Due 2023 Nov 30 1700\\
+\midrule
+\end{tabularx}
+
+% homework problems begin
+% 6.34 (page 239)
+% 6.50 (page 248)
+% 7.6 (page 259)
+% 7.12 (page 261)
+% 7.14 (page 261)
+% 7.22 (page 266)
+\begin{enumerate}
+\item[\textbf{6.34}] \textbf{Barking deer.} Microhabitat factors associated with forage and bed sites of barking deer in Hainan Island, China were examined. In this region woods make up 4.8\% of the land, cultivated grass plot makes up 14.7\%, and deciduous forests make up 39.6\%. Of the 426 sites where the deer forage, 4 were categorized as woods, 16 as cultivated grassplot, and 61 as deciduous forests. The table below summarizes these data.
+\begin{table}[h]
+    \centering
+    \begin{tabular}{ccccc}
+    Woods & Cultivated grassplot & Deciduous forests & Other & Total \\ \midrule
+    4 & 16 & 61 & 345 & 426
+    \end{tabular}
+\end{table}
+\begin{enumerate}[label=(\alph*)]
+\item Write the hypothesis for testing if barking deer prefer to forage in certain habitats over tohers.
+\begin{enumerate}
+    \item[\(H_0 : \)] The proportion of barking deer in each habitat is equal.
+    \item[\(H_1 : \)] The proportion of barking deer in each habitat is not equal.
+\end{enumerate}
+\item What type of test can we use to answer this research question?
+\\A \(\chi \)-squared test can be used to answer this research question.
+\item Check if the assumptions and conditions required for this test are satisfied.
+\\The expectation value of each category is \(\ge 5\).
+\pagebreak
+\item Do these data provide convincing evidence that barking deer prefer to forage in certain habitats over others? Conduct an appropriate hypothesis test to answer this research question.
+\\Using the hypothesis stated above the test statistic is given by
+\begin{align*}
+X^2 &= \sum{\frac{(\text{observed} - \text{expected}^2)}{\text{expected}}},\\
+&= \frac{(4 - 0.048\cdot 426)^2}{0.048\cdot 426} + \frac{(16 - 0.147\cdot 426)^2}{0.147\cdot 426} + \frac{(61 - 0.396\cdot 426)^2}{0.396\cdot 426} \\&\phantom{=}+ \frac{(345 - (1 - 0.048 - 0.147 - 0.396)\cdot426)}{(1 - 0.048 - 0.147 - 0.396)\cdot426},\\
+&= 248.889.
+\end{align*}
+The degrees of freedom (dof) is given by \(k-1\) where \(k=4\) is the number of categories.
+The p-value is given by
+\begin{align*}
+\text{p-val} &= P(\chi^2 \ge X^2),\\
+&= P(\chi^2 \ge 248.889),\\
+&\overset{R}{=} 1 - \text{pchisq}(248.889, 3),\\
+&\overset{R}{=} 0.
+\end{align*}
+For \(\alpha = 0.05\), \(\text{p-val} < \alpha \). Thus, we reject the null and accept the alternative: barking deer do not forage in all habitats equally.
+\end{enumerate}
+
+\pagebreak
+\item[\textbf{6.50}] \textbf{Coffee and Depression.} Researchers conducted a study invetigating the relationship between cafeinated coffee consumption and risk of depression in women. They collected data on 50,739 women free of depression symptoms at the start of the study in the year 1996, and these women were followed through 2006. The reseaerchers used qesionnaires to collect dta on caffeinated coffee consumption, asked each individual about physician- diagnosed depression, and also asked about the use of antidepressans. The table below shows the distribution of incidences of depression by amount of caffeinated coffee consumption.
+\begin{table}[h]
+    \centering
+    \begin{tabular}{cccccccc}
+     &  & \multicolumn{5}{c}{\textit{Caffeinated coffee consumption}} &  \\ \cline{3-7}
+     &  & \(\le 1\) & 2 to 6 & 1 & 2 to 3 & \(\ge 4\) &  \\
+     &  & cups/week & cups/week & cups/day & cups/day & cups/day & Total \\ \cline{2-8}
+    \textit{Clinical} & Yes & 670 & 373 & 905 & 564 & 95 & 2607 \\
+    \textit{depression} & No & 11545 & 6244 & 16329 & 11726 & 2288 & 48132 \\ \cline{2-8}
+     & Total & 12215 & 6617 & 17234 & 12290 & 2383 & 50739 \\ \cline{2-8}
+    \end{tabular}
+    \end{table}
+\begin{enumerate}[label=(\alph*)]
+\item What type of test is appropriate for evaluating if there is an association between cofee intake and depression?
+\\A \(\chi \)-squared test for two-way table.
+\item Write the hyothesis for the test you identified in part (a).
+\begin{enumerate}
+\item[\(H_0 : \)] There is no association.
+\item[\(H_1 : \)] There is some association.
+\end{enumerate}
+\item Calculate the overall proportion of women who do and do not suffer from depression.
+\\Let \(p_s\) be the proportion of women who suffer from depression and \(p_n\) be the proportion of women who do not.
+\begin{alignat*}{2}
+&p_s= \frac{2607}{50739}, \quad &&p_n = \frac{48132}{50739},\\
+&p_s= 0.0514, \quad &&p_n= 0.949.
+\end{alignat*}
+\item Identify the expected count for the highlighted cell (2 to 6 cups/week, yes), and calculate the contribution of this cell to the test statistic, i.e. \((\textit{Observed} - \textit{Expected})^2 / \textit{Expected}\).
+\\Let \(E_{\text{2 to 6, yes}}\) be the expected value for the highlighted cell.
+Then
+\begin{align*}
+E_{\text{2 to 6, yes}} &= \frac{2607}{5},\\
+&= 521.4.
+\end{align*}
+The contribution to the test statistic is given by
+\begin{align*}
+\frac{(\text{observed} - \text{expected})^2}{\text{expected}} &= \frac{(373 - 521.4)^2}{521.4},\\
+&= 42.24.
+\end{align*}
+\item The test statistic is \(\chi^2 = 20.93\). What is the p-value?
+\\The dof are
+\begin{align*}
+\text{dof} &= (\#\text{ of rows} - 1)(\#\text{ of cols} - 1),\\
+&= (2-1)(5-1),\\
+&= 4.
+\end{align*}
+\\The p-value is given by
+\begin{align*}
+\text{p-value} &= P(X^2 \ge \chi^2),\\
+&= P(X^2 \ge 20.93),\\
+&\overset{R}{=} 1 - \text{pchisq}(20.93, \text{dof}=4),\\
+&\overset{R}{=} 0.0003269507.
+\end{align*}
+\item What is the conclusion of the hypothesis test?
+\\For \(\alpha=0.05\), \(\text{p-value} < \alpha \). Thus, we reject the null and accept the alternative: there is an association between caffeine consumption and depression in women.
+\item One of the authors of this study was quoted on the NYTimes as saying it was \say{too early to recommend that women load up on extra coffee} based on just this study. Do you agree with this statement? Explain your reasoning.
+\\Yes, it is to early to conclude that women should drink coffee to prevent depression. The hypothesis test we conducted only demonstrated a relationship, not that coffee prevents depression. Furhtermore this only demonstrates an association, not a causal relationship.
+\end{enumerate}
+
+\pagebreak
+\item[\textbf{7.6}] \textbf{Working backwards, Part II.} A 90\% confidence interval for a population mean is \((65, 77)\). The population distribution is approximately normal and the population standard deviation is unkown. This confidence interval is based on a simple random sample of 25 observations. Calculate the sample mean, the margin of error, and the sample standard deviation.
+\\The confiddence interval is given by
+\[\mu \pm t^*\cdot\frac{s}{\sqrt{n}},\]
+where \(\mu \) is the sample mean, \(t^*\) is given by R using the confidence level and dof, \(s\) is the sample standard deviation, and \(n=25\) is the sample size. The margin of error, \(\neptune=t^*\frac{s}{\sqrt{n}}\). Then
+\begin{align*}
+t^* &\overset{R}{=} \text{qt}(0.9, n-1),\\
+&\overset{R}{=} \text{qt}(0.9, 24),\\
+&\overset{R}{=} 1.710882.
+\end{align*}
+Thus
+\[77 = \mu + \neptune = \mu + t^*\frac{s}{\sqrt{n}}, \quad 65 = \mu - \neptune = \mu - t^*\frac{s}{\sqrt{n}}.\]
+% \begin{align*}
+% 77 &= \mu + \neptune = \mu + t^*\frac{s}{\sqrt{n}},\\
+% 65 &= \mu - \neptune = \mu - t^*\frac{s}{\sqrt{n}}.
+% \end{align*}
+Thusly
+\begin{align*}
+77 - 65 &= \mu + \neptune - (\mu - \neptune),\\
+12 &= 2 \neptune,\\
+6 &= \neptune.
+\end{align*}
+Thusmore
+\begin{align*}
+77 &= \mu + \neptune,\\
+77 - \neptune &= \mu,\\
+71 &= \mu.
+\end{align*}
+Thusmoreover
+\begin{align*}
+\neptune &= t^* \frac{s}{\sqrt{n}},\\
+\frac{\neptune \sqrt{n}}{t^*} &= s,\\
+\frac{6\sqrt{25}}{1.710882} &= s,\\
+17.53 &= s.
+\end{align*}
+
+\pagebreak
+\item[\textbf{7.12}] \textbf{Auto exhaust and lead exposure.} Researchers interested in lead exposure due to car exhaust sampled the blood of 52 police officers subjected to constant inhalation of automobile exhaust fumes while working traffic enforcement in a primarily urban environment. The blood samples of these officers had an average lead concentration of \(124.32\,\mu\text{g}/\text{l}\) and a SD of \(37.74\,\mu\text{g}/\text{l}\); a previous study of individuals fro a nearby suburb, with no history of exposure, found an average blood level concentration of \(35\,\mu\text{g}/\text{l}\).
+\begin{enumerate}[label=(\alph*)]
+\item Write down the hypothesis that would be appropriate for testing if the police officers appear to have been exposed to a different concentration of lead.
+\\Let \(\mu_{\text{o}}\) be the mean lead concentration of officers blood and \(\mu_{\text{p}}\) be the lead concentration of blood of people in a nearby suburb. Similarly \(\sigma_{\text{o}}\) and \(\sigma_{\text{p}}\) are the standard deviation of lead concentration of blood in officers and people in a nearby suburb respectively. The null and alternative hypothesis are then
+\[H_0 : \mu_{\text{o}} = \mu_{\text{p}}, \quad H_1 : \mu_{\text{o}} \ne \mu_{\text{p}}.\]
+
+\item Explicitly state and check all conditions necessary for inference on these data.
+\item Regardless of your answers in part (b), test the hypothesis that the downtown police officers have a higher lead exposure than the group in the previous study. Interpret your results in context.
+\end{enumerate}
+
+\pagebreak
+\item[\textbf{7.14}] \textbf{SAT scores.} The standard deviation of SAT scores for students at a particular Ivy League college is 250 points. Two statistics students, Raina and Luke, want to estiate the average SAT score of studens at this college as part of a class project. They want their margin of error to be no more than 25 points.
+\begin{enumerate}[label=(\alph*)]
+\item Raine wants to use a 90\% confidence interval. How large a sample should she collect?
+\item Luke wants to use a 99\% confidence interval. Without calculating the actual sample size, determine whether his sample should be larger or smaller than Raina's, and explain your reasoning.
+\item Calculate the minimum required sample size for Luke.
+\end{enumerate}
+
+\pagebreak
+\item[\textbf{7.22}] \textbf{High school and beyond, Part II.} We considered the difference between the reading and writing scores of a random sample of 200 students who took the High School and Beyond Survey in Exercise 7.20. The mean and standard deviation of the differences are \(\bar{x}_{\text{read-write}}=-0.545\) and 8.887 points.
+\begin{enumerate}[label=(\alph*)]
+\item Calculate a 95\% confidence interval for the average difference between the reading and writing scores of all students.
+\item Interpret this interval in context.
+\item Does the confidence interval provide convincing evidence that there is a real difference in the average scores? Explain.
+\end{enumerate}
+\end{enumerate}
+\end{document}

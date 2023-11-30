@@ -159,13 +159,10 @@ Thus, $x\mod3 = 1$. Therefore, if $x\in A$ then $x\in B$. Thus, $A \subseteq B$.
 \\$B\nsubseteq A$. Suppose $x = 1$. Then $1\mod3 = 1$ but $1\mod15\neq 10$. Thus, $\forall x \in \ints\, (x\in B \rightarrow x \in A)$ is not true, so $B \nsubseteq A$.
 \end{enumerate}
 
-\pagebreak
+\vspace{2\singlelineheight}
 \item Suppose $A$ and $B$ are subsets of a universe $\mathcal{U}$. Show that if $A\subseteq B^c$, then $A\cap B = \emptyset$.
 \begin{proof}
-Let $A$ and $B$ be subsets of a universe $\mathcal{U}$. Suppose $A\subseteq B^c$. Then
-\begin{align*}
-A \subseteq B^c &\equiv 
-\end{align*}
+Let \(A\) and \(B\) be subsets of a universe \(\mathcal{U}\). We will use the contrapositive, that is, if \(A \cap B \ne \emptyset \) then \(A \nsubseteq B^c\). Suppose \(A \cap B \ne \emptyset \). Then, there exists some \(x\in\mathcal{U}\) such that \(x\in A\cap B\). Thus, \(x\in A\) and \(x \in B\). Equivalently, \(x\in A\) and \(x \notin B^c\). Therefore, if \(A \cap B \ne \emptyset \) then \(A \nsubseteq B^c\). By the contrapositive, if \(A \subseteq B^c\) then \(A \cap B = \emptyset \).
 \end{proof}
 
 \end{enumerate}
