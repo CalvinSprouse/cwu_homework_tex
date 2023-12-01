@@ -19,7 +19,8 @@
 % document title
 \noindent
 \begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
-Calvin Sprouse & Book Problems 8 & Due 2023 Dec 01 1600\\\hline
+Calvin Sprouse & Book Problems 8 & Due 2023 Dec 01 1600\\
+\midrule
 \end{tabularx}
 
 % homework problems begin
@@ -45,9 +46,9 @@ Then
 Thus, by definition, $a|(bx+cy)$. Therefore, for $a, b, c, x, y\in\ints$, if $a|b$ and $b|c$, then $a|(bx+cy)$.
 \end{proof}
 
-\pagebreak
 \item[4.] Let $m,n\in\ints, n\neq0$. Prove that if $n^2x^2-2mnx+m^2=n^2$, then $x$ is irrational.
 \[\forall m,n\in\ints\left(\left((n\neq0) \land (n^2x^2-2mnx+m^2=n^2)\right) \rightarrow \left(\forall a\in\ints,b\in\ints^+\,x\neq\frac{a}{b}\right)\right).\]
+I think I stumped myself by trying to write the symbolic version.
 
 \pagebreak
 \item[6.] Use the contrapositive to prove the following statement. For all $x\in\reals^+$ if $x$ is irrational, then $\sqrt{x}$ is irrational. You will need to use the following consequence of the Closure Properties for the Rational Numbers: If $x$ is rational, then $x^2$ is rational.
@@ -102,6 +103,30 @@ This is a contradiction since $x,y\in\ints$ but integers are not closed under di
 \item[16]
 \begin{enumerate}
 \item[a)] Use the contrapositive to prove, for all $x\in\ints$, that if $3|x^2$, then $3|x$. There will be two cases, namely $x\mod3=1$ and $x\mod3=2$.
+\begin{proof}
+Let \(x\in\ints\) be given. We use the contrapositive, that is, if \(3\ndiv x\) then \(3 \ndiv x^2\). We proceed with a proof by cases:
+\begin{enumerate}[label=\textit{(\roman*)}]
+\item \(x\mod3=0\),
+\item \(x\mod3=1\),
+\item \(x\mod3=2\).
+\end{enumerate}
+\textit{Case (i).} Suppose \(x\mod3=0\). Then \(x=3q+1\) for some \(q\in\ints\). Clearly, \(x|3\) by the same \(q\). Thus we have vacuous truth.
+\\\textit{Case (ii).} Suppose \(x\mod3=1\). Then \(x=3q+1\) for some \(q\in\ints\). Clearly, \(x\ndiv 3\). Then
+\begin{align*}
+x^2 &= (3q+1)^2,\\
+&= 9q^2 + 6q + 2,\\
+&= 3q(3q+2) + 2.
+\end{align*}
+That is, $x^2\mod3=2$. Thus \(x^2 \ndiv 3\).
+\\\textit{Case (iii).} Suppose \(x\mod3=2\). Then \(x=3q+2\) for some \(q\in\ints\). Clearly \(x\ndiv3\). Then
+\begin{align*}
+x^2 &= (3q+2)^2,\\
+&= 9q^2 + 12q + 4,\\
+&= 3(3q^2 + 4q) + 4.
+\end{align*}
+That is, \(x^2 \mod 3 = 4\). Thus \(x^2 \ndiv 3\).
+Therefore, for all \(x\in\ints\) if \(3\ndiv x\) then \(3 \ndiv x^2\). By the contrapositive, for all \(x\in\ints\) if \(3|x\) then \(3|x^2\).
+\end{proof}
 \item[b)] Use part a) of this exercise to prove that the square root of $3$, $\sqrt{3}$, is irrational.
 \end{enumerate}
 \end{enumerate}
@@ -112,10 +137,8 @@ This is a contradiction since $x,y\in\ints$ but integers are not closed under di
 \begin{enumerate}
 \item[2.] Prove $\log_{32}16\nirat$.
 
-\pagebreak
 \item[3.] Prove $\log_{10}7\nirat$.
 
-\pagebreak
 \item[4.] Prove $\log_4{5}\nirat$.
 \end{enumerate}
 
@@ -166,7 +189,6 @@ Let $x\in\ints$ be given. We proceed with a proof by cases
 \pagebreak
 \item[5.] Let $S=\left\{x\in\ints:x\mod12=8\right\}$ and $T=\left\{x\in\ints:4|x\right\}.$ Prove that $S\subseteq T$, but $T\nsubseteq S.$
 
-\pagebreak
 \item[9.] Let $S=\left\{x\in\ints:\exists\,r,s\in\ints,x=9r+6s\right\}$ and $T=\left\{x\in\ints:3|x\right\}.$
 \begin{enumerate}[label=\alph*)]
 \item Prove that $S\subseteq T$.
@@ -174,17 +196,14 @@ Let $x\in\ints$ be given. We proceed with a proof by cases
 % hint: 9n + 6(-n) = 3n.
 \end{enumerate}
 
-\pagebreak
 \item[10.] Let $A,B,$ and $C$ be subsets of a universal set $\mathcal{U}$. Prove each of the following set theory theorems using a sequence of logically equivalent compound forms.
 \begin{enumerate}
 \item[d.] $A \cap \left(B \cup C\right) = \left(A \cap B\right)\cup\left(A\cap C\right).$
 \item[k.] $A\cap A^c=\emptyset.$
 \end{enumerate}
 
-\pagebreak
 \item[14.] Prove that, if $A\cap B^c=\emptyset$, then $A\subseteq B$.
 
-\pagebreak
 \item[24.] Find the mistake in the \say{proof} of the following \say{proposition.} Is this \say{proposition} true? If not, find a counterexample.
 \\\say{\textbf{Proposition.}} Let $A,B,$ and $C$ be sets and suppose that $A\subseteq (B \cup C)$. Then $A\subseteq B$ or $A\subseteq C$.
 \\\say{\textit{proof.}} Let $x$ be any object and suppose that $x\in A$. Then $x\in (B\cup C)$ since $A\subseteq (B \cup C).$ Thus, by the definition of union, $x\in B$ or $x\in C$. Therefore, for all objects $x$, if $x\in A$, then $x\in B$ or, for all objects $x$, if $x\in A$, then $x\in C.$
