@@ -37,7 +37,7 @@
 \textbf{Teacher:} Calvin Sprouse
 \\\hline
 
-\textbf{Date:} 2023 December 01
+\textbf{Date:} 2023 December 03
 \\\hline
 
 \textbf{Subject / Grade level:} PHYS 183
@@ -47,6 +47,14 @@
 \\\hline
 
 \textbf{Materials:}
+\begin{itemize}
+\item A pendulum that supports swapping the string.
+\item A set of two weights that hook onto the loops of a string.
+\item A set of two lengths of string.
+\item A protractor for measuring pendulum angle
+\item Access to a computer and a link to the PHET Circuit Construction Kit: AC module.
+\item Link to a desmos digital notebook that has been created as detailed below.
+\end{itemize}
 \\\hline
 
 \textbf{Lesson Objective(s):}
@@ -56,23 +64,34 @@
 \end{itemize}
 \\\hline
 
-\textbf{ENGAGEMENT:} Students will be presented with a theoretical pendulum and calculate the period and velocity as a function of time.
+\textbf{ENGAGEMENT:} Students will first be given the equations that govern a simple pendulum,
+\[\theta(t) = \theta_0 \cos\left(\frac{2\pi}{T}t + \phi\right), \quad T=2\pi\sqrt{\frac{L}{g}},\]
+where each term will be defined by an accompanying diagram. Students will also be told this is an approximate equation that is only good if their pendulum stays under about \(\pi/12\) radians. As a refresher exercise they will be asked to convert this to degrees.
+
+If there is time, students could be asked to think about why mass does not appear in the equation for period. A good answer might be one that mentions how the acceleration of an object under just gravity is independent of mass.
+\\\hline
+\end{tabularx}
+
+\begin{tabularx}{\textwidth}{| >{\raggedright\arraybackslash}X |}
+\hline
+\textbf{EXPLORATION:} Students will then be presented with a labeled schematic and equations for a simple AC circuit voltage divider,
+\[V_\text{out}(t) = A\sin(\omega t), \quad A = \frac{R_2}{R_1 + R_2}V_0.\]
+They will then be tasked with identifying related quantities to their pendulum equations. In this case
+\[A = \theta_0, \quad \frac{2\pi}{T} = \omega.\]
+\textit{A potential point of tension: \(A=\theta_0\) is not technically correct by units. Some students may point this out and thats a very good thing to recognize.}
 \\\hline
 
-\textbf{EXPLORATION:} Students will then be presented with the schematic of a voltage divider circuit. Given an AC input students will need to find a pair of resistors such that the graph of output voltage is identical to their theoretical pendulum (they can configure the period of the AC source).
+\textbf{EXPLANATION:} Students will then build their AC circuit digitally. A value for \(R_1\), such that calculations are nice and clean, will be provided on the worksheet as well as a value for \(V_0\) that the students must use for the rest of the worksheet. Students will also choose some value of \(L\) and \(\theta_0\), so long as \(\theta_0 < \pi/12\) radians, and calculate a value of \(R_2\) and \(\omega \) to create a digital analogue.
 \\\hline
 
-\textbf{EXPLANATION:} Students will then build the pendulum and circuit (does the cart software do circuits? if so they can do the graphs on the same window! Otherwise most software can to a csv export and they can use excel to plot the curves over one another? The goal here is just to demonstrate that it works.
+\textbf{ELABORATION:} Students will verify their circuit works with some digital view in the circuit software. They will then be given a link to some pre-existing Desmos notebook where a pendulum and circuit function have already been defined and they can tweak the values of \(R_2, A, \theta_0, L\), and \(\phi_0\). They will then have to plug in calculated values and figure out how to change \(\phi_0\) such that their waves visually line up. As a hint/refresher some trig identities will have been provided at the front of the worksheet. Students should recognize how to convert sin functions to cos functions.
 \\\hline
 
-\textbf{ELABORATION:} Students will then find an equation the relates their pendulum mass and length to a resistor value such that for any length and mass pendulum they can pick a resistor pair to make an analogous circuit.
-\\\hline
+\textbf{EVALUATION:} Students will be asked to think about another situation that could be modeled with a sin or cos function. They should recall, perhaps, orbital mechanics. If they have any other thoughts, like a spring oscillator, they are welcome to use those. They should then identify the equivalent quantities to their AC circuit. For orbital mechanics the amplitude, \(A\), is like the radius of the orbit and the frequency is inversely related to the period.
 
-\textbf{EVALUATION:} Students will be given a new mass and length and must build a circuit and demonstrate they are analogues.
+If there is time they can investigate this third model and build a circuit analogue but honestly I think this will already be a long lab.
 \\\hline
 
 \end{tabularx}
 \end{center}
-
-I know theres a lot here and I have no idea if this goes above and beyond the 183 level. I really wanted to touch on analagous physical systems because I think they are tremendously important and highlight the power of both physics and math. I also wanted to do something with EM since I think its a really fun topic and the more students can link it to real life experience the easier it will be. I had another idea of having students build a rope out of a series of magnets and plastic spacers. Students could figure out that the rope could theoretically pull an infinite force (in a frictionless world). By giving them a surface with particular friction students could be tasked with figuring out what length spacer is the maximum allowed to pull a certain mass. Both are fun ideas!
 \end{document}
