@@ -19,20 +19,143 @@ Calvin Sprouse & PHYS 451 HW 7 & Due 2023 Dec 03\\
 
 % homework problems begin
 \begin{enumerate}
-\item Consider the exploded spacecraft from one of the best episodes of television ever produced. Initially, the spacecraft was traveling at 5 m/s to the east at a height of 1.96 km. When the spacecraft was 100 m west of the center of town it experienced a rapid unplanned dissasembly (RUD). Suppose none of the pieces acuire appreciable vertical velocities after the RUD. After the dust settles the following three pieces are located:
+\item Consider the exploded spacecraft from one of the best episodes of television ever produced. Initially, the spacecraft was traveling at 5 m/s to the east at a height of 1.96 km. When the spacecraft was 100 m west of the center of town it experienced a rapid unplanned disassembly (RUD). Suppose none of the pieces acquire appreciable vertical velocities after the RUD.
+After the dust settles the following three pieces are located:
 \begin{table}[h]
     \centering
     \begin{tabular}{cccc}
     Piece & Mass [kg] & Distance from town center [km] & Angle from north [degrees] \\ \midrule
-    1 & \(300 \unit{kg}\) & \(6 \unit{\kilo\meter}\) & \(0 \unit{\degree}\) \\
-    2 & \(1000 \unit{kg}\) & \(1.5 \unit{\kilo\meter}\) & \(126 \unit{\degree}\) \\
-    3 & \(400 \unit{kg}\) & \(4 \unit{\kilo\meter}\) & \(205 \unit{\degree}\)
+    1 & \(300\,\unit{kg}\) & \(6\, \unit{\kilo\meter}\) & \(0\, \unit{\degree}\) \\
+    2 & \(1000\, \unit{kg}\) & \(1.5\, \unit{\kilo\meter}\) & \(126\, \unit{\degree}\) \\
+    3 & \(400\, \unit{kg}\) & \(4\, \unit{\kilo\meter}\) & \(205\, \unit{\degree}\)
     \end{tabular}
     \end{table}
-\begin{enumerate}
+\begin{enumerate}[label=\Alph*.]
 \item Compare the linear momentum of each piece after the explosion to the craft prior to the explosion.
+\\ The linear momentum of the craft pre-RUD is given by
+\[\vec{p}_{is} = \matr{p_{isx} \\ p_{isy}} = \matr{5(300+1000+400) \unit{\kg\meter\per\second} \\ 0\,\unit{\kg\meter\per\second}} = \matr{\qty{8500}{\kg\meter\per\second} \\ 0\,\unit{\kg\meter\per\second}}.\]
+The magnitude of which is given by
+\[|\vec{p}_{is}| = p_{is} = \qty{8500}{\kg\meter\per\second}.\]
+Assuming each piece, \(j\), of the craft started at the height of the spacecraft, the distance a piece travels before landing is given by
+\[r_j = v_{rj}\sqrt{\frac{2 z_i}{g}},\]
+where \(v_{rj}\) is the velocity of the piece after RUD, \(z_i=\qty{1.96}{\kilo\meter}\) is the initial height of the piece which we assume to be the height of the craft, and \\ \( g = \qty{9.8}{\meter\per\second} \) is gravitational acceleration which we assume to be the typical surface level acceleration. The linear momentum of each piece is then
+\[\vec{p}_{j} = \matr{p_{ijx} \\ p_{ijy}} = m_j r_j \sqrt{\frac{g}{2 z_i}}\matr{\sin(\theta_j) \\ \cos(\theta_j)}.\]
+\begin{table}[h]
+    \centering
+    \begin{tabular}{cc}
+    Piece & \(p_{i}\) \\ \midrule
+    1 & \(m_1 r_1 \sqrt{\frac{g}{2 z_i}} \matr{0 \\ 1}\) \\
+    2 & \(m_2 r_2 \sqrt{\frac{g}{2 z_i}} \matr{\cos(\qty{26}{\degree}) \\ -\sin(\qty{26}{\degree})}\) \\
+    3 & \(m_3 r_3 \sqrt{\frac{g}{2 z_i}} \matr{-\sin(\qty{25}{\degree}) \\ -\cos(\qty{25}{\degree})}\)
+    \end{tabular}
+\end{table}
+By the conservation of linear momentum we expect that the sum of linear momentum in each direction from the components is 0.
+\begin{align*}
+0 &= \vec{p}_{is} - \vec{p}_{i1} - \vec{p}_{i2} - \vec{p}_{i3},\\
+&= \matr{\qty{8500}{\kg\meter\per\second} \\ 0\,\unit{\kg\meter\per\second}} - \sqrt{\frac{g}{2 z_i}}\left(m_1 r_1  \matr{0 \\ 1} + m_2 r_2 \matr{\cos(\qty{26}{\degree}) \\ -\sin(\qty{26}{\degree})} - m_3 r_3 \matr{\sin(\qty{25}{\degree}) \\ \cos(\qty{25}{\degree})}\right).
+\end{align*}
+Substituting quantities into Mathematica:
+\begin{align*}
+    0 &=  \matr{\qty{8500}{\kg\meter\per\second} \\ 0\,\unit{\kg\meter\per\second}} - \matr{\qty{1.06e6}{\kg\meter\per\second} \\ \qty{1.59e6}{\kg\meter\per\second}},\\
+    &\ne \matr{\qty{-1.05e6}{\kg\meter\per\second} \\ -\qty{1.59e6}{\kg\meter\per\second}}
+\end{align*}
+This is inconsistent with the spacecraft exploding spontaneously. The momentum leftover creates a vector with direction given by \(\theta\):
+\begin{align*}
+    \theta &= \arctan\left(\frac{\qty{-1.05e6}{\kg\meter\per\second}}{-\qty{1.59e6}{\kg\meter\per\second}}\right),\\
+    &= \qty{33.44}{\degree},
+\end{align*}
+pointing west of south. The missile then must have come from the opposite direction which is \(\qty{57}{\degree}\) north of east or \(\qty{33}{\degree}\) from north.
+
+\pagebreak
 \item Determine the center of mass of the pieces after the explosion, and compare it to where it \textit{should} be.
+\\ The center of mass of the pieces after the explosion, in the \(x\)-direction, is given by
+\begin{align*}
+R_x &= \frac{m_1 r_{1x} + m_2 r_{2x} + m_3 r_{3x}}{m_1 + m_2 + m_3},\\
+&= \frac{m_1\cdot 0 + m_2\cdot\qty{1500}{\meter}\cdot\cos(\qty{36}{\degree}) - m_3\cdot\sin(\qty{25}{\degree})}{m_1 + m_2 + m_3},\\
+&= \qty{316.08}{\meter}.
+\end{align*}
+The center of mass of the pieces after the explosion, in the \(y\)-direction, is given by
+\begin{align*}
+R_y &= \frac{m_1 r_{1y} + m_2 r_{2y} + m_3 r_{3y}}{m_1 + m_2 + m_3},\\
+&= \frac{m_1\cdot \qty{6000}{\meter} - m_2\cdot\qty{1500}{\meter}\cdot\sin(\qty{36}{\degree}) - m_3\cdot\qty{4000}{\meter}\cdot\cos(\qty{25}{\degree})}{m_1 + m_2 + m_3},\\
+&= \qty{-312.806}{\meter}.
+\end{align*}
+The center of mass \textit{should} be equivalent to the center of mass if the spacecraft simply started falling 100 m west of the center of town. This is given by
+\begin{align*}
+R_x &= \qty{-100}{\meter} + 5\sqrt{\frac{2 z_i}{g}}\,\unit{\meter\per\second},\\
+R_x &= \qty{0}{\meter}.
+\end{align*}
+The center of mass in the \(y\)-direction will be 0 m as well since the spacecraft was not traveling in the \(y\)-direction. To have caused the spacecraft to move its center of mass the missile must have come from the same direction as the center of mass shift:
+\begin{align*}
+\theta &= \arctan\left(\frac{\qty{312.806}{\meter}}{\qty{316.08}{\meter}}\right),\\
+&= \qty{44.70}{\degree}.
+\end{align*}
+The missile came from \(\qty{44.70}{\degree}\) south of east. This is a very different answer than from part A. In review I noticed two issues in part A that I \textit{hope} to fix before submitting. The first is that \(126 - 90 \ne 26\). In other words, I messed up when converting my angles for piece 2. The second is that when I plugged these numbers into my calculator I did not convert \(z_i\) to meters.
 \end{enumerate}
 
+\pagebreak
+\item Consider Dr. White's brilliant experimental decision method. If his chart measures \(\qty{90}{\centi\meter}\times\qty{120}{\centi\meter}\) and each element box measures \(\qty{6}{\centi\meter}\times\qty{6}{\centi\meter}\), how many darts does he need to throw before he \textit{likely} hits an element whose symbol contains the letter \say{A} or \say{a}.
+\\ There are \(14\) elements whose symbols contain the letter \say{A} or \say{a}. Each element has a cross sectional area
+\[\sigma = \qty{36}{\centi\meter\squared}.\]
+The target density, \(n_{\text{tar}}\) is given by
+\begin{align*}
+n_{\text{tar}} &= \frac{14}{\qty{90}{\centi\meter}\times\qty{120}{\centi\meter}},\\
+&= \frac{14}{\qty{10800}{\centi\meter\squared}}.
+\end{align*}
+We can consider the number of scattered projectiles to be the number of darts that hit one of these elements. This is given by
+\begin{align*}
+N_{\text{sc}} &= N_{\text{inc}}n_{\text{tar}}\sigma,\\
+&= N_{\text{inc}}\frac{14\cdot\qty{36}{\centi\meter\squared}}{\qty{10800}{\centi\meter\squared}},\\
+&= \frac{7}{150}N_{\text{inc}}.
+\end{align*}
+We say the number of darts that need to be thrown before a hit likely occurs is given when \(N_{\text{sc}}=1. \)
+Then
+\begin{align*}
+N_{\text{sc}} &= \frac{7}{150}N_{\text{inc}},\\
+1 &= \frac{7}{150}N_{\text{inc}},\\
+\frac{150}{7} &= N_{\text{inc}},\\
+22 &\approx N_{\text{inc}}.
+\end{align*}
+Dr. White must throw about 22 darts before he is likely to hit a single element containing the letter \say{A} or \say{a}.
+
+\pagebreak
+\item Demonstrate that the total solid angle for any closed surface is 4\(\pi \) steradians given that the differential solid angle in spherical coordinates is given by
+\[\text{d}\Omega = \sin(\theta)\text{d}\theta\text{d}\phi.\]
+Consider an ancient model of the heavens, that the Earth is surrounded by a massive sphere through which the stars shine through. We would say that the apparent angular area covered by this glass dome is that of the entire sky (supposing we could look through the earth). Now replace said dome with an arbitrary geometry. If the geometry is closed it would still be said to cover the entire sky. Thus, when calculating the angular area enclosed by the geometry, so long as it is closed, we may use a sphere in place of the actual geometry.
+\begin{align*}
+\iint{\text{d}\Omega} &= \iint{\sin(\theta)\text{d}\theta\text{d}\phi},\\
+&= \bint{0}{\pi}{\bint{0}{2\pi}{\sin(\theta)}{\phi}}{\theta},\\
+&= 2\pi \bint{0}{\pi}{\sin(\theta)}{\theta},\\
+&= 2\pi \left(-\cos(\theta)\right)_0^\pi,\\
+&= 2\pi(-(-1) - (-1)),\\
+&= 4\pi.
+\end{align*}
+
+\pagebreak
+\item Demonstrate that the angle of incidence and angle of reflection, as defined in Figure 14.10 are indeed equal. Suppose both energy and angular momentum are conserved.
+\\ I will further assume that the target sphere does not move, that is its initial and final velocity is 0. Thus the incident particle will have initial kinetic energy
+\[K_i = \frac{1}{2}mv_i^2,\]
+and final kinetic energy
+\[K_f = \frac{1}{2}m(v_f \cos(\theta))^2 + \frac{1}{2}m(v_f \sin(\theta))^2.\]
+Thus
+\begin{align*}
+K_i &= K_f,\\
+\frac{1}{2}mv_i^2 &=  \frac{1}{2}m(v_f \cos(\theta))^2 + \frac{1}{2}m(v_f \sin(\theta))^2,\\
+v_i^2 &= (v_f \cos(\theta))^2 + (v_f \sin(\theta))^2,
+\end{align*}
+where \(\theta = \pi - \alpha_i - \alpha_r\).
+The incident particle will also have initial linear momentum given by
+\[\ell_i = m v_i \dot{\alpha},\]
+and final angular momentum
+\[\ell_f = m v_f \dot{\theta}.\]
+From the conservation of kinetic energy we have \(v_i = v_f\).
+Thus, by conservation of angular momentum
+\begin{align*}
+\ell_i &= \ell_f,\\
+m v_i \dot{\alpha} &= m v_f \dot{\theta},\\
+m v_i \dot{\alpha} &= m v_i \dot{\theta},\\
+\dot{\alpha} &= \dot{\theta}.
+\end{align*}
+I'm feeling that from here, or maybe even earlier, I could've done a shift of coordinates like we did in class to the vertex point of the incoming and outgoing track of the incident particle. From there what would follow is probably a more typical demonstration of angle of incidence and angle of reflection being equal, perhaps even like the one we did earlier in the quarter with Snell's Law. Had I started this sooner that's what I would try next (since this was a bit of a dead end). Unfortunately it is quite late and I am quite tired (and regretting not starting this sooner).
 \end{enumerate}
 \end{document}
