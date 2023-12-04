@@ -1,0 +1,38 @@
+% document style header
+\documentclass[a4paper, 12pt]{config/homework}
+
+% import default packages
+\usepackage{config/defpackages}
+
+% import custom math commands
+\usepackage{config/domath}
+
+% end preamble
+\begin{document}
+
+% document title
+\noindent
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
+Calvin Sprouse & PHYS 451 HW 7 & Due 2023 Dec 03\\
+\midrule
+\end{tabularx}
+
+% homework problems begin
+\begin{enumerate}
+\item Consider the exploded spacecraft from one of the best episodes of television ever produced. Initially, the spacecraft was traveling at 5 m/s to the east at a height of 1.96 km. When the spacecraft was 100 m west of the center of town it experienced a rapid unplanned dissasembly (RUD). Suppose none of the pieces acuire appreciable vertical velocities after the RUD. After the dust settles the following three pieces are located:
+\begin{table}[h]
+    \centering
+    \begin{tabular}{cccc}
+    Piece & Mass [kg] & Distance from town center [km] & Angle from north [degrees] \\ \midrule
+    1 & \(300 \unit{kg}\) & \(6 \unit{\kilo\meter}\) & \(0 \unit{\degree}\) \\
+    2 & \(1000 \unit{kg}\) & \(1.5 \unit{\kilo\meter}\) & \(126 \unit{\degree}\) \\
+    3 & \(400 \unit{kg}\) & \(4 \unit{\kilo\meter}\) & \(205 \unit{\degree}\)
+    \end{tabular}
+    \end{table}
+\begin{enumerate}
+\item Compare the linear momentum of each piece after the explosion to the craft prior to the explosion.
+\item Determine the center of mass of the pieces after the explosion, and compare it to where it \textit{should} be.
+\end{enumerate}
+
+\end{enumerate}
+\end{document}
