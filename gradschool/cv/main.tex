@@ -1,0 +1,288 @@
+% Document class and font size
+\documentclass[a4paper,9pt]{extarticle}
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{fancyhdr}
+
+% configure page with geometry
+\geometry{letterpaper, margin=0.75in}
+
+% Formatting
+% Removes item separation
+\setlist{noitemsep}
+% Section title format
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}[\titlerule]
+% Section title spacing
+\titlespacing*{\section}{0pt}{\baselineskip}{\baselineskip}
+
+% Begin document
+\begin{document}
+
+% Disable page numbers
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead{}
+\fancyhead[L]{\textit{Calvin Sprouse}}
+\fancyhead[R]{\textit{December 2023}}
+% Remove header from the first page
+\thispagestyle{empty}
+
+% Header
+\begin{flushleft}
+% Name
+\textbf{\LARGE Calvin Sprouse}\\[2pt]
+Full Time Student and Part Time Tutor in Physics and Math, Central Washington University (CWU), Ellensburg, Washington
+% Contact info
+\\ \href{mailto:sprousecal@gmail.com}{sprousecal@gmail.com} | \href{tel:4252602368}{(425) 260-2368} | \href{https://www.linkedin.com/in/calvin-sprouse}{www.linkedin.com/in/calvin-sprouse}
+% for webpage add
+% | \href{https://JohnDoe/en/staff/single/59}{Organization page}
+% to above line
+\end{flushleft}
+
+% Education Section
+\section*{RESEARCH INTERESTS}
+\noindent
+Theoretical Physics, Quantum Gravity, High Energy Physics, Astroparticle Physics, Particle Physics
+% Education Section
+\section*{EDUCATION}
+\noindent
+% University name and location
+\textbf{Central Washington University}, Ellensburg, Washington \hfill September 2020 | June 2024\\
+% Degree and GPA
+B.S. Physics \hfill Cumulative GPA: 3.73/4.00 \\
+Minors in Astronomy and Mathematics
+% Additional info
+% Thesis Title: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+% \noindent\\
+% % University name and location
+% \textbf{\#University Name},  \#City, \#Country \hfill \#Month \#Year | \#Month \#Year\\
+% % Degree and GPA
+% Bachelor of Science: \#Major field
+% % Additional info
+
+% Experience Section
+\section*{ACADEMIC EXPERIENCE}
+\noindent
+% Company name and location
+\textbf{CWU Tutoring Center} \hfill Ellensburg, Washington\\
+% Position and duration
+\textit{Lead Tutor} \hfill September 2022 | Present
+\begin{itemize}
+    \item Work with students by drop-in or appointment on math issues in any STEM course.
+    \item Reinforce study habits with a focus on math concepts.
+    \item Develop and give trainings to fellow tutors according to CRLA standards.
+    \item Preform office tasks associated with running a tutoring center.
+    % Job responsibilities and achievements
+\end{itemize}
+
+\noindent
+% Company name and location
+\textbf{CWU Tutoring Center} \hfill Ellensburg, Washington\\
+% Position and duration
+\textit{Peer Assisted Learning Physics Tutor} \hfill September 2022 | Present
+\begin{itemize}
+    \item Provide individual and group help to students in any physics course.
+    \item Reinforce study habits with a focus on physics concepts.
+    \item Create session plans targeted to introductory physics students.
+    \item Regularly interact with professors of introductory classes to advertise and discuss upcoming coursework.
+    % Job responsibilities and achievements
+\end{itemize}
+
+\noindent
+% Company name and location
+\textbf{CWU Department of Physics} \hfill Ellensburg, Washington\\
+% Position and duration
+\textit{TA for PHYS 303 Observational Astronomy} \hfill June 2023
+\begin{itemize}
+    \item Developed astronomy focused lesson plans for a quarter long course.
+    \item Taught lessons using a planetarium.
+    \item Taught students how to identify constellations and use celestial coordinate systems using only their eyes.
+    \item Evaluated students throughout the quarter.
+    \item Led observational sessions and mentored students doing research on the CWU research telescope.
+    % Job responsibilities and achievements
+\end{itemize}
+
+\noindent
+% Company name and location
+\textbf{CWU Department of Physics} \hfill Ellensburg, Washington\\
+% Position and duration
+\textit{TA for PHYS 181 Introductory Physics with Lab} \hfill September 2023 | Present
+\begin{itemize}
+    \item Worked in the classroom to assist with labs.
+    \item Graded student assignments and provided feedback.
+    \item Provided explanations to students in class on lecture material.
+    \item Read and discussed physics teaching literature as part of an accompanying class.
+    % Job responsibilities and achievements
+\end{itemize}
+
+\noindent
+% Company name and location
+\textbf{Northwest Earth Space Science Pathways Student Assistant} \hfill Ellensburg, Washington\\
+% Position and duration
+\textit{Peer Assisted Learning Physics Tutor} \hfill September 2022 | June 2023
+\begin{itemize}
+    \item Helped create robotics curriculum for K-12 student teams.
+    \item Hosted week-long summer camps for students to learn robotics.
+    \item Taught K-12 students engineering and programming.
+    % Job responsibilities and achievements
+\end{itemize}
+
+\noindent
+% Company name and location
+\textbf{After School Robotics Instructor} \hfill North Bend, Washington\\
+% Position and duration
+\textit{Peer Assisted Learning Physics Tutor} \hfill 2013 | 2020
+\begin{itemize}
+    \item Taught K-12 students skills in teamwork, leadership, engineering, programming, and project management.
+    \item Mentored competitive FIRST student teams.
+    \item Coordinate with other student teachers to provide classes to an entire school district.
+    % Job responsibilities and achievements
+\end{itemize}
+
+\pagebreak
+% Projects Section
+\section*{PROJECTS}
+\noindent
+% Project name and location
+\textbf{Computational Models of Neuronal Cytoskeleton} \hfill CWU - NSF\\
+\textit{Undergraduate Student Researcher}
+% Project link and duration
+\hfill June 2022 | Present
+\begin{itemize}
+    \item Develop computational models on the mechanics of the neuronal Cytoskeleton in MatLab.
+    \item Developed data visualizations in Python.
+    \item Presented work at 6 research conferences including PhysCon 2022, the Biophysical Society Meeting 2023, and soon 2024.
+    \item Made posters and presentations for conferences.
+    \item Wrote user guides and kept a lab notebook documenting procedures.
+\end{itemize}
+
+\noindent
+% Project name and location
+\textbf{Construction of a new Spectrograph for the CWU 0.6m Research Telescope} \hfill CWU - NSF\\
+\textit{Undergraduate Student Researcher}
+% Project link and duration
+\hfill September 2022 | June 2023
+\begin{itemize}
+    \item Programmed data reduction notebooks in Python for an under construction spectrograph.
+    \item Researched data analysis methods for using spectrograph data.
+\end{itemize}
+
+\noindent
+% Project name and location
+\textbf{Characterization of CWU 0.6m Telescope Precision} \hfill CWU\\
+\textit{Undergraduate Student Researcher}
+% Project link and duration
+\hfill March 2022 | June 2023
+\begin{itemize}
+    \item Created and executed methods to reliably measure variable stars.
+    \item Wrote Python scripts to automatically control a research telescope.
+    \item Wrote Python scripts to preform data analysis on hundreds of observations.
+    \item Presented this research at two research conferences.
+\end{itemize}
+
+\noindent
+% Project name and location
+\textbf{Development of a Magneto Caloric Testing Apparatus} \hfill CWU\\
+\textit{Undergraduate Student Researcher}
+% Project link and duration
+\hfill January 2023 | Present
+\begin{itemize}
+    \item Developed software in Python for an Arduino controlled measurement device.
+    \item Research sampling material for device calibration.
+\end{itemize}
+
+\noindent
+\textbf{Calculating the Energy of IceCube Neutrino 190331A}\\
+\textit{University of Wisconsin Madison Astrophysics REU Summer 2023}
+\begin{itemize}
+    \item Developed Monte Carlo simulations for calculating neutrino energies.
+    \item Worked with IceCube data.
+    \item Learned to work within IceCube data analysis protocols.
+    \item Learned to work with large research teams and follow data handling procedures.
+\end{itemize}
+
+\noindent
+\textbf{CWU Learning Commons Math Center Data Analysis}\\
+\textit{Lead Tutor}
+\begin{itemize}
+    \item Handled sensitive student data according to FERPA guidelines.
+    \item Wrote Python scripts to process student data from a variety of formats.
+    \item Used data collected in the math tutoring center to answer questions and improve tutoring.
+\end{itemize}
+
+\section*{PUBLICATIONS}
+\noindent
+\textbf{Biophysical Society Meeting 2023 Poster Abstract}
+% Project name and location
+\begin{itemize}
+    \item Craig et. al. (2023). Self-organization of the microtubule cytoskeleton in developing axons. Biophysical Journal Abstract, \href{doi.org/10.1016/j.bpj.2022.11.1506}{doi.org/10.1016/j.bpj.2022.11.1506}
+    \item Sprouse et. al. (2024). The Highest-Energy Astrophysical Muon-Neutrino: 190331A. American Astronomical Society 243rd Meeting.
+\end{itemize}
+
+\section*{SELECTED COURSES}
+\begin{tabularx}{1\textwidth}{>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X }
+    % \textbf{Physics Courses}&   \textbf{Math Courses}\\
+    \vspace{-0.2in}
+    \begin{itemize}
+        \item PHYS 292 Exploring Physics Teaching
+        \item MATH 314 Probability and Statistics
+    \end{itemize}
+    & \vspace{-0.2in} \begin{itemize}
+        \item MATH 260 Sets and Logic
+    \end{itemize}
+\end{tabularx}
+
+\vspace{-0.2in}
+\section*{AWARDS}
+\textbf{Sigma Pi Sigma Department Nomination} \hfill CWU Deptartment of Physics\\
+Nominated by the Physics department for academic excellence and volunteer service. \hfill June 2023
+% \textbf{College of the Sciences Deans List}  \hfill CWU\\
+% Awarded a deans list recognition for maintaining a GPA above 3.5/4.0.\\
+
+% \section*{OTHER EXPERIENCES}
+% \noindent
+% \textbf{\# you can here experiences those are less related to you applying position}  \hfill \#City, \#Country\\ % Company name and location
+% \textit{\# Your Position} \hfill \#Month \#Year | \#Month \#Year % Position and duration
+% \begin{itemize}
+%     \item \# Description of your job duty and responsibilities.
+%     \item \# Description of your job duty and responsibilities.
+%     \item \# Description of your job duty and responsibilities.
+%     \item \# Description of your job duty and responsibilities.
+% \end{itemize}
+
+% \section*{ENGLISH \& GRE TESTS}
+% \begin{tabularx}{1\textwidth}{>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X }
+% \textbf{IELTS (Academic): 7.5} (overall score)&   \textbf{GRE General Test:}\\ \\
+% Listening: XX | Reading: XX & Quant: XXX | Verbal: XXX\\
+% Speaking: XX   | Writing: XX& Analytical writing: X\\
+% Test date: \#Month \#Year &Test date: \#Month \#Year
+% \end{tabularx}
+
+% Skills Section
+\section*{SKILLS}
+\begin{itemize}
+    \item \textbf{Computer Science:} Python scripting, simulations, and data science; MatLab; Mathematica; Git; GitHub; \LaTeX
+\end{itemize}
+
+% \section*{REFERENCES}
+% \textbf{Prof. John Doe}\\
+% \textit{\#Position, \# Department, \# Organization name or University name, \# City, \# Country}\\
+% E-mail: \href{mailto:johndoe@XXX.XX}{johndoe@XXX.XX}\\
+% Scholar Profiles: \href{related link}{University of XXX - Personal Page} | \href{related link}{Google Scholar} | \href{https://www.linkedin.com/in/xxxxxxxx}{LinkedIn}\\ \\
+% \textbf{Prof. John Doe}\\
+% \textit{\#Position, \# Department, \# Organization name or University name, \# City, \# Country}\\
+% E-mail: \href{mailto:johndoe@XXX.XX}{johndoe@XXX.XX}\\
+% Scholar Profiles: \href{related link}{University of XXX - Personal Page} | \href{related link}{Google Scholar} | \href{https://www.linkedin.com/in/xxxxxxxx}{LinkedIn}\\ \\
+% \textbf{Prof. John Doe}\\
+% \textit{\#Position, \# Department, \# Organization name or University name, \# City, \# Country}\\
+% E-mail: \href{mailto:johndoe@XXX.XX}{johndoe@XXX.XX}\\
+% Scholar Profiles: \href{related link}{University of XXX - Personal Page} | \href{related link}{Google Scholar} | \href{https://www.linkedin.com/in/xxxxxxxx}{LinkedIn}\\ \\
+% End document
+\end{document}
