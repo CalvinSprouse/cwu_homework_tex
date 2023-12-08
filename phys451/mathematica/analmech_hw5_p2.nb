@@ -1,0 +1,313 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9764,        305]
+NotebookOptionsPosition[      8145,        267]
+NotebookOutlinePosition[      8572,        284]
+CellTagsIndexPosition[      8529,        281]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ "The Moment of Inertia Tensor ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       StyleBox["I", "TI"], TraditionalForm], "errors" -> {}, "input" -> "I", 
+     "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "2feb09f4-3806-46d8-8b03-b1f5a335897a"]
+}], "Section",
+ CellChangeTimes->{{3.9084904250302057`*^9, 3.908490433448028*^9}, {
+  3.908490865527279*^9, 
+  3.90849088602847*^9}},ExpressionUUID->"870f10a8-a7fd-4166-8abe-\
+f19f20307485"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Imoment", "=", 
+   RowBox[{
+    SubsuperscriptBox["\[Integral]", "0", "a"], 
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      RowBox[{
+       RowBox[{"-", "a"}], "/", "2"}], 
+      RowBox[{"a", "/", "2"}]], 
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", "0", 
+       RowBox[{"-", "a"}]], 
+      RowBox[{
+       RowBox[{"(", GridBox[{
+          {
+           RowBox[{
+            SuperscriptBox["y", "2"], "+", 
+            SuperscriptBox["z", "2"]}], 
+           RowBox[{
+            RowBox[{"-", "x"}], "*", "y"}], 
+           RowBox[{
+            RowBox[{"-", "x"}], "*", "z"}]},
+          {
+           RowBox[{
+            RowBox[{"-", "y"}], "*", "x"}], 
+           RowBox[{
+            SuperscriptBox["x", "2"], "+", 
+            SuperscriptBox["z", "2"]}], 
+           RowBox[{
+            RowBox[{"-", "y"}], "*", "z"}]},
+          {
+           RowBox[{
+            RowBox[{"-", "z"}], "*", "x"}], 
+           RowBox[{
+            RowBox[{"-", "z"}], "*", "y"}], 
+           RowBox[{
+            SuperscriptBox["x", "2"], "+", 
+            SuperscriptBox["y", "2"]}]}
+         }], ")"}], 
+       RowBox[{"\[DifferentialD]", "x"}], 
+       RowBox[{"\[DifferentialD]", "y"}], 
+       RowBox[{"\[DifferentialD]", "z"}]}]}]}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.908490697319243*^9, 3.908490837318737*^9}, {
+  3.908491111897756*^9, 3.908491126670993*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"93838b62-1d46-4803-9231-2eb7f35a1024"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MatrixForm", "[", "Imoment", "]"}]], "Input",
+ CellChangeTimes->{{3.908491129368997*^9, 3.908491132416081*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"eb46e0c4-063f-44a4-8b1c-92efceb12ebe"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"5", " ", 
+         SuperscriptBox["a", "5"]}], "12"]}], "0", 
+      RowBox[{"-", 
+       FractionBox[
+        SuperscriptBox["a", "5"], "4"]}]},
+     {"0", 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"2", " ", 
+         SuperscriptBox["a", "5"]}], "3"]}], "0"},
+     {
+      RowBox[{"-", 
+       FractionBox[
+        SuperscriptBox["a", "5"], "4"]}], "0", 
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"5", " ", 
+         SuperscriptBox["a", "5"]}], "12"]}]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.9084911327382097`*^9},
+ CellLabel->
+  "Out[8]//MatrixForm=",ExpressionUUID->"e04739d0-a049-45d2-bd0e-\
+c1a4acf17d26"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TeXForm", "[", "Imoment", "]"}]], "Input",
+ CellChangeTimes->{{3.9084911336626377`*^9, 3.908491137150855*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"bd899ab9-0c48-4040-a472-22b63eba19f2"],
+
+Cell["\<\
+\\left(
+\\begin{array}{ccc}
+ -\\frac{5 a^5}{12} & 0 & -\\frac{a^5}{4}
+   \\\\
+ 0 & -\\frac{2 a^5}{3} & 0 \\\\
+ -\\frac{a^5}{4} & 0 & -\\frac{5 a^5}{12}
+   \\\\
+\\end{array}
+\\right)\
+\>", "Output",
+ CellChangeTimes->{3.908491137671294*^9},
+ CellLabel->
+  "Out[9]//TeXForm=",ExpressionUUID->"2075cff9-1c51-498f-8cae-4fef8e1d4f13"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Define the rotation vector ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       OverscriptBox["\[Omega]", "\[RightVector]"], TraditionalForm], 
+     "errors" -> {}, "input" -> "\\vec{\\omega}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "fc7a2b84-bf49-4234-8530-a640f79731e2"],
+ ", center of mass position ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       OverscriptBox[
+        StyleBox["R", "TI"], "\[RightVector]"], TraditionalForm], 
+     "errors" -> {}, "input" -> "\\vec{R}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "451401f5-b769-4def-b216-8e966a9f91a1"],
+ ", and initial sliding velocity ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    TemplateBox[<|"boxes" -> FormBox[
+        OverscriptBox[
+         StyleBox["v", "TI"], "\[RightVector]"], TraditionalForm], 
+      "errors" -> {}, "input" -> "\\vec{v}", "state" -> "Boxes"|>,
+     "TeXAssistantTemplate"], "."}], TraditionalForm]],ExpressionUUID->
+  "24570b28-1091-4c2e-b371-9f80a327a40d"]
+}], "Section",
+ CellChangeTimes->{{3.908491165254366*^9, 3.9084911828992987`*^9}, {
+  3.908491216592743*^9, 3.9084912436730003`*^9}, {3.9084916416257467`*^9, 
+  3.908491661922586*^9}},ExpressionUUID->"9667426f-86b8-4721-aeae-\
+ce7a9ea6916f"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"\[Omega]vec", "=", 
+   RowBox[{"(", GridBox[{
+      {"0"},
+      {"\[Omega]"},
+      {"0"}
+     }], ")"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Rvec", "=", 
+   RowBox[{"(", GridBox[{
+      {
+       RowBox[{
+        RowBox[{"-", "a"}], "/", "2"}]},
+      {"0"},
+      {
+       RowBox[{"a", "/", "2"}]}
+     }], ")"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"vvec", "=", 
+   RowBox[{"(", GridBox[{
+      {"v"},
+      {"0"},
+      {"0"}
+     }], ")"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.9084911873185043`*^9, 3.908491210892312*^9}, {
+  3.908491245732037*^9, 3.908491282485743*^9}, {3.908491665577051*^9, 
+  3.90849168465701*^9}},
+ CellLabel->"In[25]:=",ExpressionUUID->"d765237e-3d23-4a67-b9fc-9e6b79c17c7f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"R", "=", 
+  RowBox[{"Simplify", "[", 
+   RowBox[{
+    RowBox[{"Norm", "[", "Rvec", "]"}], ",", 
+    RowBox[{"Assumptions", "->", 
+     RowBox[{"{", 
+      RowBox[{"a", ">", "0"}], "}"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.908491288971368*^9, 3.908491367678046*^9}},
+ CellLabel->"In[16]:=",ExpressionUUID->"9e3a7067-51d0-4c37-9c24-480032dd0f30"],
+
+Cell[BoxData[
+ FractionBox["a", 
+  SqrtBox["2"]]], "Output",
+ CellChangeTimes->{{3.90849130613024*^9, 3.908491371313592*^9}},
+ CellLabel->"Out[16]=",ExpressionUUID->"7a0a669a-9402-4a59-bddc-624ae8a3a893"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[Theta]", "=", 
+  RowBox[{"-", 
+   RowBox[{
+    RowBox[{"ArcTan", "[", 
+     RowBox[{
+      RowBox[{"Rvec", "[", 
+       RowBox[{"[", "3", "]"}], "]"}], "/", 
+      RowBox[{"Rvec", "[", 
+       RowBox[{"[", "1", "]"}], "]"}]}], "]"}], "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.908491373738796*^9, 3.908491414819091*^9}, {
+  3.9084915013000517`*^9, 3.908491565283873*^9}},
+ CellLabel->"In[24]:=",ExpressionUUID->"fe4b0009-9985-43ef-b080-932db64c4383"],
+
+Cell[BoxData[
+ FractionBox["\[Pi]", "4"]], "Output",
+ CellChangeTimes->{
+  3.908491415383086*^9, {3.908491503602887*^9, 3.9084915656639957`*^9}},
+ CellLabel->"Out[24]=",ExpressionUUID->"a952324d-541e-463c-9bce-b3ff7d625ebf"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{894, 1065},
+WindowMargins->{{1, Automatic}, {Automatic, 1}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"13.1 for Mac OS X x86 (64-bit) (June 16, 2022)",
+StyleDefinitions->"ReverseColor.nb",
+ExpressionUUID->"9f653481-4c3b-46b0-af2a-4488278bf20d"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 515, 13, 102, "Section",ExpressionUUID->"870f10a8-a7fd-4166-8abe-f19f20307485"],
+Cell[1098, 37, 1493, 45, 101, "Input",ExpressionUUID->"93838b62-1d46-4803-9231-2eb7f35a1024"],
+Cell[CellGroupData[{
+Cell[2616, 86, 213, 3, 46, "Input",ExpressionUUID->"eb46e0c4-063f-44a4-8b1c-92efceb12ebe"],
+Cell[2832, 91, 1135, 38, 166, "Output",ExpressionUUID->"e04739d0-a049-45d2-bd0e-c1a4acf17d26"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4004, 134, 212, 3, 46, "Input",ExpressionUUID->"bd899ab9-0c48-4040-a472-22b63eba19f2"],
+Cell[4219, 139, 339, 13, 291, "Output",ExpressionUUID->"2075cff9-1c51-498f-8cae-4fef8e1d4f13"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4607, 158, 1342, 32, 162, "Section",ExpressionUUID->"9667426f-86b8-4721-aeae-ce7a9ea6916f"],
+Cell[5952, 192, 780, 28, 269, "Input",ExpressionUUID->"d765237e-3d23-4a67-b9fc-9e6b79c17c7f"],
+Cell[CellGroupData[{
+Cell[6757, 224, 378, 9, 46, "Input",ExpressionUUID->"9e3a7067-51d0-4c37-9c24-480032dd0f30"],
+Cell[7138, 235, 204, 4, 73, "Output",ExpressionUUID->"7a0a669a-9402-4a59-bddc-624ae8a3a893"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7379, 244, 511, 13, 46, "Input",ExpressionUUID->"fe4b0009-9985-43ef-b080-932db64c4383"],
+Cell[7893, 259, 224, 4, 65, "Output",ExpressionUUID->"a952324d-541e-463c-9bce-b3ff7d625ebf"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
