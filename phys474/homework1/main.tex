@@ -1,0 +1,54 @@
+% document style header
+\documentclass[a4paper, 12pt]{config/homework}
+
+% import default packages
+\usepackage{config/defpackages}
+
+% import custom math commands
+\usepackage{config/domath}
+
+% end preamble
+\begin{document}
+
+% document title
+\noindent
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
+Calvin Sprouse & PHYS474 Homework 1 & Due 2024 Jan 10\\
+\midrule
+\end{tabularx}
+
+% homework problems begin
+\begin{enumerate}
+\item Consider the continuous Gaussian distribution, \(\rho(x) = Ae^{-\lambda (x-a)^2}\), where \(A\), \(a\), and \(\lambda \) are positive, real constants. Note that this is \underline{not} a wavefunction, but rather a distribution.
+\begin{enumerate}[label=(\alph*)]
+\item Normalize the distribution to determine \(A\).
+\begin{align*}
+1 &= \bint{-\infty}{\infty}{\rho(x)}{x}
+\\&= \bint{-\infty}{\infty}{Ae^{-\lambda (x-a)^2}}{x}
+\\&= A \bint{-\infty}{\infty}{e^{-\lambda (x-a)^2}}{x}
+\\&= A \bint{-\infty}{\infty}{e^{-(\lambda x^2 -2\lambda ax + \lambda a^2)}}{x}
+\\&= A \sqrt{\frac{\pi}{\lambda}} \exp\left({\frac{(-2\lambda a)^2 - 4\lambda^2}{4\lambda}}\right)
+\\&= A \sqrt{\frac{\pi}{\lambda}} \exp\left(\lambda a^2 - \lambda\right)
+\\\sqrt{\frac{\lambda}{\pi}} \exp\left(-\lambda a^2 + \lambda\right) &= A
+\end{align*}
+
+\item Determine \(\braket{x}\), \(\braket{x^2}\), and \(\sigma\).
+\end{enumerate}
+
+\pagebreak
+\item At time \(t=\qty{0}{\second}\), an electron is represented by the wave function,
+\[\Psi(x, 0) = \begin{cases}
+    A\frac{x}{a}, & 0 \le x \le a \\
+    A \frac{(b-x)}{(b-a)}, & a \le x \le b \\
+    0, & \text{otherwise}
+\end{cases}\]
+where \(A\), \(a\), and \(b\) are constants.
+\begin{enumerate}[label=(\alph*)]
+\item Normalize \(\Psi\).
+\item Sketch \(\Psi(x,0)\) as a function of \(x\).
+\item Where is the electron most likely to be found at \(t=\qty{0}{\second}\)?
+\item What is the probability the electron will be found in the region \(x \le a\)? Check your result in the limiting case where \(b=a\) and \(b=2a\).
+\item Determine \(\braket{x}\).
+\end{enumerate}
+\end{enumerate}
+\end{document}
