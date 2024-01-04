@@ -27,13 +27,25 @@ Calvin Sprouse & PHYS474 Homework 1 & Due 2024 Jan 10\\
 \\&= \bint{-\infty}{\infty}{Ae^{-\lambda (x-a)^2}}{x}
 \\&= A \bint{-\infty}{\infty}{e^{-\lambda (x-a)^2}}{x}
 \\&= A \bint{-\infty}{\infty}{e^{-(\lambda x^2 -2\lambda ax + \lambda a^2)}}{x}
-\\&= A \sqrt{\frac{\pi}{\lambda}} \exp\left({\frac{(-2\lambda a)^2 - 4\lambda^2}{4\lambda}}\right)
-\\&= A \sqrt{\frac{\pi}{\lambda}} \exp\left(\lambda a^2 - \lambda\right)
-\\\sqrt{\frac{\lambda}{\pi}} \exp\left(-\lambda a^2 + \lambda\right) &= A
+\\&= A \sqrt{\frac{\pi}{\lambda}} \exp\left({\frac{(-2\lambda a)^2 - 4\lambda^2 a^2}{4\lambda}}\right)
+\\&= A \sqrt{\frac{\pi}{\lambda}}
+\\\sqrt{\frac{\lambda}{\pi}} &= A.
 \end{align*}
 
 \item Determine \(\braket{x}\), \(\braket{x^2}\), and \(\sigma\).
 \end{enumerate}
+The average value of \(x\) is given by
+\begin{align*}
+\braket{x} &= \bint{-\infty}{\infty}{x \rho(x)}{x}
+\end{align*}
+The average of the squares of \(x\) is given by
+\begin{align*}
+\braket{x^2} &= \bint{-\infty}{\infty}{x^2 \rho(x)}{x}
+\end{align*}
+The standard deviation, \(\sigma \), of \(\rho \) is given by
+\begin{align*}
+\sigma &= \sqrt{\braket{x^2} - \braket{x}^2}
+\end{align*}
 
 \pagebreak
 \item At time \(t=\qty{0}{\second}\), an electron is represented by the wave function,
