@@ -18,6 +18,7 @@ Calvin Sprouse & PHYS474 Homework 1 & Due 2024 Jan 10\\
 \end{tabularx}
 
 % homework problems begin
+Note that integrals have been evaluated by the provided integral table.
 \begin{enumerate}
 \item Consider the continuous Gaussian distribution, \(\rho(x) = Ae^{-\lambda (x-a)^2}\), where \(A\), \(a\), and \(\lambda \) are positive, real constants. Note that this is \underline{not} a wavefunction, but rather a distribution.
 \begin{enumerate}[label=(\alph*)]
@@ -28,24 +29,39 @@ Calvin Sprouse & PHYS474 Homework 1 & Due 2024 Jan 10\\
 \\&= A \bint{-\infty}{\infty}{e^{-\lambda (x-a)^2}}{x}
 \\&= A \bint{-\infty}{\infty}{e^{-(\lambda x^2 -2\lambda ax + \lambda a^2)}}{x}
 \\&= A \sqrt{\frac{\pi}{\lambda}} \exp\left({\frac{(-2\lambda a)^2 - 4\lambda^2 a^2}{4\lambda}}\right)
-\\&= A \sqrt{\frac{\pi}{\lambda}}
-\\\sqrt{\frac{\lambda}{\pi}} &= A.
+\\&= A \sqrt{\frac{\pi}{\lambda}}.
 \end{align*}
+Thus, \(A = \sqrt{\lambda / \pi}\).
 
-\item Determine \(\braket{x}\), \(\braket{x^2}\), and \(\sigma\).
-\end{enumerate}
-The average value of \(x\) is given by
+\item Determine \(\braket{x}\), \(\braket{x^2}\), and \(\sigma \).
+
+The average value of \(x\), or expectation value, is given by
 \begin{align*}
 \braket{x} &= \bint{-\infty}{\infty}{x \rho(x)}{x}
+\\&= \sqrt{\frac{\lambda}{\pi}} \bint{-\infty}{\infty}{x \exp{\left(-\lambda(x-a)^2\right)}}{x}
+\\&= \sqrt{\frac{\lambda}{\pi}} a \sqrt{\frac{\pi}{\lambda}}
+\\&= a.
 \end{align*}
+
 The average of the squares of \(x\) is given by
 \begin{align*}
 \braket{x^2} &= \bint{-\infty}{\infty}{x^2 \rho(x)}{x}
+\\&= \sqrt{\frac{\lambda}{\pi}} \bint{-\infty}{\infty}{x^2 \exp{\left(-\lambda(x-a)^2\right)}}{x}
+\\&= \sqrt{\frac{\lambda}{\pi}} \bint{-\infty}{\infty}{x^2 \exp{\left(-\lambda x^2 +2\lambda ax - \lambda a^2\right)}}{x}
+\\&= \sqrt{\frac{\lambda}{\pi}} \bint{-\infty}{\infty}{x^2 \exp{\left(-\lambda x^2 + 2\lambda a x\right)}\exp{\left(-\lambda a^2\right)}}{x}
+\\&= \sqrt{\frac{\lambda}{\pi}} \exp{\left(-\lambda a^2\right)} \bint{-\infty}{\infty}{x^2 \exp{\left(-\lambda x^2 + 2\lambda a x\right)}}{x}
+\\&= \sqrt{\frac{\lambda}{\pi}} \exp{\left(-\lambda a^2\right)} \frac{\sqrt{\pi} (2\lambda + (2\lambda a)^2)}{4 \lambda^{5/2}} \exp{\left(\frac{(2\lambda a)^2}{4\lambda}\right)}
+\\&= \frac{2\lambda + (2\lambda a)^2}{4\lambda^2}
+\\&= \frac{1 + 2\lambda a^2}{2\lambda}.
 \end{align*}
+
 The standard deviation, \(\sigma \), of \(\rho \) is given by
 \begin{align*}
 \sigma &= \sqrt{\braket{x^2} - \braket{x}^2}
+\\&= \sqrt{\frac{1 + 2\lambda a^2}{2\lambda} - a^2}
+\\&= \frac{1}{\sqrt{2\lambda}}.
 \end{align*}
+\end{enumerate}
 
 \pagebreak
 \item At time \(t=\qty{0}{\second}\), an electron is represented by the wave function,
@@ -56,11 +72,21 @@ The standard deviation, \(\sigma \), of \(\rho \) is given by
 \end{cases}\]
 where \(A\), \(a\), and \(b\) are constants.
 \begin{enumerate}[label=(\alph*)]
-\item Normalize \(\Psi\).
+\item Normalize \(\Psi \).
+\begin{align*}
+1 &= \bint{-\infty}{\infty}{\left| \Psi \right|^2}{x}
+\\&= \bint{-\infty}{0}{(0)^2}{x} + \bint{0}{a}{\left(A \frac{x}{a}\right)^2}{x} + \bint{a}{b}{\left(A\frac{(b-x)}{(b-a)}\right)^2}{x} + \bint{b}{\infty}{(0)^2}{x}
+\end{align*}
+Thus, \(A = \sqrt{3/b}\).
+
 \item Sketch \(\Psi(x,0)\) as a function of \(x\).
+
 \item Where is the electron most likely to be found at \(t=\qty{0}{\second}\)?
+
 \item What is the probability the electron will be found in the region \(x \le a\)? Check your result in the limiting case where \(b=a\) and \(b=2a\).
+
 \item Determine \(\braket{x}\).
+
 \end{enumerate}
 \end{enumerate}
 \end{document}
