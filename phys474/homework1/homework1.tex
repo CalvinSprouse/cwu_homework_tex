@@ -76,6 +76,11 @@ where \(A\), \(a\), and \(b\) are constants.
 \begin{align*}
 1 &= \bint{-\infty}{\infty}{\left| \Psi \right|^2}{x}
 \\&= \bint{-\infty}{0}{(0)^2}{x} + \bint{0}{a}{\left(A \frac{x}{a}\right)^2}{x} + \bint{a}{b}{\left(A\frac{(b-x)}{(b-a)}\right)^2}{x} + \bint{b}{\infty}{(0)^2}{x}
+\\&= 0 + \frac{A^2}{a^2}\bint{0}{a}{x^2}{x} + \frac{A^2}{(b-a)^2}\bint{a}{b}{(b-x)^2}{x} + 0
+\\&= \frac{A^2}{a^2} \left[\frac{1}{3}x^3\right]_0^a + \frac{A^2}{(b-a)^2}\left[-\frac{a^3}{3} + a^2b - ab^2 + \frac{b^3}{3}\right]_a^b
+\\&= \frac{A^2}{a^2} \frac{a^3}{3} + \frac{A^2}{(b-a)^2}\frac{(b-a)^3}{3}
+\\&= A^2 \left(\frac{a}{3} + \frac{b-a}{3}\right)
+\\&= A^2 \frac{b}{3}.
 \end{align*}
 Thus, \(A = \sqrt{3/b}\).
 
@@ -86,6 +91,14 @@ Thus, \(A = \sqrt{3/b}\).
 \item What is the probability the electron will be found in the region \(x \le a\)? Check your result in the limiting case where \(b=a\) and \(b=2a\).
 
 \item Determine \(\braket{x}\).
+\begin{align*}
+\braket{x} &= \bint{-\infty}{\infty}{x\left| \Psi \right|^2}{x}
+\\&= \bint{0}{a}{x\left(\sqrt{\frac{3}{b}} \frac{x}{a}\right)^2}{x} + \bint{a}{b}{x\left(\sqrt{\frac{3}{b}}\frac{(b-x)}{(b-a)}\right)^2}{x}
+\\&= \frac{3}{ba^2}\bint{0}{a}{x^3}{x} + \frac{3}{b}\frac{1}{(b-a)^2}\bint{a}{b}{(b^2 x - 2bx^2 + x^3)}{x}
+\\&= \frac{3}{ba^2}\left[\frac{1}{4}x^4\right]_0^a + \frac{3}{b}\frac{1}{(b-a)^2} \left[\frac{b^2}{2}x^2 - \frac{2b}{3}x^3 + \frac{1}{4}x^4\right]_a^b
+\\&= \frac{3}{4}\frac{a^2}{b} + 3 \frac{1}{b(b-a)^2}\left(\frac{b^4}{2} - \frac{2b^4}{3} + \frac{b^4}{4} - \frac{a^2 b^2}{2} + \frac{2ba^3}{3} - \frac{a^4}{4}\right)
+\\&=
+\end{align*}
 
 \end{enumerate}
 \end{enumerate}
