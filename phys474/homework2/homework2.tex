@@ -1,0 +1,39 @@
+% document style header
+\documentclass[a4paper, 12pt]{config/homework}
+
+% import default packages
+\usepackage{config/defpackages}
+
+% import custom math commands
+\usepackage{config/domath}
+
+% end preamble
+\begin{document}
+
+% document title
+\noindent
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
+Calvin Sprouse & PHYS474 Homework 2 & Due 2024 Jan 17\\
+\midrule
+\end{tabularx}
+
+% homework problems begin
+\begin{enumerate}
+\item Let the wavefunction \(\Psi(x,t)\) be a solution to the time-dependent Schr{\"o}dinger equation when the potential energy is given by \(V(x)\). What is the solution to the Shr{\"o}dinger equation if we now consider a potential of \(V(x) + V_0\) where \(V_0\) is a real positive constant.
+
+\pagebreak
+\item A particle is observed in a quantum state described by the wavefunction
+\[\Psi(x,t) = A\exp\left(-a\left(\frac{mx^2}{\hbar}+it\right)\right),\]
+where \(A\) and \(a\) are real positive constants.
+\begin{enumerate}[label=(\alph*)]
+\item Normalize \(\Psi \).
+\item What is the potential \(V(x)\) that this particle finds itself within?
+\item Determine the expectation values \(\braket{x}\), \(\braket{x^2}\), \(\braket{p}\), \(\braket{p^2}\).
+\item Determine the standard deviations for position, \(\sigma_x\), and momentum, \(\sigma_p\).
+\item Are your values for \(\sigma_x\) and \(\sigma_p\) consistent with the uncertainty principle?
+\end{enumerate}
+
+\pagebreak
+\item An electron is trapped in a harmonic quadratic potential. Suppose the expectation value for its position is given by \(\braket{x} = \frac{a}{2}\sin(\omega t)\). Here, \(a\) is a real constant with units of length and \(\omega \) is an angular frequency. What, if anything, can be concluded about the electron's momentum?
+\end{enumerate}
+\end{document}
