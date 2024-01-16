@@ -27,6 +27,18 @@ Calvin Sprouse & PHYS474 Homework 2 & Due 2024 Jan 17\\
 where \(A\) and \(a\) are real positive constants.
 \begin{enumerate}[label=(\alph*)]
 \item Normalize \(\Psi \).
+
+As shown in Griffiths, if \(\Psi\) is normalized at any time \(t\) it is normalized at all times \(t\). We will normalize \(\Psi\) at \(t=0\).
+\begin{align*}
+1 &= \bint{-\infty}{\infty}{\Psi(x,t=0)}{x}
+\\&= \bint{-\infty}{\infty}{A\exp\left(\frac{-amx^2}{\hbar}\right)}{x}
+\\&= A \bint{-\infty}{\infty}{\exp\left(\frac{-amx^2}{\hbar}\right)}{x}
+\\&= A \sqrt{\frac{\pi}{\left(\frac{am}{\hbar}\right)}}
+\\&= A \sqrt{\frac{\pi\hbar}{am}}.
+\end{align*}
+Thus
+\[A = \sqrt{\frac{am}{\pi\hbar}}.\]
+
 \item What is the potential \(V(x)\) that this particle finds itself within?
 \item Determine the expectation values \(\braket{x}\), \(\braket{x^2}\), \(\braket{p}\), \(\braket{p^2}\).
 \item Determine the standard deviations for position, \(\sigma_x\), and momentum, \(\sigma_p\).
