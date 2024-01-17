@@ -25,53 +25,70 @@ Calvin Sprouse & PHYS474 Homework 2 & Due 2024 Jan 17\\
 \item A particle is observed in a quantum state described by the wavefunction
 \[\Psi(x,t) = A\exp\left(-a\left(\frac{mx^2}{\hbar}+it\right)\right),\]
 where \(A\) and \(a\) are real positive constants.
-\begin{enumerate}[label=(\alph*)]
+\begin{enumerate}[label = (\alph*)]
+
 \item Normalize \(\Psi \).
 
-As shown in Griffiths, if \(\Psi\) is normalized at any time \(t\) it is normalized at all times \(t\). We will normalize \(\Psi\) at \(t=0\).
+% As shown in Griffiths, if \(\Psi \) is normalized at a particular time \(t\) then it is normalized at all times \(t\). We then normalize \(\Psi \) at \(t=0\).
 \begin{align*}
-1 &= \bint{-\infty}{\infty}{\Psi(x,t=0)}{x}
-\\&= \bint{-\infty}{\infty}{A\exp\left(\frac{-amx^2}{\hbar} - (ai\times0)\right)}{x}
-\\&= A \bint{-\infty}{\infty}{\exp\left(\frac{-amx^2}{\hbar}\right)}{x}
-\\&= A \sqrt{\frac{\pi}{\left(\frac{am}{\hbar}\right)}}
-\\&= A \sqrt{\frac{\pi\hbar}{am}}.
+1 &= \bint{-\infty}{\infty}{\left|\Psi\right|^2}{x}
+\\&= \bint{-\infty}{\infty}{\Psi^* \Psi}{x}
+\\&= \bint{-\infty}{\infty}{A\exp\left(-a\left(\frac{mx^2}{\hbar}+it\right)\right) A\exp\left(-a\left(\frac{mx^2}{\hbar}-it\right)\right)}{x}
+\\&= A^2 \bint{-\infty}{\infty}{\exp\left(-a\left(\frac{mx^2}{\hbar} + it + \frac{mx^2}{\hbar} - it\right)\right)}{x}
+\\&= A^2 \bint{-\infty}{\infty}{\exp\left(-\frac{2am}{\hbar}x^2\right)}{x}
+\\&= A^2 \sqrt{\frac{\pi}{\frac{2am}{\hbar}}}.
 \end{align*}
-Thus, \(A = \sqrt{am / (\pi\hbar)}\).
+Solving for \(A\) we find
+\[A = {\left(\frac{2am}{\pi \hbar}\right)}^{1/4}.\]
 
 \pagebreak
 \item What is the potential \(V(x)\) that this particle finds itself within?
-
-\(\Psi\) is, by definition, a solution to the Schr{\"o}dinger equation. Thus,
+\(\Psi \) is, by definition, a solution to the Schr{\"o}dinger equation. Thus,
 \[i\hbar \diffp{\Psi}{t} = -\frac{\hbar^2}{2m} \diffp[2]{\Psi}{x} + V\Psi.\]
 Arranging for the potential energy function \(V\) we get
 \[V = \frac{1}{\Psi} \left(i\hbar \diffp{\Psi}{t} + \frac{\hbar^2}{2m} \diffp[2]{\Psi}{x}\right).\]
-To make these partial derivatives less threatening, we can begin by writing \(\Psi\) in the form \(\Psi = A \psi(x) \phi(t)\).
-The \(A\) component is simply \(A\), as solved for above during normalization.
-The exponential term in \(\Psi\) can be separated into an \(x\)-dependent and \(t\)-dependent component;
+To make these partial derivatives less threatening, we can begin by writing \(\Psi \) in the form \(\Psi = A \psi(x) \phi(t)\).
+The \(A\) component is simply \(A\), as found by normalization.
+The exponential term in \(\Psi \) can be separated into an \(x\)-dependent and \(t\)-dependent component;
 \[\exp\left(\frac{-amx^2}{\hbar} - ait\right) = \exp\left(-\frac{amx^2}{\hbar}\right)\exp\left(-ait\right),\]
-which become \(\psi\) and \(\phi\) respectively. We know
+which become \(\psi \) and \(\phi \) respectively. We know
 \[\phi(t) = \exp\left(-\frac{iEt}{\hbar}\right) = \exp\left(-ait\right),\]
-thus \(a = E / \hbar\). We can now write \(V\) in a more approachable way with ordinary derivatives:
+thus \(a = E / \hbar \). We can now write \(V\) in a more approachable way with ordinary derivatives:
 \[V = \frac{1}{A\psi\phi} \left(i\hbar A\psi \diff{\phi}{t} + \frac{\hbar^2}{2m} A\phi \diff[2]{\psi}{x}\right).\]
 The ordinary derivatives are
 \[\diff{\phi}{t} = \diff{}{t}\left[\exp(-ait)\right] = -ai \exp(-ait) = -ai \phi,\]
 and
-\[\diff[2]{\psi}{x} = \diff[2]{}{x}\left[\exp\left(-\frac{amx^2}{\hbar}\right)\right] = -\frac{2amx}{\hbar} \exp\left(-\frac{amx^2}{\hbar}\right) = -\frac{2amx}{\hbar} \psi.\]
+\[\diff[2]{\psi}{x} =
+% \diff[2]{}{x}\left[\exp\left(-\frac{amx^2}{\hbar}\right)\right] =
+\diff{\psi}{x}\left[-\frac{2amx}{\hbar} \exp\left(-\frac{amx^2}{\hbar}\right)\right] =
+% -\frac{2amx}{\hbar} \psi.
+\frac{-2am}{\hbar}\left(1 - \frac{2am}{\hbar}x^2\right)\psi.
+\]
 Thus the potential energy function \(V\) is given by
 \begin{align*}
 V &= \frac{1}{A\psi\phi} \left(i\hbar A\psi \diff{\phi}{t} + \frac{\hbar^2}{2m} A\phi \diff[2]{\psi}{x}\right)
-\\&= \frac{1}{A\psi\phi} \left(-i\hbar A\psi  \frac{E}{\hbar} i \phi + \frac{\hbar^2}{2m} A\phi \frac{-2 E mx}{\hbar^2} \psi\right)
-\\&= E - Ex
-\\&= E (1-x).
+\\&= \frac{1}{A\psi\phi} \left(-i\hbar A\psi  \frac{E}{\hbar} i \phi + \frac{\hbar^2}{2m} A\phi \frac{-2Em}{\hbar^2}\left(1 - \frac{2Em}{\hbar^2}x^2\right)\psi\right)
+\\&= E - E\left(1 - \frac{2Em}{\hbar^2}x^2\right)
+\\&= \frac{2 m E^2 }{\hbar^2} x^2.
 \end{align*}
 
 \pagebreak
 \item Determine the expectation values \(\braket{x}\), \(\braket{x^2}\), \(\braket{p}\), \(\braket{p^2}\).
 \begin{enumerate}[label=\roman*.]
-\item
+
+\item The expectation value of \(x\), \(\braket{x}\), is given by
+\[\braket{x} = \bint{-\infty}{\infty}{x \left|\Psi\right|^2}{x}\]
+which is an odd function evaluated over symmetric limits and therefore
+\[\braket{x} = 0.\]
+
+\item The mean square position, \(\braket{x^2}\), is given by
 \begin{align*}
-\braket{x} &= \bint{-\infty}{\infty}{x \left|\psi\right|}{x}
+\braket{x^2} &= \bint{-\infty}{\infty}{x^2 \left|\Psi\right|^2}{x}
+\\&= A^2 \bint{-\infty}{\infty}{x^2 \exp\left(- \frac{2am}{\hbar} x^2\right)}{x}
+\\&= \sqrt{\frac{2am}{\pi\hbar}} \frac{\sqrt{\pi}}{2\left(\frac{2am}{\hbar}\right)^{3/2}}
+\\&=
 \end{align*}
+
 \end{enumerate}
 
 \item Determine the standard deviations for position, \(\sigma_x\), and momentum, \(\sigma_p\).
