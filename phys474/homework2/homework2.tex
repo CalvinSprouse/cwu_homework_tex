@@ -85,8 +85,18 @@ which is an odd function evaluated over symmetric limits and therefore
 \begin{align*}
 \braket{x^2} &= \bint{-\infty}{\infty}{x^2 \left|\Psi\right|^2}{x}
 \\&= A^2 \bint{-\infty}{\infty}{x^2 \exp\left(- \frac{2am}{\hbar} x^2\right)}{x}
-\\&= \sqrt{\frac{2am}{\pi\hbar}} \frac{\sqrt{\pi}}{2\left(\frac{2am}{\hbar}\right)^{3/2}}
-\\&=
+\\&= \sqrt{\frac{2am}{\pi\hbar}} \frac{\sqrt{\pi}}{2 {\left(\frac{2am}{\hbar}\right)}^{3/2} }
+\\&= \frac{\hbar^2}{4Em}.
+\end{align*}
+
+\item The expectation momentum, \(\braket{p}\), is given by
+\[\braket{p} = \diff{\braket{x}}{t} = 0.\]
+
+The mean square momentum, \(\braket{p^2}\), is given by
+\begin{align*}
+\braket{p^2} &= \bint{-\infty}{\infty}{\Psi^* {\left[-i\hbar \diffp{}{x}\right]}^2 \Psi}{x}
+\\&= -\hbar^2 \bint{-\infty}{\infty}{\Psi^* \diffp{}{x}\diffp{}{x} \Psi}{x}
+\\&= -\hbar^2 \bint{-\infty}{\infty}{}{x}
 \end{align*}
 
 \end{enumerate}
