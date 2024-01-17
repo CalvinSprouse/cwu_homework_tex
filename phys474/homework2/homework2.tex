@@ -31,7 +31,7 @@ where \(A\) and \(a\) are real positive constants.
 As shown in Griffiths, if \(\Psi\) is normalized at any time \(t\) it is normalized at all times \(t\). We will normalize \(\Psi\) at \(t=0\).
 \begin{align*}
 1 &= \bint{-\infty}{\infty}{\Psi(x,t=0)}{x}
-\\&= \bint{-\infty}{\infty}{A\exp\left(\frac{-amx^2}{\hbar}\right)}{x}
+\\&= \bint{-\infty}{\infty}{A\exp\left(\frac{-amx^2}{\hbar} - (ai\times0)\right)}{x}
 \\&= A \bint{-\infty}{\infty}{\exp\left(\frac{-amx^2}{\hbar}\right)}{x}
 \\&= A \sqrt{\frac{\pi}{\left(\frac{am}{\hbar}\right)}}
 \\&= A \sqrt{\frac{\pi\hbar}{am}}.
@@ -41,45 +41,28 @@ Thus, \(A = \sqrt{am / (\pi\hbar)}\).
 \pagebreak
 \item What is the potential \(V(x)\) that this particle finds itself within?
 
-% Suppose \(\Psi\) is separable, a good assumption because it is the only wave-function we know how to deal with at this point. We know then that \(\Psi(x,t) = \psi(x)\phi(t)\) and \(\phi(t)=\exp\left(-iEt/\hbar\right)\). We can separate \(\Psi\) into two exponential functions:
-% \begin{align*}
-% \Psi(x,t) &= A\exp\left(-a\left(\frac{mx^2}{\hbar}+it\right)\right)
-% \\&= A \exp\left(\frac{-a m x^2}{\hbar}\right) \exp\left(-ait\right).
-% \end{align*}
-% We say then that \(\phi(t) = \exp(-ait)\) where \(a = E/\hbar\). Thus,
-% \[\psi(x) = A\exp\left(-\frac{amx^2}{\hbar}\right) = A\exp\left(-\frac{Em}{\hbar^2} x^2\right),\]
-% where \(\psi\) is a solution to the time-independent Schr{\"o}dinger equation. Thus,
-% \begin{align*}
-% -\frac{\hbar^2}{2m} \diff[2]{\psi}{x} + V\psi &= E \psi,
-% \\ -\frac{\hbar^2}{2m} \diff[2]{}{x}\left[A\exp\left(-\frac{Em}{\hbar^2} x^2\right)\right] + V \psi &= E \psi,
-% \\ -\frac{\hbar^2}{2m} \left(\frac{-2amx}{\hbar}\right) \psi + V\psi &= E\psi,
-% \\ \hbar a x + V &= E,
-% \\ V &= E - \hbar x \frac{E}{\hbar},
-% \\ V &= E - E x,
-% \\ V &= E(1-x).
-% \end{align*}
-% what if instead we just said Psi is a solution to the full Schroedinger equation instead of separating out the solutions? That might be better tbh. More "complete"
 \(\Psi\) is, by definition, a solution to the Schr{\"o}dinger equation. Thus,
 \[i\hbar \diffp{\Psi}{t} = -\frac{\hbar^2}{2m} \diffp[2]{\Psi}{x} + V\Psi.\]
 Arranging for the potential energy function \(V\) we get
 \[V = \frac{1}{\Psi} \left(i\hbar \diffp{\Psi}{t} + \frac{\hbar^2}{2m} \diffp[2]{\Psi}{x}\right).\]
-To make these partial derivatives less threatening we can begin by writing \(\Psi\) in the form \(\Psi = A \psi(x) \phi(t)\).\footnote{Since separable equations are the only ones we know how to deal with \(\Psi\) must be separable!} The \(A\) component is simply \(A\) as solved for above during normalization. The exponential term in \(\Psi\) can be separated into an \(x\)-dependent and \(t\)-dependent component;
+To make these partial derivatives less threatening, we can begin by writing \(\Psi\) in the form \(\Psi = A \psi(x) \phi(t)\).
+The \(A\) component is simply \(A\), as solved for above during normalization.
+The exponential term in \(\Psi\) can be separated into an \(x\)-dependent and \(t\)-dependent component;
 \[\exp\left(\frac{-amx^2}{\hbar} - ait\right) = \exp\left(-\frac{amx^2}{\hbar}\right)\exp\left(-ait\right),\]
 which become \(\psi\) and \(\phi\) respectively. We know
 \[\phi(t) = \exp\left(-\frac{iEt}{\hbar}\right) = \exp\left(-ait\right),\]
 thus \(a = E / \hbar\). We can now write \(V\) in a more approachable way with ordinary derivatives:
 \[V = \frac{1}{A\psi\phi} \left(i\hbar A\psi \diff{\phi}{t} + \frac{\hbar^2}{2m} A\phi \diff[2]{\psi}{x}\right).\]
 The ordinary derivatives are
-\begin{align*}
-\diff{\psi}{t} &= \diff{}{t}\left[\exp(-ait)\right]
-\\&= -ai \exp(-ait)
-\\&= -ai \psi,
-\end{align*}
+\[\diff{\phi}{t} = \diff{}{t}\left[\exp(-ait)\right] = -ai \exp(-ait) = -ai \phi,\]
 and
+\[\diff[2]{\psi}{x} = \diff[2]{}{x}\left[\exp\left(-\frac{amx^2}{\hbar}\right)\right] = -\frac{2amx}{\hbar} \exp\left(-\frac{amx^2}{\hbar}\right) = -\frac{2amx}{\hbar} \psi.\]
+Thus the potential energy function \(V\) is given by
 \begin{align*}
-\diff[2]{\phi}{x} &= \diff[2]{}{x}\left[\exp\left(-\frac{amx^2}{\hbar}\right)\right]
-\\&= -\frac{2amx}{\hbar} \exp\left(-\frac{amx^2}{\hbar}\right)
-\\&= -\frac{2amx}{\hbar} \psi.
+V &= \frac{1}{A\psi\phi} \left(i\hbar A\psi \diff{\phi}{t} + \frac{\hbar^2}{2m} A\phi \diff[2]{\psi}{x}\right)
+\\&= \frac{1}{A\psi\phi} \left(-i\hbar A\psi  \frac{E}{\hbar} i \phi + \frac{\hbar^2}{2m} A\phi \frac{-2 E mx}{\hbar^2} \psi\right)
+\\&= E - Ex
+\\&= E (1-x).
 \end{align*}
 
 \pagebreak
