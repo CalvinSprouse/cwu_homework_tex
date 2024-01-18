@@ -21,6 +21,16 @@ Calvin Sprouse & PHYS474 Homework 2 & Due 2024 Jan 17\\
 \begin{enumerate}
 \item Let the wavefunction \(\Psi(x,t)\) be a solution to the time-dependent Schr{\"o}dinger equation when the potential energy is given by \(V(x)\). What is the solution to the Shr{\"o}dinger equation if we now consider a potential of \(V(x) + V_0\) where \(V_0\) is a real positive constant.
 
+Disclaimer: it is late, I'm very tired and have spend the last couple hours looking at this problem so type-setting seems very daunting.
+
+Let \(\Psi'\) be our wavefunction for our new potential. If we do separation of variables as described in Griffiths \S 2.1 we arrive at Eq.\ 2.3:
+\[i\hbar \frac{1}{\phi'} \diff{\phi'}{t} = -\frac{\hbar^2}{2m} \frac{1}{\psi} \diff[2]{\psi'}{x} + V + V_0.\]
+Here is where the magic happens, a process I still have no justification for other than it works and not doing results in nonsense (or hours at a whiteboard). By subtracting \(V_0\) to the ``time-side'' of the equation and proceeding to Eq.\ 2.4 we find
+\[i\hbar \frac{1}{\psi'} \diff{\psi'}{t} - V_0 = E.\]
+Proceeding to solve this differential equation we find
+\[\psi'(t) = \exp\left(\frac{-iEt}{\hbar}\right)\exp\left(\frac{-i V_0 t}{\hbar}\right).\]
+Behold! Phase factor! It is unclear to me why this should be the ``correct'' thing to do but keeping \(V_0\) in the ``position-side'' is not. Perhaps keeping it on the ``position-side'' will work out in the end and produce a similar result. Nonetheless, it seems the only difference between \(\Psi \) and \(\Psi' \) is a phase-factor in the time-dependent component.
+
 \pagebreak
 \item A particle is observed in a quantum state described by the wavefunction
 \[\Psi(x,t) = A\exp\left(-a\left(\frac{mx^2}{\hbar}+it\right)\right),\]
@@ -92,20 +102,57 @@ which is an odd function evaluated over symmetric limits and therefore
 \item The expectation momentum, \(\braket{p}\), is given by
 \[\braket{p} = \diff{\braket{x}}{t} = 0.\]
 
-The mean square momentum, \(\braket{p^2}\), is given by
+\item The mean square momentum, \(\braket{p^2}\), is given by
 \begin{align*}
 \braket{p^2} &= \bint{-\infty}{\infty}{\Psi^* {\left[-i\hbar \diffp{}{x}\right]}^2 \Psi}{x}
-\\&= -\hbar^2 \bint{-\infty}{\infty}{\Psi^* \diffp{}{x}\diffp{}{x} \Psi}{x}
-\\&= -\hbar^2 \bint{-\infty}{\infty}{}{x}
+\\&= -\hbar^2 \bint{-\infty}{\infty}{\Psi^* \diffp[2]{}{x}\Psi}{x}
+\\&= -\hbar^2 \bint{-\infty}{\infty}{\Psi^* \left(\frac{-2am}{\hbar^2}(\hbar - 2amx^2)\right) \Psi}{x}
+\\&= 2am \bint{-\infty}{\infty}{{\left|\Psi\right|}^2 (\hbar - 2amx^2)}{x}
+\\&= 2am \left(\hbar\bint{-\infty}{\infty}{{\left|\Psi\right|}^2}{x} - 2am\bint{-\infty}{\infty}{x^2 {\left|\Psi\right|}^2}{x}\right)
+\\&= 2am \left(\hbar - 2am \braket{x^2}\right)
+\\&= 2am \left(\hbar - 2am \frac{\hbar^2}{4Em}\right)
+\\&= \frac{2Em}{\hbar} \left(\hbar - \frac{2Em}{\hbar}\frac{\hbar^2}{4Em}\right)
+\\&= Em.
 \end{align*}
-
 \end{enumerate}
 
 \item Determine the standard deviations for position, \(\sigma_x\), and momentum, \(\sigma_p\).
+
+The standard deviation of position is given by
+\begin{align*}
+\sigma_x &= \sqrt{\braket{x^2} - \braket{x}^2}
+\\&= \sqrt{\left(\frac{\hbar^2}{4Em}\right) - {\left(0\right)}^2}
+\\&= \frac{\hbar}{2 \sqrt{Em}}.
+\end{align*}
+
+The standard deviation of momentum is given by
+\begin{align*}
+\sigma_p &= \sqrt{\braket{p^2} - \braket{p}^2}
+\\&= \sqrt{Em - {\left(0\right)}^2}
+\\&= \sqrt{Em}.
+\end{align*}
+
 \item Are your values for \(\sigma_x\) and \(\sigma_p\) consistent with the uncertainty principle?
+
+The uncertainty principle, in terms of position and momentum, states
+\[\sigma_x \sigma_p \le \frac{\hbar}{2}.\]
+Substituting known values we find
+\[\sigma_x \sigma_p = \frac{\hbar}{2 \sqrt{Em}} \sqrt{Em} = \frac{\hbar}{2},\]
+which satisfies the uncertainty principle. Though, \(\sigma_x \sigma_p\) are the limit of precision allowed by the uncertainty principle.
 \end{enumerate}
 
 \pagebreak
 \item An electron is trapped in a harmonic quadratic potential. Suppose the expectation value for its position is given by \(\braket{x} = \frac{a}{2}\sin(\omega t)\). Here, \(a\) is a real constant with units of length and \(\omega \) is an angular frequency. What, if anything, can be concluded about the electron's momentum?
+
+The expectation value of momentum can be found in terms of the expectation value of position:
+\begin{align*}
+\braket{p} &= m \diff{\braket{x}}{t}
+\\&= m \diff{}{t}\left[\frac{a}{2}\sin(\omega t)\right]
+\\&= \frac{ma \omega}{2} \cos(\omega t),
+\end{align*}
+where is is assumed that \(\omega \) is not a function of time.
+
+We can begin to analyze the uncertainty, but ultimately without knowing the expectation of the square position or expectation of square momentum not much insight can be gained (trust me I tried).
+
 \end{enumerate}
 \end{document}
