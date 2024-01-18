@@ -1,0 +1,41 @@
+% document style header
+\documentclass[a4paper, 12pt]{config/homework}
+
+% import default packages
+\usepackage{config/defpackages}
+
+% import custom math commands
+\usepackage{config/domath}
+
+% end preamble
+\begin{document}
+
+% document title
+\noindent
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
+Calvin Sprouse & MATH407 HW2 & Due 2024 Jan 19\\
+\midrule
+\end{tabularx}
+
+% homework problems begin
+\begin{enumerate}
+\item Show that the converse of p4 is not true. That is, prove a counterexample of an asymmetric binary relation \(R\) with elements \(x\) and \(y\) such that \(\neg xRy\) does not imply \(yRx\).
+
+\item Consider the set of all triples where each component is a real number, \(\reals^3\). Let \(x=(x_1,x_2,x_3)\) and \(y=(y_1,y_2,y_3)\) and define the weak preference \(x \preccurlyeq^* y\) if \(x_i \le y_i\) for at least two out of the three components, \(i=1,2,3\).
+\begin{enumerate}[label= (\alph*)]
+\item Show \(\preccurlyeq^*\) is connected.
+
+\item Show \(\preccurlyeq^*\) is not transitive by providing a counterexample.
+
+\item Define the strict preference \(x \prec^* y\) by \(x \preccurlyeq^* y\) but not \(y \preccurlyeq^* x\).
+\begin{enumerate}[label= \roman*.]
+\item Explain why it is equivalent to say \(x \prec^* y\) if \(x_i < y_i\) for at least two out of the three components, \(i=1,2,3\).
+
+\item Prove or give a counterexample: \(\prec^*\) is symmetric.
+
+\item Prove or give a counterexample: \(\prec^*\) is negatively transitive.
+
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+\end{document}
