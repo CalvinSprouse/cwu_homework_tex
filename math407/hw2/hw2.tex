@@ -21,22 +21,54 @@ Calvin Sprouse & MATH407 HW2 & Due 2024 Jan 19\\
 \begin{enumerate}
 \item Show that the converse of p4 is not true. That is, provide a counterexample of an asymmetric binary relation \(R\) with elements \(x\) and \(y\) such that \(\neg xRy\) does not imply \(yRx\).
 
+The binary relation \(R\) is asymmetric if \(xRy \Rightarrow yRx\) for all \(x,y\).
+
+\textit{Counterexample.} Let \(R\) be the binary relation ``is married to''. Suppose \(\neg xRy\); that is, \(x\) is not married to \(y\). It is well known that this does not imply \(y\) is married to \(x\). Thus, \(\neg xRy\) does not imply \(yRx\).
+
 \item Consider the set of all triples where each component is a real number; that is, \(\reals^3\). Let \(x=(x_1,x_2,x_3)\) and \(y=(y_1,y_2,y_3)\) and define the weak preference \(x \preccurlyeq^* y\) if \(x_i \le y_i\) for at least two out of the three components, \(i=1,2,3\).
 \begin{enumerate}[label= (\alph*)]
 \item Show \(\preccurlyeq^*\) is connected.
-\begin{proof}
 
+The binary relation \(R\) is connected if \(xRy\) or \(yRx\) for all \(x,y\).
+\begin{proof}
+Let the binary relation \(\preccurlyeq^*\) be defined for \(x,y\in \reals^3\) such that \(x \preccurlyeq^* y\) if \(x_i \le y_i\) for at least two out of the three components \(i = 1, 2, 3\). The binary relation \(\le \) on the real numbers is connected. Thus, \(x_i \le y_i\) or \(y_i \le x_i\) for \(i= 1, 2, 3\). We now proceed with two cases:
+\begin{enumerate}[label= \roman*.]
+\item Suppose \(x \preccurlyeq^* y\). Clearly, \(x \preccurlyeq^* y\) or \(y \preccurlyeq^* x\) is true.
+\item Suppose \(\neg (x \preccurlyeq^* y)\). That is, \(x_i \le y_i\) is not true for two out of the three components. Since \(\le \) is connected, the components for which \(x_i \le y_i\) is not true instead satisfy \(y_i \le x_i\). Thus, for two out of the three components \(y_i \le x_i\). Therefore, \(y \preccurlyeq^* x\).
+\end{enumerate}
+The binary relation \(\preccurlyeq^*\) is connected.
 \end{proof}
 
 \item Show \(\preccurlyeq^*\) is not transitive by providing a counterexample.
 
+The binary relation \(R\) is transitive if \(( xRy \land yRz) \Rightarrow xRz\) for all \(x,y,z\).
+
+\textit{Counterexample.} Let \(x=(1,2,3)\), \(y=(2,2,1)\), and \(z=(2,0,2)\). It is clear that \( x \preccurlyeq^* y\) and \( y \preccurlyeq^* z\). Furthermore, it is clear that \(\neg x \preccurlyeq^* z\). Thus, \(\preccurlyeq^*\) is not transitive.
+
+\pagebreak
 \item Define the strict preference \(x \prec^* y\) by \(x \preccurlyeq^* y\) but not \(y \preccurlyeq^* x\).
 \begin{enumerate}[label= \roman*.]
 \item Explain why it is equivalent to say \(x \prec^* y\) if \(x_i < y_i\) for at least two out of the three components, \(i=1,2,3\).
 
-\item Prove or give a counterexample. \(\prec^*\) is symmetric.
+If two of the three components satisfy \(x_i \le y_i\) then those same two may satisfy \(y_i \le x_i\) if the two components are equal. The strict preference \(\prec^*\) is stronger than \(\preccurlyeq^*\) in the same way that \(<\) is stronger than \(\le \). Thus, if we say \(x \prec^* y\) then \(x \preccurlyeq^* y\) is implied.
+
+\item Prove or give a counterexample. \(\prec^*\) is asymmetric.
+
+The binary relation \(R\) is asymmetric if \(xRy \Rightarrow \neg yRx\) for all \(x,y\).
+
+\begin{proof}
+Let \(\prec^*\) be the binary relation defined as \(x \preccurlyeq^* y \land \neg y \preccurlyeq^* x\). We proceed with a proof by contradiction. Suppose \(x \prec^* y\); that is, \(x_i < y_i\) for at least two \(i\) where \(i = 1,2,3\). Further suppose \(y \prec^* x\); that is, \(y_i < x_i\) for at least two \(i\). Thus two elements of \(x_i < y_i\) and two elements of \(y_i < x_i\). Since there are three elements in \(x\) and \(y\) each there must be at least one element pair, \(x_j\) and \(y_j\), that satisfies \(x_j < y_j\) and \(y_j < x_j\). This is, clearly, a contradiction. There are no real numbers \(x_j\) and \(y_j\) that satisfy this condition. Thus, \(\neg y \prec^* x\). Therefore, \(x \prec^* y \Rightarrow \neg y \prec^* x\). That is, \(\prec^*\) is asymmetric.
+\end{proof}
 
 \item Prove or give a counterexample. \(\prec^*\) is negatively transitive.
+
+The binary relation \(R\) is negatively transitive if \(\neg xRy \land \neg yRz \Rightarrow \neg xRz\) for all \(x,y\).
+
+\begin{proof}
+\(\neg x \prec^* y\) means \(x_i \ge y_i\) for at least two \(i\). This is equivalently \(y \preccurlyeq^* x\).
+Similarly, \(\neg y \prec^* z\) means \(y_i \ge z_i\) for at least two \(i\). This is equivalently \(z \preccurlyeq^* y\).
+Thus negative transitivity of the strict preference can be expressed as transitivity of the weak preference. As proven in 2b, \(\preccurlyeq^*\) is not transitive. Thus, \(\prec^*\) is not negatively transitive.
+\end{proof}
 
 \end{enumerate}
 \end{enumerate}
