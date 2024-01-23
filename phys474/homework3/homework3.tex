@@ -1,0 +1,106 @@
+% document style header
+\documentclass[a4paper, 12pt]{config/homework}
+
+% import default packages
+\usepackage{config/defpackages}
+% import custom math commands
+\usepackage{config/domath}
+
+% end preamble
+\begin{document}
+
+% document title
+\noindent
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
+Calvin Sprouse & PHYS474 Homework 3 & 2024 January 23\\
+\midrule
+\end{tabularx}
+
+% homework problems begin
+\begin{enumerate}
+\item A particle is trapped in an infinite square well with a width \(a\). At \(t=0\) is is equally probable for the particle to be found anywhere on the left-side of the well and impossible for it to be found on the right-side of the well.
+\begin{enumerate}[label=(\alph*)]
+\item What is the normalized wavefunction \(\Psi(x,0)\) that represents this initial state? Note that \(\Psi\) breaks one of the fundamental rules about wavefunctions.
+
+The wavefunction, disregarding the cases of \(x\) outside the range \([0,a]\), is given by
+\[\Psi(x,0) = \begin{cases}
+    A & 0 \le x \le \frac{a}{2} \\
+    0 & \frac{a}{2} < x \le a
+\end{cases}\]
+where \(A\) is the normalization constant. We see the issue with \(\Psi\) at \(x=a/2\) where we have a discontinuity.
+The normalization constant can be found by the typical normalization process:
+\[1 = \bint{-\infty}{\infty}{\left|\Psi\right|^2}{x}.\]
+We recognize \(\Psi(x,t=0)\) takes on non-zero values only on the interval \([0,\frac{a}{2}]\) and that \(\Psi(x,t=0)\) is real.
+\[1 = A^2 \bint{0}{a/2}{}{x} = A^2 \frac{a}{2}.\]
+Thus,
+\[A = \sqrt{\frac{2}{a}}\]
+and consequently
+\[\Psi(x,0) = \begin{cases}
+    \sqrt{\frac{2}{a}} & 0 \le x \le \frac{a}{2} \\
+    \phantom{\sqrt{}}0 & \frac{a}{2} < x \le a
+\end{cases}\]
+
+\pagebreak
+\item What is the probability that you would measure an energy of
+\[E = \frac{4\pi^2\hbar^2}{2ma^2}\]
+at \(t=0\).
+
+% whence the quantum came.
+The energy of any infinitely-square-well-ed particle is given by
+\[E_n = \frac{n^2\pi^2\hbar^2}{2ma^2}.\]
+By inspection, our particle is in the \(n=2\) state. The probability of finding a particle in the \(n=2\) state is given by \(\left| C_2 \right|^2\) where \(C_2\) is found through linearization of \(\Psi\). The \(n\)th linear coefficient is given as
+\[C_n = \bint{-\infty}{\infty}{\psi_n^* \Psi}{x} = \frac{2}{a}\bint{0}{a/2}{\sin\left(\frac{n\pi}{a}x\right)}{x} = \frac{2}{n\pi}\left(1 - \cos\left(\frac{n\pi}{2}\right)\right).\]
+Thus, \(C_2\) is given as
+\[C_2 = \frac{2}{\pi},\]
+hence, the probability of measuring the 2nd energy state is given as
+\[P\left(E_2\right) = \left| C_2 \right|^2 = \left(\frac{2}{\pi}\right)^2 \approx 0.41 .\]
+
+\end{enumerate}
+
+\pagebreak
+\item Consider the standard infinite square well with width \(a\). The stationary state solutions are \(\psi_n(x)\).
+\begin{enumerate}[label=(\alph*)]
+\item Compute \(\braket{x}\) and \(\braket{x^2}\) for \(\psi_n(x)\).
+
+\begin{align*}
+\braket{x} &= \bint{-\infty}{\infty}{\psi_n^* [x] \psi_n}{x}
+\\&= 
+\end{align*}
+
+\item Compute \(\braket{p}\) and \(\braket{p^2}\) for \(\psi_n(x)\).
+
+\item Compute \(\sigma_x\) and \(\sigma_p\) and confirm that the uncertainty principle is satisfied for all allowed \(n\).
+
+\end{enumerate}
+
+\pagebreak
+\item A particle infinitely-square-well-ed to width \(a\) is initially observed in a quantum state described by the wavefunction
+\[\Psi(x,0) = A \left(\psi_1(x) + \psi_3(x)\right),\]
+where \(A\) is a real positive constant and both \(\psi_1(x)\) and \(\psi_3(x)\) are solutions to the time-independent Schr{\"o}dinger equation for \(n=1\) and \(n=3\) respectively.
+\begin{enumerate}[label=(\alph*)]
+\item Normalize \(\Psi(x,0)\) assuming \(\psi_1\) and \(\psi_3\) are separately normalized.
+
+We begin with typical normalization.
+\[1 = \bint{-\infty}{\infty}{\left|\Psi(x,0)\right|^2}{x} = A^2\left( \bint{-\infty}{\infty}{\left|\psi_1\right|^2}{x} + \bint{\infty}{\infty}{\left|\psi_3\right|^2}{x}\right) = 2A^2,\]
+where we have used the assumption that \(\psi_1\) and \(\psi_3\) are separately normalized to evaluate the integrals. Thus,
+\[A = 2^{-1/2}.\]
+
+\item Compute \(\left|\Psi\right|^2\) and simplify as much as possible.
+
+The time-dependent \(\Psi\) is obtained by adding the typical \(\phi(t)\) to each stationary state describing \(\Psi\).
+\[\Psi = \frac{1}{\sqrt{2}} \left(\psi_1 e^{-it \frac{E_1}{\hbar}} + \psi_3e^{-it \frac{E_3}{\hbar}}\right).\]
+Then,
+\begin{align*}
+\left|\Psi\right|^2 &= \Psi^* \Psi
+\\&= \frac{1}{2} \left(\psi_1 e^{it \frac{E_1}{\hbar}} + \psi_3e^{it \frac{E_3}{\hbar}}\right) \left(\psi_1 e^{-it \frac{E_1}{\hbar}} + \psi_3e^{-it \frac{E_3}{\hbar}}\right)
+\\&= \frac{1}{2} \left( \psi_1^2 + \psi_3^2 + \psi_1\psi_3\exp\left(\frac{1}{\hbar}\left( E_1 - E_3 -E_1 + E_3 \right) \right) \right)
+\\&= \frac{1}{2} \left( \psi_1^2 + \psi_3^2 \right).
+\end{align*}
+
+\item If you measured the particle's energy, what value(s) might you possibly obtain and what is the probability of measuring them?
+
+The factor \(1/2\) can be interpreted as both \(\left|C_1\right|^2\) and \(\left|C_3\right|^2\). Since this is the representation of \(\Psi\) as a linear combination of stationary states we say that all other coefficients \(C_n\) are 0 for \(n\ne1,3\). Thus, the energy states \(E_1\) and \(E_3\) are the only possible energy states each with an equal probability of being measured.
+
+\end{enumerate}
+\end{enumerate}
+\end{document}
