@@ -1,0 +1,159 @@
+% document style header
+\documentclass[a4paper, 12pt]{config/homework}
+
+% import default packages
+\usepackage{config/defpackages}
+% import custom math commands
+\usepackage{config/domath}
+\usepackage{titlesec}
+
+% change section header
+\titleformat{\section}
+    % 16pt font size, 19pt line spacing
+    {\fontsize{14pt}{14pt}\selectfont}
+    % prefix (section number with a period)
+    {\thesection.}
+    % space between the prefix and the title
+    {1em}
+    % suffix
+    {}
+
+% end preamble
+\begin{document}
+
+% document title
+\noindent
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
+Calvin Sprouse & MATH407 HW3 & 2024 January 23\\
+\midrule
+\end{tabularx}
+
+% for each of the seven sections of the article
+% What are two important facts, words, concepts, etc. that you want to remember from the section? Why do you want to remember them? Why are they significant?
+% Write one (or two) question that you developed as you read through the section.
+% Summarize your entire reading of this section into one well-written statement.
+
+% homework problems begin
+\section{The History of the St.\ Petersburg Paradox}
+\begin{enumerate}[label=\roman*.]
+\item What are two important facts, words, concepts, etc.\ that you want to remember from the section? Why do you want to remember them? Why are they significant?
+
+The solution of the St.\ Petersburg paradox rests on the idea that the large and improbable gains contribute less than smaller more probable gains. This is a relatively simple solution but I feel it succinctly describes the notion of expected utility.
+
+\item Write one (or two) questions that you developed as you read through the section.
+
+Of the two utility functions, and of course the many unconsidered, which are preferred and why? Are humans so varied as to be modeled by different utility functions or can we be described quite well by one type of utility function?
+
+\item Summarize your entire reading of this section into one well-written statement.
+
+The St.\ Petersburg paradox is resolved if we consider not total wealth but wealth as it feels to a person, or the wealths impact on the individuals life. Total wealth increases linearly but the impact of wealth has a decreasing impact.
+
+\end{enumerate}
+
+\section{The Modern St.\ Petersburg Paradox}
+\begin{enumerate}[label=\roman*.]
+\item What are two important facts, words, concepts, etc.\ that you want to remember from the section? Why do you want to remember them? Why are they significant?
+
+Though the expected outcome is of infinite value the outcome will always be finite.
+
+\item Write one (or two) questions that you developed as you read through the section.
+
+How does the H{\'a}jek and Nover argument work? Specifically the point about being bounded below by each value. Surely H{\'a}jek and Nover consider themselves rational yet would not actually pay any finite amount to play the game.
+
+\item Summarize your entire reading of this section into one well-written statement.
+
+The St.\ Petersburg paradox can be restored by replacing some specific amount of money with some specific amount of utility such that potential payoff, in utility, is again infinite. Thus we need a more careful definition of rationality to say with certainty when the St.\ Petersburg game should and should not be played; that is, for what bet is the game worthwhile or not worthwhile to the reasonable player.
+
+\end{enumerate}
+
+\section{Unrealistic Assumptions?}
+\begin{enumerate}[label=\roman*.]
+\item What are two important facts, words, concepts, etc.\ that you want to remember from the section? Why do you want to remember them? Why are they significant?
+
+Math need not be burdened with reality.
+
+There exists some, possibly purely philosophical, difference between infinity and not finite. It may have something to do with countable or uncountable infinity. Or may be completely unrelated.
+
+\item Write one (or two) questions that you developed as you read through the section.
+
+There is a brief comment on the utility reward scale being linear. What would change if the utility reward scale was some quadratic, exponential, or other faster growing function? Would there exist some way to frame utility such that a rational decision could be made?
+
+\item Summarize your entire reading of this section into one well-written statement.
+
+The notion of utility is distinct from monetary gain. Utility is an abstract quantification of something desireable and thus the St.\ Petersburg game need not imply the demise of an economy.
+
+\end{enumerate}
+
+\section{A Bounded Utility Function?}
+\begin{enumerate}[label=\roman*.]
+\item What are two important facts, words, concepts, etc.\ that you want to remember from the section? Why do you want to remember them? Why are they significant?
+
+Continuity is essential to define utility and infinities break continuity. This is the background that defines utility and makes utility worth talking about.
+
+\item Write one (or two) questions that you developed as you read through the section.
+
+Is it correct to respond to the proposed new paradox, that the St.\ Petersburg game cannot coexist with the Continuity Axiom, with the fact that the St.\ Petersburg paradox rewards finitely with finite probability? It is only the expectation probability that is infinite.
+
+\item Summarize your entire reading of this section into one well-written statement.
+
+To develop a mathematically rigorous way of talking about rational decisions we begin with a definition of utility such that we can compare the utility of decisions and choose the decision with the greatest utility.
+
+\end{enumerate}
+
+\section{Ignore Small Probabilities?}
+\begin{enumerate}[label=\roman*.]
+\item What are two important facts, words, concepts, etc.\ that you want to remember from the section? Why do you want to remember them? Why are they significant?
+
+That there is a name for the issue of deriving an ``ought'' from an ``is'' and it is the no-ought-from-an-is issue or objection. People do this too much and this feels like a fun way to phrase the issue.
+
+Risk-weighted expected utility is a potential solution to the St.\ Petersburg paradox.
+
+\item Write one (or two) questions that you developed as you read through the section.
+
+Is it correct that the idea of ignoring small probabilities should feel similar, and possibly be based on, the extra credit assignment from Probability and Statistics? I answer this question with the quote on the next page which is indeed nearly identical to the excerpt read in Probability and Statistics.
+
+Rationally negligible probabilities (RNP) are probabilities for which humans tend to consider them impossible despite there being a very real non-zero probability. This is an important consideration in avoiding paradoxes like the St.\ Petersburg paradox but are somewhat difficult to grapple with mathematically.
+
+\item Summarize your entire reading of this section into one well-written statement.
+
+We can again solve the St.\ Petersburg paradox, which has now evolved to give some amount of utility instead of wealth, by applying a ``utility of utility'' approach known as risk-weighted expected utility. This is a modification to the notion that we reject all probabilities below some threshold, eerily similar to the argument that above some threshold wealth does not matter. A theme emerges of taking a discontinuous idea and giving it some continuity.
+
+\end{enumerate}
+
+\section{Relative Expected Utility Theory}
+\begin{enumerate}[label=\roman*.]
+\item What are two important facts, words, concepts, etc.\ that you want to remember from the section? Why do you want to remember them? Why are they significant?
+
+The Petrograd game makes the significant observation that perhaps there is a problem in using expected utility to make rational decisions. Expected utility does not prefer the St.\ Petersburg game to the Petrograd game yet it is clear the Petrograd game is worth more.
+
+Plausible decision theory is the name given to some mathematical set of rules that can determine with certainty the optimal choice to maximize gain. The underlying goal of this paper is to explore the requirements of a plausible decision theory such that these supposed paradoxes are resolved in alignment which what humans feel is reasonable.
+
+\item Write one (or two) questions that you developed as you read through the section.
+
+What would it mean for Bartha's utility to produce the same relative utilities? What does that mean for Bartha's utility? It seems to imply that Bartha's utility is not a useful measure of utility.
+
+\item Summarize your entire reading of this section into one well-written statement.
+
+There exist several attempts to quantify expected utility in some way which resolves the St.\ Petersburg paradox and other game paradoxes. These solutions all have some elements of a plausible decision theory but fall short in either being unable to analyze all types of games or not actually making clear weather one game is preferred to another.
+
+\end{enumerate}
+
+\section{The Pasadena Game}
+\begin{enumerate}[label=\roman*.]
+\item What are two important facts, words, concepts, etc.\ that you want to remember from the section? Why do you want to remember them? Why are they significant?
+
+Contamination, in the game context, refers to a miniscule probability being assigned to a possibly infinite utility gain. There is no possible probability, other than 0, that permits a decision to be made when an infinite wealth gain can be considered.
+
+A conditionally convergent series can converge onto any finite number, or infinity, given some particular arrangement of terms.
+
+\item Write one (or two) questions that you developed as you read through the section.
+
+If not expected utility, then what? A reasonable person must be doing some form of calculation, conscious or not, to decide to play similar games. It is quite clear from the formulation of each of these games which one is preferred yet why is it so difficult to argue those points with rigor?
+
+\item Summarize your entire reading of this section into one well-written statement.
+
+The notion that expected utility should guide the decision making process, and that there exists a quantifiable expected utility for all decisions, is perhaps wrong. There are a wide variety of games for which this principle does not agree with rational decisions.
+
+\end{enumerate}
+
+\end{document}
