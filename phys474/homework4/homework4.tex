@@ -1,0 +1,75 @@
+% document style header
+\documentclass[a4paper, 12pt]{config/homework}
+
+% import default packages
+\usepackage{config/defpackages}
+% import custom math commands
+\usepackage{config/domath}
+
+% end preamble
+\begin{document}
+
+% document title
+\noindent
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
+Calvin Sprouse & PHYS474 HW4 & 2024 January 24\\
+\midrule
+\end{tabularx}
+
+% homework problems begin
+\begin{enumerate}
+\item A particle is trapped in a harmonic oscillator potential. We know that at \(t=0\), the particle can be represented by the wavefunction
+\[\Psi(x,0) = A\left(2\psi_0(x) + 5\psi_2(x)\right),\]
+where \(\psi_0\) and \(\psi_2\) are the stationary-state solutions for \(n=0\) and \(n=0\), respectively.
+\begin{enumerate}[label=(\alph*)]
+\item Normalize \(\Psi(x,0)\).
+\begin{align*}
+1 &= \braket*{\Psi(x,0)}{\Psi{x,0}}
+\\&= A^2 \left( 4 \braket*{\psi_0}{\psi_0} + 25 \braket*{\psi_2}{\psi_2} + 20\braket*{\psi_0}{\psi_2} \right)
+\\&= 29 A^2.
+\end{align*}
+Thus, \(A=\sqrt{1/29}\).
+
+\item Construct \(\Psi(x,t)\) and then determine \(\left|\Psi(x,t)\right|^2\). Will \(\expval{x}\) depend on time?
+
+The complete wavefunction is given by
+\[\Psi(x,t) = \sqrt{\frac{1}{29}} \left( 2 \Psi_0 + 5 \Psi_2 \right),\]
+where \(\Psi_n\) represents \(\psi_n(x)\phi_n(t)\). Thus,
+\begin{align*}
+\left| \Psi(x,t) \right|^2 &= \frac{1}{29}\left(2\Psi_0^* + 5\Psi_2^*\right)\left(2\Psi_0 + 5\Psi_2\right)
+\\&= \frac{1}{29}\left(4\left|\Psi_0\right|^2 + 2\Psi_0^*\Psi_2 + 5\Psi_2^*\Psi_0 + 25\left|\Psi_2\right|^2\right)
+\\&= \frac{1}{29}\left(4\left|\psi_0\right|^2
++ 20\psi_0\psi_2\left(e^{-2i\omega t} + e^{2i\omega t}\right)
++ 25\left|\psi_2\right|^2\right)
+\\&= \frac{1}{29}\left(
+4\left|\psi_0\right|^2
++ 10 \psi_0 \psi_2 \cosh(2i\omega t)
++ 25 \left|\psi_2\right|^2
+\right)
+\end{align*}
+
+\end{enumerate}
+
+\pagebreak
+\item Consider the stationary states of the harmonic oscillator. As straightforwardly as possible, compute the following quantities for the \(n\)th stationary state \(\psi_n(x)\).
+\begin{enumerate}[label=(\alph*)]
+\item \(\expval{x}\)
+\item \(\expval{x^2}\)
+\item \(\expval{p}\)
+\item \(\expval{p^2}\)
+\item \(\expval{T}\)
+\item Is the Heisenberg uncertainty principle satisfied for all values of \(n\)?
+\end{enumerate}
+
+\pagebreak
+\item A particle in a harmonic oscillator potential is described by the normalized wavefunction
+\[\ket*{\Psi(x,0)} = \frac{1}{\sqrt{5}}\ket*{1} + \frac{2}{\sqrt{5}}\ket*{2},\]
+where \(\ket*{n}\) represents the \(n\)th stationary state.
+\begin{enumerate}[label=(\alph*)]
+\item What is \(\ket*{\Psi(x,t)}\)?
+\item What is the expectation value for energy?
+\item What is \(\langle x(t) \rangle\)?
+\end{enumerate}
+
+\end{enumerate}
+\end{document}
