@@ -23,12 +23,16 @@ Calvin Sprouse & PHYS474 HW4 & 2024 January 24\\
 where \(\psi_0\) and \(\psi_2\) are the stationary-state solutions for \(n=0\) and \(n=0\), respectively.
 \begin{enumerate}[label=(\alph*)]
 \item Normalize \(\Psi(x,0)\).
-\begin{align*}
-1 &= \braket*{\Psi(x,0)}{\Psi{x,0}}
-\\&= A^2 \left( 4 \braket*{\psi_0}{\psi_0} + 25 \braket*{\psi_2}{\psi_2} + 20\braket*{\psi_0}{\psi_2} \right)
-\\&= 29 A^2.
-\end{align*}
-Thus, \(A=\sqrt{1/29}\).
+\[1 = \braket*{\Psi(x,0)}{\Psi{x,0}}
+= A^2 \left( 4 \braket*{\psi_0}{\psi_0} + 25 \braket*{\psi_2}{\psi_2} + 20\braket*{\psi_0}{\psi_2} \right)
+= 29 A^2.\]
+% \begin{align*}
+% 1 &= \braket*{\Psi(x,0)}{\Psi{x,0}}
+% \\&= A^2 \left( 4 \braket*{\psi_0}{\psi_0} + 25 \braket*{\psi_2}{\psi_2} + 20\braket*{\psi_0}{\psi_2} \right)
+% \\&= 29 A^2.
+% \end{align*}
+Thus,
+\[A = \sqrt{\frac{1}{29}}\]
 
 \item Construct \(\Psi(x,t)\) and then determine \(\left|\Psi(x,t)\right|^2\). Will \(\expval{x}\) depend on time?
 
@@ -53,12 +57,63 @@ where \(\Psi_n\) represents \(\psi_n(x)\phi_n(t)\). Thus,
 \pagebreak
 \item Consider the stationary states of the harmonic oscillator. As straightforwardly as possible, compute the following quantities for the \(n\)th stationary state \(\psi_n(x)\).
 \begin{enumerate}[label=(\alph*)]
-\item \(\expval{x}\)
-\item \(\expval{x^2}\)
-\item \(\expval{p}\)
+\item \(\expval{x}\).
+
+Given
+\[\widehat{x} = \sqrt{\frac{\hbar}{2m\omega}}\left(\widehat{a_+} + \widehat{a_-}\right).\]
+Then,
+\[\expval{x}
+= \bra*{n}\widehat{x}\ket*{n}
+= \sqrt{\frac{\hbar}{2m\omega}}\left(\bra*{n}\widehat{a_+}\ket*{n} + \bra*{n}\widehat{a_-}\ket*{n}\right)
+= 0.\]
+
+\item \(\expval{x^2}\).
+
+Given
+\begin{align*}
+\widehat{x^2} &= \widehat{x}^{\,2}
+\\&= \frac{\hbar}{2m\omega} \left(\widehat{a_+}^{\,2} + \widehat{a_-}^{\,2} + \widehat{a_-}\widehat{a_+} + \widehat{a_+}\widehat{a_-}\right)
+\\&= \frac{\hbar}{2m\omega} \left(\widehat{a_+}^{\,2} + \widehat{a_-}^{\,2} + \frac{1}{\hbar \omega}\left(\widehat{H}+\frac{1}{2}\right) + \frac{1}{\hbar \omega}\left(\widehat{H}-\frac{1}{2}\right)\right)
+\\&= \frac{\hbar}{2m\omega} \left(\widehat{a_+}^{\,2} + \widehat{a_-}^{\,2} + \frac{2}{\hbar \omega}\widehat{H}\right).
+\end{align*}
+
+Then,
+\[\expval{x^2} = \bra*{n}\widehat{x^2}\ket*{n} = \frac{\hbar}{2m\omega} \left( \bra*{n}\widehat{a_+}^{\,2}\ket*{n} + \bra*{n}\widehat{a_-}^{\,2}\ket*{n} + \frac{2}{\hbar \omega}\bra*{n}\widehat{H}\ket*{n}\right) = \frac{E_n}{m\omega^2}.\]
+
+\item \(\expval{p}\).
+\[\expval{p} = m\diff{}{t}\expval{x} = m\diff{}{t}(0) = 0.\]
+
 \item \(\expval{p^2}\)
+
+Given
+\[\expval{H} = \frac{\expval{p^2}}{2m} = E_n.\]
+
+Then,
+\[\expval{p^2} = 2m\expval{H} = 2m E_n.\]
+
 \item \(\expval{T}\)
+
+Given
+\[\expval{H} = \expval{T} + \expval{V} = \expval{T} + \frac{1}{2}m\omega^2\expval{x^2}.\]
+Then,
+\[\expval{T} = \expval{H} - \expval{V} = E_n - \frac{1}{2}m\omega^2\frac{E_n}{m\omega^2} = \frac{1}{2}E_n.\]
+
 \item Is the Heisenberg uncertainty principle satisfied for all values of \(n\)?
+
+The uncertainty of \(x\), \(\sigma_x\), is given by
+\[\sigma_x = \sqrt{\expval{x^2} - \expval{x}^2} = \sqrt{\frac{E_n}{m\omega^2}}.\]
+The uncertainty of \(p\), \(\sigma_p\), is given by
+\[\sigma_p = \sqrt{\expval{p^2} - \expval{p}^2} = \sqrt{2mE_n}.\]
+The product of uncertainties is given by
+\[\sigma_x\sigma_p = \sqrt{\frac{E_n}{m\omega^2}}\sqrt{2mE_n} = \frac{E_n}{\omega}\sqrt{2} = \hbar\left(n+\frac{1}{2}\right)\sqrt{2}.\]
+The Heisenberg uncertainty principle requires that
+\[\sigma_x\sigma_p \ge \frac{\hbar}{2}.\]
+Where a factor of \(\hbar/2\) appears on both sides thus simplifying to
+\[\left(2n + 1\right)\sqrt{2} \ge 1.\]
+The left side increases with \(n\) so we check only the smallest \(n\), that is \(n=0\).
+\[\sqrt{2} \ge 1,\]
+is indeed true. Whence, the uncertainty principle is satisfied for all \(n\).
+
 \end{enumerate}
 
 \pagebreak
