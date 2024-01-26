@@ -26,13 +26,7 @@ where \(\psi_0\) and \(\psi_2\) are the stationary-state solutions for \(n=0\) a
 \[1 = \braket*{\Psi(x,0)}{\Psi{x,0}}
 = A^2 \left( 4 \braket*{\psi_0}{\psi_0} + 25 \braket*{\psi_2}{\psi_2} + 20\braket*{\psi_0}{\psi_2} \right)
 = 29 A^2.\]
-% \begin{align*}
-% 1 &= \braket*{\Psi(x,0)}{\Psi{x,0}}
-% \\&= A^2 \left( 4 \braket*{\psi_0}{\psi_0} + 25 \braket*{\psi_2}{\psi_2} + 20\braket*{\psi_0}{\psi_2} \right)
-% \\&= 29 A^2.
-% \end{align*}
-Thus,
-\[A = \sqrt{\frac{1}{29}}\]
+Thus, \[A = \sqrt{\frac{1}{29}}\]
 
 \item Construct \(\Psi(x,t)\) and then determine \(\left|\Psi(x,t)\right|^2\). Will \(\expval{x}\) depend on time?
 
@@ -42,26 +36,41 @@ where \(\Psi_n\) represents \(\psi_n(x)\phi_n(t)\). Thus,
 \begin{align*}
 \left| \Psi(x,t) \right|^2 &= \frac{1}{29}\left(2\Psi_0^* + 5\Psi_2^*\right)\left(2\Psi_0 + 5\Psi_2\right)
 \\&= \frac{1}{29}\left(4\left|\Psi_0\right|^2 + 2\Psi_0^*\Psi_2 + 5\Psi_2^*\Psi_0 + 25\left|\Psi_2\right|^2\right)
-\\&= \frac{1}{29}\left(4\left|\psi_0\right|^2
-+ 20\psi_0\psi_2\left(e^{-2i\omega t} + e^{2i\omega t}\right)
-+ 25\left|\psi_2\right|^2\right)
-\\&= \frac{1}{29}\left(
-4\left|\psi_0\right|^2
-+ 10 \psi_0 \psi_2 \cosh(2i\omega t)
-+ 25 \left|\psi_2\right|^2
-\right)
-\\&= \frac{1}{29}\left(
-4\left|\psi_0\right|^2
-+ 10 \psi_0 \psi_2 \cos(2\omega t)
-+ 25 \left|\psi_2\right|^2
-\right)
+% \\&= \frac{1}{29}\left(4\left|\psi_0\right|^2
+% + 20\psi_0\psi_2\left(e^{-2i\omega t} + e^{2i\omega t}\right)
+% + 25\left|\psi_2\right|^2\right)
 % \\&= \frac{1}{29}\left(
 % 4\left|\psi_0\right|^2
-% + \frac{10}{\sqrt{2}}\psi_0\widehat{a_+}^2\psi_0\cos(2\omega t)
-% + 25 \left|\psi_0\right|^2
+% + 10 \psi_0 \psi_2 \cosh(2i\omega t)
+% + 25 \left|\psi_2\right|^2
 % \right)
+% \\&= \frac{1}{29}\left(
+% 4\left|\psi_0\right|^2
+% + 10 \psi_0 \psi_2 \cos(2\omega t)
+% + 25 \left|\psi_2\right|^2
+% \right)
+% \\&= \frac{1}{29}\left(
+% 4\psi_0^* \psi_0
+% + 5\sqrt{2}\cos(2\omega t) \psi_0 \left[\widehat{a_+}^2 \psi_0\right]
+% + 25 \psi_2^*\psi_2
+% \right).
+\\&= \frac{1}{29}\left(4\psi_0^*\psi_0
++ 10\psi_0^*\psi_2e^{-2i\omega t}
++ 10\psi_2^*\psi_0e^{2i\omega t}
++ 25\psi_2^*\psi_2\right)
+\\&= \frac{1}{29}\left(4\psi_0^2
++ 10\psi_0\psi_2\left(e^{-2i\omega t} + e^{2i\omega t}\right)
++ 25\psi_2^2\right)
+\\&= \frac{1}{29}\left(4\psi_0^2
++ 20\psi_0\psi_2\cosh(2i\omega t)
++ 25\psi_2^2\right)
+\\&= \frac{1}{29}\left(4\psi_0^2
++ 20\psi_0\psi_2\cos(2\omega t)
++ 25\psi_2^2\right)
 \end{align*}
-\(\expval{x}\) will depend on time!
+
+\(\expval{x}\) will not depend on time. The expectation value of position is only time dependent if the two wavefunctions are within \(\pm n\) of each other because the position operator includes a raising and lowering operator. As it stands now, applying the position operator and integrating over all space will result in an expectation position of 0.
+
 \end{enumerate}
 
 \pagebreak
@@ -95,11 +104,8 @@ Then,
 
 \item \(\expval{p^2}\)
 
-Given
-\[\expval{H} = \frac{\expval{p^2}}{2m} = E_n.\]
-
-Then,
-\[\expval{p^2} = 2m\expval{H} = 2m E_n.\]
+Given \[\expval{H} = \frac{\expval{p^2}}{2m} = E_n.\]
+Then, \[\expval{p^2} = 2m\expval{H} = 2m E_n.\]
 
 \item \(\expval{T}\)
 
@@ -122,7 +128,7 @@ Where a factor of \(\hbar/2\) appears on both sides thus simplifying to
 \[\left(2n + 1\right)\sqrt{2} \ge 1.\]
 The left side increases with \(n\) so we check only the smallest \(n\), that is \(n=0\).
 \[\sqrt{2} \ge 1,\]
-is indeed true. Whence, the uncertainty principle is satisfied for all \(n\).
+is indeed true. Hence, the uncertainty principle is satisfied for all \(n\).
 
 \end{enumerate}
 
@@ -132,8 +138,54 @@ is indeed true. Whence, the uncertainty principle is satisfied for all \(n\).
 where \(\ket*{n}\) represents the \(n\)th stationary state.
 \begin{enumerate}[label=(\alph*)]
 \item What is \(\ket*{\Psi(x,t)}\)?
+\(\ket*{\Psi(x,t)}\) can be found by adding the time-dependent term to \(\ket*{\Psi(x,0)}\),
+\begin{align*}
+\ket*{\Psi(x,t)} &=
+\frac{1}{\sqrt{5}} \left( \ket*{1} \exp\left({- \frac{3i\omega}{2}}\right)
++ 2\ket*{2}\exp\left({- \frac{5i\omega}{2}}\right)\right).
+\end{align*}
+
 \item What is the expectation value for energy?
-\item What is \(\langle x(t) \rangle\)?
+
+The expectation value for energy is given by
+\begin{align*}
+\expval{H} &= \bra*{\Psi}\widehat{H}\ket*{\Psi}
+\\&= \frac{1}{\sqrt{5}}\left(\bra*{1}\phi_1^* + 2\bra*{2}\phi_2^*\right)\widehat{H}\frac{1}{\sqrt{5}}\left(\ket*{1}\phi_1 + 2\ket*{2}\phi_2\right)
+\\&= \frac{1}{5}\left(\bra*{1}\phi_1^* + 2\bra*{2}\phi_2^*\right)\left(\widehat{H}\ket*{1}\phi_1 + 2\widehat{H}\ket*{2}\phi_2\right)
+\\&= \frac{1}{5}\left(\bra*{1}\widehat{H}\ket*{2}\phi_1^*\phi_1 + \bra*{1}\widehat{H}\ket*{2}\phi_1^*\phi_2 + 2\bra*{2}\widehat{H}\ket*{1}\phi_2^*\phi_1 + 4\bra*{2}\widehat{H}\ket*{2}\phi_2^*\phi_2\right)
+\\&= \frac{1}{5}\left(E_1 + 0 + 0 + 4E_2\right)
+\\&= \frac{23}{10}\hbar\omega.
+\end{align*}
+
+\pagebreak
+\item What is \(\langle x(t) \rangle \)?
+
+The expectation value of position as a function of time is given by
+\begin{align*}
+\expval{x(t)} &= \bra*{\Psi}\widehat{x}\ket*{\Psi}
+\\&= \frac{1}{5}\sqrt{\frac{\hbar}{2m\omega}}\bigg(
+\bra*{1}\left[\widehat{a_+} + \widehat{a_-}\right]\ket*{1}
+\\&\phantom{=\frac{1}{5}\sqrt{\frac{\hbar}{2m\omega}}+}
++ 4\bra*{2}\left[\widehat{a_+} + \widehat{a_-}\right]\ket*{2}
+\\&\phantom{=\frac{1}{5}\sqrt{\frac{\hbar}{2m\omega}}+}
++ 2\bra*{1}\left[\widehat{a_+} + \widehat{a_-}\right]\ket*{2}\phi_1^*\phi_2
+\\&\phantom{=\frac{1}{5}\sqrt{\frac{\hbar}{2m\omega}}+}
++ 2\bra*{2}\left[\widehat{a_+} + \widehat{a_-}\right]\ket*{1}\phi_2^*\phi_1 \bigg)
+\\&= \frac{1}{5}\sqrt{\frac{\hbar}{2m\omega}}\left(0+ 0 +
+2\bra*{1}\widehat{a_-}\ket*{2}\phi_1^*\phi_2 + 0 +
+2\bra*{2}\widehat{a_+}\ket*{1}\phi_2^*\phi_1 + 0
+\right)
+\\&= \frac{2}{5}\sqrt{\frac{\hbar}{2m\omega}}\left(
+\bra*{1}\widehat{a_-}\ket*{2}\phi_1^*\phi_2 + \bra*{2}\widehat{a_+}\ket*{1}\phi_2^*\phi_1\right)
+\\&= \frac{2}{5}\sqrt{\frac{\hbar}{2m\omega}}\left(\sqrt{2}\phi^*_1\phi_2 + \sqrt{2}\phi_2^*\phi_1\right)
+\\&= \frac{2}{5}\sqrt{\frac{\hbar}{m\omega}}\left(\phi^*_1\phi_2 + \phi^*_2\phi_1\right)
+\\&= \frac{4}{5}\sqrt{\frac{\hbar}{m\omega}}\left(\frac{\exp\left(-i\omega t\right) + \exp\left(i\omega t\right)}{2}\right)
+\\&= \frac{4}{5}\sqrt{\frac{\hbar}{m\omega}}\cosh(i\omega t)
+\\&= \frac{4}{5}\sqrt{\frac{\hbar}{m\omega}}\cos(\omega t).
+\end{align*}
+
+The \(\cos \) popping out to remove the imaginary components is really cool!
+
 \end{enumerate}
 
 \end{enumerate}
