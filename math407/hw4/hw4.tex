@@ -1,0 +1,60 @@
+% document style header
+\documentclass[a4paper, 12pt]{config/homework}
+
+% import default packages
+\usepackage{config/defpackages}
+% import custom math commands
+\usepackage{config/domath}
+
+% end preamble
+\begin{document}
+
+% document title
+\noindent
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
+Calvin Sprouse & MATH407 HW4 & 2024 January 29\\
+\midrule
+\end{tabularx}
+
+% homework problems begin
+\begin{enumerate}
+\item A decision maker is described by the utility function \(u(w)=w^{1/3}\). She is given the choice between two random amounts \(X_1\) and \(X_2\), in exchange for her entire present wealth \(w_0\). Suppose that
+\[X_1 = \begin{cases}
+\phantom{0}8 & \text{with probability}\ 0.5 \\
+27 & \text{with probability}\ 0.5
+\end{cases}\] and
+\[X_2 = \begin{cases}
+\phantom{0}1 & \text{with probability}\ 0.6 \\
+64 & \text{with probability}\ 0.4
+\end{cases}\]
+\begin{enumerate}[label=(\alph*)]
+\item Show that she prefers \(X_1\) to \(X_2\).
+
+
+\item Determine for what values of \(w_0\) she should decline the offer.
+
+
+\item Give an example of a utility function in which she would prefer \(X_2\) to \(X_1\).
+
+
+\end{enumerate}
+\item Recall that the iso-elastic property says that for any \(k > 0\), \(u(kw) = f(k)u(w) + g(k)\) for some \(f(k)\) and \(g(k)\).
+\begin{enumerate}[label=(\alph*)]
+\item Identify the functions \(f(k)\) and \(g(k)\) in the case of \(u(w)=\ln(w)\).
+
+
+\item Identify the functions \(f(k)\) and \(g(k)\) in the case of \(u(w)=\frac{w^\lambda - 1}{\lambda}\).
+
+
+\end{enumerate}
+\item Recall that the Arrow-Pratt absolute risk aversion function is given by
+\[A(w) = \frac{-\diff[2]{u(w)}{w}}{\diff{u(w)}{w}}.\]
+\begin{enumerate}[label=(\alph*)]
+\item Compute \(A(w)\) in the case of \(u(w)=\ln(w)\). Is \(A(w)\) non-increasing?
+
+\item Compute \(A(w)\) in the case of \(u(w)=\frac{w^{\lambda} - 1}{\lambda}\). Is \(A(w)\) non-increasing.
+
+
+\end{enumerate}
+\end{enumerate}
+\end{document}
