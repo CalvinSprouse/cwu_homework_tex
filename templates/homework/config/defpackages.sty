@@ -61,6 +61,16 @@
 
 % for controlling section and title formats
 \usepackage{titlesec}
+% modify section header
+\titleformat{\section}
+	% font size and line spacing
+	{\fontsize{16pt}{16pt}\selectfont}
+	% prefix section number with period
+	{\thesection.}
+	% space between prefix and title
+	{1em}
+	% suffix
+	{}
 
 % must go last
 % for placing graphics, very important
