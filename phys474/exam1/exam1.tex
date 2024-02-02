@@ -17,8 +17,8 @@ Calvin Sprouse & PHYS474 Exam 1 & 2024 February 01\\
 \end{tabularx}
 
 % homework problems begin
-\begin{enumerate}
-\item You trap an electron in an infinite-square well with size \(a\). At time \(t=0\), we know that the electron is in the following state:
+\noindent
+You trap an electron in an infinite-square well with size \(a\). At time \(t=0\), we know that the electron is in the following state:
 \[\Psi(x,0) = \begin{cases}
     bx^2, & 0 \le x \le a \\
     \phantom{b^2}0, & \text{otherwise}
@@ -47,30 +47,45 @@ We will express \(\Psi \) as a linear combination of stationary states \(\psi_n(
 The coefficients \(c_n\) can be found by applying Fourier's trick:
 \begin{align*}
 c_n &= \bint{-\infty}{\infty}{\psi_n\Psi(x,0)}{x}
-\\&= \bint{-\infty}{0}{\psi_n\times 0}{x} + \bint{0}{a}{\psi_n\Psi(x,0)}{x} + \bint{a}{\infty}{\psi_n\times 0}{x}
-\\&= \bint{0}{a}{\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi}{a}x\right)\Psi(x,0)}{x}
-\\&= b\sqrt{\frac{2}{a}} \bint{0}{a}{x^2\sin\left(\frac{n\pi}{a}x\right)}{x}
-\\&= \sqrt{\frac{10}{a^6}} {\left[\frac{2x}{\left(\frac{n\pi}{a}\right)^2} \sin\left(\frac{n\pi}{a}x\right) + \left(\frac{2}{\left(\frac{n\pi}{a}\right)^3} - \frac{x^2}{\left(\frac{n\pi}{a}\right)}\right)\cos\left(\frac{n\pi}{a}x\right)\right]}_0^a
-\\&= \sqrt{\frac{10}{a^6}} \left[
-    \frac{2a}{\left(\frac{n\pi}{a}\right)^2} \sin\left(n\pi\right)
-    + \left(\frac{2}{\left(\frac{n\pi}{a}\right)^3} - \frac{a^2}{\left(\frac{n\pi}{a}\right)}\right) \cos\left(n\pi\right)
-    \right.
-\\&\phantom{= \sqrt{\frac{10}{a^6}}} \left.
-    - 0 - \left(\frac{2}{\left(\frac{n\pi}{a}\right)^3}\right) \cos\left(0\right)
-    \right]
-\\&= \sqrt{\frac{10}{a^6}}\left(
-    0 + \left(\frac{2}{\left(\frac{n\pi}{a}\right)^3} - \frac{a^2}{\left(\frac{n\pi}{a}\right)}\right) \cos\left(n\pi\right)
-    - 0 - \left(\frac{2}{\left(\frac{n\pi}{a}\right)^3}\right)
-\right)
-\\&= \sqrt{\frac{10}{a^6}} \left(
-    \left(\frac{2}{\left(\frac{n\pi}{a}\right)^3} - \frac{a^2}{\left(\frac{n\pi}{a}\right)}\right) \cos\left(n\pi\right)
-    - \frac{2}{\left(\frac{n\pi}{a}\right)^3}
-\right)
-\\&= \begin{cases}
-    -\sqrt{\frac{10}{a^6}}\frac{a^3}{n\pi}, & n\ \text{is even}\ \\
-    -\sqrt{\frac{10}{a^6}}\left(\frac{4a^3}{(n\pi)^3} - \frac{a^3}{n\pi}\right), & n\ \text{is odd}
-\end{cases}.
+\\&= 0 + \bint{0}{a}{\psi_n\Psi(x,0)}{x} + 0
+\\&= \bint{0}{a}{\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi}{a}x\right)b x^2}{x}
+\\&= \sqrt{\frac{5}{a^5}}\sqrt{\frac{2}{a}}\bint{0}{a}{x^2\sin\left(\frac{n\pi}{a}x\right)}{x}
+\\&= \frac{\sqrt{10}}{a^3} \bint{0}{a}{x^2\sin\left(\frac{n\pi}{a}x\right)}{x},
 \end{align*}
+which is given by integral (16) of the supplied integral table. Then,
+\begin{align*}
+c_n &= \frac{\sqrt{10}}{a^3} \left[
+    \frac{2x}{\left(\frac{n\pi}{a}\right)^2} \sin\left(\frac{n\pi}{a}x\right)
+    + \left(
+        \frac{2}{\left(\frac{n\pi}{a}\right)^3}
+        - \frac{x^2}{\left(\frac{n\pi}{a}\right)}
+    \right) \cos\left(\frac{n\pi}{a}x\right)
+\right]_0^a.
+\end{align*}
+Evaluating the limits yields
+\begin{align*}
+c_n &= \frac{\sqrt{10}}{a^3}\left(
+    \frac{2a^3}{(n\pi)^2} \sin(n\pi)
+    + \left(
+        \frac{2a^3}{(n\pi)^3}
+        - \frac{a^3}{n\pi}
+    \right) \cos(n\pi)
+    - 0 - \left(\frac{2a^3}{(n\pi)^3} - 0\right) \cos(0)\right)
+\\&= \frac{\sqrt{10}}{a^3} \left(
+    \frac{2a^3}{(n\pi)^3}\cos(n\pi)
+    - \frac{a^3}{n\pi}\cos(n\pi)
+    - \frac{2a^3}{(n\pi)^3}
+\right)
+\\&= \frac{\sqrt{10}}{n\pi}\left(
+    \frac{2}{(n\pi)^2}\left(\cos(n\pi) - 1\right)
+    - \cos(n\pi)
+\right).
+\end{align*}
+Since \(n\) takes in integer values \(n\ge 1\), \(c_n\) can be expressed as a piecewise function:
+\[c_n = \begin{cases}
+    -\frac{\sqrt{10}}{n\pi}, & n\ \text{is even}\ \\
+    \frac{\sqrt{10}}{n\pi}\left(\frac{-4}{(n\pi)^2}+1\right), & n\ \text{is odd}
+\end{cases}.\]
 
 \pagebreak
 \item (\textit{5 points}) If you measure the electron's energy, the probability of obtaining \(E_n\) can be denoted \(P(E_n)\). Determine \(P(E_n)\) for \(n=\{1,2,3,4,5\} \).
@@ -79,27 +94,40 @@ The probability of measuring the energy \(E_n\) is given by the probability of f
 \[P(E_n) = \left|c_n\right|^2.\]
 Thus,
 \begin{align*}
-P(E_1) &= \left|c_1\right|^2 = ,
-\\P(E_3) &= \left|c_3\right|^2 = ,
-\\P(E_2) &= \left|c_2\right|^2 = ,
-\\P(E_4) &= \left|c_4\right|^2 = ,
-\\P(E_5) &= \left|c_5\right|^2 = .
+P(E_1) &= \left|c_1\right|^2
+= \left(\frac{\sqrt{10}}{\pi}\left(\frac{-4}{(\pi)^2}+1\right)\right)^2
+= \frac{10}{\pi^2}\left(\frac{16}{\pi^4} - \frac{8}{\pi^2} + 1\right)
+\approx 0.3584,
+\\P(E_2) &= \left|c_2\right|^2
+= \left(-\frac{\sqrt{10}}{2\pi}\right)^2
+\approx 0.2533,
+\\P(E_3) &= \left|c_3\right|^2
+= \left(\frac{\sqrt{10}}{3\pi}\left(\frac{-4}{(3\pi)^2}+1\right)\right)^2
+= \frac{10}{9\pi^2}\left(\frac{16}{9\pi^4} - \frac{8}{9\pi^2} + 1\right)
+\approx 0.1027,
+\\P(E_4) &= \left|c_4\right|^2
+= \left(-\frac{\sqrt{10}}{4\pi}\right)^2
+\approx 0.06333,
+\\P(E_5) &= \left|c_5\right|^2
+= \left(\frac{\sqrt{10}}{5\pi}\left(\frac{-4}{(5\pi)^2}+1\right)\right)^2
+= \frac{10}{25\pi^2}\left(\frac{16}{25\pi^4} - \frac{8}{25\pi^2} + 1\right)
+\approx 0.03923.
 \end{align*}
 
+\pagebreak
 \item (\textit{2 points}) What is the probability of obtaining an energy larger than \(E_5\) in an energy measurement on this electron?
 
 The probability of obtaining energy, \(H\), greater than \(E_5\) can be denoted
 \[P(H > E_5) = \sum_{n=6}^{\infty}{P(E_n)}.\]
-Since there is a probability 1 of obtaining an energy we can instead write
+Since there is a guarantee of obtaining some energy, we can instead write
 \[P(H > E_5) = 1 - P(H < 5) = 1 - \sum_{n=1}^{5}{P(E_n)}.\]
 The probability of obtaining energy \(P(E_n)\) for \(n=1,2,3,4,5\) was found above. Thus,
 \begin{align*}
 P(H > E_5) &= 1 - \sum_{n=1}^{5}{P(E_n)}
 \\&= 1 - \left(P(E_1) + P(E_2) + P(E_3) + P(E_4) + P(E_5)\right)
-\\&= 1 - \left(  \right)
-\\&= .
+\\&\approx 1 - \left( 0.3584 + 0.2533 + 0.1027 + 0.06333 + 0.03923\right)
+\\&\approx 0.1831.
 \end{align*}
 
-\end{enumerate}
 \end{enumerate}
 \end{document}
