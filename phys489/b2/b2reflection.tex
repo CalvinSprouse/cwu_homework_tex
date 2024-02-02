@@ -1,0 +1,25 @@
+% document style header
+\documentclass[a4paper, 12pt]{config/homework}
+
+% import default packages
+\usepackage{config/defpackages}
+% import custom math commands
+\usepackage{config/domath}
+\usepackage{pdfpages}
+
+% end preamble
+\begin{document}
+
+% document title
+\noindent
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
+Calvin Sprouse & PHYS489 B2 & 2024 February 01\\
+\midrule
+\end{tabularx}
+
+% homework problems begin
+My artifact of choice is a skeletal report from PHYS333 on transmission line impedance. Figure 1 of this report shows data collected on the impedance of the transmission line linearized and fit to a model to extract parameters. 
+
+% insert artifact page
+\includepdf[pages=-]{CalvinSprouseCharacterizationOfTransmissionLineImpedanceSkeletal.pdf}
+\end{document}
