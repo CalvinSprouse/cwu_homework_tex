@@ -1,0 +1,88 @@
+% document style header
+\documentclass[a4paper, 12pt]{config/homework}
+
+% import default packages
+\usepackage{config/defpackages}
+% import custom math commands
+\usepackage{config/domath}
+
+% end preamble
+\begin{document}
+
+% document title
+\noindent
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
+Calvin Sprouse & PHYS 474 HW5 & 2024 February 07\\
+\midrule
+\end{tabularx}
+
+% homework problems begin
+\begin{enumerate}
+\item Consider a free particle that is described at \(t=\qty{0}{\second}\) by the wavefunction, \(\Psi(x,0)=Ae^{-a|x|}\) where both \(A\) and \(a\) are positive, real constants.
+\begin{enumerate}
+\item Normalize \(\Psi(x,0)\).
+
+We begin by expressing \(\Psi \) as a piecewise function:
+\[\Psi(x,0) = \begin{cases}
+Ae^{-ax}, & x > 0 \\ Ae^{ax}, & x < 0
+\end{cases}\]
+Now, \(\Psi \) can be normalized by the typical method:
+\begin{align*}
+1 &= \bint{-\infty}{\infty}{\left|\Psi\right|^2}{x}
+\\&= A^2\bint{-\infty}{0}{e^{2ax}} + A^2\bint{0}{\infty}{e^{-2ax}}{x}
+\\&= A^2\left( \left[\frac{1}{2a}e^{2ax}\right]_{-\infty}^0 + \left[-\frac{1}{2a}e^{-2ax}\right]_0^\infty \right)
+\\&= A^2\left( \frac{1}{2a} - 0 + 0 + \frac{1}{2a} \right)
+\\&= A^2 \frac{1}{a}.
+\end{align*}
+Thus, \(A=\sqrt{a}\).
+
+\item Determine \(\phi(k)\).
+
+
+
+\item Construct \(\Psi(x,t)\) in the form of an integral.
+
+
+
+\item Evaluate the integral for \(\Psi(x,t)\) in the limiting cases of a very large \(a\) and a very small \(a\).
+
+
+
+\end{enumerate}
+\pagebreak
+\item As we discussed in class, the time-independent Schr{\"o}dinger equation for the free particle has solutions that look like \(Ae^{ikx} + Be^{-ikx}\) or like \(C\cos(kx) + D\sin(kx)\). Show that these are equivalent solutions. Determine what the constants \(C\) and \(D\) are as a function of \(A\) and \(B\) and vice versa.
+
+
+
+\pagebreak
+\item Consider a bead with mass \(m\) that slides frictionlessly around a circular wire ring with circumference \(L\). We can think about this problem like a free particle assuming boundary condition of the form \(\psi(x+L) = \psi(x)\). Determine the normalized stationary states and their corresponding energies. You should find two distinct solutions for each energy (so there is a two-fold degeneracy in this system). These two states represent clockwise and counter-clockwise rotation.
+
+
+
+\pagebreak
+\item Consider a particle interacting with a potential energy given by
+\[V(x)\begin{cases}
+\infty, & x < 0 \\ -\alpha\delta(x-a), & x>0
+\end{cases}\]
+\begin{enumerate}
+\item Determine the bound-state solutions (assume \(E<0\)) to the time-independent Schr{\"o}dinger equation in three different regions of \(x\): \(x<0\), \(0 \le x \le a\), and \(x > a\). Define \(K^2=-2mE/\hbar^2\) in your solutions.
+
+
+
+\item Demand continuity of the wavefunctions at \(x=0\) and \(x=a\) to reduce the number of unknown constant parameters.
+
+
+
+\item Show that the discontinuity in the derivative of the wavefunctions at \(x=a\) is given by
+\[\left.\diff{\psi}{x}\right|_{a+\epsilon} - \left.\diff{\psi}{x}\right|_{a-\epsilon} = - \frac{2m\alpha}{\hbar^2}\psi(a).\]
+
+
+\item Using the boundary condition from part (c), show that
+\[\frac{K\hbar^2}{m\alpha} = 1 - e^{-2Ka}.\]
+This transcendental equation relates \(K\) with \(\alpha \). How many different \(K\) values will solve the equation? You might try to graph the left-hand and right-hand equations vs.\ \( K \) to see where they intersect.
+
+
+
+\end{enumerate}
+\end{enumerate}
+\end{document}
