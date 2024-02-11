@@ -38,11 +38,37 @@ Thus, \(A=\sqrt{a}\).
 
 \item Determine \(\phi(k)\).
 
-
+We begin with the typical \(\phi(k)\) and exploit Euler's formula:
+\[\phi(k)
+= \frac{1}{\sqrt{2\pi}} \bint{-\infty}{\infty}{\Psi(x,0)e^{-ikx}}{x}
+= \sqrt{\frac{a}{2\pi}} \bint{-\infty}{\infty}{e^{-a|x|}\left(\cos(kx)-i\sin(kx)\right)}{x}.\]
+\(\Psi \) has not been expressed in piecewise form because we can simplify here. \(\Psi \) is even, \(\cos \) is even, and \(\sin \) is odd. Our limits of integration are symmetric so the \(\sin \) term integrates to 0. We are left with only even functions over symmetric limits so we can further simplify to
+\[\phi(k) = \sqrt{\frac{2a}{\pi}}\bint{0}{\infty}{e^{-ax}\cos(kx)}{x}.\]
+The \(\cos \) function can be expressed in terms of imaginary exponentials:
+\[\phi(k) = \frac{1}{2}\sqrt{\frac{2a}{\pi}}\bint{0}{\infty}{e^{-ax}\left(e^{ikx} + e^{-ikx}\right)}{x}.\]
+These represent waves moving in the \(+x\) and \(-x\) direction. Then,
+\[\phi(k) = \sqrt{\frac{a}{2\pi}}\left(\bint{0}{\infty}{e^{ikx-ax}}{x} + \bint{0}{\infty}{e^{-ikx - ax}}{x}\right).\]
+These are deceptively simple integrals and evaluate to
+\begin{align*}
+\phi(k) &= \sqrt{\frac{a}{2\pi}}\left[
+    e^{-ax}\left(
+    \frac{e^{ikx}}{ik-a}
+    + \frac{e^{-ikx}}{ik+a}
+    \right)
+\right]_0^\infty.
+\\&= \sqrt{\frac{a}{2\pi}}\left(0 - \frac{1}{ik-a} - \frac{1}{ik+a} \right)
+\\&= -\sqrt{\frac{a}{2\pi}}\left(\frac{(ik+a) - (ik-a)}{(ik-a)(ik+1)}\right)
+\\&= -\sqrt{\frac{a}{2\pi}}\frac{2a}{(ik-a)(ik+a)}
+\\&= \frac{1}{k^2 + a^2} \sqrt{\frac{2a^3}{\pi}}.
+\end{align*}
 
 \item Construct \(\Psi(x,t)\) in the form of an integral.
 
-
+The full wavefunction is then given by
+\begin{align*}
+\Psi(x,t) &= \frac{1}{\sqrt{2\pi}}\bint{-\infty}{\infty}{\phi(k)e^{i(kx- \frac{\hbar k^2}{2m}t)}}{k}
+\\&= \frac{a^{3/2}}{\pi} \bint{-\infty}{\infty}{\frac{\exp\left[i\left(kx - \frac{\hbar k^2}{2m}t\right)\right]}{k^2 + a^2}}{k}.
+\end{align*}
 
 \item Evaluate the integral for \(\Psi(x,t)\) in the limiting cases of a very large \(a\) and a very small \(a\).
 
@@ -52,7 +78,16 @@ Thus, \(A=\sqrt{a}\).
 \pagebreak
 \item As we discussed in class, the time-independent Schr{\"o}dinger equation for the free particle has solutions that look like \(Ae^{ikx} + Be^{-ikx}\) or like \(C\cos(kx) + D\sin(kx)\). Show that these are equivalent solutions. Determine what the constants \(C\) and \(D\) are as a function of \(A\) and \(B\) and vice versa.
 
-
+We begin with the Euler formula:
+\begin{align*}
+Ae^{ikx} + Be^{-ikx} &= A\left(\cos(kx) + i \sin(kx)\right) + B\left(\cos(-kx) + i\sin(-kx)\right)
+\\&= A\cos(kx) + B\cos(kx) + Ai\sin(kx) - Bi\sin(kx)
+\\&= (A+B)\cos(kx) + (A-B)i\sin(kx).
+\end{align*}
+Thus,
+\[C = A+B,\quad D=i(A-B).\]
+Some simple arrangement yields
+\[A = \frac{C-D}{2}, \quad B = \frac{C+D}{2}.\]
 
 \pagebreak
 \item Consider a bead with mass \(m\) that slides frictionlessly around a circular wire ring with circumference \(L\). We can think about this problem like a free particle assuming boundary condition of the form \(\psi(x+L) = \psi(x)\). Determine the normalized stationary states and their corresponding energies. You should find two distinct solutions for each energy (so there is a two-fold degeneracy in this system). These two states represent clockwise and counter-clockwise rotation.
