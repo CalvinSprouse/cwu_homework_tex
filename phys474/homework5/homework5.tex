@@ -72,8 +72,6 @@ The full wavefunction is then given by
 
 \item Evaluate the integral for \(\Psi(x,t)\) in the limiting cases of a very large \(a\) and a very small \(a\).
 
-
-
 \end{enumerate}
 \pagebreak
 \item As we discussed in class, the time-independent Schr{\"o}dinger equation for the free particle has solutions that look like \(Ae^{ikx} + Be^{-ikx}\) or like \(C\cos(kx) + D\sin(kx)\). Show that these are equivalent solutions. Determine what the constants \(C\) and \(D\) are as a function of \(A\) and \(B\) and vice versa.
@@ -89,20 +87,42 @@ Thus,
 Some simple arrangement yields
 \[A = \frac{C-D}{2}, \quad B = \frac{C+D}{2}.\]
 
-\pagebreak
 \item Consider a bead with mass \(m\) that slides frictionlessly around a circular wire ring with circumference \(L\). We can think about this problem like a free particle assuming boundary condition of the form \(\psi(x+L) = \psi(x)\). Determine the normalized stationary states and their corresponding energies. You should find two distinct solutions for each energy (so there is a two-fold degeneracy in this system). These two states represent clockwise and counter-clockwise rotation.
 
-
+We begin with the TISE with \(V(x)=0\), \(k^2=2mE/\hbar^2\), and some typical re-arrangement has been done:
+\[\diff[2]{\psi}{x} = -k^2\psi.\]
+This differential equation has general solutions of the form
+\[\psi(x) = Ae^{ikx} + Be^{-ikx}.\]
+We apply the boundary condition \(\psi(x+L) = \psi(x)\):
+\[A\exp\left(ik(x+L)\right) + B\exp\left(-ik(x+L)\right) = A\exp\left(ikx\right) + B\exp\left(-ikx\right).\]
+This is arranged to the (hopefully useful) form
+\[A\exp(ikx)\left(\exp(ikL)-1\right) = B\exp(-ikx)\left(1-\exp(-ikL)\right).\]
+To find the coefficients \(A\) and \(B\) we exploit the fact that this is valid for all \(x\). Let \(x=0\); then,
+\[A\left(\exp(ikL) - 1\right) = B\left(1-\exp(-ikL)\right),\]
+which on its own does not tell us much. Since we are trapped on a circular ring a displacement \(L\) corresponds to \(2\pi\) radians. Thus, \(kL=2\pi\). As cool as this is to notice substituting \(x=L\) and applying the relation \(kL=2\pi\) yields the extremely insightful expression \(0=0\). We instead let \(x=L/2\); then,
+\[Ae^{i\pi}\left(e^{i\pi}-1\right) = Be^{-i\pi}\left(1 - e^{-i\pi}\right) \Rightarrow A = -B.\]
+Then,
+\begin{align*}
+0 &= A\left(\exp(ikL) - 1\right) + B\left(\exp(-ikL)-1\right)
+\\&= A\left(\exp(ikL) - 1\right) -A\left(\exp(-ikL)-1\right)
+\\&= A\left(e^{ikL}-e^{-ikL}\right)
+\\&= i2A\sin(kL).
+\end{align*}
+Iff \(A\ne 0\), \(kL=n\pi\) where \(n\in\ints^+\). From the earlier definition of \(k\) we find
+\[E = \frac{k^2\hbar^2}{2m} = \frac{n^2 \pi^2 \hbar^2}{2mL^2}.\]
 
 \pagebreak
 \item Consider a particle interacting with a potential energy given by
 \[V(x)\begin{cases}
-\infty, & x < 0 \\ -\alpha\delta(x-a), & x>0
+\infty, & x < 0 \\ -\alpha\delta(x-b), & x>0
 \end{cases}\]
 \begin{enumerate}
-\item Determine the bound-state solutions (assume \(E<0\)) to the time-independent Schr{\"o}dinger equation in three different regions of \(x\): \(x<0\), \(0 \le x \le a\), and \(x > a\). Define \(K^2=-2mE/\hbar^2\) in your solutions.
+\item Determine the bound-state solutions (assume \(E<0\)) to the time-independent Schr{\"o}dinger equation in three different regions of \(x\): \(x<0\), \(0 \le x \le b\), and \(x > b\). Define \(K^2=-2mE/\hbar^2\) in your solutions.
 
-
+I'm going to argue that solutions should be independent of \(b\) (\(a\) in the original problem) since \(b\) only moves the Dirac-delta well. Assuming that's true we can take steps from \S 2.6 The Finite Square Well in the limit \(a\to 0\). Thus,
+\[\psi(x)=\begin{cases}
+Fe^{-kx}, & x > b, \\ D\cos(lx), & 0 < x < b, \\ 0, & x < 0.
+\end{cases}\]
 
 \item Demand continuity of the wavefunctions at \(x=0\) and \(x=a\) to reduce the number of unknown constant parameters.
 
