@@ -119,14 +119,23 @@ Iff \(A\ne 0\), \(kL=n\pi\) where \(n\in\ints^+\). From the earlier definition o
 \begin{enumerate}
 \item Determine the bound-state solutions (assume \(E<0\)) to the time-independent Schr{\"o}dinger equation in three different regions of \(x\): \(x<0\), \(0 \le x \le b\), and \(x > b\). Define \(K^2=-2mE/\hbar^2\) in your solutions.
 
-I'm going to argue that solutions should be independent of \(b\) (\(a\) in the original problem) since \(b\) only moves the Dirac-delta well. Assuming that's true we can take steps from \S 2.6 The Finite Square Well in the limit \(a\to 0\). Thus,
-\[\psi(x)=\begin{cases}
-Fe^{-kx}, & x > b, \\ D\cos(lx), & 0 < x < b, \\ 0, & x < 0.
-\end{cases}\]
+In region 1 the potential is infinite so the particle cannot exist there, thus
+\[\psi_1(x)=0.\]
+In region 2 following the example in \S2.6
+\[\psi_{2}(x) = B\exp(-Kx).\]
+Similarly, in region 3
+\[\psi_{3}(x) = F\exp(-Kx).\]
 
 \item Demand continuity of the wavefunctions at \(x=0\) and \(x=a\) to reduce the number of unknown constant parameters.
 
+The first continuity dictates that \(\psi_1(0) = \psi_2(0)\):
+\[0 = B\exp(-K\times0) = B.\]
+Thus, \(B=0\).
+The second continuity dictates that \(\psi_2(a)=\psi_3(a)\):
+\[0 = F\exp(-K a).\]
+Thus, \(F=0\) or \(K=\infty\) or \(a=\infty\). The only physically reasonable solution is that \(F=0\). Unfortunately we are forced to conclude that no particle can exist in this type of potential, but that doesnt make a lot of sense.
 
+I appreciate the extension but I've been at this for awhile so I'm going to take this as my dropped homework and come to some office hours.
 
 \item Show that the discontinuity in the derivative of the wavefunctions at \(x=a\) is given by
 \[\left.\diff{\psi}{x}\right|_{a+\epsilon} - \left.\diff{\psi}{x}\right|_{a-\epsilon} = - \frac{2m\alpha}{\hbar^2}\psi(a).\]
