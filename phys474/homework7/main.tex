@@ -1,0 +1,79 @@
+% document style header
+\documentclass[a4paper, 12pt]{config/homework}
+
+% import default packages
+\usepackage{config/defpackages}
+% import custom math commands
+\usepackage{config/domath}
+
+% end preamble
+\begin{document}
+
+% document title
+\noindent
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
+Calvin Sprouse & PHYS474 Homework 7 & 2024 February 26\\
+\midrule
+\end{tabularx}
+
+% homework problems begin
+\begin{enumerate}
+\item Determine the eigenfunctions and eigenvalues of the operator
+\[\hat{Q} = \diff[2]{}{\phi}\]
+where \(\phi\) is the angle in polar coordinates. Due to the rotational symmetry of the problem, your eigenfunctions, \(f\), should satisfy the boundary condition
+\[f(\phi) = f(\phi + 2\pi).\]
+Is the spectrum of eigenvalues degenerate or non-degenerate?
+
+
+
+\pagebreak
+\item Suppose that \(f(x)\) and \(g(x)\) are both eigenfunctions of an operator \(\hat{Q}\). The spectrum is degenerate such that both \(f(x)\) and \(g(x)\) have the same eigenvalue, \(q\).
+\begin{enumerate}[label=(\alph*.)]
+\item  Prove that any linear combination of \(f(x)\) and \(g(x)\) is also an eigenfunction of \(Q\). What is its eigenvalue?
+
+
+
+\item An anti-hermitian operator obeys the following condition:
+\[\hat{Q}^\dagger = -\hat{Q}.\]
+Show that the expectation value of an anti-hermitian operator is imaginary.
+
+
+
+\item Show that the commutator of two hermitian operators is anti-hermitian.
+
+
+
+\item Show that the commutator of two anti-hermitian operators is also anti-hermitian.
+
+
+
+\end{enumerate}
+\pagebreak
+\item We have two operators \(\hat{A}\) and \(\hat{B}\) each with two eigenstates. The eigenstates and corresponding eigenvalues are characterized by the equations
+\begin{align*}
+\hat{A}\psi_1 &= a_1 \psi_1, \\
+\hat{A}\psi_2 &= a_2 \psi_2, \\
+\hat{B}\phi_1 &= b_1 \phi_1, \\
+\hat{B}\phi_2 &= b_2 \phi_2.
+\end{align*}
+Suppose we know that the eigenstates for each operator are related by
+\begin{align*}
+\psi_1 &= \frac{1}{5}\left(3\phi_1 + 4\phi_2\right), \\
+\psi_2 &= \frac{1}{5}\left(4\phi_1 - 3\phi_2\right).
+\end{align*}
+\begin{enumerate}[label=(\alph*.)]
+\item If observable \(A\) is measured and we obtain a value of \(a_1\), what is the state of the system in the instant after the measurement was made?
+
+
+
+\item If \(B\) is now measured following the measurement in part (a.), what are the possible results and what are their associated probabilities?
+
+
+
+\item If we measure \(A\) again immediately following the measurement of \(B\) in part (b.), what is the probability of obtaining \(a_1\)? This is tricky because we do not know what value of \(B\) we obtained in part (b.).
+
+
+
+\end{enumerate}
+\end{enumerate}
+\end{document}
