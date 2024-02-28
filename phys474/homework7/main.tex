@@ -12,7 +12,7 @@
 % document title
 \noindent
 \begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
-Calvin Sprouse & PHYS474 Homework 7 & 2024 February 26\\
+Calvin Sprouse & PHYS474 Homework 7 & 2024 February 28\\
 \midrule
 \end{tabularx}
 
@@ -70,15 +70,40 @@ That is, a linear combination of eigenfunctions of \(\hat{Q}\), each with eigenv
 \[\hat{Q}^\dagger = -\hat{Q}.\]
 Show that the expectation value of an anti-hermitian operator is imaginary.
 
-
+\begin{align*}
+\langle Q \rangle &= \bra*{f}\hat{Q}\ket*{f}
+\\&= \langle \hat{Q}^\dagger f | f \rangle
+\\&= - \langle \hat{Q} f | f \rangle
+\\&= - \left( \langle f | \hat{Q} f \rangle \right)^*
+\\&= - \langle Q \rangle^*.
+\end{align*}
 
 \item Show that the commutator of two hermitian operators is anti-hermitian.
 
-
+Let \(\hat{A}\) and \(\hat{B}\) be hermitian operators.
+% Given \[\left(\hat{A}\hat{B}\right)^\dagger = \hat{B}^\dagger \hat{A}^\dagger,\]
+The commutator of \(\hat{A}\) and \(\hat{B}\) is given by
+\begin{align*}
+\left[\hat{A}, \hat{B}\right] &= \hat{A}\hat{B} - \hat{B}\hat{A}
+\\&= \hat{A}^\dagger \hat{B}^\dagger - \hat{B}^\dagger \hat{A}^\dagger
+\\&= \left(\hat{B}\hat{A}\right)^\dagger - \left(\hat{A}\hat{B}\right)^\dagger
+\\&= -\left(\hat{A}\hat{B} - \hat{B}\hat{A}\right)^\dagger
+\\&= -\left[\hat{A}, \hat{B}\right]^\dagger.
+\end{align*}
 
 \item Show that the commutator of two anti-hermitian operators is also anti-hermitian.
 
-
+Let \(\hat{A}\) and \(\hat{B}\) be anti-hermitian operators.
+% Given \[\left(\hat{A}\hat{B}\right)^\dagger = \hat{B}^\dagger \hat{A}^\dagger,\]
+The commutator of \(\hat{A}\) and \(\hat{B}\) is given by
+\begin{align*}
+\left[\hat{A}, \hat{B}\right] &= \hat{A}\hat{B} - \hat{B}\hat{A}
+\\&= \hat{A}^\dagger \hat{B}^\dagger - \hat{B}^\dagger \hat{A}^\dagger
+\\&= \left(\hat{B}\hat{A}\right)^\dagger - \left(\hat{A}\hat{B}\right)^\dagger
+\\&= -\left(\hat{A}\hat{B} - \hat{B}\hat{A}\right)^\dagger
+\\&= -\left[\hat{A}, \hat{B}\right]^\dagger.
+\end{align*}
+Because the commutator is the product of two operators if both are anti-hermitian the minus-sign has no effect. Thus this has the same form as in part (c.).
 
 \end{enumerate}
 \pagebreak
@@ -121,7 +146,7 @@ Futhermore, we can define a new quantum state, \(\xi \), based on the unknown ou
 \\&= \psi_1.
 \end{align*}
 This, however, is wrong\footnote{Realization that this was wrong required a lot of ``this cant be right'' type thoughts followed by a probability tree from my prior stats class. I feel like there is some interpretation to be had here given that I returned \(\psi_1\) which was the wavefunction I started with.}. For as cool of a result as this would be it neglects the fact that measurement of \(B\) changes the wavefunction so we cannot construct \(\xi \) in this way. I kept this in the response because I thought it was neat.
-We instead must consider the probability of measuring \(\psi_1\) given \(\phi_1\) or \(\phi_2\), \(P\left(\psi_1 \mid \phi_n\right)\).
+We instead must consider the probability of measuring \(\psi_1\) given \(\phi_1\) or \(\phi_2\), \(P\left(\psi_1 \mid \phi_n\right)\). This is simply the product of the probability of making the first measurement, \(\phi_n\), and the probability of making the measurement \(\psi_1\).
 \begin{align*}
 P\left(\psi_1 \mid \phi_1\right) &= \frac{9}{25}\left|\frac{3}{5}\right|^2 = \frac{81}{625}, \\
 P\left(\psi_1 \mid \phi_2\right) &= \frac{16}{25}\left|\frac{4}{5}\right|^2 = \frac{256}{625}.
