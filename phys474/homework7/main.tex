@@ -20,18 +20,51 @@ Calvin Sprouse & PHYS474 Homework 7 & 2024 February 26\\
 \begin{enumerate}
 \item Determine the eigenfunctions and eigenvalues of the operator
 \[\hat{Q} = \diff[2]{}{\phi}\]
-where \(\phi\) is the angle in polar coordinates. Due to the rotational symmetry of the problem, your eigenfunctions, \(f\), should satisfy the boundary condition
+where \(\phi \) is the angle in polar coordinates. Due to the rotational symmetry of the problem, your eigenfunctions, \(f\), should satisfy the boundary condition
 \[f(\phi) = f(\phi + 2\pi).\]
+
+The eigenvalue equation
+\[\hat{Q}f = qf,\]
+where \(q\) is the eigenvalue, has the general solution
+\[f=Ae^{q^b \phi}.\]
+Then,
+\[\diff[2]{f}{\phi} = \left(q^b\right)^2 Ae^{q^b \phi} = \left(q^b\right)^2 f,\]
+where \(\left(q^b\right)^2\) is the eigenvalue yielding the condition
+\[\left(q^b\right)^2 = q.\]
+Thus, \(b=1/2\). Thusly the eigenfunction \(f\) is given by
+\[f = A\exp\left(\sqrt{q}\phi\right).\]
+We apply the boundary condition by letting \(\phi=0\). Thus, having neglected the amplitudes which are constant,
+\[1 = \exp\left(\sqrt{q}2\pi\right).\]
+This is satisfied for
+\[\sqrt{q}2\pi = in 2\pi.\]
+Thus,
+\[q = -n^2.\]
+
 Is the spectrum of eigenvalues degenerate or non-degenerate?
 
-
+The spectrum of eigenvalues, \(n\in\ints \), is degenerate for \(n\ne 0\).
 
 \pagebreak
 \item Suppose that \(f(x)\) and \(g(x)\) are both eigenfunctions of an operator \(\hat{Q}\). The spectrum is degenerate such that both \(f(x)\) and \(g(x)\) have the same eigenvalue, \(q\).
 \begin{enumerate}[label=(\alph*.)]
 \item  Prove that any linear combination of \(f(x)\) and \(g(x)\) is also an eigenfunction of \(Q\). What is its eigenvalue?
 
-
+\begin{proof}
+Let \(f(x)\) and \(g(x)\) be defined as eigenfunctions of an operator \(\hat{Q}\) such that
+\[\hat{Q}f=qf, \quad \hat{Q}g = qg.\]
+Furthermore let \(a,b\in\reals \) be given. Then, let \(j(x)\) be a function defined as a linear combination of \(f\) and \(g\) such that
+\[j(x) = af(x) + bg(x).\]
+Then,
+\begin{align*}
+\hat{Q}j &= \hat{Q}\left[af + bg\right] \\
+&= \hat{Q}af + \hat{Q}bg \\
+&= a\hat{Q}f + b\hat{Q}g \\
+&= aqf + bqg \\
+&= q\left(af + bg\right) \\
+&= qj.
+\end{align*}
+That is, a linear combination of eigenfunctions of \(\hat{Q}\), each with eigenvalue \(q\), is also an eigenfunction of \(\hat{Q}\) with eigenvalue \(q\).
+\end{proof}
 
 \item An anti-hermitian operator obeys the following condition:
 \[\hat{Q}^\dagger = -\hat{Q}.\]
@@ -64,15 +97,37 @@ Suppose we know that the eigenstates for each operator are related by
 \begin{enumerate}[label=(\alph*.)]
 \item If observable \(A\) is measured and we obtain a value of \(a_1\), what is the state of the system in the instant after the measurement was made?
 
-
+To measure \(a_1\) the system must be in state \(\psi_1\). Therefore, a measurement of \(a_1\) puts the system in state \(\psi_1\).
 
 \item If \(B\) is now measured following the measurement in part (a.), what are the possible results and what are their associated probabilities?
 
-
+Before measurement the system is in state \(\psi_1\) which is a linear combination of the states \(\phi_1\) and \(\phi_2\). The probability of measuring each of these states, \(P(\phi_n)\), is given by the square of their amplitudes. Thus,
+\begin{align*}
+P(\phi_1) &= \left|\frac{3}{5}\right|^2 = \frac{9}{25}, \\
+P(\phi_2) &= \left|\frac{4}{5}\right|^2 = \frac{16}{25}.
+\end{align*}
 
 \item If we measure \(A\) again immediately following the measurement of \(B\) in part (b.), what is the probability of obtaining \(a_1\)? This is tricky because we do not know what value of \(B\) we obtained in part (b.).
 
-
+Expressing \(\phi_1\) and \(\phi_2\) as linear combinations of \(\psi_1\) and \(\psi_2\) we have
+\begin{align*}
+\phi_1 &= \frac{3}{5}\psi_1 + \frac{4}{5}\psi_2, \\
+\phi_2 &= \frac{4}{5}\psi_1 - \frac{3}{5}\psi_2.
+\end{align*}
+Futhermore, we can define a new quantum state, \(\xi \), based on the unknown outcome of measuring the observable \(B\). This quantum state will be a superposition of outcomes of a measurement of \(B\) with amplitudes given by the root of the probability of measuring that quantum state. That is,
+\begin{align*}
+\xi &= \frac{3}{5}\phi_1 + \frac{4}{5}\phi_2
+\\&= \frac{3}{5}\left(\frac{3}{5}\psi_1 + \frac{4}{5}\psi_2\right) + \frac{4}{5}\left(\frac{4}{5}\psi_1 - \frac{3}{5}\psi_2\right)
+\\&= \psi_1.
+\end{align*}
+This, however, is wrong\footnote{Realization that this was wrong required a lot of ``this cant be right'' type thoughts followed by a probability tree from my prior stats class. I feel like there is some interpretation to be had here given that I returned \(\psi_1\) which was the wavefunction I started with.}. For as cool of a result as this would be it neglects the fact that measurement of \(B\) changes the wavefunction so we cannot construct \(\xi \) in this way. I kept this in the response because I thought it was neat.
+We instead must consider the probability of measuring \(\psi_1\) given \(\phi_1\) or \(\phi_2\), \(P\left(\psi_1 \mid \phi_n\right)\).
+\begin{align*}
+P\left(\psi_1 \mid \phi_1\right) &= \frac{9}{25}\left|\frac{3}{5}\right|^2 = \frac{81}{625}, \\
+P\left(\psi_1 \mid \phi_2\right) &= \frac{16}{25}\left|\frac{4}{5}\right|^2 = \frac{256}{625}.
+\end{align*}
+We then sum these two probabilities to find the probability of measuring \(\psi_1\) after making some measurement of observable \(B\):
+\[P(\psi_1) = \frac{81}{625} + \frac{256}{625} = \frac{337}{625}.\]
 
 \end{enumerate}
 \end{enumerate}
