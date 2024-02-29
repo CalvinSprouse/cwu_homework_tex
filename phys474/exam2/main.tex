@@ -1,0 +1,52 @@
+% document style header
+\documentclass[a4paper, 12pt]{config/homework}
+
+% import default packages
+\usepackage{config/defpackages}
+% import custom math commands
+\usepackage{config/domath}
+
+% end preamble
+\begin{document}
+
+% document title
+\noindent
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
+Calvin Sprouse & PHYS474 Exam 2 & 2024 February 29\\
+\midrule
+\end{tabularx}
+
+% homework problems begin
+\vspace{\baselineskip}\noindent
+An electron is sent from \(x\to-\infty \) towards a potential barrier,
+\[V(x) = \begin{cases}
+0, & x < 0, \\ V_0, & x > 0.
+\end{cases}\]
+The electron's energy is \(E>V_0\).
+\begin{enumerate}[label=(\alph*.)]
+\item (\textit{5 points}) Solve the time-independent Schr{\"o}dinger equation for \(\psi_\text{I}(x)\) and \(\psi_\text{II}(x)\), solutions for \(x<0\) and \(x>0\) respectively. Like we did n class for finite square-wells, combine the collection of constants, \(\hbar,m,V_0\), and \(E\), into real quantities \(k,\ell\in\reals \).
+
+
+
+\item (\textit{5 points}) Apply boundary conditions at \(x=0\) and solve for the reflection and transmission coefficients \(R\) and \(T\). Remember that these coefficients are defined
+\[R \equiv \frac{|B|^2}{|A|^2}, \quad T\equiv\frac{|F|^2}{|A|^2},\]
+where \(A\) is the incident amplitude, \(B\) is the reflected amplitude, and \(F\) is the transmitted amplitude.
+
+
+
+\item (\textit{2 points}) Using your results from part (b.), calculate \(R+T\). What do you expect \(R+T\) should equal? Do you have any ideas for why \(R+T\) gives an unexpected answer in this case?
+
+
+
+\item (\textit{5 points}) Calculate a quantity called the probability current,
+\[j(x) \equiv \frac{i\hbar}{2m}\left[\psi\diffp{\psi^*}{x} - \psi^*\diffp{\psi}{x}\right],\]
+on both sides of the barrier. Let \(j_\text{I}(x)\) be the probability current for \(x<0\) and \(j_\text{II}(x)\) be the probability current for \(x>0\). Evaluate them at \(x=0\); that is, \(j_\text{I}(0)\) and \(j_\text{II}(0)\). Don't forget that \(A,B\), and \(F\) could be complex.
+
+
+
+\item (\textit{3 points}) It must be true that \(j_\text{I}(0)=j_\text{II}(0)\). Construct an equation using this conservation rule and your answers from part (d.). Divide this equation by \(|A|^2\) and rearrange it so that you determine what linear combination of \(R\) and \(T\) sums to 1.
+
+
+
+\end{enumerate}
+\end{document}
