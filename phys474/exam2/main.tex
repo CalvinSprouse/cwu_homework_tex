@@ -18,36 +18,134 @@ Calvin Sprouse & PHYS474 Exam 2 & 2024 February 29\\
 
 % homework problems begin
 \vspace{\baselineskip}\noindent
-An electron is sent from \(x\to-\infty \) towards a potential barrier,
+An electron with energy \(E>V_0\) is sent from \(x\to-\infty \) towards a potential barrier,
 \[V(x) = \begin{cases}
 0, & x < 0, \\ V_0, & x > 0.
 \end{cases}\]
-The electron's energy is \(E>V_0\).
 \begin{enumerate}[label=(\alph*.)]
 \item (\textit{5 points}) Solve the time-independent Schr{\"o}dinger equation for \(\psi_\text{I}(x)\) and \(\psi_\text{II}(x)\), which are solutions for \(x<0\) and \(x>0\) respectively. Like we did in class for finite square-wells, combine the collection of constants, \(\hbar,m,V_0\), and \(E\), into real quantities \(k,\ell\in\reals \).
 
+We begin in region 1, \(x<0\). Here \(V(x)=0\) so we obtain the typical free particle solutions detailed in Griffiths Eq.~2.93:
+\[\psi_\text{I}(x)=A\exp\left[ikx\right]+B\exp\left[-ikx\right],\]
+where
+\[k \equiv \sqrt{\frac{2mE}{\hbar}}.\]
+We will not be simplifying this to a single particle because we will have to consider reflections from a particle traveling in the \(+x\) direction which will become our \(-x\) traveling wave.
 
+In region 2, \(x>0\), our situation is equivalent to being inside of the finite square well. Thus, we can take Griffiths Eq.~2.152 expressed in the equivalent exponential form which is more convenient for modeling traveling particles.
+\[\psi_\text{II}(x) = C\exp[i\ell x] + D\exp[-i\ell x],\]
+where we define \(\ell \) Griffiths Eq.~2.151 with the sign of \(V_0\) switched:
+\[\ell \equiv \sqrt{\frac{2m(E-V_0)}{\hbar}}.\]
+Much like in region one the first term, \(C\) represents a particle traveling to the right and \(D\) a particle traveling to the left. Once inside the potential there will be no further reflection because \(V(x)\) remains constant. Therefore we take \(D=0\). For consistency with later problems \(C=F\), the amplitude of the transmitted wave.
 
+Thus,
+\[\psi(x) = \begin{cases}
+A\exp\left[ikx\right]+B\exp\left[-ikx\right], & x<0, \\ F\exp[i\ell x], & x>0.
+\end{cases}\]
+
+\vspace{\baselineskip}
 \item (\textit{5 points}) Apply boundary conditions at \(x=0\) and solve for the reflection and transmission coefficients \(R\) and \(T\). Remember that these coefficients are defined
 \[R \equiv \frac{|B|^2}{|A|^2}, \quad T\equiv\frac{|F|^2}{|A|^2},\]
 where \(A\) is the incident amplitude, \(B\) is the reflected amplitude, and \(F\) is the transmitted amplitude.
 
+We begin with the continuity of \(\psi \) at \(x=0\). That is,
+\[\psi_\text{I}(0) = \psi_\text{II}(0) \Rightarrow A+B = F.\]
+Then the continuity of the first derivative of \(\psi \) with respect to \(x\):
+\begin{align*}
+\left. \diff{}{x}\psi_\text{I} \right|_{x=0} &= iAk - iBk, \\
+\left. \diff{}{x}\psi_\text{II} \right|_{x=0} &= iF\ell.
+\end{align*}
+Then,
+\[\left. \diff{}{x}\psi_\text{I} \right|_{x=0} = \left. \diff{}{x}\psi_\text{II} \right|_{x=0} \Rightarrow k(A-B) = \ell F.\]
 
+The reflection coefficient \(R\) is given by
+\[R = \frac{|B|^2}{|A|^2} = \left| \frac{B}{A} \right|^2.\]
+The continuity of the derivative can be expressed as
+\[F = \frac{k}{\ell}(A-B).\]
+Then,
+\begin{align*}
+0 &= F-F
+\\&= A+B - \frac{k}{\ell}(A-B)
+\\&= A - \frac{k}{\ell} + B + \frac{k}{\ell}B
+\\&= A \left(1 - \frac{k}{\ell}\right) + B\left(1 + \frac{k}{\ell}\right).
+\end{align*}
+Thus,
+\[\frac{B}{A} = - \frac{1-\frac{k}{\ell}}{1 + \frac{k}{\ell}} = - \frac{\ell -k}{\ell + k}.\]
+We return to \(R\), substituting and simplifying with this new expression,
+\[R = \left| - \frac{\ell - k}{\ell + k} \right|^2.\]
+Since \(\ell \) and \(k\) are real numbers, and the square of any real number is real and positive, we can simplify \(R\) to
+\[R = \left( \frac{\ell - k}{\ell + k}\right)^2.\]
+The transmission coefficient, \(T\), is simpler. \(T\) is given by
+\begin{align*}
+T &= \frac{|F|^2}{|A|^2}
+\\&= \left| \frac{A + B}{A} \right|^2
+\\&= \left| 1 + \frac{B}{A} \right|^2
+\\&= \left| 1 - \frac{\ell - k}{\ell + k} \right|^2
+\\&= \left| 1 - \sqrt{R} \right|^2
+\\&= \left( 1 - \sqrt{R} \right)^2.
+\end{align*}
 
+\vspace{\baselineskip}
 \item (\textit{2 points}) Using your results from part (b.), calculate \(R+T\). What do you expect \(R+T\) should equal? Do you have any ideas for why \(R+T\) gives an unexpected answer in this case?
 
-Given that \(R\) and \(T\) are interpreted as probabilities, and that a particle can only be reflected or transmitted at a barrier, we should expect
-\(R + T = 1. \)
+\begin{align*}
+R + T &= R + \left( 1 - \sqrt{R} \right)^2
+\\&= R + 1 - 2\sqrt{R} + R
+\\&= 1 - 2\sqrt{R} + 2R.
+\end{align*}
 
+Given that \(R\) and \(T\) are interpreted as probabilities and that there are two possibilities at an interface, transmission or reflection, I expect \(T+R=1\). Hope is not yet lost though. If we require this to be true, then \(R = \sqrt{R}.\)
+This is satisfied for \(R=0\) or \(R=1\) which would, under this assumption, correspond to total transmission or total reflection respectively. Going along with this, \(R=0\) implies \(\ell=k\) which by inspection of \(\ell \) and \(k\) could be approximately true if \(E >> V_0\). If this is not the case then we might say \(R=1\), that the particle is not transmitted at all. We know of course that this is not true either. Since \(\ell \) and \(k\) are both related to the energy \(E\) the dubious uncertainty proposal may be invoked. An uncertainty in \(E\) would translate to an uncertainty in the value of \(R\) and \(T\) thus permitting \(R+T\ne 0\). We could, in theory, arrange \(R+T\) to find an expression for \(E\) and relate it to the non-one-ness of \(R+T\).
+
+\vspace{\baselineskip}
 \item (\textit{5 points}) Calculate a quantity called the probability current,
 \[j(x) \equiv \frac{i\hbar}{2m}\left[\psi\diffp{\psi^*}{x} - \psi^*\diffp{\psi}{x}\right],\]
 on both sides of the barrier. Let \(j_\text{I}(x)\) be the probability current for \(x<0\) and \(j_\text{II}(x)\) be the probability current for \(x>0\). Evaluate them at \(x=0\); that is, \(j_\text{I}(0)\) and \(j_\text{II}(0)\). Don't forget that \(A,B\), and \(F\) could be complex.
 
+Beginning with region 1, \(x<0\), we first calculate \(\psi^*\) and derivatives:
+\begin{align*}
+\psi &= A\exp[ikx] + B\exp[-ikx] \\
+\psi^* &= A^*\exp[-ikx] + B^*\exp[-ikx] \\
+\diffp{\psi}{x} &= ikA\exp[ikx] - ikB\exp[-ikx] \\
+\diffp{\psi^*}{x} &= -ikxA^*\exp[-ikx] + ikB\exp[ikx].
+\end{align*}
+Then,
+\begin{align*}
+j_\text{I}(x) &= \frac{i\hbar}{2m}\left[\psi\diffp{\psi^*}{x} - \psi^*\diffp{\psi}{x}\right]
+\\&= \frac{i\hbar}{2m}\left[-2ik|A|^2 + 2ik|B|^2\right]
+\\&= \frac{k\hbar}{m}\left(|A|^2 - |B|^2\right).
+\end{align*}
 
+Now onto region 2, \(x>0\), we again calculate \(\psi^*\) and derivatives:
+\begin{align*}
+\psi &= F\exp[i\ell x] \\
+\psi^* &= F^*\exp[-i\ell x] \\
+\diffp{\psi}{x} &= i\ell F \exp[i\ell x] \\
+\diffp{\psi^*}{x} &= -i\ell F^* \exp[-i\ell x].
+\end{align*}
+Then,
+\begin{align*}
+j_\text{II}(x) &= \frac{i\hbar}{2m}\left[\psi\diffp{\psi^*}{x} - \psi^*\diffp{\psi}{x}\right]
+\\&= \frac{i\hbar}{2m}\left[-2i\ell|F|^2\right]
+\\&= \frac{\ell \hbar}{m}|F|^2.
+\end{align*}
 
+\vspace{\baselineskip}
 \item (\textit{3 points}) It must be true that \(j_\text{I}(0)=j_\text{II}(0)\). Construct an equation using this conservation rule and your answers from part (d.). Divide this equation by \(|A|^2\) and rearrange it so that you determine what linear combination of \(R\) and \(T\) sums to 1.
 
-
-
+This conservation rule is equivalently expressed as
+\begin{align*}
+0 &= j_\text{I}(0) - j_\text{II}(0)
+\\&= \frac{k\hbar}{m}\left(|A|^2 - |B|^2\right) - \frac{\ell\hbar}{m}|F|^2
+\\&= k\left(|A|^2-|B|^2\right) - \ell|F|^2.
+\end{align*}
+Dividing both sides by \(|A|^2\) yields
+\begin{align*}
+0 &= k\frac{|A|^2 - |B|^2}{|A|^2} - \ell\frac{|F|^2}{|A|^2}
+\\&= k\left(1 - \frac{|B|^2}{|A|^2}\right) - \ell\frac{|F|^2}{|A|^2}
+\\&= k\left(1 - R\right) - \ell T.
+\end{align*}
+This in turn tells us
+\[R + \frac{\ell}{k}T = 1.\]
+This is even in agreement with the wild tangent above. That \(R=0\) implies \(\ell=k\) which is the case of complete transmission. We can recognize that this is a classical limit. Both because \(E>>V_0\) means we are dealing with high energy particles and because complete transmission is what we expect of a classical system setup with this potential barrier.
 \end{enumerate}
 \end{document}
