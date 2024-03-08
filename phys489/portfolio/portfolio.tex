@@ -1,0 +1,129 @@
+% document style header
+\documentclass[a4paper, 12pt]{article}
+
+% for inserting pages
+\usepackage{pdfpages}
+
+% for custom headers
+\usepackage[margin=1in]{geometry}
+\usepackage{eso-pic}
+\usepackage{background} % Added package for background page number
+\backgroundsetup{
+    scale=1,
+    angle=0,
+    position=current page.south east,
+    vshift=10pt,
+    hshift=-10pt,
+    color=black,
+    opacity=1,
+    contents={\thepage}
+}
+
+% for custom headers
+\usepackage[margin=1in]{geometry}
+\usepackage{eso-pic}
+\newcommand\myheader[1]{%
+    \AddToShipoutPictureBG*{%
+        \AtPageUpperLeft{%
+            \raisebox{-\height-0.5cm}{\makebox[\paperwidth][l]{\hspace{0.25cm}\normalfont\large #1}}}%
+    }%
+}
+
+% end preamble
+\begin{document}
+\pagestyle{empty}
+
+% title page
+\includepdf[pages=-]{title_page.pdf}
+
+% table of contents
+\newpage
+\tableofcontents
+\newpage
+
+% Add "Reflections" to the table of contents
+\addcontentsline{toc}{section}{Reflections}
+
+% reflections
+% 1A
+\addcontentsline{toc}{subsection}{Goal 1A}
+\includepdf[pages=1]{../goal1a/a1reflection.pdf}
+
+% 1B
+\addcontentsline{toc}{subsection}{Goal 1B}
+\includepdf[pages=1]{../goal1b/b1reflection.pdf}
+
+% 2A
+\addcontentsline{toc}{subsection}{Goal 2A}
+\includepdf[pages=1]{../goal2a/a2reflection.pdf}
+
+% 2B
+\addcontentsline{toc}{subsection}{Goal 2B}
+\includepdf[pages=1]{../goal2b/b2reflection.pdf}
+
+% 2C
+\addcontentsline{toc}{subsection}{Goal 2C}
+\includepdf[pages=1]{../goal2c/c2reflection.pdf}
+
+% 3
+\addcontentsline{toc}{subsection}{Goal 3}
+\includepdf[pages=1]{../goal3/goal3.pdf}
+
+% 4A
+\addcontentsline{toc}{subsection}{Goal 4A}
+\includepdf[pages=1]{../goal4a/goal4a.pdf}
+
+% 4B
+\addcontentsline{toc}{subsection}{Goal 4B}
+\includepdf[pages=1]{../goal4b/goal4b.pdf}
+
+% Add "Artifacts" to the table of contents
+\addcontentsline{toc}{section}{Artifacts}
+
+% appendix
+% 1A
+\addcontentsline{toc}{subsection}{Goal 1A}
+\myheader{Goal 1A}
+\includepdf[pages=-]{../goal1a/em_hw_6.pdf}
+
+% 1B
+\addcontentsline{toc}{subsection}{Goal 1B}
+\myheader{Goal 1B}
+\includepdf[pages=-]{../goal1b/hw4.pdf}
+
+% 2A
+\addcontentsline{toc}{subsection}{Goal 2A}
+\myheader{Goal 2A}
+\includepdf[pages=-]{../goal2a/FullReportCalvinSprouse.pdf}
+
+% 2B
+\addcontentsline{toc}{subsection}{Goal 2B}
+\myheader{Goal 2B}
+\includepdf[pages=-]{../goal2b/CalvinSprouseCharacterizationOfTransmissionLineImpedanceSkeletal}
+
+% 2C
+\addcontentsline{toc}{subsection}{Goal 2C}
+\myheader{Goal 2C}
+\includepdf[pages=-]{../goal2c/analmech_hw4-1.pdf}
+
+% 3
+\addcontentsline{toc}{subsection}{Goal 3}
+\myheader{Goal 3}
+\includepdf[pages=-]{../goal3/bps2024_cs_ds_poster_vFin.pdf}
+
+% 4A
+\addcontentsline{toc}{subsection}{Goal 4A}
+\myheader{Goal 4A}
+\includepdf[pages=-, angle=90]{../goal4a/source2023_presentation.pdf}
+
+% 4B
+\addcontentsline{toc}{subsection}{Goal 4B}
+\myheader{Goal 4B}
+\includepdf[pages=-]{../goal4b/StellarAstrophysicsWUMaStars.pdf}
+
+% 5
+\addcontentsline{toc}{subsection}{Goal 5}
+\myheader{Goal 5}
+\includepdf[pages=-]{../goal5/reflection.pdf}
+
+\end{document}
