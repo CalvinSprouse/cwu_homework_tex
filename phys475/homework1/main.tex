@@ -1,0 +1,54 @@
+% document style header
+\documentclass[a4paper, 12pt]{config/homework}
+
+% import default packages
+\usepackage{config/defpackages}
+% import custom math commands
+\usepackage{config/domath}
+
+% end preamble
+\begin{document}
+
+% document title
+\noindent
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
+Calvin Sprouse & PHYS475 Homework 1 & 2024 April 03\\
+\midrule
+\end{tabularx}
+
+% homework problems begin
+\begin{enumerate}
+\item Use separation of variables in cartesian coordinates to solve the infinite cubical well. The potential of the infinite cubical well is
+\[V(x,y,z)=\begin{cases}
+0, & \text{if}\ x,y,z\ \text{are all between 0 and}\ a, \\
+\infty, & \text{otherwise}.
+\end{cases}\]
+\begin{enumerate}[label=(\alph*.)]
+\item Find the stationary states and their corresponding energies. Apply boundary conditions at the boundaries of the well. Note that solutions should depend on three distinct quantum numbers.
+
+
+
+\item Call the distinct energies \(E_1,E_2,E_3\), etc., in order of increasing energy. Note that the subscripted integer is not a quantum number here; instead, these number simply represent the lowest energy, \(E_1\), second lowest energy, \(E_2\), etc. Determine what \(E_1,E_2,E_3,E_4,E_5\), and \(E_6\) are in terms of \(\hbar,m,\pi\), and \(a\). Determine the degeneracy of each of these energies.
+
+
+
+\item What is the degeneracy of \(E_{14}\), and what is unusual about this case?
+
+
+
+\end{enumerate}
+\pagebreak
+\item Construct the spherical harmonics \(Y_0^0(\theta,\phi)\) and \(Y_2^1(\theta,\phi)\) using the formula for spherical harmonics,
+\[Y_\ell^m(\theta,\phi) = \epsilon\sqrt{\frac{(2\ell+1)}{4\pi}\frac{(\ell-|m|)!}{(\ell+|m|)!}}\exp(im\phi)P_\ell^m\left(\cos(\theta)\right),\]
+where the constant \(\epsilon\) is defined to be
+\[\epsilon = \begin{cases}
+(-1)^m, & m \ge 0, \\ 1, & m \le 0,
+\end{cases}\]
+the Rodrigues formula for the Legendre polynomial,
+\[P_\ell^m(x) \equiv \left(1-x^2\right)^{|m|/2}\diff[|m|]{}{x}P_\ell(x).\]
+Check that solutions for \(Y_0^0(\theta,\phi)\) and \(Y_2^1(\theta,\phi)\) are normalized and orthogonal.
+
+
+
+\end{enumerate}
+\end{document}
