@@ -1,0 +1,133 @@
+% document style header
+\documentclass[a4paper, 12pt]{config/homework}
+
+% import default packages
+\usepackage{config/defpackages}
+% import custom math commands
+\usepackage{config/domath}
+\usepackage{geometry}
+
+% end preamble
+\begin{document}
+
+% document title
+\noindent
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
+Calvin Sprouse & Topology Problem Set 1 & 2024 April 02\\
+\midrule
+\end{tabularx}
+
+% homework problems begin
+% 1a, 2a, 7, 5(i), 5(iii)
+\vspace{\baselineskip}
+Complete the following from Exercises 1.1: 1a, 2a, 7, 5(i), 5(iii).
+\begin{enumerate}
+\item Let \(X=\left\{a,b,c,d,e,f\right\}\). Determine whether or not each of the following collections of subsets of \(X\) is a topology on \(X\):
+\begin{enumerate}[label=(\alph*)]
+\item \(\tau_1 = \left\{X,\emptyset,\{a\},\{a,f\},\{b,f\},\{a,b,f\}\right\}\).
+\end{enumerate}
+
+\(\tau_1\) is not a topology on \(X\). Notice, \(\{b,f\}\cap\{a,f\}=\{f\}\) and \(\{f\}\notin\tau_1\). Thus, \(\tau_1\) does not satisfy Definition 1.1.1 (iii).
+
+\vspace{\baselineskip}
+\item Let \(X=\left\{a,b,c,d,e,f\right\}\). Which of the following collections of subsets of \(X\) is a topology on \(X\)?
+\begin{enumerate}[label=(\alph*)]
+\item \(\tau_1 = \left\{X,\emptyset,\{c\},\{b,d,e\},\{b,c,d,e\},\{b\}\right\}\).
+\end{enumerate}
+
+\(\tau_1\) is not a topology on \(X\). Notice, \(\{c\}\cup\{b\}=\{c,b\}\) and \(\{c,b\}\notin\tau_1\). Thus, \(\tau_1\) does not satisfy Definition 1.1.1 (ii).
+
+\pagebreak
+\newgeometry{top=1cm, bottom=1cm}
+\item[7.] List all possible topologies on the following sets:
+
+\begin{minipage}[t]{0.45\textwidth}
+\begin{enumerate}[label=(\alph*)]
+\item \(X = \left\{a,b\right\}\);
+\begin{enumerate}[label=\roman*.]
+\item \(\left\{X, \emptyset\right\}\),
+\item \(\left\{X,\emptyset, \{a\} \right\}\),
+\item \(\left\{X,\emptyset, \{b\} \right\}\),
+\item \(\left\{X,\emptyset, \{a\}, \{b\}, \{a,b\} \right\}\).
+\end{enumerate}
+\end{enumerate}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.54\textwidth}
+\begin{enumerate}
+\item[(b)] \(Y = \left\{a,b,c\right\}\).
+\begin{enumerate}[label=\roman*.]
+% two members
+\item \(\left\{X,\emptyset \right\}\),
+% three members
+\item \(\left\{X,\emptyset, \{a\} \right\}\),
+\item \(\left\{X,\emptyset, \{b\} \right\}\),
+\item \(\left\{X,\emptyset, \{c\} \right\}\),
+\item \(\left\{X,\emptyset, \{a,c\} \right\}\),
+\item \(\left\{X,\emptyset, \{b,c\} \right\}\),
+\item \(\left\{X,\emptyset, \{a,b\} \right\}\),
+% four members
+\item \(\left\{X,\emptyset, \{a\}, \{a,c\} \right\}\),
+\item \(\left\{X,\emptyset, \{b\}, \{a,c\} \right\}\),
+\item \(\left\{X,\emptyset, \{c\}, \{a,c\} \right\}\),
+\item \(\left\{X,\emptyset, \{a\}, \{b,c\} \right\}\),
+\item \(\left\{X,\emptyset, \{b\}, \{b,c\} \right\}\),
+\item \(\left\{X,\emptyset, \{c\}, \{b,c\} \right\}\),
+\item \(\left\{X,\emptyset, \{a\}, \{a,b\} \right\}\),
+\item \(\left\{X,\emptyset, \{b\}, \{a,b\} \right\}\),
+\item \(\left\{X,\emptyset, \{c\}, \{a,b\} \right\}\),
+% five members, single singleton
+\item \(\left\{X,\emptyset, \{a\}, \{a,b\}, \{a,c\} \right\}\),
+\item \(\left\{X,\emptyset, \{b\}, \{a,b\}, \{b,c\} \right\}\),
+\item \(\left\{X,\emptyset, \{c\}, \{a,c\}, \{b,c\} \right\}\),
+% five members, double singleton single doublington
+\item \(\left\{X,\emptyset, \{a\}, \{c\}, \{a,c\} \right\}\),
+\item \(\left\{X,\emptyset, \{b\}, \{c\}, \{b,c\} \right\}\),
+\item \(\left\{X,\emptyset, \{a\}, \{b\}, \{a,b\} \right\}\),
+% six members, double singleton double doublington
+\item \(\left\{X,\emptyset, \{a\}, \{c\}, \{a,c\}, \{b,c\} \right\}\),
+\item \(\left\{X,\emptyset, \{a\}, \{c\}, \{a,c\}, \{b,a\} \right\}\),
+\item \(\left\{X,\emptyset, \{b\}, \{c\}, \{b,c\}, \{a,b\} \right\}\),
+\item \(\left\{X,\emptyset, \{b\}, \{c\}, \{b,c\}, \{a,c\} \right\}\),
+\item \(\left\{X,\emptyset, \{a\}, \{b\}, \{a,b\}, \{a,c\} \right\}\),
+\item \(\left\{X,\emptyset, \{a\}, \{b\}, \{a,b\}, \{b,c\} \right\}\),
+% eight members
+\item \(\left\{X,\emptyset, \{a\}, \{b\}, \{c\}, \{a,b\}, \{a,c\}, \{b,c\} \right\}\).
+\end{enumerate}
+\end{enumerate}
+\end{minipage}
+\restoregeometry%
+
+\pagebreak
+\item[5.] Let \(\reals\) be the set of all real numbers. Prove that each of the following collections of subsets of \(\reals\) is a topology.
+\begin{enumerate}[label=(\roman*)]
+\item \(\tau_1\) consists of \(\reals\), \(\emptyset\), and every interval \((-n,n)\), for \(n\in\ints^+\), where \((-n,n)\) denotes the set \(\left\{x\in\reals:-n<x<n\right\}\);
+
+% We satisfy Definition 1.1.1 (i) by including \(\reals\) and \(\emptyset\). We satisfy Definition 1.1.1 (ii) by noticing the infinite union of open-sets defined by \((-n,n)\) for \(n\in\ints^+\) is equivalent to \(\reals\) which is in \(\tau_1\). We satisfy Definition 1.1.1 (iii) by noticing the intersection of any two open-sets, say \((-n_1, n_1) \cap (-n_2, n_2)\) for \(n_1,n_2\in\ints^+\), yields the smaller of the two sets or the empty set when \(n_1=n_2\).
+
+\begin{proof}
+Let \(k,l\in\ints^+\) be given. By definition, the sets \((-k,k)\) and \((-l,l)\) are in \(\tau_1\). We now proceed to check the three possible relations between \(k\) and \(l\); that is, (i.) \(k<l\), (ii.) \(k=l\), (iii.) \(k>l\).
+\begin{enumerate}[label=(\roman*.)]
+\item Suppose \(k<l\). Then, \((-k,k)\cup(-l,l)=(-l,l)\) which is in \(\tau_1\). Also notice, \((-k,k)\cap(-l,l)=(-k,k)\) which is in \(\tau_1\).
+\item Suppose \(k=l\). Then, \((-k,k)\cup(-l,l)=(-k,k)\) which is in \(\tau_1\). Also notice, \((-k,k)\cap(-l,l)=(-k,k)\) which is in \(\tau_1\).
+\item Suppose \(k>l\). Then, \((-k,k)\cup(-l,l)=(-k,k)\) which is in \(\tau_1\). Also notice, \((-k,k)\cap(-l,l)=(-l,l)\) which is in \(\tau_1\).
+\end{enumerate}
+We also notice \(\bigcup_{n\in\ints^+}(-n,n)=\reals\). Thus, we satisfy Definition 1.1.1 (i) by including \(\reals\) and \(\emptyset\), Definition 1.1.1 (ii) by considering any combination of finite unions and infinite unions, and Definition 1.1.1 (iii) by considering any two intersections. Therefore, \(\tau_1\) is a topology on \(\reals\).
+\end{proof}
+
+\pagebreak
+\item[(iii)] \(\tau_3\) consists of \(\reals\), \(\emptyset\), and every interval \([n,\infty)\), for \(n\in\ints^+\), where \([n,\infty)\) denotes the set \(\left\{x\in\reals:n\le x\right\}\).
+
+\begin{proof}
+Let \(k,l\in\ints^+\) be given. By definition, the sets \([k,\infty)\) and \([l,\infty)\) are in \(\tau_3\). We now proceed to check the three possible relations between \(k\) and \(l\); that is, (i.) \(k<l\), (ii.) \(k=l\), (iii.) \(k>l\).
+\begin{enumerate}[label=(\roman*.)]
+\item Suppose \(k<l\). Then, \([k,\infty)\cup[l,\infty)=[k,\infty)\) which is in \(\tau_3\). Also notice, \([k,\infty)\cap[l,\infty)=[l,\infty)\) which is in \(\tau_3\).
+\item Suppose \(k=l\). Then, \([k,\infty)\cup[l,\infty)=[k,\infty)\) which is in \(\tau_3\). Also notice, \([k,\infty)\cap[l,\infty)=[k,\infty)\) which is in \(\tau_3\).
+\item Suppose \(k>l\). Then, \([k,\infty)\cup[l,\infty)=[l,\infty)\) which is in \(\tau_3\). Also notice, \([k,\infty)\cap[l,\infty)=[k,\infty)\) which is in \(\tau_3\).
+\end{enumerate}
+We also notice \(\bigcup_{n\in\ints^+}=[1,\infty)\) which is in \(\tau_3\). Thus, we satisfy Definition 1.1.1 (i) by including \(\reals\) and \(\emptyset\), Definition 1.1.1 (ii) by considering any combination of finite unions and infinite unions, and Definition 1.1.1 (iii) by considering any two intersections. Therefore, \(\tau_3\) is a topology on \(\reals\).
+\end{proof}
+
+\end{enumerate}
+\end{enumerate}
+\end{document}
