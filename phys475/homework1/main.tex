@@ -26,8 +26,41 @@ Calvin Sprouse & PHYS475 Homework 1 & 2024 April 03\\
 \begin{enumerate}[label=(\alph*.)]
 \item Find the stationary states and their corresponding energies. Apply boundary conditions at the boundaries of the well. Note that solutions should depend on three distinct quantum numbers.
 
+We begin with the time-independent Schr{\"o}dinger equation (TISE),
+\[-\frac{\hbar^2}{2m}\nabla^2\psi + V\psi = E\psi,\]
+where by our choice of cartesian coordinates we define \(\nabla\) as
+\[\nabla^2 = \diffp[2]{}{x} + \diffp[2]{}{y} + \diffp[2]{}{z}.\]
+We have two regions: (i.) outside the box, and (ii.) inside the box. Outside the box, \(V(x,y,z)=\infty\), we have the wavefunction
+\[\psi_i(x,y,z)=0.\]
+Inside the box, \(V(x,y,z)=0\), the TISE can be expressed as
+\[-\frac{\hbar^2}{2m}\left( \diffp[2]{\psi}{x} + \diffp[2]{\psi}{y} + \diffp[2]{\psi}{z} \right) = E\psi.\]
+We assume that \(\psi\) has separable solutions in all three dimensions; that is,
+\[\psi(x,y,z) = X(x)Y(y)Z(z).\]
+Substituting this expression for \(\psi\), dividing both sides by \(XYZ\), replacing our partial derivatives with ordinary derivatives, and rearranging the \(\hbar\) term yields
+\[-\frac{1}{X}\diff[2]{X}{x} - \frac{1}{Y}\diff[2]{Y}{y} - \frac{1}{Z}\diff[2]{Z}{z} = \frac{2m}{\hbar^2}E.\]
+Each term on the left is a function of only one variable and is independent of each other. Therefore, each term on the left side must be constant. We use our typical \(k^2\) constant and define one for each term: \(k^2_x, k^2_y, k^2_z\). Looking into the \(x\)-term we say
+\[-\frac{1}{X}\diff[2]{X}{x} = k^2_x\]
+which is a simple differential equation solved with exponential functions or equivalently sine and cosine functions. Since we are dealing with a trapt particle, sine and cosine functions are a natural choice. Notice that each of these terms has the same structure and boundary conditions so we need only solve one. Continuing with the \(x\)-term we have a general solution,
+\[X(x) = A_x\sin(k_x x) + B_x\cos(k_x x).\]
+Our boundary conditions are (1.) \(X(0)=0\), and (2.) \(X(a)=0\). Our first condition requires that \(B_x=0\). Our second condition then requires that
+\[k_x = \frac{n_x\pi}{a},\ n_x\in\mathbb{N}.\]
+Thus, our solution for the \(x\)-term can be written as
+\[X(x) = A_x\sin\left(\frac{n_x\pi}{a}x\right),\ n_x\in\mathbb{N}.\]
+The \(y\) and \(z\) terms have the same structure:
+\begin{align*}
+Y(y) &= A_y\sin\left(\frac{n_y\pi}{a}y\right),\ n_y\in\mathbb{N}; \\
+Z(z) &= A_z\sin\left(\frac{n_z\pi}{a}z\right),\ n_z\in\mathbb{N}.
+\end{align*}
+Then our wavefunction inside the box, \(\psi_{ii}\), can be written as
+\[\psi_{ii}(x,y,z) = A_x A_y A_z\sin\left(\frac{n_x\pi}{a}x\right)\sin\left(\frac{n_y\pi}{a}y\right)\sin\left(\frac{n_z\pi}{a}z\right).\]
+Since each wavefunction resembles a one-dimensional oscillator we can simply take the normalization constants from that system for each term:
+\[A_x A_y A_z = \sqrt{\frac{2}{a}}\sqrt{\frac{2}{a}}\sqrt{\frac{2}{a}} = \left(\frac{2}{a}\right)^{3/2}.\]
+Thus,
+\[\psi_{ii}(x,y,z) = \left(\frac{2}{a}\right)^{3/2}\sin\left(\frac{n_x\pi}{a}x\right)\sin\left(\frac{n_y\pi}{a}y\right)\sin\left(\frac{n_z\pi}{a}z\right).\]
+Finally, we recognize that since each term was equal to some constant, so too was the right hand side of our equation. Expressed with some rearrangement and substitution we find
+\[E=\frac{1}{2m}\left(\frac{\hbar\pi}{a}\right)^2\left(n_x^2 + n_y^2 + n_z^2 \right),\ n_x,n_y,n_z\in\mathbb{N}.\]
 
-
+\pagebreak
 \item Call the distinct energies \(E_1,E_2,E_3\), etc., in order of increasing energy. Note that the subscripted integer is not a quantum number here; instead, these number simply represent the lowest energy, \(E_1\), second lowest energy, \(E_2\), etc. Determine what \(E_1,E_2,E_3,E_4,E_5\), and \(E_6\) are in terms of \(\hbar,m,\pi\), and \(a\). Determine the degeneracy of each of these energies.
 
 
