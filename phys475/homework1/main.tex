@@ -103,13 +103,46 @@ This introduces three more possible configurations of quantum numbers. This is u
 \[Y_\ell^m(\theta,\phi) = \epsilon\sqrt{\frac{(2\ell+1)}{4\pi}\frac{(\ell-|m|)!}{(\ell+|m|)!}}\exp(im\phi)P_\ell^m\left(\cos(\theta)\right),\]
 where the constant \(\epsilon\) is defined to be
 \[\epsilon = \begin{cases}
-(-1)^m, & m \ge 0, \\ 1, & m \le 0,
+(-1)^m, & m > 0, \\ 1, & m \le 0,
 \end{cases}\]
 the Rodrigues formula for the Legendre polynomial,
 \[P_\ell^m(x) \equiv \left(1-x^2\right)^{|m|/2}\diff[|m|]{}{x}P_\ell(x).\]
 Check that solutions for \(Y_0^0(\theta,\phi)\) and \(Y_2^1(\theta,\phi)\) are normalized and orthogonal.
 
+\begin{align*}
+Y_0^0(\theta, \phi) &= \epsilon\sqrt{\frac{(0+1)}{4\pi}\frac{(0-|0|)!}{(0+|0|)!}}\exp(0)P_0^0\left(\cos(\theta)\right)
+\\&= \sqrt{\frac{1}{4\pi}}\left((1-(\cos\theta)^2)^0\diff[0]{}{x}P_0(\cos(\theta))\right)
+\\&= \sqrt{\frac{1}{4\pi}}.
+\\&\\
+Y_2^1(\theta, \phi) &= \epsilon \sqrt{\frac{(2(2)+1)}{4\pi}\frac{(2-1)!}{(2+1)!}}\exp(i\phi)P_2^1\left(\cos(\theta)\right)
+\\&= -\sqrt{\frac{5}{4\pi}\frac{1}{6}}\exp(i\phi)
+\left( \left(1-(\cos\theta)^2\right)^{1/2} \diff{}{\cos\theta}P_2(\cos\theta) \right)
+\\&= -\sqrt{\frac{5}{24\pi}}\exp(i\phi) \sqrt{1-(\cos(\theta))^2} \diff{}{\cos\theta}\frac{1}{2}\left(3(\cos\theta)^2-1\right)
+\\&= -\sqrt{\frac{5}{24\pi}}\exp(i\phi)\sin(\theta)3\cos(\theta)
+\\&= -3\sqrt{\frac{5}{24\pi}}\exp(i\phi)\sin(\theta)\cos(\theta)
+\\&= -\sqrt{\frac{15}{8\pi}}\exp(i\phi)\sin(\theta)\cos(\theta).
+\end{align*}
 
+Checking for normalization:
+\begin{align*}
+\bint{0}{2\pi}{\bint{0}{\pi}{|Y_0^0(\theta,\phi)|^2\sin(\theta)}{\theta}}{\phi} &= \frac{1}{4\pi}\bint{0}{2\pi}{\bint{0}{\pi}{\sin(\theta)}{\theta}}{\phi}
+\\&= \frac{1}{4\pi} 2 (2\pi)
+\\&= 1.
+\\&\\
+\bint{0}{2\pi}{\bint{0}{\pi}{|Y_2^1(\theta,\phi)|^2\sin(\theta)}{\theta}}{\phi} &= \frac{15}{8\pi} \bint{0}{\pi}{\sin(\theta)^2\cos(\theta)^2\sin(\theta)}{\theta}\bint{0}{2\pi}{e^{i\phi}e^{-i\phi}}{\phi}
+\\&= \frac{15}{4}\bint{0}{\pi}{\sin(\theta)^2(1-\sin(\theta)^2)\sin(\theta)}{\theta}
+\\&= \frac{15}{4}\left(\bint{0}{\pi}{\sin(\theta)^3}{\theta} - \bint{0}{\pi}{\sin(\theta)^5}{\theta}\right)
+\\&= \frac{15}{4}\left(\frac{4}{3} - \frac{16}{15}\right)
+\\&= 5 - 4
+\\&= 1.
+\end{align*}
+
+Checking for orthogonality:
+\begin{align*}
+\bint{0}{2\pi}{\bint{0}{\pi}{Y_0^{0*}Y_2^1\sin(\theta)}{\theta}}{\phi} &= -\sqrt{\frac{1}{4\pi}}\sqrt{\frac{15}{8\pi}}\bint{0}{\pi}{\sin(\theta)^2\cos(\theta)}{\theta}\bint{0}{2\pi}{\exp(i\phi)}{\phi}
+\\&= 0.
+\end{align*}
+We need only observe that the \(\phi\) integral integrates the complex exponential \(\exp(i\phi)\) over a full circle of arc is is therefore 0.
 
 \end{enumerate}
 \end{document}
