@@ -31,14 +31,19 @@ where \(V\) is the volume and \(T\) is the temperature of the substance in quest
 \begin{enumerate}[label=(\alph*.)]
 \item Get a mercury thermometer, estimate the size of the bulb at the bottom, and then estimate what the inside diameter of the tube has to be in order for the thermometer to work as required. Assume that the thermal expansion of the glass is negligible.
 
+Let \(d\) be the spacing between 1 kelvin marks on the thermometer. Suppose the bulb is a cylinder of radius \(R\) and height \(L\), and that the tube is a cylinder of radius \(r\) and length \(l\). As the temperature of the mercury rises by one kelvin the liquid must increase in volume by \(\Delta V = \pi r^2 d\). Working with the smallest measurable temperature the initial volume of liquid must be the volume of the bulb: \(V=\pi R^2 L\).
 
+Suppose the bulb has radius \(R=\qty{2}{\milli\meter}\) and length \(L=\qty{4}{\milli\meter}\). Further suppose the tube has a length \(L=100d\), corresponding to a range of \(\qty{100}{\kelvin}\) and that \(d=\qty{1}{\milli\meter}\). Then the radius, \(r\), of the tube can be found by
+\[\beta=\frac{\Delta V/ V}{\Delta T} \Rightarrow \sqrt{\frac{\Delta T \beta V}{\pi d}} = r.\]
+Thus,
+\[r = \sqrt{\frac{\qty[parse-numbers=false]{\frac{1}{5500}}{\per\kelvin}\times\qty{1}{\kelvin}\times\left(\qty{2}{\milli\meter}\right)^2\times\qty{4}{\milli\meter}}{\qty{1}{\milli\meter}}} = \qty{0.0539}{\milli\meter}.\]
 
-\item The thermal expansion coefficient of water varies significantly with temperature. It is \(\qty{7.5e-4}{\per\kelvin}\) at \(\qty{100}{\celsius}\), but decreases as the temperature is lowered until it becomes 0 at \(\qty{4}{\celsius}\). Below \(\qty{4}{\celsius}\) it is slightly negative, reaching a value of \(\qty{-0.68e-4}{\per\kelvin}\) at \(\qty{0}{\celsius}\). This behavior is related to the fact that ise is les dense than water. With this behavior in mind, imagine the process of a lake freezing over, and discuss in some detail how this process would be different if the thermal expansion coefficient of water were always positive.
+\item The thermal expansion coefficient of water varies significantly with temperature. It is \(\qty{7.5e-4}{\per\kelvin}\) at \(\qty{100}{\celsius}\), but decreases as the temperature is lowered until it becomes 0 at \(\qty{4}{\celsius}\). Below \(\qty{4}{\celsius}\) it is slightly negative, reaching a value of \(\qty{-0.68e-4}{\per\kelvin}\) at \(\qty{0}{\celsius}\). This behavior is related to the fact that ice is less dense than water. With this behavior in mind, imagine the process of a lake freezing over, and discuss in some detail how this process would be different if the thermal expansion coefficient of water were always positive.
 
-
+If the thermal expansion coefficient of water were always positive, the lake would simply form a sheet, or block, of ice which was at a lower water level than when the lake was liquid. In contrast, as lakes freeze the variation of waters expansion, particularly at the end of freezing when water begins to expand, causes significant erosion of the lake bed. Furthermore, the last bit of expansion can cause small overhangs to form on the shore of the lake. These overhangs at the shore would not form if the expansion coefficient remained positive as the water would just decrease in volume continuously.
 
 \end{enumerate}
-\pagebreak
+\vspace{\baselineskip}
 \item[1.9:] What is the volume of one mole of air, at room temperature and \(\qty{1}{\atm}\) pressure?
 
 The volume of air, which we shall assume is an ideal gas, is given by the ideal gas law to be
@@ -46,7 +51,7 @@ The volume of air, which we shall assume is an ideal gas, is given by the ideal 
 From the problem statement, \(n=\qty{1}{\mol}\), \(T=\qty{293}{\kelvin}\), \(R=\qty{8.31}{\joule\per\mol\per\kelvin}\), and \(P=\qty{1.013e5}{\pascal}\). Then,
 \[V = \frac{\qty{1}{\mol}\times\qty{293}{\kelvin}\times\qty{8.31}{\joule\per\mol\per\kelvin}}{\qty{1.013e5}{\pascal}}=\qty{0.0240}{\meter\cubed}.\]
 
-\vspace{\baselineskip}
+\pagebreak
 \item[1.10:] Estimate the number of air molecules in an average-sized room.
 
 Suppose the average sized room is a cube with side lengths 5 meters. We then take standard temperature and pressure: \(T=\qty{293}{\kelvin}\), and \(P=\qty{1.013e5}{\pascal}\). The number of molecules in an ideal gas is given by
@@ -60,7 +65,7 @@ Then
 
 Rooms \(A\) and \(B\) have the same mass of air. If we consider the rooms before room \(A\) was heated, perhaps that morning before sunrise, then they are in equilibrium and thus have the same mass of air. Then, the sun rose. Room \(A\) is heated and yet it's volume remains unchanged. Thus, the pressure rises in room \(A\). Room \(A\) may exchange a higher energy gas particle with room \(B\) as the two come back into thermal equilibrium. However, in doing so, room \(A\) will be at a lower pressure and thus room \(B\) will be more likely to ``send over'' a gas particle. Thus the two rooms will maintain an equilibrium in molecule count.
 
-\pagebreak
+\vspace{\baselineskip}
 \item [1.17:] Even at low density, real gases don't quite obey the ideal gas law. A systematic way to account for deviations from ideal behavior is the virial expansion,
 \[PV=nRT\left(1 + \frac{B(T)}{V/n} + \frac{C(T)}{(V/n)^2} + \cdots\right),\]
 where the functions \(B(T)\), \(C(T)\), and so on are called the virial coefficients. When the density of the gas is fairly low, so that the volume per mole is large, each term in the series is much smaller than the one before. In many situations it's sufficient to omit the third term and concentrate on the second, whose coefficient \(B(T)\) is called the second virial coefficient. Here are some measured values of the second virial coefficient for nitrogen \(\text{N}_2\):
@@ -100,7 +105,7 @@ where \(R\) is a universal gas constant, \(T\) is given, \(P=\qty{1.013e5}{\pasc
 
 \item[(b.)] Think about the forces between molecules, and explain why we might expect \(B(T)\) to be negative at low temperatures but positive at high temperatures.
 
-
+At low temperatures individual gas molecules lack the energy required to overcome attractive forces that turn a gas into a liquid or solid. Thus we anticipate a corrective term to represent gas particles coming together. At higher temperatures a gas particle becomes ``ignorant'' to these attractive forces, which have less-negligible impacts at ``room temperatures'', and act more freely.
 
 \end{enumerate}
 \pagebreak
