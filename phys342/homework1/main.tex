@@ -41,26 +41,62 @@ where \(V\) is the volume and \(T\) is the temperature of the substance in quest
 \pagebreak
 \item[1.9:] What is the volume of one mole of air, at room temperature and \(\qty{1}{\atm}\) pressure?
 
-
+The volume of air, which we shall assume is an ideal gas, is given by the ideal gas law to be
+\[V = \frac{nRT}{P}.\]
+From the problem statement, \(n=\qty{1}{\mol}\), \(T=\qty{293}{\kelvin}\), \(R=\qty{8.31}{\joule\per\mol\per\kelvin}\), and \(P=\qty{1.013e5}{\pascal}\). Then,
+\[V = \frac{\qty{1}{\mol}\times\qty{293}{\kelvin}\times\qty{8.31}{\joule\per\mol\per\kelvin}}{\qty{1.013e5}{\pascal}}=\qty{0.0240}{\meter\cubed}.\]
 
 \vspace{\baselineskip}
 \item[1.10:] Estimate the number of air molecules in an average-sized room.
 
+Suppose the average sized room is a cube with side lengths 5 meters. We then take standard temperature and pressure: \(T=\qty{293}{\kelvin}\), and \(P=\qty{1.013e5}{\pascal}\). The number of molecules in an ideal gas is given by
+\[N = \frac{PV}{kT},\]
+where \(V=\qty{125}{\meter\cubed}\), and \(k=\qty{1.381e-23}{\joule\per\kelvin}\).
+Then
+\[N = \frac{\qty{1.013e5}{\pascal}\times\qty{125}{\meter\cubed}}{\qty{1.381e-23}{\joule\per\kelvin}\qty{293}{\kelvin}} = \qty{3.13e27}.\]
 
 \vspace{\baselineskip}
 \item[1.11:] Rooms \(A\) and \(B\) are the same size and are connected by an open door. Room \(A\), however, is warmer. Which room contains the greater mass of air? Explain carefully.
 
-
+Rooms \(A\) and \(B\) have the same mass of air. If we consider the rooms before room \(A\) was heated, perhaps that morning before sunrise, then they are in equilibrium and thus have the same mass of air. Then, the sun rose. Room \(A\) is heated and yet it's volume remains unchanged. Thus, the pressure rises in room \(A\). Room \(A\) may exchange a higher energy gas particle with room \(B\) as the two come back into thermal equilibrium. However, in doing so, room \(A\) will be at a lower pressure and thus room \(B\) will be more likely to ``send over'' a gas particle. Thus the two rooms will maintain an equilibrium in molecule count.
 
 \pagebreak
 \item [1.17:] Even at low density, real gases don't quite obey the ideal gas law. A systematic way to account for deviations from ideal behavior is the virial expansion,
 \[PV=nRT\left(1 + \frac{B(T)}{V/n} + \frac{C(T)}{(V/n)^2} + \cdots\right),\]
 where the functions \(B(T)\), \(C(T)\), and so on are called the virial coefficients. When the density of the gas is fairly low, so that the volume per mole is large, each term in the series is much smaller than the one before. In many situations it's sufficient to omit the third term and concentrate on the second, whose coefficient \(B(T)\) is called the second virial coefficient. Here are some measured values of the second virial coefficient for nitrogen \(\text{N}_2\):
-% insert table here
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{cc}
+\(T\) {[}K{]} & \(B\) \(\left[\text{cm}^3\,\text{mol}^{-1}\right]\) \\ \hline
+100           & -160                                   \\
+200           & -35                                    \\
+300           & -4.2                                   \\
+400           & 9.0                                    \\
+500           & 16.9                                   \\
+600           & 21.3
+\end{tabular}
+\end{center}
+\end{table}
 \begin{enumerate}
 \item[(a.)] For each temperature in the table, compute the second term in the virial equation, \(B(T)/(V/n)\), for nitrogen at atmospheric pressure. Discuss the validity of the ideal gas law under these conditions.
 
+For nitrogen at atmospheric pressure, the volume of gas is given by
+\[V = \frac{nRT}{P},\]
+where \(R\) is a universal gas constant, \(T\) is given, \(P=\qty{1.013e5}{\pascal}\), and the \(n\) term, being present in both numerator and denominator, divides out in the calculation of \(C\) from \(B\).
 
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{cc}
+\(T\) {[}K{]} & \(B/(V/n)\) \\ \hline
+100           & -19504                                 \\
+200           & -2133                                    \\
+300           & -170                                  \\
+400           & 274                                   \\
+500           & 412                                   \\
+600           & 434
+\end{tabular}
+\end{center}
+\end{table}
 
 \item[(b.)] Think about the forces between molecules, and explain why we might expect \(B(T)\) to be negative at low temperatures but positive at high temperatures.
 
@@ -70,17 +106,34 @@ where the functions \(B(T)\), \(C(T)\), and so on are called the virial coeffici
 \pagebreak
 \item[1.18:] Calculate the rms speed of a nitrogen molecule at room temperature.
 
-
+The rms speed of a nitrogen gas molecule, (\(\text{N}_2\)), at some temperature is given by
+\[v_\text{rms} = \sqrt{\frac{3kT}{m}},\]
+where \(m=\qty{4.65e-26}{\kg}\). Then,
+\[v_\text{rms} = \sqrt{\frac{3\times\qty{1.381e-23}{\joule\per\kelvin}\times\qty{293}{\kelvin}}{{\qty{4.65e-26}{\kg}}}} = \qty{511}{\meter\per\second}.\]
 
 \vspace{\baselineskip}
 \item[1.19:] Suppose you have a gas containing hydrogen molecules and oxygen molecules in thermal equilibrium. Which molecules are moving faster, on average? By what factor?
 
+The ratio of rms velocities between the oxygen molecules, \((\text{O}_2)\), and hydrogen molecules, \((\text{H}_2)\), is given by
+\[
+v_{\text{rms},\text{O}_2}^2 m_{\text{O}_2} = v_{\text{rms},\text{H}_2}^2 m_{\text{H}_2}
+\Rightarrow
+\frac{v_{\text{rms},\text{O}_2}}{v_{\text{rms},\text{H}_2}} = \sqrt{\frac{m_{\text{H}_2}}{m_{\text{O}_2}}}.
+\]
 
+Substituting the masses of both molecules we find
+\[\frac{v_{\text{rms},\text{O}_2}}{v_{\text{rms},\text{H}_2}} = \qty{1.022e-14}{}.\]
+That is, the oxygen molecules are moving, on average, many orders of magnitude slower than the hydrogen molecules.
 
 \vspace{\baselineskip}
 \item[1.23:] Calculate the total thermal energy in a liter of helium at room temperature and atmospheric pressure. Then repeat the calculation for a liter of air.
 
-
+The total thermal energy of an ideal gas is given by
+\[U = Nf\frac{1}{2}kT,\]
+where \(NkT\) can be found via the ideal gas law as
+\[NkT = PV.\]
+One liter is equivalent to \(\qty{1e-3}{\meter\cubed}\), which is \(V\). A helium molecule, \((\text{H}_2)\), is a diatomic molecule and thus has 3 translational degrees of freedom and two rotational: \(f=5\). Thus, the total thermal energy stored in this system is given by
+\[U = \frac{PVf}{2} = \frac{\qty{1.013e5}{\pascal}\times\qty{1e-3}{\meter\cubed}\times5}{2} = \qty{253.25}{\joule}.\]
 
 \end{enumerate}
 \end{document}
