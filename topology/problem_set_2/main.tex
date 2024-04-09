@@ -27,13 +27,16 @@ Calvin Sprouse & Topology Problem Set 2 & 2024 April 09\\
 
 \(\tau_3\) consists of \(\reals\), \(\emptyset\), and every interval \([n,\infty)\), for \(n\in\reals^+\).
 
-The sets \([1,\infty)\) and \([2,\infty)\) are open to \(\tau\_3\). Either sets compliment is an interval from \(-\infty\) to the start-point exclusive. Since the compliment of the sets is not in \(\tau_3\), the sets are open to \(\tau\).
+The sets \([1,\infty)\) and \([2,\infty)\) are open to \(\tau_3\) by definition.
+% Either sets compliment is an interval from \(-\infty\) to the start-point exclusive. Since the compliment of the sets is not in \(\tau_3\), the sets are open to \(\tau\).
 
+\bigskip
 \item Give two examples of closed sets that are not \(\reals\) or \(\emptyset\). Use at least one complete sentence to explain why the given sets are closed.
 
 The sets \((-\infty,1)\) and \((-\infty,2)\) are closed to \(\tau_3\). These are, in fact, the compliments to the sets defined above. Since the compliment of either set is in \(\tau_3\), these sets are closed to \(\tau_3\).
 
 \end{enumerate}
+\bigskip
 \item In the context of exercise 6 (ii) on page 31:
 \begin{enumerate}[label=\alph*.]
 \item Give two examples of open sets that are not \(\mathbb{N}\) or \(\emptyset\). Use at least one complete sentence to explain why the given sets are open.
@@ -42,6 +45,7 @@ The sets \((-\infty,1)\) and \((-\infty,2)\) are closed to \(\tau_3\). These are
 
 The sets \(\{2, 3, 4, \dots\}\) and \(\{3, 4, 5, \dots\}\) are in \(\tau_2\) and are thus open sets.
 
+\bigskip
 \item Give two examples of closed sets that are not \(\mathbb{N}\) or \(\emptyset\). Use at least one complete sentence to explain why the given sets are closed.
 
 The sets \(\{1\}\) and \(\{1, 2\}\) are closed sets to \(\tau_2\). These sets are the compliments to the sets define above over the positive integers, \(\mathbb{N}\), and are thus closed sets to \(\tau_2\).
@@ -51,7 +55,7 @@ The sets \(\{1\}\) and \(\{1, 2\}\) are closed sets to \(\tau_2\). These sets ar
 \item Exercise 1.2: \#2 (page 36). Let \((X,\tau)\) be a topological space with the property that every subset is closed. Prove that this is a discrete space.
 
 \begin{proof}
-
+Let \((X,\tau)\) be a topological space with the property that every subset is closed. Then, the subset \(S\), \(S\subseteq X\), is a closed set. The compliment of \(S\) in \(X\), \(X \backslash S\), is open in \((X,\tau)\) by Definition 1.2.4. Furthermore, the compliment of \(S\) in \(X\) is a subset of \(X\), \((X\backslash S)\subseteq X\). Thus, the compliment of \(S\) in \(X\) is also closed in \((X,\tau)\). Since the compliment of \(S\) in \(X\) is closed, its compliment in \(X\), the original set \(S\), is open. Therefore, both \(S\) and it's compliment in \(X\) are clopen sets in \((X,\tau)\). Since every subset of \(X\) is clopen in \(X,\tau\), the topological space \((X,\tau)\) is the discrete space by the extended Definition 1.2.6.
 \end{proof}
 
 \end{enumerate}
