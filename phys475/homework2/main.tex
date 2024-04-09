@@ -1,0 +1,75 @@
+% document style header
+\documentclass[a4paper, 12pt]{config/homework}
+
+% import default packages
+\usepackage{config/defpackages}
+% import custom math commands
+\usepackage{config/domath}
+
+% end preamble
+\begin{document}
+
+% document title
+\noindent
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
+Calvin Sprouse & PHYS475 Homework 2 & 2024 April 10\\
+\midrule
+\end{tabularx}
+
+% homework problems begin
+\begin{enumerate}
+\item \begin{enumerate}[label=(\alph*)]
+\item Normalize \(R_{2,0}\) for hydrogen and constrict the wavefunction \(\psi_{2,0,0}\). \bigskip
+
+
+
+\item Normalize \(R_{2,1}\) for hydrogen and construct the wavefunction \(\psi_{2,1,1}, \psi_{2,1,0}\), and \(\psi_{2,1,-1}\). \bigskip
+
+
+
+\end{enumerate}
+\pagebreak
+\item \begin{enumerate}[label=(\alph*)]
+\item Determine \(\langle r \rangle\) and \(\langle r^2 \rangle\) for an electron in the ground state of the hydrogen atom. Express solutions in terms of the Bohr radius, \(a\). \bigskip
+
+
+
+\item Determine \(\langle x \rangle\) and \(\langle x^2 \rangle\) for an electron in the ground state of the hydrogen atom. If the symmetry of the ground state is exploited, there will not be any new integration for this calculation. \bigskip
+
+
+
+\item Determine \(\langle x^2 \rangle\) for an electron in a hydrogen atom in the state \(n=2\), \(l=1\), \(m=1\). It is helpful to use the fact that \(x=r\sin(\theta)\cos(\phi)\). \bigskip
+
+
+
+\end{enumerate}
+\pagebreak
+\item \begin{enumerate}[label=(\alph*)]
+\item Starting with \([r_i,p_j]=-[p_i,r_j]=i\hbar\delta_{ij}\) and \([r_i,r_j]=[p_i,p_j]=0\), where the index \(i\) stands for \(x,y\), or \(z\), and \(r_x=x\), \(r_y=y\), \(r_z=z\), work out the following commutator relations:
+\begin{alignat*}{3}
+[L_z,x] & =i\hbar y, & \qquad\qquad [L_z,y] & =i\hbar x, & \qquad\qquad [L_z,z] & =0, \\
+[L_z,p_x]&=i\hbar p_y, & [L_z, p_y]&=i\hbar p_x, & [L_z, p_z]&=0.
+\end{alignat*} \bigskip
+
+
+
+\item Use the results from part (a) and the definitions
+\begin{align*}
+L_x&=yp_z-zp_y, \\
+L_y&=zp_x-xp_z, \\
+L_z&=xp_y-yp_x,
+\end{align*}
+to obtain \([L_z,L_x]=i\hbar L_y\). \bigskip
+
+
+\item Evaluate the commutators \([L_z, r^2]\) and \([L_z, p^2]\), where \(r^2 = x^2 + y^2 + z^2\) and \(p^2 = p^2_x + p^2_y + p^2_z\). \bigskip
+
+
+
+\item Show that the Hamiltonian, \[\hat{H}=\frac{\hat{p}^2}{2m} + \hat{V},\] commutes with all three components of \(\hat{\vec{L}}\) if \(\hat{V}\) depends only on \(r\). \bigskip
+
+
+
+\end{enumerate}
+\end{enumerate}
+\end{document}
