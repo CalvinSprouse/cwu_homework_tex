@@ -3,9 +3,9 @@
 % special sets
 \newcommand{\reals}{\mathbb{R}}
 \newcommand{\ints}{\mathbb{Z}}
-\newcommand{\zero}{\vec{\mathbf{0}}}
+\newcommand{\zerovec}{\vec{\mathbf{0}}}
 \newcommand{\field}{\mathbb{F}}
-\newcommand{\ip}[1]{ \left\langle #1 \right\rangle}
+\newcommand{\nats}{\mathbb{N}}
 
 % easy matrices
 \newcommand{\matr}[1]{ \left[ \begin{matrix} #1 \end{matrix} \right] }
@@ -24,19 +24,9 @@
 % euler-lagrange (mathcal L)
 \newcommand{\el}{\mathcal{L}}
 
-% command to insert a space middle bracket with sizing
-\newcommand{\midpipe}{\;\middle|\,}
-
-% command to make a given
-\newcommand{\given}[2]{\left( #1 \;\middle|\, #2 \right)}
-
-% command to make a integral d
-\newcommand{\intd}[1]{\phantom{\cdot}\text{d}#1}
-
 % command to make a bounded integral
-% inputs: #1 is lower bound, #2 is upper bound,
-% #3 is integrand, #4 is variable to integrate w/rspct to
-\newcommand{\bint}[4]{\int_{#1}^{#2}{#3\intd{#4}}}
+\newcommand{\defint}[4]{\int_{#1}^{#2}{#3 \text{d}#4}}
+\newcommand{\indint}[2]{\int{#1 \text{d}#2}}
 
 % fix the mod command to make mod properly spaced
 \renewcommand\mod{\;\text{mod}\;}
