@@ -19,34 +19,106 @@
 \item \begin{enumerate}[label=(\alph*)]
 \item Normalize \(R_{2,0}\) for hydrogen and construct the wavefunction \(\psi_{2,0,0}\). \bigskip
 
-From Griffiths Table 4.7,
-\[R_{2,0} = \frac{1}{\sqrt{2}}a^{-3/2}\exp\left[-\frac{r}{2a}\right]\left(1 - \frac{1}{2}\frac{r}{a}\right).\]
-Let \(AR_{2,0}\) be normalized for some \(A\). Then,
+% From Griffiths Table 4.7,
+% \[R_{2,0} = \frac{1}{\sqrt{2}}a^{-3/2}\exp\left[-\frac{r}{2a}\right]\left(1 - \frac{1}{2}\frac{r}{a}\right).\]
+% Let \(AR_{2,0}\) be normalized for some \(A\). Then,
+% \begin{align*}
+% 1 &= \bint{0}{\infty}{\left| AR_{2,0} \right|^2 r^2}{r}
+% \\&= A^2 \bint{0}{\infty}{\left(rR_{2,0}\right)^2}{r}
+% \\&= A^2 \bint{0}{\infty}{\frac{r^2}{2}a^{-3}\exp\left[-\frac{r}{a}\right]\left(1 - \frac{r}{2a}\right)^2}{r}
+% \\&= A^2 \frac{1}{2a^3}\bint{0}{\infty}{r^2\exp\left[-\frac{r}{a}\right]\left(1-\frac{r}{2a}\right)^2}{r}
+% \\&= A^2 \frac{1}{2a^3} \bint{0}{\infty}{\left[ r^2e^{-r/a} - \frac{1}{a}r^3e^{-r/a} + \frac{1}{4a^2}r^4e^{-r/a}\right]}{r},
+% \end{align*}
+% where each of these three integrals are of the form of integral (7) on the provided integral table; that is,
+% \[\bint{0}{\infty}{x^n e^{-ax}}{x}=\frac{\Gamma(n+1)}{a^{n+1}}
+% \Rightarrow \bint{0}{\infty}{r^n e^{-r/a}}{r} = n! a^{n+1}.\]
+% Then,
+% \begin{align*}
+% 1 &= A^2 \frac{1}{2a^3} \left(3!a^3 - 4!a^3 + \frac{1}{4}5!a^3\right)
+% \\&= A^2 \frac{1}{2} \left(6 - 24 + 30\right)
+% \\&= 6A^2,
+% \end{align*}
+% which is satisfied for \(A=\sqrt{1/6}\).
+
+From Griffiths Eq.\ 4.82,
+\[R_{2,0} = \frac{c_0}{2a}\left(1- \frac{r}{2a}\right)\exp\left[-\frac{r}{2a}\right],\]
+where \(c_0\) is the normalization constant. Then,
 \begin{align*}
-1 &= \bint{0}{\infty}{\left| AR_{2,0} \right|^2 r^2}{r}
-\\&= A^2 \bint{0}{\infty}{\left(rR_{2,0}\right)^2}{r}
-\\&= A^2 \bint{0}{\infty}{\frac{r^2}{2}a^{-3}\exp\left[-\frac{r}{a}\right]\left(1 - \frac{r}{2a}\right)^2}{r}
-\\&= A^2 \frac{1}{2a^3}\bint{0}{\infty}{r^2\exp\left[-\frac{r}{a}\right]\left(1-\frac{r}{2a}\right)^2}{r}
-\\&= A^2 \frac{1}{2a^3} \bint{0}{\infty}{\left[ r^2e^{-r/a} - \frac{1}{a}r^3e^{-r/a} + \frac{1}{4a^2}r^4e^{-r/a}\right]}{r},
+1 &= \bint{0}{\infty}{\left| R_{2,0} \right|^2 r^2}{r}
+\\&= \left(\frac{c_0}{2a}\right)^2 \bint{0}{\infty}{\left(1 - \frac{r}{2a}\right)^2 \exp\left[-\frac{r}{a}\right]r^2}{r}
+\\&= \left(\frac{c_0}{2a}\right)^2 \left(
+    \bint{0}{\infty}{r^2 e^{-r/a}}{r}
+    - \frac{1}{a}\bint{0}{\infty}{r^3 e^{-r/a}}{r}
+    + \frac{1}{4a^2}\bint{0}{\infty}{r^4 e^{-r/a}}{r}
+    \right),
 \end{align*}
-where each of these three integrals are of the form of integral (7) on the provided integral table; that is,
-\[\bint{0}{\infty}{x^n e^{-ax}}{x}=\frac{\Gamma(n+1)}{a^{n+1}}
-\Rightarrow \bint{0}{\infty}{r^n e^{-r/a}}{r} = n! a^{n+1}.\]
+where all three integrals are of the form of integral (7) from the provided integral table; that is,
+\[\bint{0}{\infty}{x^n e^{-ax}}{x}
+=\frac{\Gamma(n+1)}{a^{n+1}}
+\Rightarrow \bint{0}{\infty}{r^{n} e^{-r/a}}{r}
+= n! a^{n+1}.\]
 Then,
 \begin{align*}
-1 &= A^2 \frac{1}{2a^3} \left(3!a^3 - 4!a^3 + \frac{1}{4}5!a^3\right)
-\\&= A^2 \frac{1}{2} \left(6 - 24 + 30\right)
-\\&= 6A^2,
+1 &= \left(\frac{c_0}{2a}\right)^2 \left(2!a^3 - \frac{1}{a}3!a^4 + \frac{1}{4a^2}4!a^5\right)
+\\&= \left(\frac{c_0}{2a}\right)^2 \left(2a^3 - 6a^3 + 6a^3\right)
+\\&= c_0^2 \frac{1}{4a^2}2a^3
+\\&= c_0^2 \frac{a}{2},
 \end{align*}
-which is satisfied for \(A=\sqrt{1/6}\).
+which is satisfied for
+\[c_0 = \sqrt{\frac{2}{a}}.\]
+Thus,
+\[R_{2,0} = \frac{a^{-3/2}}{\sqrt{2}}\left(1-\frac{r}{2a}\right)\exp\left[-\frac{r}{2a}\right].\]
+The wavefunction, \(\psi_{2,0,0}\), is given by
+\[\psi_{2,0,0} = R_{2,0}Y_0^0,\]
+where \(Y_0^0\) is given by Griffiths Table 4.3 as
+\[Y_0^0 = \sqrt{\frac{1}{4\pi}}.\]
+Thus,
+\[\psi_{2,0,0} = \frac{a^{-3/2}}{\sqrt{8\pi}}\left(1-\frac{r}{2a}\right)\exp\left[-\frac{r}{2a}\right].\]
 
+\bigskip
 \item Normalize \(R_{2,1}\) for hydrogen and construct the wavefunction \(\psi_{2,1,1}, \psi_{2,1,0}\), and \(\psi_{2,1,-1}\). \bigskip
 
-From Griffiths Table 4.7,
+% From Griffiths Table 4.7,
+% \[R_{2,1}
+% = \frac{1}{2\sqrt{6}}a^{-3/2}\exp\left[-\frac{r}{2a}\right]\left(\frac{r}{a}\right)
+% = \frac{1}{2\sqrt{3}}\left(\frac{a}{r}-\frac{1}{2}\right)R_{2,0}
+% .\]
+
+From Griffiths Eq.\ 4.83,
 \[R_{2,1}
-= \frac{1}{2\sqrt{6}}a^{-3/2}\exp\left[-\frac{r}{2a}\right]\left(\frac{r}{a}\right)
-= \frac{1}{2\sqrt{3}}\left(\frac{a}{r}-\frac{1}{2}\right)R_{2,0}
-.\]
+= \frac{c_0}{4a^2}r\exp\left[-\frac{r}{2a}\right],\]
+where \(c_0\) is the normalization constant. Then,
+\begin{align*}
+1 &= \bint{0}{\infty}{\left| R_{2,1} \right|^2 r^2}{r}
+\\&= \left(\frac{c_0}{4a^2}\right)^2 \bint{0}{\infty}{r^4\exp\left[-\frac{r}{a}\right]}{r},
+\end{align*}
+which is an integral of the same form as in part (a). Thus,
+\begin{align*}
+1 &= \left(\frac{c_0}{4a^2}\right)^2 4!a^5
+\\&= c_0^2 a \frac{3}{2},
+\end{align*}
+which is satisfied for
+\[c_0 = \sqrt{\frac{2}{3a}}.\]
+Thus,
+\[R_{2,1} = \frac{a^{-5/2}}{\sqrt{24}}r \exp\left[-\frac{r}{2a}\right].\]
+The wavefunctions, \(\psi_{2,1,1}, \psi_{2,1,0}\), and \(\psi_{2,1,-1}\) are given by
+\begin{align*}
+\psi_{2,1,1} &= R_{2,1}Y_1^1, \\
+\psi_{2,1,0} &= R_{2,1}Y_1^0, \\
+\psi_{2,1,-1} &= R_{2,1}Y_1^{-1}.
+\end{align*}
+The angular components of the wavefunctions, \(Y_1^1\), \(Y_1^0\), and \(Y_1^{-1}\), are given by Griffiths Table 4.3 as
+\begin{align*}
+Y_1^1 &= -\sqrt{\frac{3}{8\pi}}\sin[\theta]\exp\left[i\phi\right], \\
+Y_1^0 &= \sqrt{\frac{3}{4\pi}}\cos[\theta], \\
+Y_1^{-1} &= \sqrt{\frac{3}{8\pi}}\sin[\theta]\exp\left[-i\phi\right].
+\end{align*}
+Then,
+\begin{align*}
+\psi_{2,1,1} &= -\frac{a^{-5/3}}{\sqrt{64\pi}}r\exp\left[i\phi-\frac{r}{2a}\right]\sin[\theta],\\
+\psi_{2,1,0} &= \frac{a^{-5/3}}{\sqrt{32\pi}}r\exp\left[-\frac{r}{2a}\right]\cos[\theta],\\
+\psi_{2,1,-1} &= \frac{a^{-5/3}}{\sqrt{64\pi}}r\exp\left[-\left(i\phi+\frac{r}{2a}\right)\right]\sin[\theta].
+\end{align*}
 
 \end{enumerate}
 \pagebreak
@@ -92,7 +164,7 @@ Then,
     \frac{1}{24a^3}\left(\frac{r}{a}\right)^2e^{-r/a}\frac{3}{8\pi} r^4(\sin[\theta])^5(\cos[\theta])^2
 }{r}}{\theta}}{\phi}
 \\&= \frac{1}{64\pi a^5} \bint{0}{2\pi}{\bint{0}{\pi}{\bint{0}{\infty}{
-    e^{-r/a} r^6(\sin[\theta])^5(\cos[\theta])^2
+    e^{-r/a} r^6 (\sin[\theta])^5 (\cos[\theta])^2
 }{r}}{\theta}}{\phi}
 \\&= \frac{1}{64\pi a^5}
 \bint{0}{2\pi}{\left(\cos[\phi]\right)^2}{\phi}
@@ -108,7 +180,6 @@ Then,
 where the remaining integrals are of the form that Mathematica can solve\footnote{I could too, but would rather not apply integration by parts many times over.}.
 Then,
 \[\expval{x^2} = \frac{45}{4\pi}a^2 \frac{16}{15} \pi = 12 a^2.\]
-
 
 \end{enumerate}
 \pagebreak
