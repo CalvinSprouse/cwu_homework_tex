@@ -193,28 +193,71 @@ Then,
 \item \begin{enumerate}[label=(\alph*)]
 \item Starting with \([r_i,p_j]=-[p_i,r_j]=i\hbar\delta_{ij}\) and \([r_i,r_j]=[p_i,p_j]=0\), where the index \(i\) stands for \(x,y\), or \(z\), and \(r_x=x\), \(r_y=y\), \(r_z=z\), work out the following commutator relations:
 \begin{alignat*}{3}
-[L_z,x] & =i\hbar y, & \qquad\qquad [L_z,y] & =i\hbar x, & \qquad\qquad [L_z,z] & =0, \\
-[L_z,p_x]&=i\hbar p_y, & [L_z, p_y]&=i\hbar p_x, & [L_z, p_z]&=0.
+[L_z,x] & =i\hbar y, & \qquad\qquad [L_z,y] & =-i\hbar x, & \qquad\qquad [L_z,z] & =0, \\
+[L_z,p_x]&=i\hbar p_y, & [L_z, p_y]&=-i\hbar p_x, & [L_z, p_z]&=0.
 \end{alignat*} \bigskip
 
+Using notation from Griffiths Eq.\ 4.97,
+\[\left[L_z, x\right] = \left[xp_y - yp_x, x\right] = \left[xp_y,x\right] - \left[yp_x,x\right],\]
+we notice \(p_y\) and \(x\) will commute while \(p_x\) and \(x\) will not. We also notice that the \(y\) term in the right-most term will commute with both \(p_x\) and \(x\). Thus,
+\[\left[L_z, x\right] = 0 - y\left[p_x,x\right] = y\left[x,p_x\right] = i\hbar y.\]
+Similarly,
+\[\left[L_z, y\right] = \left[xp_y-yp_x, y\right] = \left[xp_y,y\right] + \left[y,yp_x\right] = -x\left(i\hbar\right) + 0 = -i\hbar x.\]
+Not so similarly,
+\[\left[L_z, z\right] = \left[xp_y - yp_x, z\right] = \left[xp_y, z\right] - \left[yp_x, z\right].\]
+Here, \(z\) commutes with \(x\), \(y\), \(p_x\), and \(p_y\). Thus,
+\[\left[L_z, z\right] = 0 - 0 = 0.\]
+The momentum terms will interact just like the position terms.
+\begin{align*}
+\left[L_z, p_x\right] &= \left[xp_y - yp_x, p_x\right] = \left[xp_y, p_x\right] - \left[yp_x, p_x\right] = p_y\left[x, p_x\right] - 0 = i\hbar p_y; \\
+\left[L_z, p_y\right] &= \left[xp_y - yp_x, p_y\right] = \left[xp_y, p_y\right] - \left[yp_x, p_y\right] = 0 - p_x\left[y,p_y\right] = -i\hbar p_x; \\
+\left[L_z, p_z\right] &= \left[xp_y - yp_x, p_z\right] = \left[xp_y, p_z\right] - \left[yp_x, p_z\right] = 0 - 0 = 0.
+\end{align*}
 
-
+\pagebreak
 \item Use the results from part (a) and the definitions
 \begin{align*}
 L_x&=yp_z-zp_y, \\
 L_y&=zp_x-xp_z, \\
 L_z&=xp_y-yp_x,
 \end{align*}
-to obtain \([L_z,L_x]=i\hbar L_y\). \bigskip
+to obtain \([L_z,L_x]=i\hbar L_y\).
 
+\begin{align*}
+\left[L_z, L_x\right] &= \left[xp_y - yp_x, yp_z - zp_y\right]
+\\&= \left[xp_y,yp_z\right] - \left[xp_y, zp_y\right] - \left[yp_x, yp_z\right] + \left[yp_x, zp_y\right],
+\end{align*}
+where here the middle two terms commute and so equal 0. Then,
+\begin{align*}
+\left[L_z, L_x\right] &= \left[xp_y,yp_z\right] + \left[yp_x, zp_y\right]
+\\&= xp_z\left[p_y,y\right] + p_x z \left[y,p_y\right]
+\\&= xp_z(-i\hbar) + p_x z (i\hbar)
+\\&= i\hbar\left(-xp_z + p_x z\right)
+\\&= i\hbar\left(p_x z - xp_z\right)
+\\&= i\hbar\left(z p_x - x p_z\right)
+\\&= i\hbar L_y.
+\end{align*}
 
+\bigskip
 \item Evaluate the commutators \([L_z, r^2]\) and \([L_z, p^2]\), where \(r^2 = x^2 + y^2 + z^2\) and \(p^2 = p^2_x + p^2_y + p^2_z\). \bigskip
 
+We begin by exploiting Griffiths Eq.\ 3.65;
+\begin{align*}
+\left[L_z, r^2\right] &= \left[L_z, x^2\right] + \left[L_z, y^2\right] + \left[L_z, z^2\right]
+\\&= \left[L_z, x\right]x + x\left[L_z, x\right] + \left[L_z, y\right]y + y\left[L_z, y\right] + 0.
+\end{align*}
+Then by the results from part (a),
+\[\left[L_z, r^2\right] = i\hbar yx + i\hbar xy -i\hbar xy - i\hbar xy = 0.\]
+We appeal to identical arguments for \(\left[L_z, p^2\right]\). Eq.\ 3.65 holds, the commutator relations from part (a) are of the same form, and thus
+\[\left[L_z, p^2\right] = 0.\]
 
-
+\bigskip
 \item Show that the Hamiltonian, \[\hat{H}=\frac{\hat{p}^2}{2m} + \hat{V},\] commutes with all three components of \(\hat{\vec{L}}\) if \(\hat{V}\) depends only on \(r\). \bigskip
 
-
+Let \(L\) be an arbitrary component of angular momentum. The result from part (c) may exploit similar arguments to show \(\left[L_x,p^2\right]=0\) and \(\left[L_y, p^2\right]=0\). Then,
+\[\left[L, H\right] = \frac{1}{2m}\left[L, p^2\right] + \left[L, V\right] = 0 + \left[L, V\right],\]
+where \(V\) is a function only of \(r\). Thus
+\[\left[L,H\right] = \left[L,r\right].\]
 
 \end{enumerate}
 \end{enumerate}
