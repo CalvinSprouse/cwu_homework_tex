@@ -256,8 +256,26 @@ We appeal to identical arguments for \(\left[L_z, p^2\right]\). Eq.\ 3.65 holds,
 
 Let \(L\) be an arbitrary component of angular momentum. The result from part (c) may exploit similar arguments to show \(\left[L_x,p^2\right]=0\) and \(\left[L_y, p^2\right]=0\). Then,
 \[\left[L, H\right] = \frac{1}{2m}\left[L, p^2\right] + \left[L, V\right] = 0 + \left[L, V\right],\]
-where \(V\) is a function only of \(r\). Thus
+where \(V\) is a function only of \(r\). Thus,
 \[\left[L,H\right] = \left[L,r\right].\]
+Let \(L\) be a particular component of orbital angular momentum by Eq.\ 4.96,
+\[L=L_z=xp_y-yp_x=xi\hbar\diffp{}{y} - yi\hbar\diffp{}{x}.\]
+Then, we evaluate \(\left[L_z,r\right]\) with a test function, \(v(r)\),
+\begin{align*}
+\left[L_z,r\right]v &= i\hbar\left[x\diffp{}{y}-y\diffp{}{x},r\right]v
+\\&= i\hbar\left[x\diffp{}{y}-y\diffp{}{x},r\right]v
+\\&= i\hbar\left(\left[x\diffp{}{y},r\right]v - \left[y\diffp{}{x},r\right]v\right),
+\end{align*}
+where
+\[r = \sqrt{x^2 + y^2 + z^2}.\]
+Then,
+\begin{align*}
+\left[L_z, r\right]v &= i\hbar\left(x\diffp{rv}{y}-rx\diffp{v}{y} - y\diffp{rv}{x} + ry\diffp{v}{x}\right)
+\\&= i\hbar \left(xv\frac{1}{2}r^{-1}2y - 0 -yv\frac{1}{2}r^{-1}2x + 0\right)
+\\&= i\hbar v\left(\frac{xy}{r}-\frac{xy}{r}\right)
+\\&= 0.
+\end{align*}
+By inspection, we see that any choice of \(L\), \(L_x\), \(L_y\), or \(L_z\), will interact with the test function, \(v(r)\), and \(r\) similarly, and thus commute.
 
 \end{enumerate}
 \end{enumerate}
