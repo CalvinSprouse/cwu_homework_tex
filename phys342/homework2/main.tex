@@ -25,9 +25,20 @@ Any system undergoing non-isothermal compression will experience a temperature i
 Estimate how long it should take to bring a cup of water to boiling temperature in a typical 600-watt microwave oven, assuming that all the energy ends up in the water. Assume any reasonable initial temperature for the water. Explain why no heat is involved in this process.
 
 \bigskip\noindent
+Let the water be at room temperature, \(T_i = \qty{293}{\kelvin}\), before the microwave is turned on. The energy required to raise the temperature of water by some amount is given by
+\[E = m c \Delta T = V\left(\qty{1}{\gram\per\milli\liter}\right)\left(\qty{4.182}{\joule\per\gram\per\kelvin}\right)\left(\qty{80}{\kelvin}\right),\]
+where the mass of the water is represented by the volume and density, \(c\) is the specific heat capacity of water, and \(\Delta T\) is the temperature difference in kelvin between the boiling temperature of water and room temperature. Let
+\[V=1\,\text{cup}\approx\qty{250}{\milli\liter}.\]
+Then,
+\[E = \qty{8.364e4}{\joule}.\]
+The time required to deliver an amount of energy \(E\) at some wattage \(W\) is given by
+\[t = \frac{E}{W} = \frac{\qty{8.364e4}{\joule}}{\qty{600}{\joule\per\second}} = \qty{139.4}{\second}.\]
+The microwave should bring a cup of room temperature water to boil in 139.4 seconds. There is no heat involved in this process. Heat is defined as the spontaneous flow of energy between two objects of different temperature. The microwave, however, is not transferring energy on the basis of a temperature gradient. The microwave transfers energy through directed radiation.
 
 
-\bigskip\noindent \textbf{Problem 1.29.} Put a few spoonfuls of water into a bottle with a tight lid. Make sure everything is at room temperature, measuring the temperature of the water with a thermometer to make sure. Now close the bottle and shake it as hard as you can for several minutes. When you're exhausted and ready to drop, shake it for several minutes more. Then measure the temperature again. Make a rough calculation of the expected temperature change, and compare.
+% \bigskip\noindent
+\pagebreak\noindent
+\textbf{Problem 1.29.} Put a few spoonfuls of water into a bottle with a tight lid. Make sure everything is at room temperature, measuring the temperature of the water with a thermometer to make sure. Now close the bottle and shake it as hard as you can for several minutes. When you're exhausted and ready to drop, shake it for several minutes more. Then measure the temperature again. Make a rough calculation of the expected temperature change, and compare.
 
 \bigskip\noindent
 
@@ -44,7 +55,9 @@ Estimate how long it should take to bring a cup of water to boiling temperature 
 \bigskip\noindent
 
 
-\bigskip\noindent \textbf{Problem 1.33.} An ideal gas is made to undergo the cyclic process shown in Figure 1.10(a). For each of the steps \(A\), \(B\), and \(C\), determine whether each of the following is positive, negative, or zero:
+% \bigskip\noindent
+\pagebreak\noindent
+\textbf{Problem 1.33.} An ideal gas is made to undergo the cyclic process shown in Figure 1.10(a). For each of the steps \(A\), \(B\), and \(C\), determine whether each of the following is positive, negative, or zero:
 \begin{enumerate}[label=(\alph*)]
 \item the work done on the gas;
 \item the change in the energy content of the gas;
@@ -53,7 +66,19 @@ Estimate how long it should take to bring a cup of water to boiling temperature 
 Then determine the sign of each of these three quantities for the whole cycle. What does this process accomplish?
 
 \bigskip\noindent
+% generate a 4x4 table
+\begin{center}
+\begin{tabular}{c|c|c|c}
+& (a) Work & (b) Energy & (c) Heat \\ \hline \hline
+A & - & - & 0 \\ \hline
+B & 0 & + & + \\ \hline
+C & + & + & 0 \\ \hline \hline
+cycle & 0 & + & + \\ \hline
+\end{tabular}
+\end{center}
 
+\noindent
+This process increases the energy of the gas.
 
 \bigskip\noindent \textbf{Problem 1.35.} Derive equation 1.40,
 \[V^\gamma P = \text{constant},\]
@@ -63,24 +88,62 @@ from equation 1.39,
 \bigskip\noindent
 
 
-\bigskip\noindent \textbf{Problem 1.37.} In a Diesel engine, atmospheric air is quickly compressed to about \(1/20\) of its original volume. Estimate the temperature of the air after compression, and explain why a Diesel engine does not require spark plugs.
+% \bigskip\noindent
+\pagebreak\noindent
+\textbf{Problem 1.37.} In a Diesel engine, atmospheric air is quickly compressed to about \(1/20\) of its original volume. Estimate the temperature of the air after compression, and explain why a Diesel engine does not require spark plugs.
 
 \bigskip\noindent
+Let the gas be at room temperature before compression, \(T_i = \qty{293}{\kelvin}\), and let the volume of the gas before compression be \(V\). Then, Eq.\ 1.38 states
+\[V_\text{f}T_\text{f}^{f/2} = V_\text{i}T_\text{i}^{f/2},\]
+where \(f\) is the number of degrees of freedom of the gas. Since air is composed almost entirely of diatomic molecules \(\text{O}_2\) and \(\text{N}_2\), \(f=5\). Then,
+\[T_\text{f} = \left(\frac{V_i}{V_f}\right)^{2/f} T_\text{i} = (20)^{2/5}\qty{293}{\kelvin} \approx \qty{971}{\kelvin}.\]
+This temperature is presumably higher than the auto-ignition temperature of Diesel fuel thus allowing the engine to create combustion without the need for a spark.
 
-
-\bigskip\noindent \textbf{Problem 1.41.} To measure the heat capacity of an object, all you usually have to do is put it in thermal contact with another object whose heat capacity you know. As an example, suppose that a chunk of metal is immersed in boiling water \((\qty{100}{\celsius})\), then is quickly transferred into a Styrofoam cup containing \(\qty{250}{\gram}\) of water at \(\qty{20}{\celsius}\). After a minute or so, the temperature of the contents of the cup is \(\qty{24}{\celsius}\). Assume that during this time no significant energy is transferred between the contents of the cup and the surroundings. The heat capacity of the cup itself is negligible.
+% \bigskip\noindent
+\pagebreak\noindent
+\textbf{Problem 1.41.} To measure the heat capacity of an object, all you usually have to do is put it in thermal contact with another object whose heat capacity you know. As an example, suppose that a chunk of metal is immersed in boiling water \((\qty{100}{\celsius})\), then is quickly transferred into a Styrofoam cup containing \(\qty{250}{\gram}\) of water at \(\qty{20}{\celsius}\). After a minute or so, the temperature of the contents of the cup is \(\qty{24}{\celsius}\). Assume that during this time no significant energy is transferred between the contents of the cup and the surroundings. The heat capacity of the cup itself is negligible.
 \begin{enumerate}[label=\textbf{(\alph*)}]
 \item How much heat is gained by the water?
+
+The water gains heat \(Q\).
 \item How much heat is lost by the metal?
+
+The metal loses heat \(Q\).
 \item What is the heat capacity of this chunk of metal?
+
+As derived in class, the heat capacity of the chunk of metal, \(c_t\) for test object, is given by
+\[c_t = -c_r \frac{m_r}{m_t}\frac{\left(T_f - T_{ir}\right)}{\left(T_f - T_{it}\right)},\]
+where the subscript \(r\) denotes the reference object properties, in this case water, and the subscript \(t\) denotes the test object properties, in this case the metal. The final temperature of both objects will be the same. The heat capacity then, \(C=cm\), is given by
+\[C_t = - C_r \frac{m_r}{m_t}\frac{\left(T_f - T_{ir}\right)}{\left(T_f - T_{it}\right)}.\]
+Substituting known properties of water and initial conditions of the metal we find
+\[C_t = -\left(\qty{4.182}{\joule\per\gram\per\kelvin}\right)\left(\qty{250}{\gram}\right)\frac{\left(\qty{4}{\kelvin}\right)}{\left(\qty{-76}{\kelvin}\right)} \approx \qty{55.02}{\joule\kelvin}.\]
 \item If the mass of the chunk of metal is \(\qty{100}{\gram}\), what is its specific heat capacity?
+
+Given the mass of the test material we can us the specific heat capacity relation,
+\[c_t = -c_r \frac{m_r}{m_t}\frac{\left(T_f - T_{ir}\right)}{\left(T_f - T_{it}\right)}.\]
+Then, substituting known properties of the system,
+\[c_t = -\left(\qty{4.182}{\joule\per\gram\per\kelvin}\right)\frac{\qty{250}{\gram}}{\qty{100}{\gram}}\frac{\left(\qty{4}{\kelvin}\right)}{\left(\qty{-76}{\kelvin}\right)} \approx \qty{0.55}{\joule\per\gram\per\kelvin}.\]
 \end{enumerate}
 
 \bigskip\noindent
 
 
-\bigskip\noindent \textbf{Problem 1.42.} The specific heat capacity of Albertson's \textit{Rotini Tricolore} is approximately \(\qty{1.8}{\joule\per\gram\per\celsius}\). Suppose you toss \(\qty{340}{\gram}\) of this pasta, at \(\qty{25}{\celsius}\), into \(\qty{1.5}{\liter}\) of boiling water. What effect does this have on the temperature of the water assuming the stove does not add any more heat?
+% \bigskip\noindent
+\pagebreak\noindent
+\textbf{Problem 1.42.} The specific heat capacity of Albertson's \textit{Rotini Tricolore} is approximately \(\qty{1.8}{\joule\per\gram\per\celsius}\). Suppose you toss \(\qty{340}{\gram}\) of this pasta, at \(\qty{25}{\celsius}\), into \(\qty{1.5}{\liter}\) of boiling water. What effect does this have on the temperature of the water assuming the stove does not add any more heat?
 
 \bigskip\noindent
+We begin with the specific heat capacity relationship for a test object and reference object derived in class,
+\[c_t = -c_r \frac{m_r}{m_t}\frac{\left(T_f - T_{ir}\right)}{\left(T_f - T_{it}\right)}.\]
+This can be arranged for \(T_f\),
+\[c_t = -c_r \frac{m_r}{m_t}\frac{\left(T_f - T_{ir}\right)}{\left(T_f - T_{it}\right)}
+\Rightarrow T_f = \frac{T_{ir}c_r m_r + T_{it}c_t m_t}{c_t m_t + c_r m_r}.\]
+Let the subscript \(t\) refer to the water and the subscript \(r\) refer to the pasta. Substituting known quantities and expressing the water in terms of its volume and density yields
+\begin{align*}
+T_f &= \frac{\left(\qty{298}{\kelvin}\right)\left(\qty{1.8}{\joule\per\gram\per\kelvin}\right)\left(\qty{340}{\gram}\right) + \left(\qty{373}{\kelvin}\right)\left(\qty{4.182}{\joule\per\gram\per\kelvin}\right)\left(\qty{1500}{\milli\liter}\right)\left(\qty{1}{\gram\per\milli\liter}\right)}{\left(\qty{4.182}{\joule\per\gram\per\kelvin}\right)\left(\qty{1500}{\milli\liter}\right)\left(\qty{1}{\gram\per\milli\liter}\right) + \left(\qty{1.8}{\joule\per\gram\per\kelvin}\right)\left(\qty{340}{\gram}\right)}
+\\&\approx \qty{366}{\kelvin}
+\\&= \qty{93}{\celsius}.
+\end{align*}
+Before the stove adds more heat to the system, the water and pasta reach a temperature of \(\qty{93}{\celsius}\).
 
 \end{document}
