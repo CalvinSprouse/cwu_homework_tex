@@ -4,6 +4,7 @@
 % import default packages
 \usepackage{config/packages}
 \usepackage{config/commands}
+\DeclareSIUnit{\atm}{atm}
 
 % end preamble
 \begin{document}
@@ -41,15 +42,49 @@ The microwave should bring a cup of room temperature water to boil in 139.4 seco
 \textbf{Problem 1.29.} Put a few spoonfuls of water into a bottle with a tight lid. Make sure everything is at room temperature, measuring the temperature of the water with a thermometer to make sure. Now close the bottle and shake it as hard as you can for several minutes. When you're exhausted and ready to drop, shake it for several minutes more. Then measure the temperature again. Make a rough calculation of the expected temperature change, and compare.
 
 \bigskip\noindent
+Suppose we have a water bottle which will absorb a negligible amount of heat from the water and be of negligible mass. The water then shall be of mass \(m\). Let the water start at room temperature, \(T_i=\qty{293}{\kelvin}\). The final temperature of the water then, after receiving some heat energy \(Q\), is given by
+\[T_f = \frac{Q}{mc} + T_i.\]
+Now suppose the water bottle is shaken upward violently, a height \(h\). The water gains some potential gravitational energy, which will be lost in the downward motion and so can be ignored, but the violence of the shake means there exists some additional kinetic energy. This kinetic energy is not used to raise the water higher in the gravitational potential, but is instead lost to chaotic motion of the water in the bottle. If we imagine the shaker lost grip and simply tossed the bottle into the air, then the difference in potential energy of the bottle tossed vs.\ the bottle held is the extra energy the water receives from violent shaking. Suppose the shaker could toss the bottle upward a height \(H\), where \(H>h\). Then the extra kinetic energy of the water after the upward shake is given by
+\[K = mg\left(H-h\right).\]
+On the downward shake now, we suppose the shaker can impart a similar amount of energy. Then over one shake cycle, the shaker imparts kinetic energy to the water
+\[K = 2mg\left(H-h\right).\]
+As the water settles, this kinetic energy of the water molecules becomes thermal energy of the water. Suppose all this kinetic energy becomes thermal energy of the water. Then one shake cycle should raise the temperature of water by
+\[T_f = \frac{2mg\left(H-h\right)}{mc} + T_i = \frac{2g}{c}\left(H-h\right) + T_i.\]
+We see that the mass of the water has no effect, though I'm sure the shaker's arm would disagree. If we shake the water for \(N\) cycles, the final temperature should be
+\[T_f = N\frac{2g}{c}\left(H-h\right) + T_i.\]
+Now, suppose a shaker can toss a bottle of water a height \(H=\qty{3}{\meter}\) and the same bottle is shaken through a height \(h=\qty{1}{\meter}\). To reach boiling temperature, \(T_f = \qty{373}{\kelvin}\), would require \(N\) shakes given by
+\[N = \frac{c\left(T_f-T_i\right)}{H-h}.\]
+Substituting our hypothetical values yields
+\[N= 167,280.\]
+Unfortunately, this is a best case scenario. Much of the energy the shaker puts into the water will be lost to sound and to the shakers own muscles stopping the bottle at the top and bottom of the shake.
 
-
-\bigskip\noindent \textbf{Problem 1.31.} Imagine some helium in a cylinder which an initial volume of 1 liter and an initial pressure of 1 atm. Somehow, the helium is made to expand to a final volume of 3 liters, in such a way that its pressure rises in direct proportion to its volume.
+% \bigskip\noindent
+\pagebreak\noindent
+\textbf{Problem 1.31.} Imagine some helium in a cylinder which an initial volume of 1 liter and an initial pressure of 1 atm. Somehow, the helium is made to expand to a final volume of 3 liters, in such a way that its pressure rises in direct proportion to its volume.
 \begin{enumerate}[label=\textbf{(\alph*)}]
 \item Sketch a graph of pressure vs.\ volume for this process.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{figure.pdf}
+\end{figure}
+
 \item Calculate the work done on the gas during this process, assuming that there are are no ``other'' types of work being done.
+
+The area under the curve is given by
+\[W = \frac{1}{2}\left(\qty{3}{\atm}\right)\left(\qty{3}{\liter}\right) = \qty{4.5}{\joule}.\]
+
 \item Calculate the change in the helium's energy content during this process.
+
+\[\Delta E = P_f V_f - P_i V_i = \left(\qty{3}{\atm}\right)\left(\qty{3}{\liter}\right) - \left(\qty{1}{\atm}\right)\left(\qty{1}{\liter}\right) = \qty{8}{\joule}.\]
+
 \item Calculate the amount of heat added to or removed from the helium during this process.
+
+Since only \(\qty{4.5}{\joule}\) of energy was added through work, the remaining \(\qty{3.5}{\joule}\) of energy must come from heat.
+
 \item Describe what you might do to \textit{cause} the pressure to rise as the helium expands.
+
+As the gas expands I might heat it to replenish the energy lost to expansion.
 \end{enumerate}
 
 \bigskip\noindent
@@ -84,8 +119,15 @@ This process increases the energy of the gas.
 \[V^\gamma P = \text{constant},\]
 from equation 1.39,
 \[VT^{f/2} = \text{constant}.\]
-
 \bigskip\noindent
+We begin with Eq.\ 1.38,
+\[V_\text{f}T_\text{f}^{f/2} = V_\text{i}T_\text{i}^{f/2}.\]
+Then, solving the ideal gas law for \(T\) yields
+\[T = \frac{PV}{nR}.\]
+Substituting this relation and recognizing that \(nR\) is constant yields
+\[V_\text{f}\left(\frac{P_\text{f}V_\text{f}}{nR}\right)^{f/2} = V_\text{i}\left(\frac{P_\text{i}V_\text{i}}{nR}\right)^{f/2}.\]
+Multiplying both sides by \(nR\) and combining the exponents yields
+\[P_\text{f}V_\text{f}^{\frac{f+2}{2}} = P_\text{i}V_\text{i}^{\frac{f+2}{2}} \Rightarrow PV^\gamma = \text{constant}.\]
 
 
 % \bigskip\noindent
