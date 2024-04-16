@@ -1,0 +1,129 @@
+% document style header
+\documentclass[a4paper, 12pt]{config/homework}
+
+% import default packages
+\usepackage{config/packages}
+\usepackage{config/commands}
+
+% end preamble
+\begin{document}
+
+% document title
+\noindent
+\hfill Calvin Sprouse \hfill PHYS 475 Homework 2 \hfill 2024 April 10 \hfill
+\bigskip
+
+% homework problems begin
+\begin{enumerate}
+\item An electron is in the spin state
+\[\chi = A \matr{3i \\ 4}.\]
+\begin{enumerate}
+\item Normalize \(\chi\) to determine A.
+\bigskip \\
+We begin by recognizing that
+\[\chi = A \matr{3i \\ 4} = A\left(3i\bra*{\uparrow} + 4\ket*{\downarrow}\right).\]
+Then,
+\[ 1 = \left| \chi \right|^2
+= A^*A \left((3i)(-3i)\braket*{\uparrow}{\downarrow} + (4)(4)\braket*{\downarrow}{\downarrow} + 0 + 0\right)
+= A^2 \left(9 + 16\right), \]
+which is satisfied for \(A = 1/5\).
+
+\bigskip
+\item Determine \(\expval{S_x}\), \(\expval{S_y}\), \(\expval{S_z}\).
+\bigskip \\
+From Griffiths Eq.\ 4.145 and Eq.\ 4.147,
+\[
+\widehat{S_x} = \frac{\hbar}{2}\matr{0 & 1 \\ 1 & 0}, \quad
+\widehat{S_y} = \frac{\hbar}{2}\matr{0 & -i \\ i & 0}, \quad
+\widehat{S_z} = \frac{\hbar}{2}\matr{1 & 0 \\ 0 & -1}.
+\]
+Then, in general,
+\[
+\expval{S_a}
+= \bra*{\chi}\,\widehat{S_a}\,\ket*{\chi}
+= \frac{1}{25}\matr{-3i & 4} \widehat{S_a} \matr{3i \\ 4},
+\]
+where \(a\) represents \(x\), \(y\), or \(z\).
+Thus,
+\begin{align*}
+\expval{S_x} &= \frac{1}{25}\frac{\hbar}{2}\matr{-3i & 4}\matr{0 & 1 \\ 1 & 0}\matr{3i \\ 4} = 0,
+\\ \expval{S_y} &= \frac{1}{25}\frac{\hbar}{2}\matr{-3i & 4}\matr{0 & -i \\ i & 0}\matr{3i \\ 4} = -\frac{24}{50}\hbar,
+\\ \expval{S_z} &= \frac{1}{25}\frac{\hbar}{2}\matr{-3i & 4}\matr{1 & 0 \\ 0 & -1}\matr{3i \\ 4} = -\frac{7}{50}\hbar.
+\end{align*}
+
+\bigskip
+\item Determine the uncertainties \(\sigma_{S_x}\), \(\sigma_{S_y}\), and \(\sigma_{S_x}\).
+\bigskip
+In general,
+\[\sigma_a = \sqrt{\expval{a^2} - \expval{a}^2},\]
+where \(a\) represents some observable. Our square spin operators are then
+\[
+\widehat{S_x^2} = \frac{\hbar^2}{4}\matr{1 & 0 \\ 0 & 1}, \quad
+\widehat{S_y^2} = \frac{\hbar^2}{4}\matr{1 & 0 \\ 0 & 1}, \quad
+\widehat{S_z^2} = \frac{\hbar^2}{4}\matr{1 & 0 \\ 0 & 1}.
+\]
+Since the operators are equal, their expectation values on \(\chi\) will be equal. We also notice that the matrix for each operator is the identity matrix. Thus,
+\[\expval{S_x^2} = \expval{S_y^2} = \expval{S_z^2} = \frac{\hbar^2}{4}\bra*{\chi}\widehat{S^2_x}\ket*{\chi} = \frac{\hbar^2}{4}\braket*{\chi}{\chi} = \frac{\hbar^2}{4}.\]
+Therefore,
+\begin{align*}
+\sigma_{S_x} &= \sqrt{\expval{S_x^2} - \expval{S_x}^2} = \sqrt{\frac{\hbar^2}{4}-0} = \frac{\hbar}{2}, \\
+\sigma_{S_y} &= \sqrt{\expval{S_y^2} - \expval{S_y}^2} = \sqrt{\frac{\hbar^2}{4} - \left(-\frac{12}{25}\hbar\right)^2} = \frac{7}{50}\hbar \\
+\sigma_{S_z} &= \sqrt{\expval{S_z^2} - \expval{S_y}^2} = \sqrt{\frac{\hbar^2}{4} - \left(-\frac{7}{50}\hbar\right)^2} = \frac{12}{25}\hbar.
+\end{align*}
+
+\bigskip
+\item Confirm that the results are consistent with all three uncertainty principles; that is,
+\[\sigma_{S_x}\sigma_{S_y} \ge \frac{\hbar}{2}\left|\expval{S_z}\right|,\]
+and the cyclic permutations.
+\bigskip
+Notice from part (c),
+\[
+\sigma_{S_x} = \frac{\hbar}{2}, \quad
+\sigma_{S_y} = \frac{7}{50}\hbar = \left|\expval{S_z}\right|, \quad
+\sigma_{S_z} = \frac{12}{50}\hbar = \left|\expval{S_y}\right|.
+\]
+Then,
+\begin{align*}
+\sigma_{S_x}\sigma_{S_y} \ge \frac{\hbar}{2}\left|\expval{S_z}\right|
+&\Rightarrow \frac{\hbar}{2}\left|\expval{S_z}\right| \ge \frac{\hbar}{2}\left|\expval{S_z}\right|, \\
+\sigma_{S_y}\sigma{S_z} \ge \frac{\hbar}{2}\left|\expval{S_x}\right|
+&\Rightarrow \left(\frac{7}{50}\hbar\right)\left(\frac{12}{50}\hbar\right) \ge 0, \\
+\sigma_{S_z}\sigma{S_x} \ge \frac{\hbar}{2}\left|\expval{S_y}\right|
+&\Rightarrow \left|\expval{S_y}\right|\frac{\hbar}{2} \ge \frac{\hbar}{2}\left|\expval{S_y}\right|.
+\end{align*}
+
+\end{enumerate}
+\pagebreak
+\item For a generalized spinor,
+\[\chi = a\chi_{+,z} + b\chi_{-,z} = a\bra*{\uparrow} + b\ket*{\downarrow},\]
+where \(\chi_{+,z}\) is spin up and \(\chi_{-,z}\) is spin down, compute \(\expval{S_x}\), \(\expval{S_y}\), \(\expval{S_z}\), \(\expval{S_x^2}\), \(\expval{S_y^2}\), \(\expval{S_z^2}\). Check that
+\[\expval{S_x^2} + \expval{S_y^2} + \expval{S_z^2} = \expval{S^2}.\]
+\bigskip
+From Griffiths Eq.\ 4.145 and Eq.\ 4.147,
+\[
+\widehat{S_x} = \frac{\hbar}{2}\matr{0 & 1 \\ 1 & 0}, \quad
+\widehat{S_y} = \frac{\hbar}{2}\matr{0 & -i \\ i & 0}, \quad
+\widehat{S_z} = \frac{\hbar}{2}\matr{1 & 0 \\ 0 & -1}.
+\]
+Then,
+\[
+\widehat{S_x^2} = \widehat{S_y^2} = \widehat{S_z^2} = \frac{\hbar^2}{4}\matr{1 & 0 \\ 0 & 1}.
+\]
+Consequently,
+\[
+\widehat{S^2} = \widehat{S_x^2} + \widehat{S_y^2} + \widehat{S_z^2} = \hbar^2\frac{3}{4}\matr{1 & 0 \\ 0 & 1}.
+\]
+Then,
+\begin{align*}
+   \expval{S_x} &= \bra*{\chi}\,\widehat{S_x}\,\ket*{\chi} = \frac{\hbar}{2}\matr{a^* & b^*}\matr{0 & 1 \\ 1 & 0}\matr{a \\ b} = \frac{\hbar}{2}\left(a^*b + b^*a\right),
+\\ \expval{S_y} &= \bra*{\chi}\,\widehat{S_y}\,\ket*{\chi} = \frac{\hbar}{2}\matr{a^* & b^*}\matr{0 & -i \\ i & 0}\matr{a \\ b} = i\frac{\hbar}{2}\left(ab^* - a^*b\right),
+\\ \expval{S_z} &= \bra*{\chi}\,\widehat{S_z}\,\ket*{\chi} = \frac{\hbar}{2}\matr{a^* & b^*}\matr{1 & 0 \\ 0 & -1}\matr{a \\ b} = \frac{\hbar}{2}\left(a^*a + b^*b\right).
+\end{align*}
+Then,
+\[\expval{S_x^2} = \expval{S_y^2} = \expval{S_z^2} = \frac{\hbar^2}{4}.\]
+Finally,
+\[\expval{S^2} = \expval{S_x^2} + \expval{S_y^2} + \expval{S_z^2} = \hbar^2\frac{3}{4}.\]
+
+
+\end{enumerate}
+\end{document}

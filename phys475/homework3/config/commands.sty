@@ -1,0 +1,38 @@
+% a package containing custom commands for math/physics homework
+
+% special sets
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\ints}{\mathbb{Z}}
+\newcommand{\zerovec}{\vec{\mathbf{0}}}
+\newcommand{\field}{\mathbb{F}}
+\newcommand{\nats}{\mathbb{N}}
+
+% easy matrices
+\newcommand{\matr}[1]{ \left[ \begin{matrix} #1 \end{matrix} \right] }
+
+% eqdef
+\newcommand{\eqdef}{\stackrel{\mathclap{\tiny\mbox{def}}}{=}}
+
+% types span kind of like \sin
+\newcommand{\vspan}{\textrm{span}}
+
+% script-r
+\def\rcurs{{\mbox{$\resizebox{.16in}{.08in}{\includegraphics{.config/.script_r/ScriptR.pdf}}$}}}
+\def\brcurs{{\mbox{$\resizebox{.16in}{.08in}{\includegraphics{.config/.script_r/BoldR.pdf}}$}}}
+\def\hrcurs{{\mbox{$\hat \brcurs$}}}
+
+% euler-lagrange (mathcal L)
+\newcommand{\el}{\mathcal{L}}
+
+% command to make a bounded integral
+\newcommand{\defint}[4]{\int_{#1}^{#2}{#3 \text{d}#4}}
+\newcommand{\indint}[2]{\int{#1 \text{d}#2}}
+
+% fix the mod command to make mod properly spaced
+\renewcommand\mod{\;\text{mod}\;}
+
+% create a command to properly represent vectored primed quantities
+\newcommand{\pvec}[2]{\vec{[1]}_[2]^{\,\prime}}
+
+% print expectation value of some number
+\newcommand{\expval}[1]{\left\langle #1 \right\rangle}
