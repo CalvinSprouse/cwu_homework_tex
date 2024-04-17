@@ -1,0 +1,122 @@
+% document style header
+\documentclass[a4paper, 12pt]{config/homework}
+
+% import default packages
+\usepackage{config/packages}
+\usepackage{config/commands}
+
+% end preamble
+\begin{document}
+
+% document title
+\noindent
+\hfill Calvin Sprouse \hfill PHYS 342 Homework 3 \hfill 2024 April 19 \hfill
+
+% homework problems begin
+% Textbook problems 2.1, 2.4, 2.5, 2.8, 2.26
+\bigskip\noindent
+\textbf{Problem 2.1:} Suppose you flip four fair coins.
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\item Make a list of all possible outcomes. \\
+\bigskip\noindent
+The set of all possible outcomes, \(S\), is
+\begin{enumerate}[label=\(S_{\arabic*}\)]
+\item \(=\{H,H,H,H\}\),
+\item \(=\{H,H,H,T\}\),
+\item \(=\{H,H,T,H\}\),
+\item \(=\{H,T,H,H\}\),
+\item \(=\{T,H,H,H\}\),
+\item \(=\{H,H,T,T\}\),
+\item \(=\{H,T,H,T\}\),
+\item \(=\{H,T,T,H\}\),
+\item \(=\{T,H,T,H\}\),
+\item \(=\{T,T,H,H\}\),
+\item \(=\{T,H,H,T\}\),
+\item \(=\{H,T,T,T\}\),
+\item \(=\{T,H,T,T\}\),
+\item \(=\{T,T,H,T\}\),
+\item \(=\{T,T,T,H\}\),
+\item \(=\{T,T,T,T\}\).
+\end{enumerate}
+\pagebreak
+\item Make a list of all the different ``macrostates'' and their probabilities.
+The set of all possible macrostates, \(p_n\) where \(p\) denotes the probability of finding \(n\) heads, is
+\begin{align*}
+p_0 &= 1/16, \\
+p_1 &= 4/16, \\
+p_2 &= 6/16, \\
+p_3 &= 4/16, \\
+p_4 &= 1/16.
+\end{align*}
+\item Compute the multiplicity of each macrostate using the combinatorial formula 2.6, and check that these results agree with brute force counting.
+\bigskip\noindent
+The combinatorial formula 2.6 states
+\[\Omega(N,n)=\frac{N!}{n!(N-n)!},\]
+where \(N\) is the number of objects, in this case \(N=4\) coins, and \(n\) is macrostate to count, in this case \(n\) is the number of heads. Then,
+\begin{align*}
+\Omega(4,0) &= 1,\\
+\Omega(4,1) &= 4,\\
+\Omega(4,2) &= 6,\\
+\Omega(4,3) &= 4,\\
+\Omega(4,4) &= 1.
+\end{align*}
+The numerator of \(p_n\) is the number of microstates for a designated macrostates. With this in mind, the combinatorial formula agrees with brute force counting.
+\end{enumerate}
+
+\pagebreak\noindent
+\textbf{Problem 2.4:} Calculate the number of possible five-card poker hands, dealt from a deck of 52 cards. A royal flush consists of the five highest-ranking cards of any one of the four suits. What is the probability of being dealt a royal flush?
+\bigskip\noindent\\
+The number of ways to combine 52 cards into groups of 5 without replacement is given by the permutation formula,
+\[P(N,n)=\frac{N!}{(N-n)!},\]
+where \(N=52\) and \(n=5\). Then,
+\[P(52,5) = \frac{52!}{(52-5)!} = \qty{6.4974e+6}{}.\]
+For the probability of being dealt a royal flush we consider a probability tree. Suppose there are no other players, they would add complications at each step of the tree. Then, at the outset, there are 20 cards which correspond to a royal flush available to draw; that is, the probability of moving past node one is \(20/52\). Now, the player has drawn some card of a given suit and so is restricted to drawing cards from the same suit. There remain four cards of the same suit that the player must draw to obtain a royal flush. Thus nodes two, three, four, and five, have probabilities \(4/51\), \(3/50\), \(2/49\), \(1/48\) respectively. Here we see that the first node had probability \(4\times 5\), representing the four suits. So, the probability of drawing a royal flush from a specific suit is given by \(5!/(52!/(52-5)!)\). The probability of drawing a royal flush of any suit can be found by adding each suits royal flush probability together. That is,
+\[p = 4\frac{5!(52-5)!}{52!} \approx \qty{1.539e-6}{}.\]
+Notably, the probability of drawing a royal flush of a specific suit is a similar form as the inverse of the multiplicity formula.
+
+
+\pagebreak\noindent
+\textbf{Problem 2.5:} For an einstein solid with each of the following values of \(N\) and \(q\), list all of the possible microstates, count them, and verify formula 2.9.
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\item \(N=3\), \(q=4\)
+\item \(N=3\), \(q=5\)
+\item \(N=3\), \(q=6\)
+\item \(N=4\), \(q=2\)
+\item \(N=4\), \(q=3\)
+\item \(N=1\), \(q=\text{anything}\)
+\item \(N=\text{anything}\), \(q=1\)
+\end{enumerate}
+\bigskip\noindent
+
+
+\pagebreak\noindent
+\textbf{Problem 2.8:} Consider a system of two Einstein solids, \(A\) and \(B\), each containing \(N=10\) oscillators, sharing a total of \(q=20\) units of energy. Assume the solids are weakly coupled, and that the total energy is fixed.
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\item How many different macrostates are available to the system?\\
+\bigskip\noindent
+
+\item How many different microstates are available to the system?\\
+\bigskip\noindent
+By Eq.\ 2.9,
+\[\Omega(N,q)=\]
+
+
+\item Assuming that this system is in thermal equilibrium, what is the probability of finding all the energy in solid \(A\)?\\
+\bigskip\noindent
+
+
+\item What is the probability of finding exactly half of the energy in solid \(A\)?\\
+\bigskip\noindent
+
+
+\item Under what circumstances would this system exhibit irreversible behavior? \\
+\bigskip\noindent
+
+
+\end{enumerate}
+\pagebreak\noindent
+\textbf{Problem 2.26:} Consider an ideal monoatomic gas that lives in a two-dimensional universe, occupying an area \(A\). Find a formula for the multiplicity of this gas, analogous to Equation 2.40.
+\bigskip\noindent\\
+
+
+\end{document}
