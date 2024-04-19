@@ -122,8 +122,22 @@ For this system, irreversible behavior corresponds to a continuous trend towards
 
 \end{enumerate}
 \pagebreak\noindent
-\textbf{Problem 2.26:} Consider an ideal monoatomic gas that lives in a two-dimensional universe, occupying an area \(A\). Find a formula for the multiplicity of this gas, analogous to Equation 2.40.
-\bigskip\noindent\\
-
+\textbf{Problem 2.26:} Consider an ideal monoatomic gas that lives in a two-dimensional universe, occupying an area \(A\). Find a formula for the multiplicity of this gas, analogous to Equation 2.40. \\ \noindent
+We begin with Equation 2.29 expressed in terms of area rather than volume:
+\[\Omega_1 = AA_p.\]
+Using the same reasoning to arrive at Equation 2.30 we say our total energy \(U\) defines a momentum circle in 2-dimensional momentum space; that is,
+\[U = \frac{1}{2m}\left(p_x^2 + p_y^2\right).\]
+Thus, we have a circle of radius \(\sqrt{2mU}\). Then the area of momentum space is really the circumference of this circle. We invoke the Heisenberg uncertainty principle to obtain the same result as in Equation 2.33 and thus
+\[\Omega_1 = \frac{A A_p}{h^2}.\]
+For a two particle system we find the circumference of a circle in 4-dimensional space such that
+\[\Omega_2 = \frac{A^2}{h^4}\times\left(\text{circumference of momentum hypercircle}\right).\]
+Then applying the indisinguishability correction,
+\[\Omega_2 = \frac{1}{2}\frac{A^2}{h^4}\times\left(\text{circumference of momentum hypercircle}\right).\]
+We generalize to \(N\) particles in the same way as in Equation 2.38 to obtain
+\[\Omega_N = \frac{1}{N!}\left(\frac{A}{h^2}\right)^N \times\left(\text{circumference of momentum hypercircle}\right).\]
+For this calculation we can take Equation 2.39 and substitute \(d=2N\) instead of \(d=3N\). This recovers the expected behavior for a single particle: the circumference of a circle. Then,
+\[\Omega_N = \frac{1}{N!}\left(\frac{A}{h^2}\right)^N \frac{2\pi^{2N/2}}{\left(\frac{2N}{2}-1\right)!} \left(2mU\right)^{\frac{2N-1}{2}}.\]
+Reducing the fractions and assuming that \(N\gg 1\),
+\[\Omega_N \approx \frac{\pi^N}{(N!)^2}\frac{A^N}{h^{2N}}\left(2mU\right)^{N}.\]
 
 \end{document}
