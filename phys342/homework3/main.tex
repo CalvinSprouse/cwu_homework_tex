@@ -75,42 +75,49 @@ For the probability of being dealt a royal flush we consider a probability tree.
 Notably, the probability of drawing a royal flush of a specific suit is a similar form as the inverse of the multiplicity formula.
 
 
-\pagebreak\noindent
-\textbf{Problem 2.5:} For an einstein solid with each of the following values of \(N\) and \(q\), list all of the possible microstates, count them, and verify formula 2.9.
-\begin{enumerate}[label=\textbf{(\alph*)}]
-\item \(N=3\), \(q=4\)
-\item \(N=3\), \(q=5\)
-\item \(N=3\), \(q=6\)
-\item \(N=4\), \(q=2\)
-\item \(N=4\), \(q=3\)
-\item \(N=1\), \(q=\text{anything}\)
-\item \(N=\text{anything}\), \(q=1\)
-\end{enumerate}
-\bigskip\noindent
+% \pagebreak\noindent
+% \textbf{Problem 2.5:} For an einstein solid with each of the following values of \(N\) and \(q\), list all of the possible microstates, count them, and verify formula 2.9.
+% \begin{enumerate}[label=\textbf{(\alph*)}]
+% \item \(N=3\), \(q=4\)
+% \item \(N=3\), \(q=5\)
+% \item \(N=3\), \(q=6\)
+% \item \(N=4\), \(q=2\)
+% \item \(N=4\), \(q=3\)
+% \item \(N=1\), \(q=\text{anything}\)
+% \item \(N=\text{anything}\), \(q=1\)
+% \end{enumerate}
+% \bigskip\noindent
 
 
 \pagebreak\noindent
 \textbf{Problem 2.8:} Consider a system of two Einstein solids, \(A\) and \(B\), each containing \(N=10\) oscillators, sharing a total of \(q=20\) units of energy. Assume the solids are weakly coupled, and that the total energy is fixed.
 \begin{enumerate}[label=\textbf{(\alph*)}]
-\item How many different macrostates are available to the system?\\
-\bigskip\noindent
+\item How many different macrostates are available to the system?\\\noindent
+There exist \(q+1=21\) different macrostates of the system.
 
-\item How many different microstates are available to the system?\\
-\bigskip\noindent
+\item How many different microstates are available to the system?\\\noindent
 By Eq.\ 2.9,
-\[\Omega(N,q)=\]
+\[\Omega(N,q)=\frac{(N+q-1)!}{q!(N-1)!}\approx\qty{6.9e10}{}.\]
 
 
 \item Assuming that this system is in thermal equilibrium, what is the probability of finding all the energy in solid \(A\)?\\
 \bigskip\noindent
 
+The configuration corresponding to finding all the energy in \(A\) has a number of microstates given by
+\[\Omega(N_A,q)\Omega(N_B,0).\]
+Then the probability is given by the number of microstates for this configuration over the total number of microstates which are equally likely:
+\[P = \frac{\Omega(N_A,q)\Omega(N_B,0)}{\Omega(N,q)} \approx \qty{1.5e-4}{}.\]
 
-\item What is the probability of finding exactly half of the energy in solid \(A\)?\\
-\bigskip\noindent
+
+\item What is the probability of finding exactly half of the energy in solid \(A\)?\\\noindent
+By similar reasoning above, this configuration has multiplicity
+\[\Omega(N_A,q/2)\Omega(N_B,q/2).\]
+Then the probability is given similarly to be
+\[P = \frac{\Omega(N_A,q/2)\Omega(N_B,q/2)}{\Omega(N,q)}\approx\qty{0.12}{}.\]
 
 
-\item Under what circumstances would this system exhibit irreversible behavior? \\
-\bigskip\noindent
+\item Under what circumstances would this system exhibit irreversible behavior? \\\noindent
+For this system, irreversible behavior corresponds to a continuous trend towards decreasing entropy. For example, should the system go from the state described in part \textbf{(d)} to the state described in part \textbf{(c)}, that would be described as irreversible behavior.
 
 
 \end{enumerate}
