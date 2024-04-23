@@ -28,18 +28,45 @@ where \(C\) and \(\alpha\) are constants. We have ignored spin.
 \item Since the potential, \(V(r)\), is spherically-symmetric, the wavefunction, \(\psi\), may be separated into a radial and angular function:
 \[\psi(r,\theta,\phi)=R_{n,\ell}(r)Y_\ell^{m_\ell}(\theta,\phi).\]
 Let \(C=C_R C_Y\), where \(C_R\) is a constant associated with the radial equation and \(C_Y\) is a constant associated with the angular equation. The information about orbital angular momentum will come from the radial part of the equation, which will be a spherical harmonic of the form
-\[Y_\ell^{m_\ell} = C_Y \cos\left[\theta\right].\]
-Griffiths Table 4.3 lists normalized spherical harmonics for particular values of \(\ell\) and \(m_\ell\). The only spherical harmonic of a related form is given by \(\ell=1\) and \(m_\ell=0\); that is,
-\[Y_1^0=\left(\frac{3}{4\pi}\right)^{1/2}\cos\left[\theta\right].\]
+\[Y_\ell^{m_\ell} = C_Y \cos\left(\theta\right).\]
+Griffiths Table 4.3 lists normalized spherical harmonics for particular values of \(\ell\) and \(m_\ell\). The only spherical harmonic of a this form is given by \(\ell=1\) and \(m_\ell=0\); that is,
+\[Y_1^0=\sqrt{\frac{3}{4\pi}} \cos\left(\theta\right).\]
 Thus, \(\ell=1\) and \(m_\ell=0\).
 
 \pagebreak
-\item Part (b).
+\item By Griffiths Eq.\ 4.37,
+\[-\frac{\hbar^2}{2m}\diff[2]{u}{r}+\left(V+\frac{\hbar^2}{2m}\frac{\ell\left(\ell+1\right)}{r^2}\right)u=Eu,\]
+where \(u=rR\). Substituting \(\ell=1\) from part (a) yields
+\[-\frac{\hbar^2}{2m}\diff[2]{u}{r}+\left(V+\frac{\hbar^2}{mr^2}\right)u=Eu.\]
+See below for the evaluation of the second derivative of \(u\) with respect to \(r\). The solution is given in terms of \(u\). Then, multiplication of both sides by the inverse of \(u\) results in
+\[E = -\frac{\hbar^2}{2m}\left(\alpha^2 - 2\alpha r^{-1} \left(1+\sqrt{3}\right) + r^{-2}\left(3+\sqrt{3}\right)\right) + V + \frac{\hbar^2}{mr^2}.\]
+Since the energy, \(E\), is constant we may take any \(r\) to evaluate \(E\). Let \(r\to\infty\). Then, \(V\to0\). Therefore,
+\[E = -\frac{\hbar^2 \alpha^2}{2m}.\]
 
 
-\pagebreak
-\item Part (c).
-
+\bigskip
+\item To find the potential, we rearrange the expression from part (b) before letting \(r\to\infty\):
+\[V = E - \frac{\hbar^2}{mr^2} + \frac{\hbar^2}{2m}\left(\alpha^2 - 2\alpha r^{-1}\left(1+\sqrt{3}\right) r^{-2}\left(3+\sqrt{3}\right)\right).\]
+Then, we substitute \(E\) from part (b):
+\[V = \frac{\hbar^2}{2m}\left(-\alpha^2 - 2r^{-2} + r^{-2}\left(3 + \sqrt{3}\right) - 2\alpha r^{-1}\left(1 + \sqrt{3}\right) + \alpha^2\right).\]
+Simplifying yields the potential energy, \(V\), as a function of \(r\):
+\[V = \frac{\hbar^2}{2m}\left(1+\sqrt{3}\right)\left(r^{-2}-2\alpha r^{-1}\right).\]
 
 \end{enumerate}
+\pagebreak\noindent
+The aforementioned derivative, where \(u=rR\), given in terms of \(u\):
+\begin{align*}
+\diff[2]{u}{r} &= \diff{}{r}\diff{}{r}\left[rr^{\sqrt{3}}e^{-\alpha r}\right]
+\\&= \diff{}{r}\diff{}{r}\left[r^{\sqrt{3}+1}e^{-\alpha r}\right]
+\\&= \diff{}{r}\left[r^{\sqrt{3}+1}\diff{}{r}\left[e^{-\alpha r}\right] + e^{-\alpha r}\diff{}{r}\left[r^{\sqrt{3}+1}\right]\right]
+\\&= \diff{}{r}\left[rr^{\sqrt{3}(-\alpha)}e^{-\alpha r} + e^{-\alpha r}\left(\sqrt{3}+1\right)r^{\sqrt{3}}\right]
+\\&= \diff{}{r}\left[\left(\sqrt{3}+1-\alpha r\right)R\right]
+\\&= \left(\sqrt{3}+1-\alpha r\right)\diff{R}{r} + R\diff{}{r}\left[\sqrt{3}+1-\alpha r\right]
+\\&= \left(\sqrt{3}+1-\alpha r\right)\diff{R}{r} + (-\alpha)R
+\\&= \left(\sqrt{3}+1-\alpha r\right)\left(r^{\sqrt{3}}\diff{}{r}\left[e^{-\alpha r}\right] + e^{-\alpha r}\diff{}{r}\left[r^{\sqrt{3}}\right]\right) -\alpha R
+\\&= \left(\sqrt{3}+1-\alpha r\right)\left(r^{\sqrt{3}}(-\alpha)e^{-\alpha r} + e^{-\alpha r}\sqrt{3}r^{\sqrt{3}-1}\right)-\alpha R
+\\&= \left( \left(\sqrt{3}+1-\alpha r\right)\left(-\alpha + r^{-1}\sqrt{3}\right) -\alpha\right)R
+\\&= \left(r\alpha^2 -2\alpha\left(1 + \sqrt{3}\right) + r^{-1}\left(3 + \sqrt{3}\right)\right)R
+\\&= \left(\alpha^2 - 2\alpha r^{-1}\left(1+\sqrt{3}\right) + r^{-2}\left(3+\sqrt{3}\right)\right)u.
+\end{align*}
 \end{document}
