@@ -1,0 +1,45 @@
+% document style header
+\documentclass[a4paper, 12pt]{config/homework}
+
+% import default packages
+\usepackage{config/packages}
+\usepackage{config/commands}
+
+% end preamble
+\begin{document}
+
+% document title
+\noindent
+\hfill Calvin Sprouse \hfill PHYS 475 Midterm Exam \#1 \hfill 2024 April 25 \hfill
+\bigskip
+
+% homework problems begin
+\bigskip\noindent
+1.\ A non-relativistic particle with mass \(m\) moves in a three-dimensional potential, \(V(r)\), which is spherically-symmetric and vanishes as \(r\to\infty\). At a certain time, this particle is found in the state
+\[\psi(r,\theta,\phi) = Cr^{\sqrt{3}}\exp\left[-\alpha r\right]\cos\left[\theta\right],\]
+where \(C\) and \(\alpha\) are constants. We have ignored spin.
+\begin{enumerate}[label=(\alph*)]
+\item What is the orbital angular momentum of this state; that is, what are the quantum numbers \(l\) and \(m_l\)?
+\item What is the energy, \(E\), of this state? The radial equation, \(u=rR\), may be helpful here. Recall, \(V(r)\to0\) as \(r\to\infty\).
+\item Now that the energy, \(E\), is known from part (b), what is the potential, \(V(r)\)?
+\end{enumerate}
+\bigskip
+\begin{enumerate}[label=(\alph*)]
+\item Since the potential, \(V(r)\), is spherically-symmetric, the wavefunction, \(\psi\), may be separated into a radial and angular function:
+\[\psi(r,\theta,\phi)=R_{n,\ell}(r)Y_\ell^{m_\ell}(\theta,\phi).\]
+Let \(C=C_R C_Y\), where \(C_R\) is a constant associated with the radial equation and \(C_Y\) is a constant associated with the angular equation. The information about orbital angular momentum will come from the radial part of the equation, which will be a spherical harmonic of the form
+\[Y_\ell^{m_\ell} = C_Y \cos\left[\theta\right].\]
+Griffiths Table 4.3 lists normalized spherical harmonics for particular values of \(\ell\) and \(m_\ell\). The only spherical harmonic of a related form is given by \(\ell=1\) and \(m_\ell=0\); that is,
+\[Y_1^0=\left(\frac{3}{4\pi}\right)^{1/2}\cos\left[\theta\right].\]
+Thus, \(\ell=1\) and \(m_\ell=0\).
+
+\pagebreak
+\item Part (b).
+
+
+\pagebreak
+\item Part (c).
+
+
+\end{enumerate}
+\end{document}
