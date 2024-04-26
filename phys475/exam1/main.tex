@@ -56,15 +56,15 @@ Simplifying yields the potential energy, \(V\), as a function of \(r\):
 \pagebreak\noindent
 The aforementioned derivative, where \(u=rR\), given in terms of \(u\):
 \begin{align*}
-\diff[2]{u}{r} &= \diff{}{r}\diff{}{r}\left[rr^{\sqrt{3}}e^{-\alpha r}\right]
-\\&= \diff{}{r}\diff{}{r}\left[r^{\sqrt{3}+1}e^{-\alpha r}\right]
-\\&= \diff{}{r}\left[r^{\sqrt{3}+1}\diff{}{r}\left[e^{-\alpha r}\right] + e^{-\alpha r}\diff{}{r}\left[r^{\sqrt{3}+1}\right]\right]
-\\&= \diff{}{r}\left[rr^{\sqrt{3}(-\alpha)}e^{-\alpha r} + e^{-\alpha r}\left(\sqrt{3}+1\right)r^{\sqrt{3}}\right]
+\diff[2]{u}{r} &= \diff{}{r}\diff{}{r}\left[C_R rr^{\sqrt{3}}e^{-\alpha r}\right]
+\\&= C_R \diff{}{r}\diff{}{r}\left[r^{\sqrt{3}+1}e^{-\alpha r}\right]
+\\&= C_R \diff{}{r}\left[r^{\sqrt{3}+1}\diff{}{r}\left[e^{-\alpha r}\right] + e^{-\alpha r}\diff{}{r}\left[r^{\sqrt{3}+1}\right]\right]
+\\&= C_R \diff{}{r}\left[rr^{\sqrt{3}(-\alpha)}e^{-\alpha r} + e^{-\alpha r}\left(\sqrt{3}+1\right)r^{\sqrt{3}}\right]
 \\&= \diff{}{r}\left[\left(\sqrt{3}+1-\alpha r\right)R\right]
 \\&= \left(\sqrt{3}+1-\alpha r\right)\diff{R}{r} + R\diff{}{r}\left[\sqrt{3}+1-\alpha r\right]
 \\&= \left(\sqrt{3}+1-\alpha r\right)\diff{R}{r} + (-\alpha)R
-\\&= \left(\sqrt{3}+1-\alpha r\right)\left(r^{\sqrt{3}}\diff{}{r}\left[e^{-\alpha r}\right] + e^{-\alpha r}\diff{}{r}\left[r^{\sqrt{3}}\right]\right) -\alpha R
-\\&= \left(\sqrt{3}+1-\alpha r\right)\left(r^{\sqrt{3}}(-\alpha)e^{-\alpha r} + e^{-\alpha r}\sqrt{3}r^{\sqrt{3}-1}\right)-\alpha R
+\\&= \left(\sqrt{3}+1-\alpha r\right)C_R \left(r^{\sqrt{3}}\diff{}{r}\left[e^{-\alpha r}\right] + e^{-\alpha r}\diff{}{r}\left[r^{\sqrt{3}}\right]\right) -\alpha R
+\\&= \left(\sqrt{3}+1-\alpha r\right)C_R \left(r^{\sqrt{3}}(-\alpha)e^{-\alpha r} + e^{-\alpha r}\sqrt{3}r^{\sqrt{3}-1}\right)-\alpha R
 \\&= \left( \left(\sqrt{3}+1-\alpha r\right)\left(-\alpha + r^{-1}\sqrt{3}\right) -\alpha\right)R
 \\&= \left(r\alpha^2 -2\alpha\left(1 + \sqrt{3}\right) + r^{-1}\left(3 + \sqrt{3}\right)\right)R
 \\&= \left(\alpha^2 - 2\alpha r^{-1}\left(1+\sqrt{3}\right) + r^{-2}\left(3+\sqrt{3}\right)\right)u.
