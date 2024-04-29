@@ -1,0 +1,49 @@
+% document style header
+\documentclass[a4paper, 12pt]{config/homework}
+
+% import default packages
+\usepackage{config/packages}
+\usepackage{config/commands}
+
+% end preamble
+\begin{document}
+
+% document title
+\noindent
+\hfill Calvin Sprouse \hfill PHYS 475 Homework 4 \hfill 2024 May 3 \hfill
+\bigskip
+
+% homework problems begin
+\begin{enumerate}
+\item Consider an infinite square well that runs from 0 to \(a\). As a perturbation, we place a delta-function bump at the center of the well,
+\[\hat{H}' = \alpha\delta\left(x-\frac{a}{2}\right),\]
+where \(\alpha\) is a constant.
+\begin{enumerate}[label=(\alph*)]
+\item Determine the first-order correction to the allowed energies. Why are the energies for even \(n\) unperturbed?
+\item Determine the first three non-zero terms in the perturbation expansion,
+\[\psi^1_n = \sum_{m\ne n}\frac{\bra*{\psi_m^0}\hat{H}'\ket*{\psi_n^0}}{E_n^0-E_m^0}\psi_m^0,\]
+of the correction to the ground state \(\psi_1^1\).
+\end{enumerate}
+% solutions
+\begin{enumerate}[label=(\alph*)]
+\item 
+\end{enumerate}
+
+\pagebreak
+\item The allowed energies for the harmonic oscillator are
+\[E_n = \left(n + \frac{1}{2}\right)\hbar\omega,\]
+where \(\omega = \sqrt{k/m}\) is the classical frequency and the potential energy is
+\[V(x) = \frac{1}{2}kx^2.\]
+Suppose the spring constant increases lightly, \(k\to\left(1+\epsilon\right)k\).
+\begin{enumerate}[label=(\alph*)]
+\item Determine the exact new energies, then expand the formula as a power series in \(\epsilon\) up to second order.
+\item Calculate the first-order perturbation to the energy using
+\[E_n^1=\bra*{\psi_n^0}\hat{H}'\ket*{\psi_n^0}.\]
+To preform this calculation, it will be necessary to determine what \(\hat{H}'\) is in this case. Compare this result with the result from part (a).
+\end{enumerate}
+% solutions
+\begin{enumerate}[label=(\alph*)]
+\item 
+\end{enumerate}
+\end{enumerate}
+\end{document}
