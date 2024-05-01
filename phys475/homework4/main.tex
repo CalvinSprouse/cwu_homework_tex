@@ -96,7 +96,24 @@ The second-order expansion for \(E_n\) is given by
 \[E_n \approx \left(n+\frac{1}{2}\right)\hbar\omega\left(1 + \frac{1}{2}\epsilon - \frac{1}{8}\epsilon^2\right).\]
 
 \pagebreak
-\item 
+\item The hamiltonian of a quantum harmonic oscillator can be written as
+\[\hat{H} = \frac{1}{2}m\omega^2 \hat{x}^2.\]
+Then, we let \(\omega \to \omega'\). Our hamiltonian becomes
+\[\hat{H} = \frac{1}{2}m\omega^2(1+\epsilon)\hat{x}^2 = \frac{1}{2}m\omega^2\hat{x}^2 + \epsilon\frac{1}{2}m\omega^2\hat{x}^2.\]
+Here, we see the first term is our zeroth-order hamiltonian, \(\hat{H}^0\). Consequently, the second term is our perturbation hamiltonian,
+\[\hat{H}'=\epsilon \frac{1}{2}m\omega^2\hat{x}^2 = \epsilon V.\]
+This perturbation hamiltonian can be expressed in terms of the raising and lowering operators \(a_+\) and \(a_-\). We recognize that
+\[\hat{H}' = \epsilon V = \frac{\epsilon}{2} \hat{H},\]
+where the factor of \(1/2\) comes from the result of Griffiths Example 2.5 where we see that the hamiltonian of a simple harmonic oscillator is divided evenly in potential energy and kinetic energy.
+Then, as in Griffiths Equation 2.53,
+\[\hat{H} = \hbar\omega\left(a_-a_+ - \frac{1}{2}\right).\]
+Recognizing that \(\hat{H} = \hat{H}'/\epsilon\),
+\[\hat{H}' = \frac{1}{2}\epsilon\hbar\omega\left(a_-a_+-\frac{1}{2}\right).\]
+Finally, we may calculate the first-order energy perturbation by Griffiths Equation 7.9:
+\[E_n^1 = \bra*{\psi_n^0}\hat{H}'\ket*{\psi_n^0} = \frac{1}{2}\epsilon\hbar\omega\left(\bra*{\psi_n^0}a_-a_+\ket*{\psi_n^0} - \frac{1}{2}\braket*{\psi_n^0}{\psi_n^0}\right).\]
+The raising and lowering operators action on \(\psi_n\) is defined in Griffiths Equation 2.66. Then,
+\[E_n^1 = \frac{1}{2}\epsilon\hbar\omega\left(\sqrt{n+1}\sqrt{n+1} - \frac{1}{2}\right) = \frac{1}{2}\epsilon\hbar\omega\left(n + \frac{1}{2}\right) = \frac{1}{2}\epsilon E_n^0.\]
+This is in direct agreement with the second term (the first-order term) of the expansion in part (a).
 \end{enumerate}
 \end{enumerate}
 \end{document}
