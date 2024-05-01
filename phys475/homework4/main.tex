@@ -25,8 +25,52 @@ where \(\alpha\) is a constant.
 of the correction to the ground state \(\psi_1^1\).
 \end{enumerate}
 % solutions
+\bigskip
 \begin{enumerate}[label=(\alph*)]
-\item 
+\item The first-order correction, \(E_n^1\), is given by Griffiths Equation 7.9 to be
+\[E_n^1 = \bra*{\psi_n^0}\hat{H}'\ket*{\psi_n^0} = \defint{-\infty}{\infty}{{\psi_n^0}^* \hat{H}' \psi_n^0}{x}.\]
+% Griffiths Equation 2.31 gives the \(n\)-th wavefunction for ht infinite square well as
+% \[\psi_n^0(x) = \sqrt{\frac{2}{a}}\sin\left(\frac{n\pi}{a}x\right).\]
+Substituting Griffiths Equation 2.31, the \(n\)-th wavefunction for the infinite square well, and our expression for the perturbation hamiltonian yields
+\[E_n^1 = \frac{2\alpha}{a} \defint{0}{a}{{\sin\left(\frac{n\pi}{a}x\right)}^2 \delta\left(x-\frac{a}{2}\right)}{x}.\]
+The \(\delta\)-function is non-zero at \(x=a/2\), which is inside the limits of integration. Thus,
+\[E_n^1 = \frac{2\alpha}{a} {\sin\left(\frac{n\pi}{2}\right)}^2.\]
+Notice,
+\[E_n^1 = \begin{cases}\frac{2\alpha}{a}, & n\ \text{is odd}, \\ 0, & n\ \text{is even}.\end{cases}\]
+The lack of correction on even energies is a consequence of the wavefunction. We can also think about the shape of the even wavefunctions and how it relates to our perturbation. The even wavefunctions are of probability amplitude 0 at \(a/2\). Thus, it makes sense that a perturbation localized only to \(a/2\) would not change the wavefunction.
+
+\pagebreak
+\item We begin with Griffiths Equation 7.13:
+\[\psi^1_n = \sum_{m\ne n}\frac{\bra*{\psi_m^0}\hat{H}'\ket*{\psi_n^0}}{E_n^0-E_m^0}\psi_m^0.\]
+Substituting \(n=1\) yields
+\[\psi_1^1 = \sum_{m\ne n}\frac{\bra*{\psi_m^0}\hat{H}'\ket*{\psi_1^0}}{E_1^0-E_m^0}\psi_m^0.\]
+We begin with simplifying the denominator:
+\[E_1^0 - E_m^0 = \frac{\pi^2\hbar^2}{2m_p a} - \frac{m^2\pi^2\hbar^2}{2m_p a} = (1-m^2)\frac{\pi^2\hbar^2}{2m_p a},\]
+where \(m_p\) refers to the mass of the particle and \(m\) is the indexing number. Then,
+\[\psi_1^1 = \sum_{m\ne n} \frac{2m_p a^2}{(1-m^2)\pi^2\hbar^2}\bra*{\psi_m^0}\hat{H}'\ket*{\psi_1^0} \psi_m^0.\]
+We now focus on the inner-product term; substituting Griffiths Equation 2.37 and the expression for the perturbation hamiltonian yields, after simplification,
+\[\bra*{\psi_m^0}\hat{H}'\ket*{\psi_1^0} = \frac{2\alpha}{a}\defint{0}{a}{\sin\left(\frac{m\pi}{a}\right)\sin\left(\frac{\pi}{a}x\right)\delta\left(x-\frac{a}{2}\right)}{x}.\]
+Here, we could take the simple \(\delta\)-function interpretation, pulling our \(\sin\) terms outside the integral and substituting \(x=a/2\). However, it is fun to apply the trig identity\footnote{That is, I was not convinced that I could take that interpretation with more complicated functions.}
+\[\sin(\theta)\sin(\phi) = \frac{\cos(\theta-\phi) - \cos(\phi-\theta)}{2},\]
+doing so yields
+\begin{align*}
+\bra*{\psi_m^0}\hat{H}'\ket*{\psi_1^0} &= \frac{2\alpha}{a}
+\defint{0}{a}{\frac{\cos\left[(m-1)\frac{\pi}{a}x\right]-\cos\left[(1-m)\frac{\pi}{a}x\right]}{2}\delta\left(x-\frac{a}{2}\right)}{x}
+\\&= \frac{2\alpha}{a}
+\defint{0}{a}{\frac{\cos\left[(m-1)\frac{\pi}{a}x\right]+\cos\left[(m-1)\frac{\pi}{a}x\right]}{2}\delta\left(x-\frac{a}{2}\right)}{x}
+\\&= \frac{2\alpha}{a}
+\defint{0}{a}{\cos\left[(m-1)\frac{\pi}{a}x\right]\delta\left(x-\frac{a}{2}\right)}{x}
+\\&= \frac{2\alpha}{a}
+\cos\left((m-1)\frac{\pi}{a}\frac{a}{2}\right)
+\\&= \frac{2\alpha}{a} \cos\left(m\frac{\pi}{a} - \frac{\pi}{2}\right)
+\\&= \frac{2\alpha}{a} \sin\left(m\frac{\pi}{a}\right),
+\end{align*}
+which is what we would have found had we taken the simple \(\delta\)-function interpretation. Putting all the pieces together yields
+\[\psi_1^1 = \sum_{m\ne n} \frac{4m_p a \alpha}{(1-m^2)\pi^2\hbar^2}\sin\left(\frac{m\pi}{2}\right)\psi_m^0.\]
+This can be simplified further
+\[\psi_1^1 = \frac{4m_p a \alpha}{\pi^2\hbar^2} \sum_{m\ne n}\frac{1}{1-m^2}\sin\left(\frac{m\pi}{2}\right)\psi_m^0.\]
+Notice, the \(m\)-th term in the summation will be non-zero iff \(m\) is odd. Furthermore, the series will alternate positive and negative terms. This makes sense, in part (a) we revealed that there was no first-order correction to even wavefunctions. Then, the third-order (three-term) first-order wavefunction is
+\[\psi_1^1 \approx \frac{4m_p a \alpha}{\pi^2\hbar^2}\left(\frac{1}{8}\psi_3^0 - \frac{1}{24}\psi_5^0 + \frac{1}{48}\psi_7^0\right).\]
 \end{enumerate}
 
 \pagebreak
@@ -42,7 +86,16 @@ Suppose the spring constant increases lightly, \(k\to\left(1+\epsilon\right)k\).
 To preform this calculation, it will be necessary to determine what \(\hat{H}'\) is in this case. Compare this result with the result from part (a).
 \end{enumerate}
 % solutions
+\bigskip
 \begin{enumerate}[label=(\alph*)]
+\item The exact new energies are given simply by substituting \(k\) for \((1+\epsilon)k\). Let
+\[\omega' = \sqrt{\frac{(1+\epsilon)k}{m}} = \omega\sqrt{1+\epsilon}.\]
+Then,
+\[E_n = \left(n+\frac{1}{2}\right)\hbar\omega\sqrt{1+\epsilon}.\]
+The second-order expansion for \(E_n\) is given by
+\[E_n \approx \left(n+\frac{1}{2}\right)\hbar\omega\left(1 + \frac{1}{2}\epsilon - \frac{1}{8}\epsilon^2\right).\]
+
+\pagebreak
 \item 
 \end{enumerate}
 \end{enumerate}
