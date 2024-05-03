@@ -18,7 +18,24 @@
 \textbf{Problem 2.29.} Consider a system of two Einstein solids, with \(N_A=300\), \(N_B=200\), and \(q=100\). Compute the entropy of the most likely macrostate. Also compute the entropy over long time scales, assuming that all macrostates are accessible. Neglect the factor of Boltzmann's constant in the definition of entropy; for systems this small, it is best to think of entropy as a pure number.
 
 \noindent
-Response.
+The most likely macrostate is the macrostate with the highest multiplicity. The total multiplicity, \(\Omega\), is given by
+\[\Omega = \Omega_A \Omega_B,\]
+where \(\Omega_A\) and \(\Omega_B\) are the multiplicities of solid \(A\) and solid \(B\) respectively. The multiplicity of an Einstein solid is given by
+\[\Omega_A(N_A,q_A) = \frac{\left(q_A+N_A-1\right)!}{q_A!\left(N_A-1\right)!}.\]
+For solid \(A\) and solid \(B\) we have
+\[\Omega_A(N_A, q_A) = \frac{\left(q_A + 299\right)!}{q_A!299!}, \qquad
+\Omega_B(N_B, q_B) = \frac{\left(q_B + 199\right)!}{q_B!199!}.\]
+Notice, \(q_B = q - q_A\). Then,
+\[\Omega_B(N_B, q_B) = \Omega_B(N_B, q-q_A) = \frac{\left(299 - q_A\right)!}{(100-q_A)!199!}.\]
+We shall take for granted that \(\Omega\) is maximized for \(\Omega_A = \Omega_B\). Then,
+\[\frac{\left(q_A + 299\right)!}{q_A!299!} = \frac{\left(299 - q_A\right)!}{(100-q_A)!199!}
+\Rightarrow
+\frac{\left(299 + q_A\right)!}{\left(299 - q_A\right)!} \frac{\left(100 - q_A\right)!}{q_A!}
+= \frac{299!}{199!}.\]
+This expression not only gave me a headache, but also crashed Mathematica. I will, begrudgingly, take the solution provided by Table 3.1; that is, the most likely macrostate, the one with the highest multiplicity, is found when \(q_A=60\). Then, by Table 3.1,
+\[\frac{S_{\text{max}}}{k} = \qty{264.4}{}.\]
+Over long timescales, \(q_A\) may be found at any value between 0 and 100. Then,
+\[\frac{S_{\text{long}}}{k} = \ln\left(\sum_{q_A=0}^{100}\Omega_A(N_A,q_A)\Omega_B(N_B,100-q_A)\right) \approx 267.\]
 
 % \bigskip
 \pagebreak
@@ -26,7 +43,18 @@ Response.
 \textbf{Problem 2.36.} For either a monoatomic ideal gas or a high-temperature Einstein solid, the entropy is given by \(Nk\) times some logarithm. The logarithm is never large, so if all you want is an order-of-magnitude estimate, you can neglect it: \(S \sim Nk\). That is, the entropy in fundamental units is on the order of the number of particles in the system. This conclusion turns out to be true for most systems, with some important exceptions at low temperatures where the particles are behaving in an orderly way. Make a very rough estimate of the entropy of each of the following: (i) this book (a kilogram of carbon compounds); (ii) a moose (\(\qty{400}{\kg}\) of water); the sun (\(\qty{2e30}{\kg}\) of ionized hydrogen).
 
 \noindent
-Response.
+In general, the number of molecules in a substance with a given mass and known composition is given by
+\[N = \left(\text{mass}\right)\left(\text{molar mass}\right)\left(A_N\right),\]
+where \(A_N=\qty{6.022e23}{\per\mol}\) is Avogadros number. Since we are taking the order of magnitude approach,
+\[Nk \sim \mathcal{O}(\text{mass})\mathcal{O}(\text{molar mass})^{-1}\left(10^{23}\right)\left(10^{-23}\right) = \frac{\mathcal{O}(\text{mass})}{\mathcal{O}(\text{molar mass})}.\]
+\begin{enumerate}[label=(\roman*)]
+\item For this book, \(\mathcal{O}(\text{mass}) = 10^0\) and \(\mathcal{O}(\text{molar mass})=10^{-3}\). Then, \[S\sim\qty{e3}{\joule\per\kelvin}.\]
+
+\item For a moose, \(\text{H}_2\text{O}\), \(\mathcal{O}(\text{mass})=10^2\) and \(\mathcal{O}(\text{molar mass})=10^{-2}\). Then, \[S\sim\qty{e4}{\joule\per\kelvin}.\]
+
+\item For the Sun, \(\mathcal{O}(\text{mass})=10^{30}\) and \(\mathcal{O}(\text{molar mass})=10^{-3}\). Then, \[S\sim\qty{e33}{\joule\per\kelvin}.\]
+
+\end{enumerate}
 
 \pagebreak
 \noindent
@@ -130,17 +158,30 @@ Substituting given values,
 % \bigskip
 \pagebreak
 \noindent
-\textbf{Problem 3.32.} A cylinder contains one liter of air at room temperature, \(\qty{300}{\kelvin}\), and atmospheric pressure, \(\qty{10e5}{\Pa}\). At one end of the cylinder is a massless piston, whose surface area is \(\qty{0.01}{\meter\squared}\). Suppose that the piston is pushed in very suddenly, exerting a force of \(\qty{2000}{\newton}\). The piston moves only one millimeter, before it is stopped by an immovable barrier of some sort.
+\textbf{Problem 3.32.} A cylinder contains one liter of air at room temperature, \(\qty{300}{\kelvin}\), and atmospheric pressure, \(\qty{e5}{\Pa}\). At one end of the cylinder is a massless piston, whose surface area is \(\qty{0.01}{\meter\squared}\). Suppose that the piston is pushed in very suddenly, exerting a force of \(\qty{2000}{\newton}\). The piston moves only one millimeter, before it is stopped by an immovable barrier of some sort.
 \begin{enumerate}[label=\textbf{(\alph*)}]
 \item How much work has been done on this system?
 \item How much heat has been added to the gas?
 \item Assuming that all the energy added goes into the gas (not the piston or the cylinder walls), by how much does the energy of the gas increase?
 \item Use the thermodynamic identity to calculate the change in the entropy of the gas once it has again reached equilibrium.
 \end{enumerate}
+\bigskip
 \begin{enumerate}[label=\textbf{(\alph*)}]
 \item The work done on the system, \(W\), can be found by
 \[W = Fd,\]
 where \(F=\qty{2000}{\newton}\) is the force and \(d=\qty{1}{\milli\meter}\) is the displacement. Then,
 \[W = \left(\qty{2000}{\newton}\right)\left(\qty{1e-3}{\milli\meter}\right) = \qty{2}{\joule}.\]
+\item No heat has been added to the gas. The only energy that has been put into the system has been in the form of mechanical compressive work.
+\item The first law of thermodynamics states
+\[\Delta U = Q + W.\]
+From part \textbf{(a)}, \(W=\qty{2}{\joule}\), and from part \textbf{(b)}, \(Q=0\). Then,
+\[\Delta U = \qty{2}{\joule}.\]
+\item The thermodynamic identity is given by Equation 3.46 to be
+\[\text{d}U = T\text{d}S - P\text{d}V.\]
+Rearranging and taking the difference interpretation of the derivative yields
+\[\Delta S = \frac{P}{T}\Delta V + \frac{1}{T}\Delta U.\]
+Then,
+\[\Delta S = \frac{\qty{e6}{\Pa}}{\qty{300}{\kelvin}}\left(\qty{e-2}{\meter\squared}\right)\left(-\qty{e-3}{\meter}\right) + \frac{1}{\qty{300}{\kelvin}}\left(\qty{2}{\joule}\right)
+= \qty[per-mode=fraction, parse-numbers=false]{\frac{1}{300}}{\joule\per\kelvin}.\]
 \end{enumerate}
 \end{document}
