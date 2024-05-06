@@ -1,0 +1,41 @@
+% document style header
+\documentclass[a4paper, 12pt]{config/homework}
+
+% import default packages
+\usepackage{config/packages}
+\usepackage{config/commands}
+
+% end preamble
+\begin{document}
+
+% document title
+\noindent
+Calvin Sprouse \hfill PHYS475 Homework 5 \hfill 2024 May 11
+\bigskip
+
+% homework problems begin
+\begin{enumerate}
+\item Consider a quantum system that includes three distinct states; its Hamiltonian is
+\[\hat{H} = V_0 \matr{(1-\epsilon) & 0 & 0 \\ 0 & 1 & \epsilon \\ 0 & \epsilon & 2}\]
+where \(V_0\) is a constant and \(\epsilon\) is a small unitless number \(\left(\epsilon << 1\right)\).
+\begin{enumerate}[label=(\alph*)]
+\item Determine the eigenvectors and eigenvalues of the unperturbed Hamiltonian, \(\hat{H}^0\).
+\item Determine the exact eigenvalues of \(\hat{H}\), then expand each as a power series in \(\epsilon\) up to second-order. You may find it useful to use the binomial theorem to expand two of the eigenvalues in a power series.
+\item Use first-order and second-order non-degenerate perturbation theory to determine the approximate eigenvalue for the state that grows out of the non-degenerate eigenvector of \(\hat{H}^0\). Compare this with the exact result from part (b).
+\item Use degenerate perturbation theory to determine the first-order correction to the two initially degenerate eigenvalues. Compare this with the exact result.
+\end{enumerate}
+\bigskip
+\begin{enumerate}[label=(\alph*)]
+\item Let \(\epsilon = 0\). Then, we have the unperturbed Hamiltonian,
+\[\hat{H}^0 = \matr{1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 2}.\]
+Since the matrix is diagonalized, the terms on the diagonal are the eigenvalues. Similarly, we may consider the matrix to be composed of three column vectors which represent eigenvectors. The three eigenpairs of the system, \(\left(\lambda, \vec{u}\right)\), are then
+\[  \left(1, \matr{1 \\ 0 \\ 0}\right), \quad
+    \left(1, \matr{0 \\ 1 \\ 0}\right), \quad
+    \left(2, \matr{0 \\ 0 \\ 1}\right), \]
+where the eigenvectors have been normalized.
+
+\pagebreak
+\item 
+\end{enumerate}
+\end{enumerate}
+\end{document}
