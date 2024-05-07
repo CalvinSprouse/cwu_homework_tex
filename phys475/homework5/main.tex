@@ -35,7 +35,18 @@ Since the matrix is diagonalized, the terms on the diagonal are the eigenvalues.
 where the eigenvectors have been normalized.
 
 \pagebreak
-\item 
+\item We begin by recognizing that the upper-left of the matrix is in a diagonalized sub-space. Then, the eigenvalue, \(\lambda\), and eigenvector, \(\vec{u}\), can be read from the matrix as
+\[\lambda_1 = 1-\epsilon, \qquad \vec{u}=\matr{1 \\ 0 \\ 0}.\]
+The remaining two eigenvalues can be found by restricting ourselves to the lower-right sub-space of \(\hat{H}\). Let \(h\) be the lower-right sub-space of \(\hat{H}\),
+\[h = \matr{1 & \epsilon \\ \epsilon & 2}.\]
+Then, it's eigenvalues, \(\lambda\), are solutions to the expression,
+\[\text{det}\left[h - \lambda I\right] = 0 \quad\Rightarrow\quad \left(1-\lambda\right)(2-\lambda) - \epsilon^2 = 0.\]
+Expanding the expression on the right yields the quadratic expression
+\[\lambda^2 - 3\lambda + 2 - \epsilon^2 = 0.\]
+We find solutions via the quadratic formula; that is,
+\[\lambda = \frac{-(-3) \pm \sqrt{(-3)^2 -4(1)(2-\epsilon^2)}}{2(1)}.\]
+The remaining two eigenvalues are given by
+\[\lambda = \frac{3\pm\sqrt{1+4\epsilon^2}}{2}.\]
 \end{enumerate}
 \end{enumerate}
 \end{document}
