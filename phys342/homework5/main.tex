@@ -79,14 +79,42 @@ in agreement with the result of Problem 1.16.
 \bigskip
 \begin{enumerate}[label=\textbf{(\alph*)}]
 \item Suppose the molecules in an ideal gas are at approximately the same height \(z\). Then, the total energy, \(U\), of the gas can be expressed in terms of the kinetic energy, \(U_k\), and the gravitational potential energy of \(N\) particles; that is,
-\[U_t = U + Nmgz.\]
+\[U = U_k + Nmgz.\]
 Equation~3.62, the Sackur-Tetrode equation, gives the entropy of an ideal monoatomic gas to be
-\[S = Nk\left(\ln\left[V\left(\frac{4\pi m U}{2h^2}\right)^{3/2}\right] - \ln\left[N^{5/2}\right]+\frac{5}{2}\right),\]
-where \(U\) is the kinetic energy of the gas, \(U_k\). Expressing Equation 3.62 in terms of \(U_k\) yields
-\[S = Nk\left(\ln\left[V\left(\frac{4\pi m \left(U - Nmgz\right)}{2h^2}\right)^{3/2}\right] - \frac{5}{2}\ln\left[N\right]+\frac{5}{2}\right).\]
+\[S = Nk\left(\ln\left[V\left(\frac{4\pi m U_k}{3h^2}\right)^{3/2}\right] - \ln\left[N^{5/2}\right]+\frac{5}{2}\right).\]
+Expressing Equation 3.62 in terms of \(U_k\) yields
+\[S = Nk\left(\ln\left[V\left(\frac{4\pi m \left(U - Nmgz\right)}{3h^2}\right)^{3/2}\right] - \frac{5}{2}\ln\left[N\right]+\frac{5}{2}\right).\]
 The chemical potential, \(\mu\), is then obtained by Equation~3.55,
 \[\mu = -T\left(\diffp{S}{N}\right)_{U,V}.\]
+We begin the partial derivative with a product rule,
+\[\diffp{S}{N} = \frac{S}{N} + Nk\diffp{}{N}\left(\ln\left[V\left(\frac{4\pi m \left(U - Nmgz\right)}{3h^2}\right)^{3/2}\right] - \frac{5}{2}\ln\left[N\right]+\frac{5}{2}\right).\]
+It is convenient to expand the terms in the outer parenthesis to
+\[\diffp{}{N}\left(\ln[V] + \frac{3}{2}\ln\left[\frac{4\pi m}{3h^2}\right] + \frac{3}{2}\ln\left[U - Nmgz\right] - \frac{5}{2}\ln[N] + \frac{5}{2}\right).\]
+The derivatives inside this parenthesis are
+\[0 + 0 + \frac{3}{2}\frac{-mgz}{U - Nmgz} - \frac{5}{2}\frac{1}{N}.\]
+Then,
+\[\diffp{S}{N} = \frac{S}{N} - Nk\left(\frac{3}{2}\frac{mgz}{U-Nmgz} + \frac{5}{2}\frac{1}{N}\right).\]
+Substituting \(S\),
+\[\diffp{S}{N} = k\left(\ln\left[V\left(\frac{4\pi m \left(U - Nmgz\right)}{3h^2}\right)^{3/2}\right] - \frac{5}{2}\ln\left[N\right]+\frac{5}{2}\right)
+- \frac{3}{2}\frac{Nkmgz}{U-Nmgz} + k\frac{5}{2}.\]
+We recognize that \(U-Nmgz = U_k\) where \(U_k\) is the kinetic energy of the gas. Furthermore, we may invoke the equipartition theorem,
+\[U_k = \frac{f}{2}NkT,\]
+where, for our ideal monoatomic gas, \(f=3\).
+Then,
+\[\diffp{S}{N} = k\left(\ln\left[\frac{V}{N}\left(\frac{2\pi m kT}{h^2}\right)^{3/2}\right] + \frac{mgz}{kT}\right).\]
+Then, by Equation 3.55,
+\[\mu = -kT\ln\left[\frac{V}{N}\left(\frac{2\pi m k T}{h^2}\right)^{3/2}\right] - mgz.\]
 
+\pagebreak
+\item Let \(N\) be a function of \(z\). Then, by equilibrium, the temperature, volume, and chemical potential of the two gases are equal. Thus,
+\[\mu(z) = \mu(0).\]
+Substituting our expression for \(\mu\) derived above,
+\[-kT\ln\left[\frac{V}{N(z)}\left(\frac{2\pi m k T}{h^2}\right)^{3/2}\right] + mgz = -kT\ln\left[\frac{V}{N(0)}\left(\frac{2 \pi m k T}{h^2}\right)^{3/2}\right].\]
+Dividing both sides by \(kT\) and applying properties of the natural log yields
+\[\ln\left[V\left(\frac{2\pi m k T}{h^2}\right)^{3/2}\right] - \ln\left[N(z)\right] + \frac{mgz}{kT} = \ln\left[V\left(\frac{2\pi m k T}{h^2}\right)^{3/2}\right] - \ln\left[N(0)\right].\]
+Simplifying and raising both sides to \(e\) yields
+\[N(z) = N(0)\exp\left[-\frac{mgz}{kT}\right],\]
+as desired.
 \end{enumerate}
 
 % \bigskip
