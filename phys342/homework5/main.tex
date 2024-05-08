@@ -16,11 +16,129 @@ Calvin Sprouse \hfill PHYS342 Homework 5 \hfill 2024 May 10
 % homework problems begin
 % Textbook problems 3.36, 3.37, 3.39
 \bigskip\noindent
-\textbf{Problem 3.36.}
+\textbf{Problem 3.36.} Consider an Einstein solid for which \(N\gg 1\) and \(q\gg 1\). Think of each oscillator as a separate particle.
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\item Show that the chemical potential is
+\[\mu = - kT\ln\left(\frac{N+q}{N}\right).\]
+\item Discuss this result in the limits \(N \gg q\) and \(N \ll q\), concentrating on the question how much \(S\) increases when another particle carrying no energy is added to the system. Does the formula make intuitive sense?
+\end{enumerate}
+\bigskip
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\item The chemical potential, \(\mu\), is given by Equation~3.55 to be
+\[\mu = -T\left(\diffp{S}{N}\right)_{U,V}.\]
+The entropy, \(S\), is given in terms of the multiplicity, \(\Omega\), by Equation~2.45 to be
+\[S = k\ln\left(\Omega\right).\]
+The multiplicity of an Einstein solid is given by Equation~2.9 to be
+\[\Omega(N,q) = \frac{(q+N-1)!}{q!(N-1)!}.\]
+The natural log of factorial terms would be unpleasant to work with so we will find an approximation for \(\Omega\) in the \(N\gg 1\) and \(q\gg 1\) limit. We begin with Equation~2.9 by noting \((N-1)! = N!/N\), and likewise \((q+N-1)!=(q+N)!/(q+N)\). Then,
+\[\Omega(N,q) = \frac{N}{N+q}\left(\frac{(q+N)!}{q!N!}\right).\]
+We then turn to Stirlings approximation of the factorial function given by Equation~2.14:
+\[N! \approx N^N e^{-N}\sqrt{2\pi N},\]
+where \(N\gg 1\). Then,
+\[\Omega(N,q) \approx \frac{N}{q+N}\left(\frac{(q+N)^{q+N}\sqrt{2\pi (q+N)}e^{-(q+N)}}{q^q \sqrt{2\pi q}e^{-q} N^N \sqrt{2\pi N} e^{-N}}\right).\]
+This in turn simplifies to
+\[\Omega(N,q) \approx \left(\frac{q+N}{q}\right)^q \left(\frac{q+N}{N}\right)^N \left(\frac{N}{2\pi q \left(q+N\right)}\right)^{1/2}.\]
+Then, by Equation 2.45,
+\[S = kq\ln\left(1 + \frac{N}{q}\right) + kN\ln\left(1 + \frac{q}{N}\right) + \frac{1}{2}k\ln\left(\frac{N}{2\pi q (q + N)}\right).\]
+The final additive term is notably smaller than the first two additive terms. See that the first two terms are multiplied by the relatively large \(q\) and \(N\). Thus, we may neglect the last term in the large \(q\) and \(N\) approximation. Finally, Equation~3.55 relates the entropy to the chemical potential by
+\[\mu = -T \left(\diffp{S}{N}\right)_{U,V}.\]
+Then,
+\[\mu = -kT\left(q \diffp{}{N}\ln\left(1 + \frac{N}{q}\right) + \diffp{}{N}N\ln\left(1 + \frac{q}{N}\right)\right).\]
+The first term in the outer-parenthesis requires a chain rule:
+\[\diffp{}{N}\ln\left(1 + \frac{N}{q}\right) = \left(1 + \frac{N}{q}\right)^{-1}\frac{1}{q} = \frac{1}{q+N}.\]
+The second term in the outer-parenthesis requires a product rule and a chain rule:
+\[\diffp{}{N}N\ln\left(1 + \frac{q}{N}\right) = \ln\left(1 + \frac{q}{N}\right) - N\left(1 + \frac{q}{N}\right)^{-1}N^{-2} = -\frac{q}{N+q} + \ln\left(1 + \frac{q}{N}\right).\]
+Finally,
+\[\mu = -kT\left( \frac{q}{q+N} - \frac{q}{N+q} + \ln\left(1 + \frac{q}{N}\right) \right) = \ln\left( 1 + \frac{q}{N} \right),\]
+where we notice
+\[\ln\left( 1 + \frac{q}{N} \right) = \ln\left(\frac{N+q}{N}\right)\]
+as desired.
+
+\pagebreak
+\item Suppose \(N \gg q\). Then,
+\[ \frac{1}{k} \left(\diffp{S}{N}\right)_{U,V} \approx \ln\left(\frac{N}{N}\right) = 0.\]
+Thus, the entropy of the system when \(N\gg q\) is not altered significantly when a particle without energy is added.
 
 \bigskip\noindent
-\textbf{Problem 3.37.}
+Suppose \(q \gg N\). Then,
+\[\frac{1}{k} \left(\diffp{S}{N}\right)_{U,V} \approx \ln\left(\frac{q}{N}\right).\]
+Since \(q\gg N\), the increase in entropy for a new particle without energy is greater than 1.
+\end{enumerate}
 
-\bigskip\noindent
-\textbf{Problem 3.39.}
+% \bigskip
+\pagebreak
+\noindent
+\textbf{Problem 3.37.} Consider a monoatomic ideal gas that lives at a height \(z\) above sea level, so each molecule has potential energy \(mgz\) in addition to its kinetic energy.
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\item Show that the chemical potential is the same as if the gas were at sea level, plus an additional term \(mgz\):
+\[\mu(z) = - kT\ln\left(\frac{V}{N}\left(\frac{2\pi m k T}{h^2}\right)^{3/2}\right) + mgz.\]
+\item Consider two chunks of helium gas, one at sea level and one at height \(z\), each having the same temperature and volume. Assuming that they are in diffusive equilibrium, show that the umber of molecules in the higher chunk is
+\[N(z) = N(0)\exp\left[-\frac{mgz}{kT}\right],\]
+in agreement with the result of Problem 1.16.
+\end{enumerate}
+\bigskip
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\item Suppose the molecules in an ideal gas are at approximately the same height \(z\). Then, the total energy, \(U\), of the gas can be expressed in terms of the kinetic energy, \(U_k\), and the gravitational potential energy of \(N\) particles; that is,
+\[U_t = U + Nmgz.\]
+Equation 3.62, the Sackur-Tetrode equation, gives the entropy of an ideal monoatomic gas to be
+\[S = Nk\left(\ln\left[V\left(\frac{4\pi m U}{3h^2}\right)^{3/2}\right] - \ln\left[N^{5/2}\right]+\frac{5}{2}\right),\]
+where \(U\) is the kinetic energy of the gas, \(U_k\). Expressing Equation 3.62 in terms of \(U_k\) yields
+\[S = Nk\left(\ln\left[V\left(\frac{4\pi m \left(U - Nmgz\right)}{3h^2}\right)^{3/2}\right] - \ln\left[N^{5/2}\right]+\frac{5}{2}\right).\]
+The chemical potential, \(\mu\), is then obtained by Equation 3.55,
+\[\mu = -T\left(\diffp{S}{N}\right)_{U,V}.\]
+Substituting our definition of \(U\) into the process yields
+\end{enumerate}
+
+% \bigskip
+\pagebreak
+\noindent
+\textbf{Problem 3.39.} In Problem 2.32, the entropy of an ideal monoatomic gas that lives in a two-dimensional universe was found. Take the partial derivative with respect to \(U\), \(A\), and \(N\) to determine the temperature, pressure, and chemical potential of this gas. Simplify the result and discuss.
+
+\bigskip
+\noindent
+The multiplicity of the two-dimensional gas was found in Problem 2.26 to be
+\[\Omega_N
+\approx \frac{\pi^N}{(N!)^2}\frac{A^N}{h^{2N}}\left(2mU\right)^N
+= \frac{1}{(N!)^2} \left(\frac{2\pi A m U}{h^2}\right)^N .\]
+The entropy of a system with multiplicity \(\Omega\) can be found by
+\[S = k\ln\left(\Omega\right).\]
+Substituting the entropy of the two-dimensional gas for \(N\gg 1\) yields
+\[S = k\ln\left(\frac{1}{(N!)^2} \left(\frac{2\pi A m U}{h^2}\right)^N\right).\]
+Then,
+\[S = k\left(N\ln\left(\frac{2\pi mUA}{h^2}\right) - 2\ln\left(N!\right)\right).\]
+Applying Stirlings approximation in the form of Equation 2.16,
+\[\ln(N!) = N\ln(N) - N,\]
+yields
+\[S = Nk\left(\ln\left[\frac{2\pi mUA}{N^2h^2}\right] + 2\right).\]
+The partial derivative with respect to \(U\) is then,
+\begin{align*}
+\diffp{S}{U} &= Nk\left(\diffp{}{U}\ln\left[\frac{2\pi m U A}{N^2 h^2}\right]\right)
+\\&= Nk \left(\frac{N^2 h^2}{2\pi m U A}\frac{2 \pi m A}{N^2 h^2}\right)
+\\&= \frac{Nk}{U}.
+\end{align*}
+The partial derivative with respect to \(A\) is then,
+\begin{align*}
+\diffp{S}{A} &= Nk\left(\diffp{}{A}\ln\left[\frac{2 \pi m U A}{N^2 h^2}\right]\right)
+\\&= Nk \left(\frac{N^2 h^2}{2 \pi m U A}\frac{2 \pi m U}{N^2 h^2}\right)
+\\&= \frac{Nk}{A}.
+\end{align*}
+
+\pagebreak\noindent
+The partial derivative with respect to \(N\) is then,
+\begin{align*}
+\diffp{S}{N} &= k\left(\ln\left[\frac{2\pi m U A}{N^2 h^2}\right] + 2\right) + Nk\left(\diffp{}{N}\ln\left[\frac{2 \pi m U A}{N^2 h^2}\right]\right)
+\\&= \frac{S}{N} + Nk\left(\frac{N^2 h^2}{2\pi m U A}\frac{2\pi m U A}{h^2} (-2)N^{-3}\right)
+\\&= \frac{S}{N} - 2k
+\\&= k\ln\left(\frac{2\pi m U A}{N^2 h^2}\right).
+\end{align*}
+The temperature of the two-dimensional gas is given by
+\[T = \left(\diffp{S}{U}\right)^{-1} = \frac{U}{Nk}.\]
+The pressure of the two-dimensional gas is given by
+\[P = T\diffp{S}{A} = \frac{NkT}{A},\]
+which we notice is a two-dimensional form of the Ideal Gas Law.
+The chemical potential of the two-dimensional gas is given by
+\[\mu = -T\diffp{S}{N} = -kT\ln\left(\frac{2\pi m U A}{N^2 h^2}\right),\]
+where we may substitute our expression for temperature to obtain a more familiar form:
+\[\mu = -kT\ln\left(\frac{A}{N}\frac{2\pi m k T}{h^2}\right).\]
+The two-dimensional system is not so different from the three-dimensional system.
 \end{document}
