@@ -27,16 +27,16 @@ where \(V_0\) is a constant and \(\epsilon\) is a small unitless number \(\left(
 \bigskip
 \begin{enumerate}[label=(\alph*)]
 \item Let \(\epsilon = 0\). Then, we have the unperturbed Hamiltonian,
-\[\hat{H}^0 = \matr{1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 2}.\]
+\[\hat{H}^0 = V_0\matr{1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 2}.\]
 Since the matrix is diagonalized, the terms on the diagonal are the eigenvalues. Similarly, we may consider the matrix to be composed of three column vectors which represent eigenvectors. The three eigenpairs of the system, \(\left(\lambda, \vec{u}\right)\), are then
-\[  \left(1, \matr{1 \\ 0 \\ 0}\right), \quad
-    \left(1, \matr{0 \\ 1 \\ 0}\right), \quad
-    \left(2, \matr{0 \\ 0 \\ 1}\right), \]
+\[  \left(V_0, \matr{1 \\ 0 \\ 0}\right), \quad
+    \left(V_0, \matr{0 \\ 1 \\ 0}\right), \quad
+    \left(2V_0, \matr{0 \\ 0 \\ 1}\right), \]
 where the eigenvectors have been normalized.
 
 \pagebreak
 \item We begin by recognizing that the upper-left of the matrix is in a diagonalized sub-space. Then, the eigenvalue, \(\lambda\), and eigenvector, \(\vec{u}\), can be read from the matrix as
-\[\lambda_1 = 1-\epsilon, \qquad \vec{u}=\matr{1 \\ 0 \\ 0}.\]
+\[\lambda_1 = V_0(1-\epsilon), \qquad \vec{u}=\matr{1 \\ 0 \\ 0}.\]
 The remaining two eigenvalues can be found by restricting ourselves to the lower-right sub-space of \(\hat{H}\). Let \(h\) be the lower-right sub-space of \(\hat{H}\),
 \[h = \matr{1 & \epsilon \\ \epsilon & 2}.\]
 Then, it's eigenvalues, \(\lambda\), are solutions to the expression,
@@ -47,6 +47,35 @@ We find solutions via the quadratic formula; that is,
 \[\lambda = \frac{-(-3) \pm \sqrt{(-3)^2 -4(1)(2-\epsilon^2)}}{2(1)}.\]
 The remaining two eigenvalues are given by
 \[\lambda = \frac{3\pm\sqrt{1+4\epsilon^2}}{2}.\]
+The second-order Taylor expansion of \(\sqrt{1+4\epsilon^2}\) is given by
+\[\sqrt{1+4\epsilon^2} \approx 1 + 0 + 2\epsilon^2.\]
+Then the perturbation eigenvalues are
+\[\lambda_2 = V_0\left(1 - \epsilon^2\right), \qquad \lambda_3 = V_0\left(2 + \epsilon^2\right).\]
+Notice, if \(\epsilon = 0\), we recover the eigenvalues as found in part (a).
+
+\pagebreak
+\item The first-order non-degenerate perturbation to the energy are the diagonal terms of the perturbation hamiltonian. The perturbation hamiltonian can be written
+\[\hat{H}' = \epsilon V_0 \matr{-1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 1 & 0}.\]
+The non-degenerate eigenvector of \(\hat{H}^0\) corresponds to the third state. The third term on the perturbation hamiltonian is 0 so there is no first-order energy correction to the non-degenerate state; that is,
+\[E_3^1=0.\]
+The second-order non-degenerate correction can be found by
+\[E_3^2 = \sum_{m\in\{1,2\}}\frac{\left|\bra*{\vec{u}_m}\hat{H}'\ket*{\vec{u}_3}\right|^2}{E_3^0 - E_m^0},\]
+where \(\vec{u}_i\) is the \(i\)-th eigenvector. The uncorrected energies may be read off the unperturbed hamiltonian diagonal elements,
+\[E_3^0 = 2 V_0, \quad E_2^0 = V_0, \quad E_1^0 = V_0.\]
+We may interpret the bra-ket as selecting the value in the \(m\)-th row and 3rd column from the perturbation hamiltonian matrix. Then,
+\[E_3^2 = \frac{(0)^2}{2V_0 - V_0} + \frac{(\epsilon V_0)^2}{2V_0 - V_0} = \epsilon^2 V_0.\]
+Comparing to part(b) we see that, as expected, the first-order correction is 0 and the second-order correction is \(\epsilon^2 V_0\).
+
+\pagebreak
+\item We begin by constructing a \(\hat{W}\) matrix whose terms are given by
+\[\hat{W}_{ij} = \bra*{\vec{u}_i}\hat{H}'\ket*{\vec{u}_j}.\]
+Since we are working with two-fold degeneracy our \(\hat{W}\) matrix will be \(2\times 2\). Notice, from section 7.2.1 and Equation 7.30, if \(W_{ab}=0\) then the energies are given by Equation 7.35,
+\[E_+^1 = W_{aa} = \bra*{\vec{u}_1}\hat{H}'\ket*{\vec{u}_1}, \quad E_-^1 = W_{bb} = \bra*{\vec{u}_2}\hat{H}'\ket*{\vec{u}_2}.\]
+We find the \(W_{ab}\) term by reading the coefficient from the perturbation hamiltonian,
+\[\bra*{\vec{u}_1}\hat{H}'\ket*{\vec{u}_2} = 0.\]
+Excellent! Then the first-order energy perturbation can be found simply by reading the coefficients on the perturbation hamiltonian,
+\[E_+^1 = -\epsilon V_0, \quad E_-^1 = 0.\]
+These correspond to \(E_1\) and \(E_2\) respectively. As expected, these are the same as found in part (b).
 \end{enumerate}
 \end{enumerate}
 \end{document}
