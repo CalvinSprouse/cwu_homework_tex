@@ -1,0 +1,37 @@
+% document style header
+\documentclass[a4paper, 12pt]{config/homework}
+
+% import default packages
+\usepackage{config/packages}
+\usepackage{config/commands}
+
+% end preamble
+\begin{document}
+
+% document title
+\noindent
+Calvin Sprouse \hfill PHYS475 Homework 6 \hfill 2024 May 20
+\bigskip
+
+% homework problems begin
+\begin{enumerate}
+\item Use
+\[\vec{B}_\text{int} = \frac{1}{4\pi \epsilon_0} \frac{e}{m_e c^2 r^3} \vec{L},\]
+where \(e\) is the elementary charge, to estimate the internal magnetic field in a hydrogen atom. This value characterizes the boundary between the strong and weak field limit.
+
+\bigskip
+The angular momentum vector may be expanded in the typical form,
+\[\vec{L} = L_x \vec{x} + L_y \vec{y} + L_z \vec{z},\]
+where \(\vec{x}\) represents the unit vector of the \(x\)-axis. Then, invoking the (I THINK) Virial theorem allows \(\vec{L}\) to be expressed in terms of quantum expectation values,
+\[\vec{L} = \expval{L_x} \vec{x} + \expval{L_y} \vec{y} + \expval{L_z} \vec{z}.\]
+Then, a particular component can be found by (NAME OF THEOREM OR EQUATION)
+\[\expval{L_x} = \bra*{n,l,m_l,m_s}\hat{L}_x\ket*{n,l,m_l,m_s},\]
+where the wavefunction is expressed in terms of the appropriate basis.
+
+\pagebreak
+\item Consider the eight \(n=2\) states for the hydrogen atom, \(\bra*{2, l, j, m_j}\). Determine the energy of each state under weak-field Zeeman splitting and construct a diagram like the one in Figure 6.11 of Griffiths to show how the energies evolve as a function of \(B_\text{ext}\). Label each line clearly and indicate the slope of each line on the graph.
+
+
+
+\end{enumerate}
+\end{document}
