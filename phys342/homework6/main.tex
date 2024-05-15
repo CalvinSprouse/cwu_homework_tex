@@ -14,59 +14,82 @@ Calvin Sprouse \hfill PHYS342 Homework 6 \hfill 2024 May 17
 
 % homework problems begin
 % Textbook problems 4.1, 4.4, 4.5, 4.8, 4.9, 4.14, 4.18*, 4.19
-\bigskip
-\noindent
+\bigskip\noindent
 \textbf{Problem 4.1.} Recall Problem 1.34, which concerned an ideal diatomic gas taken around a rectangular cycle on a \(PV\) diagram. Suppose now that this system is used as a heat engine, to convert the heat added into mechanical work.
 \begin{enumerate}[label=\textbf{(\alph*)}]
 \item Evaluate the efficiency of this engine for the case \(V_2 = 3V_1\), and \(P_2 = 2P_1\).
 \item Calculate the efficiency of an ``ideal'' engine operating between the same temperature extremes.
 \end{enumerate}
 \begin{enumerate}[label=\textbf{(\alph*)}]
+\bigskip
 \item The efficiency, \(e\), of this engine is given by Equation 4.1,
 \[e \equiv \frac{W}{Q_h}.\]
 The work done by the engine can be found by the area enclosed,
 \[W = \left(P_2 - P_1\right)\left(V_2 - V_1\right) = 2 P_1 V_1.\]
 The heat absorbed can be found from steps \(A\) and \(B\) of the cycle to be
-\[Q_h = \]
+\[Q_h = .\]
 \end{enumerate}
 
-\pagebreak
-\noindent
+\pagebreak\noindent
 \textbf{Problem 4.4.} It has been proposed to use the thermal gradient of the ocean to drive a heat engine. Suppose that at a certain location the water temperature is \(\qty{22}{\celsius}\) at the ocean surface and \(\qty{4}{\celsius}\) at the ocean floor.
 \begin{enumerate}[label=\textbf{(\alph*)}]
 \item What is the maximum possible efficiency of an engine operating between these two temperatures?
-\item If the engine is to produce \(\qty{1}{\giga\watt}\) of electrical power, what minimum volume of water must be processed (to such out the heat) in every second?
+\item If the engine is to produce \(\qty{1}{\giga\watt}\) of electrical power, what minimum volume of water must be processed (to suck out the heat) in every second?
 \end{enumerate}
-\noindent
-Response.
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\bigskip
+\item The maximum possible efficiency of an engine operating between two temperatures is given by Equation 4.5,
+\[e = 1 - \frac{T_c}{T_h},\]
+where \(T_c\) is the temperature at the ocean floor, \(T_c = \qty{277}{\kelvin}\), and \(T_h\) is the temperature at the ocean surface, \(T_h=\qty{295}{\kelvin}\). Then,
+\[e = 1 - \frac{\qty{277}{\kelvin}}{\qty{295}{\kelvin}} = 0.06.\]
+\bigskip
+\item Suppose the size of our reservoirs is so large so as to render the temperatures constant. Then, in a perfect world, we may extract
+\[\Delta T = \qty{295}{\kelvin} - \qty{277}{\kelvin} = \qty{18}{\kelvin}.\]
+The heat energy obtained by extracting \(\qty{18}{\kelvin}\) is given by
+\[Q = cm\Delta T,\]
+where \(c = \qty{4186}{\joule\per\kg\per\kelvin}\) and \(Q=\qty{1}{\giga\watt}\). Then,
+\[m = \frac{Q}{m\Delta T} = \frac{\qty{e9}{\joule\per\second}}{\qty{4186}{\joule\per\kg\per\kelvin}\qty{18}{\kelvin}} = \qty{13e3}{\kg\per\second}.\]
+But that would be at \(\qty{100}{\percent}\) efficiency. Operating at a mere \(e=\qty{6}{\percent}\) efficiency,
+\[m = \frac{1}{e}\frac{Q}{m\Delta T} = \qty{217e3}{\kg\per\second}.\]
+\end{enumerate}
 
-\pagebreak
-\noindent
+\pagebreak\noindent
 \textbf{Problem 4.5.} Prove directly (by calculating the heat taken in and the heat expelled) that a Carnot engine using an ideal gas as the working substance has an efficiency of \(1 - T_c/T_h\).
 
-\bigskip
-\noindent
-Response.
+\bigskip\noindent
+\(Q_h\) and \(Q_c\) are given by finding the work done along the isotherms in step \(1\to 2\) and step \(3\to 4\). Since we are on an isotherm, \(\Delta T = 0\) and \(\Delta U = 0\). Then,
+\begin{align*}
+Q_h &= \left|W_{12}\right| = \defint{V_1}{V_2}{P}{V} = NkT_h \ln\left(\frac{V_2}{V_1}\right), \\
+Q_c &= \left|W_{34}\right| = \defint{V_4}{V_3}{P}{V} = NkT_c \ln\left(\frac{V_3}{V_4}\right).
+\end{align*}
+The relationship between volume and temperature on an adiabat is given by Equation~1.39,
+\[V_i T_i^{f/2} = V_f T_f^{f/2}.\]
+On step \(2\to 3\),
+\[V_2 T_h^{f/2} = V_3 T_c^{f/2} \quad\Rightarrow\quad \frac{V_2}{V_3}=\frac{T_c^{f/2}}{T_c^{f/2}}.\]
+On step \(4\to 1\),
+\[V_4 T_c^{f/2} = V_1 T_h^{f/2} \quad\Rightarrow\quad \frac{V_4}{V_1} = \frac{T_h^{f/2}}{T_c^{f/2}}.\]
+Then, joining the two equations by the common temperature ratio yields
+\[\frac{V_2}{V_3}=\frac{V_1}{V_4} \quad\Rightarrow\quad \frac{V_2}{V_1} = \frac{V_3}{V_4}.\]
+Finally, since the temperature ratios are equal,
+\[e = 1 - \frac{T_c}{T_h}.\]
 
-\pagebreak
-\noindent
+\bigskip\noindent
 \textbf{Problem 4.8.} Can you cool off your kitchen by leaving the refrigerator door open?
 
-\bigskip
-\noindent
+\bigskip\noindent
 A room cannot be cooled by leaving the refrigerator open. The refrigerator cools the space inside the fridge by pumping heat into the surrounding environment. The surrounding environment is then heated and the space inside the fridge is cooled. By leaving the door open, a small temperature gradient is then created as the air inside is cooled and the air outside is heated. In the best case scenario where this requires no energy the room is left at the same overall temperature but there exists a separation. In reality, this whole process requires some extra work which is cast into the room as waste heat. Then, the fridge is simply acting as a poor space heater.
 
-\pagebreak
-\noindent
+\pagebreak\noindent
 \textbf{Problem 4.9.} Estimate the maximum possible coefficient of performance of a household air conditioner. Use any reasonable values for the reservoir temperatures.
 
-\bigskip
-\noindent
-The coefficient of performance, \(c\), is given by Equation \_ to be
-\[ .\]
+\bigskip\noindent
+The maximum coefficient of performance, \(c\), is given by Equation 4.9,
+\[c = \frac{T_c}{T_h - T_c}.\]
+Suppose the household air conditioner is designed for a cool summer day in Ellensburg. Let the temperature outside the house be \(T_h=\qty{40}{\celsius}=\qty{313}{\kelvin}\). Let the desired temperature inside the house be room temperature, \(T_c=\qty{20}{\celsius}=\qty{293}{\kelvin}\). Then,
+\[c = \frac{\qty{293}{\kelvin}}{\qty{313}{\kelvin} - \qty{293}{\kelvin}} = 14.65.\]
+We interpret this to mean that for each joule of electrical energy consumed, 14.65 joules of heat energy can be removed from inside the house.
 
-\pagebreak
-\noindent
+\pagebreak\noindent
 \textbf{Problem 4.14.} A heat pump is an electrical device that heats a building by pumping heat in from the cold outside. In other words, it's the same as a refrigerator, but its purpose is to warm the hot reservoir rather than to cool the cold reservoir (even though it does both). Let us define the following standard symbols, all taken to be positive by convention:
 \begin{align*}
    T_h &= \text{temperature inside the building}
@@ -81,22 +104,24 @@ The coefficient of performance, \(c\), is given by Equation \_ to be
 \item Use the second law of thermodynamics to derive an upper limit on the COP, in terms of the temperatures \(T_h\) and \(T_c\) alone.
 \item Explain why a heat pump is better than an electric furnace, which simply converts electrical work directly into heat.
 \end{enumerate}
-\noindent
-Response.
+\begin{enumerate}[label=\textbf{(\alph*)}]
+\bigskip
+\item The desireable affect of a heat pump is the transfer of heat energy to the hot reservoir, \(Q_h\). The cost of running a heat pump is the work required, \(W\).
+\bigskip
+\item The work may be defined in terms of the heat flow, \(W=Q_h - Q_c\). Then,
+\[c = \frac{Q_h}{Q_h - Q_c} = \frac{1}{1 - \frac{Q_c}{Q_h}}.\]
+Since \(Q_h > Q_c\), \(c > 1\).
+\end{enumerate}
 
-\pagebreak
-\noindent
+\pagebreak\noindent
 \textbf{Problem 4.18*.} Derive Equation 4.10 for the efficiency of the Otto cycle.
 
-\bigskip
-\noindent
+\bigskip\noindent
 Response.
 
-\pagebreak
-\noindent
+\pagebreak\noindent
 \textbf{Problem 4.19.} The amount of work done by each stroke of an automobile engine is controlled by the amount of fuel injected into the cylinder: the more fuel, the higher the temperature and pressure at points 3 and 4 in the cycle. But according to Equation 4.10, the efficiency of the cycle depends only on the compression ratio which is always the same for any particular engine, not on the amount of fuel consumed. Do you think this conclusion still holds when various other effects such as friction are taken into account? Would you expect a real engine to be most efficient when operating at high power or at low power?
 
-\bigskip
-\noindent
+\bigskip\noindent
 Response.
 \end{document}
