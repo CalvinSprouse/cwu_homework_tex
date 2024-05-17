@@ -1,0 +1,13 @@
+Topology without Tears by Sidney A. Morris
+
+Promise of Future Searches for Cosmic Topology
+https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.132.171501
+notes: the universe may be torus shaped
+
+Particle on a Torus Knot: A Hamiltonian Analysis
+https://link.springer.com/article/10.1007/s10701-016-0035-6
+notes: particle physics, torus, yay
+
+A high-density and high-confinement tokamak plasma regime for fusion energy
+https://www.nature.com/articles/s41586-024-07313-3
+notes: torus shape for fusion confinement (application)
