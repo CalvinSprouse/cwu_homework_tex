@@ -26,8 +26,28 @@ Calvin Sprouse \hfill PHYS342 Homework 6 \hfill 2024 May 17
 \[e \equiv \frac{W}{Q_h}.\]
 The work done by the engine can be found by the area enclosed,
 \[W = \left(P_2 - P_1\right)\left(V_2 - V_1\right) = 2 P_1 V_1.\]
-The heat absorbed can be found from steps \(A\) and \(B\) of the cycle to be
-\[Q_h = .\]
+The heat absorbed in step \(A\) can be found by arranging Equation 1.41,
+\[C = \frac{Q}{\Delta T},\]
+for \(Q\) in terms of the heat capacity at constant volume, \(C_V\),
+\[Q = C_V \Delta T.\]
+Equation 1.46 gives the heat capacity at constant volume for an ideal gas as
+\[C_V = \frac{Nfk}{2}.\]
+Air is nearly entirely composed of oxygen and nitrogen gas which are diatomic molecules allowing for three spatial and two rotation degrees of freedom, \(f=5\). Then, the heat absorbed in part \(A\) is given by
+\[Q_A = \frac{5}{2}Nk(T_i - T_f).\]
+The ideal gas law states
+\[PV = NkT.\]
+We recognize by Figure~1.10b that \(V_i=V_f=V_1\). Then,
+\[Q_A = \frac{5}{2}V_1(P_2-P_1).\]
+For step \(B\) we use Equation~1.48 for the heat capacity at constant pressure, \(C_P\),
+\[C_P = C_V + Nk.\]
+Then, by Equation~1.46 and Equation~1.41,
+\[Q_B = \frac{7}{2}Nk(T_i-T_f).\]
+We recognize by Figure~1.10b that \(P_i = P_f = P_2\). By the ideal gas law,
+\[Q_B = \frac{7}{2}P_2(V_2-V_1).\]
+Then, the total heat absorbed is given by
+\[Q_H = Q_A + Q_B = \frac{33}{2}P_1V_1.\]
+Then,
+\[e = \frac{|W|}{Q_h} = \frac{2P_1V_1}{\left(\frac{33}{2}\right)P_1V_1} = \frac{4}{33} = \qty{12}{\percent}.\]
 \end{enumerate}
 
 \pagebreak\noindent
@@ -105,23 +125,62 @@ We interpret this to mean that for each joule of electrical energy consumed, 14.
 \item Explain why a heat pump is better than an electric furnace, which simply converts electrical work directly into heat.
 \end{enumerate}
 \begin{enumerate}[label=\textbf{(\alph*)}]
-\bigskip
+\pagebreak
 \item The desireable affect of a heat pump is the transfer of heat energy to the hot reservoir, \(Q_h\). The cost of running a heat pump is the work required, \(W\).
 \bigskip
 \item The work may be defined in terms of the heat flow, \(W=Q_h - Q_c\). Then,
 \[c = \frac{Q_h}{Q_h - Q_c} = \frac{1}{1 - \frac{Q_c}{Q_h}}.\]
 Since \(Q_h > Q_c\), \(c > 1\).
+\bigskip
+\item The second law of thermodynamics is given by Equation 4.8,
+\[\frac{Q_h}{T_h} \ge \frac{Q_c}{T_c}
+\quad\Rightarrow\quad \frac{Q_h}{Q_c}\ge\frac{T_h}{T_c}
+\quad\Rightarrow\quad \frac{Q_c}{Q_h}\le\frac{T_c}{T_h}.\]
+Substituting into our expression for \(c\) yields
+\[c \le \frac{1}{1-\frac{T_c}{T_h}}.\]
+\bigskip
+\item A heat pump leverages an existing temperature gradient which could, in principle, be large. An electric furnace, however, generates a temperature gradient by converting work into heat. The best case for an electric furnace is that all work is converted to heat, a coefficient of performance of 1. As demonstrated in part \textbf{(a)}, the coefficient of performance for a heat pump is always greater than 1. Thus, the heat pump is always going to be more efficient than the electric furnace but only functions if there exists a temperature gradient.
 \end{enumerate}
 
 \pagebreak\noindent
 \textbf{Problem 4.18*.} Derive Equation 4.10 for the efficiency of the Otto cycle.
 
 \bigskip\noindent
-Response.
+Equation~4.10 gives the efficiency of the Otto cycle in terms of the compression ratio as
+\[e = 1 - \left(\frac{V_2}{V_1}\right)^{\gamma - 1}.\]
+We begin with the most general form of the efficiency of an engine is given by Equation~4.3,
+\[e = 1 - \frac{Q_c}{Q_h}.\]
+Figure~4.5 shows the Otto cycle on a PV diagram where we can see that heat is added, \(Q_h\), on step \(2\to 3\) and heat is removed, \(Q_c\), on step \(4\to 1\). These are the adiabatic steps where no work is preformed. Then, by the first law of thermodynamics, at each adiabatic step,
+\[\Delta U = Q.\]
+For step \(2\to 3\),
+\[Q_h = U_3 - U_2.\]
+By the equipartition theorem,
+\[Q_h = \frac{f}{2}NkT_3 - \frac{f}{2}NkT_2.\]
+The Ideal Gas Law states
+\[PV = NkT.\]
+Then,
+\[Q_h = \frac{f}{2}V_3 P_3 - \frac{f}{2}V_2 P_2 = \frac{f}{2}V_2(P_3 - P_2),\]
+where we recognized by Figure 4.5, \(V_3=V_2\). By a similar chain of reason,
+\[Q_c = \frac{f}{2}V_1(P_4-P_1).\]
+The efficiency of our engine can then be expressed as
+\[e = 1 - \frac{V_1}{V_2} \frac{(P_4-P_1)}{(P_3-P_2)}.\]
+Equation 1.40 gives a conserved quantity for adiabatic processes as
+\[V^\gamma P = \text{constant}.\]
+Then, for the two adiabatic phases,
+\[(3\to 4): V_2^\gamma P_3 = V_1^\gamma P_4, \qquad  (1\to 2): V_1^\gamma P_1 = V_2^\gamma P_2.\]
+These equations can be arranged for \(P_3\) and \(P_2\):
+\[P_3 = \left(\frac{V_1}{V_2}\right)^\gamma P_4, \qquad P_2 = \left(\frac{V_1}{V_2}\right)^\gamma P_1.\]
+Then,
+\[P_3 - P_2 = \left(\frac{V_1}{V_2}\right)^\gamma P_4 - \left(\frac{V_1}{V_2}\right)^\gamma P_1 = (P_4 - P_1)\left(\frac{V_1}{V_2}\right)^\gamma.\]
+Substituting into our expression for engine efficiency yields
+\[e = 1 - \frac{V_1}{V_2}\frac{(P_4-P_1)}{(P_4-P_1)}\frac{1}{\left(\frac{V_1}{V_2}\right)^\gamma} = 1 - \frac{V_1}{V_2}\left(\frac{V_2}{V_1}\right)^\gamma.\]
+Finally,
+\[e = 1 - \left(\frac{V_2}{V_1}\right)^{\gamma - 1},\]
+as desired.
 
 \pagebreak\noindent
 \textbf{Problem 4.19.} The amount of work done by each stroke of an automobile engine is controlled by the amount of fuel injected into the cylinder: the more fuel, the higher the temperature and pressure at points 3 and 4 in the cycle. But according to Equation 4.10, the efficiency of the cycle depends only on the compression ratio which is always the same for any particular engine, not on the amount of fuel consumed. Do you think this conclusion still holds when various other effects such as friction are taken into account? Would you expect a real engine to be most efficient when operating at high power or at low power?
 
 \bigskip\noindent
-Response.
+This conclusion probably represents an average efficiency over the range of performance of the engine. The energy loss due to friction is relatively constant at different operating levels because it would depend on the piston displacement, which is given to be constant. At high power levels, with correspondingly high temperature and fuel injection, conductive heat loss and incomplete combustion render the engine less efficient. A real engine is tuned to some general operating efficiency, which in most internal combustion engine cars is related to the tachometer by the transmission. During the oil crisis in particular, engines and transmissions were tuned to be maximally efficient at the highest gear when doing 55 mph, the typical highway speed. Then the transmission would be engineered such that other common speeds would associate with a particular gear and result in the engine rpm being similar to the engine rpm at the ideal tuning. This way engines can maintain efficiency during long coasting periods, only dipping into high power cycles during acceleration. The exception to this is an electric generator engine present in modern hybrid vehicles. These engines are run at a near constant rpm against a near constant load, the converter, and are able to maintain near maximum efficiency at all vehicle speeds.
 \end{document}
