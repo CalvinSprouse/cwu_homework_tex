@@ -1,0 +1,26 @@
+% document style header
+\documentclass[a4paper, 12pt]{config/homework}
+
+% import default packages
+\usepackage{config/packages}
+\usepackage{config/commands}
+
+% end preamble
+\begin{document}
+
+% document title
+\noindent
+Calvin Sprouse \hfill PHYS 475 Exam 2 \hfill 2024 May 23
+\bigskip
+
+% homework problems begin
+\noindent
+Many semiconductor devices are designed to confine electrons within a thin layer that is only a few nanometers thick. When a potential difference is applied across such a layer, the electrons respond as though they are trapped within a microscopic capacitor. If our ``capacitor'' plates are separated by a distance, \(L\), that is of the order of the de Broglie wavelength of a trapped electron, we must apply a quantum treatment to the study of its behavior. We can treat this ``capacitor'' like an infinite square well,
+\[V(x) = \begin{cases}
+0, & 0 \le x \le L, \\
+\infty, & \text{otherwise}.
+\end{cases}\]
+Applying a potential difference of \(\Delta V_0\) across it introduces an additional potential energy of,
+\[V'(x) = \frac{e\Delta V_0}{L}x.\]
+Use perturbation theory to determine the first-order correction to the energy of the \(n\)th eigenstate associated with the perturbation.
+\end{document}
