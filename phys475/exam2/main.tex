@@ -25,15 +25,15 @@ Applying a potential difference of \(\Delta V_0\) across it introduces an additi
 Use perturbation theory to determine the first-order correction to the energy of the \(n\)th eigenstate associated with the perturbation.
 
 \bigskip\noindent
-The perturbation hamiltonian, \(\hat{H}'\), is simply the perturbation potential,
+The perturbation hamiltonian, \(\hat{H}'\), is simply the applied potential,
 \[\hat{H}' = \frac{e}{L}\Delta V_0 \hat{x}.\]
-Then, the first-order energy correction is given by Griffiths Equation 7.9 to be
+The first-order energy correction is given by Griffiths Equation 7.9 to be
 \[E_n^1 = \bra*{\psi^0_n}\hat{H}'\ket*{\psi^0_n},\]
 where the unperturbed stationary states, \(\psi_n^0\), are given by Griffiths Equation 2.31 to be
-\[\psi_n^0 = \sqrt{\frac{2}{a}}\sin\left(\frac{n\pi}{a}x\right),\]
-where \(a=L\). The first-order energy correction may be found by evaluating the integral corresponding to Equation 7.9. Then,
+\[\psi_n^0 = \sqrt{\frac{2}{L}}\sin\left(\frac{n\pi}{L}x\right).\]
+The first-order energy correction may be found by evaluating the integral corresponding to Equation 7.9; that is,
 \[E_n^1 = \defint{0}{L}{\sqrt{\frac{2}{L}}\sin\left(\frac{n\pi}{L}x\right) \frac{e\Delta V_0}{L}x \sqrt{\frac{2}{L}}\sin\left(\frac{n\pi}{L}x\right)}{x},\]
-where we have recognized that the only non-zero terms in the integral are in the region \(0\le x \le L\). Let \(a\) be a constant defined as
+where we have recognized that the only non-zero terms in the integral are in the region \(0\le x \le L\). Let \(a\) be defined as
 \[a \equiv \frac{n\pi}{L}.\]
 Then,
 \[E_n^1 = \frac{2e\Delta V_0}{L^2} \defint{0}{L}{x\sin^2\left(ax\right)}{x}.\]
@@ -43,6 +43,6 @@ Then,
 \[E_n^1 = \frac{2e\Delta V_0}{L^2} \left[
 \frac{L^2}{4} - \frac{L^2\sin\left(2n\pi\right)}{8(n\pi)^2} - \frac{L^2\cos\left(2n\pi\right)}{8(n\pi)^2} - 0 + 0 + \frac{L^2}{8\left(n\pi\right)^2}
 \right],\]
-where trivial trigonometric functions have been simplified. We recognize that \\ \(\sin(2\pi n) = 0\) and \(\cos(2\pi n) = 1\) for \(n\in\ints^+\). Thus,
+where trivial trigonometric functions have been simplified. We recognize that \\ \(\sin(2\pi n) = 0\) and \(\cos(2\pi n) = 1\) for \(n\in\ints^+\). Thus, the first-order energy correction of the \(n\)th eigenstate is given by
 \[E_n^1 = \frac{e\Delta V_0}{2}.\]
 \end{document}
