@@ -1,0 +1,58 @@
+% document style header
+\documentclass[a4paper, 12pt]{config/homework}
+
+% import default packages
+\usepackage{config/packages}
+\usepackage{config/commands}
+
+% end preamble
+\begin{document}
+
+% document title
+\noindent
+Calvin Sprouse \hfill PHYS 475 Homework 7 \hfill 2024 June 03
+\bigskip
+
+% homework problems begin
+\begin{enumerate}
+\item Using the trial wavefunction
+\[\psi(x) = A\exp\left[-bx^2\right],\]
+obtain the lowest upper-bound you can on the ground-state energies associated with the following one-dimensional potential energies.
+\begin{enumerate}[label=(\alph*)]
+\item \(V(x)=\alpha |x|\).
+\item \(V(x)=\alpha x^4\).
+\end{enumerate}
+\bigskip
+\begin{enumerate}[label=(\alph*)]
+\item The expectation value of total energy is given by Griffiths Equation 8.4,
+\[\expval{H} = \expval{T} + \expval{V}.\]
+The kinetic energy expectation value, \(\expval{T}\), is independent of the potential energy function and is given by
+\[\expval{T} = \defint{-\infty}{\infty}{\psi^*(x)\left(-\frac{\hbar^2}{2m}\diff[2]{}{x}\right)\psi(x)}{x} = -\frac{\hbar^2}{2m}\defint{-\infty}{\infty}{\psi^*(x)\diff[2]{}{x}\psi(x)}{x},\]
+where
+\[\diff[2]{}{x}\psi(x) = \]
+\end{enumerate}
+
+\pagebreak
+\item Use the WKB approximation to determine the allowed energies, \(E_n\), of an infinite-square well with a ``shelf'' of height \(V_0\) extending half-way across,
+\[V(x) = \begin{cases}
+V_0, & 0 < x < a/2, \\ 0, & a/2 < x < a, \\ \infty, & \text{else}.
+\end{cases}\]
+Express the solution in terms of \(V_0\) and \(E_n^0\), the energy for the \(n\)th state of the infinite-square well. Assume that \(E_1^0 > V_0\), but do not assume \(E_n \gg V_0\).
+
+\bigskip
+Response.
+
+\pagebreak
+Use the WKB approximation result for transmission probability,
+\[T \approx e^{-2\gamma},\]
+where
+\[\gamma \equiv \frac{1}{\hbar}\defint{0}{a}{|p(x)|}{x},\]
+to compute the approximate transmission probability for a particle with energy \(E\) that encounters a finite-square barrier with height \(V_0 > E\) and width \(2a\). Compare the solution to the exact result,
+\[T^{-1} = 1 + \frac{V_0^2}{4E(V_0-E)}\sinh^2\left(\frac{2a}{\hbar}\sqrt{2m(V_0-E)}\right),\]
+which should reduce to the solution in the WKB regime where \(T\ll 1\).
+
+\bigskip
+Response.
+
+\end{enumerate}
+\end{document}
