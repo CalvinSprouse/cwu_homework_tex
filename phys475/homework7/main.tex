@@ -15,7 +15,7 @@ Calvin Sprouse \hfill PHYS 475 Homework 7 \hfill 2024 June 03
 
 % homework problems begin
 \begin{enumerate}
-\item Using the trial wavefunction
+\item Using the test wavefunction
 \[\psi(x) = A\exp\left[-bx^2\right],\]
 obtain the lowest upper-bound you can on the ground-state energies associated with the following one-dimensional potential energies.
 \begin{enumerate}[label=(\alph*)]
@@ -23,13 +23,56 @@ obtain the lowest upper-bound you can on the ground-state energies associated wi
 \item \(V(x)=\alpha x^4\).
 \end{enumerate}
 \bigskip
+The normalization constant, \(A\), is given by Griffiths Equation~8.3,
+\[A = \left(\frac{2b}{\pi}\right)^{1/4}.\]
+Then,
+\[\psi(x) = \left(\frac{2b}{\pi}\right)^{1/4}\exp\left[-bx^2\right].\]
+The expectation value of kinetic energy, \(\expval{T}\), is independent of the potential energy function and can be found in general for a given test wavefunction. For the test wavefunction given, the expectation value of kinetic energy is given by Griffiths Equation~8.5,
+\[\expval{T} = \frac{\hbar^2 b}{2m}.\]
+The expectation value for total energy, \(\expval{H}\), is given by Griffiths Equation~8.4,
+\[\expval{H} = \expval{T} + \expval{V} = \frac{\hbar^2 b}{2m} + \expval{V},\]
+where Griffiths Equation~8.5 was substituted.
 \begin{enumerate}[label=(\alph*)]
-\item The expectation value of total energy is given by Griffiths Equation 8.4,
-\[\expval{H} = \expval{T} + \expval{V}.\]
-The kinetic energy expectation value, \(\expval{T}\), is independent of the potential energy function and is given by
-\[\expval{T} = \defint{-\infty}{\infty}{\psi^*(x)\left(-\frac{\hbar^2}{2m}\diff[2]{}{x}\right)\psi(x)}{x} = -\frac{\hbar^2}{2m}\defint{-\infty}{\infty}{\psi^*(x)\diff[2]{}{x}\psi(x)}{x},\]
+\pagebreak
+\item The expectation value of potential energy, \(\expval{V}\), is given by
+\[\expval{V} = \defint{-\infty}{\infty}{\psi^* V \psi}{x} = \sqrt{\frac{2b}{\pi}}\alpha\defint{-\infty}{\infty}{|x|e^{-2bx^2}}{x}.\]
+The integrand is symmetric about \(x=0\); that is,
+\[\expval{V} = 2 \alpha \sqrt{\frac{2b}{\pi}} \defint{0}{\infty}{xe^{-2bx^2}}{x}.\]
+\(\expval{V}\) is of the form of Equation~8 on the class Integral Table,
+\[\defint{0}{\infty}{x^m e^{-ax^2}}{x} = \frac{\Gamma\left(\frac{m+1}{2}\right)}{2a^{\frac{m+1}{2}}},\]
+where \(a=2b\) and \(m=1\). Then,
+\[\expval{V} = 2\alpha\sqrt{\frac{2b}{\pi}}\frac{1}{4b} = \frac{\alpha}{\sqrt{2b\pi}}.\]
+The expectation value of total energy is then
+\[\expval{H} = \frac{\hbar^2 b}{2m} + \frac{\alpha}{\sqrt{2b\pi}}.\]
+To minimize with respect to \(b\) we first take the derivative with respect to \(b\),
+\[\diff{}{b}\expval{H} = \frac{\hbar^2}{2m} - \frac{1}{2}\frac{\alpha}{\sqrt{2\pi}}b^{-3/2}.\]
+The minimum value is given by solutions to
+\[\diff{}{b}\expval{H} = 0.\]
+This is satisfied for
+\[b = \left( \frac{m\alpha}{\hbar^2\sqrt{2\pi}} \right)^{2/3}.\]
+The minimum expectation value of total energy is given by substituting the minimized value of \(b\),
+\[\expval{H}_\text{min} = \frac{\hbar^2}{2m}\left( \frac{m\alpha}{\hbar^2\sqrt{2\pi}} \right)^{2/3} + \frac{\alpha}{\sqrt{2\pi}}\sqrt{\frac{1}{\left( \frac{m\alpha}{\hbar^2\sqrt{2\pi}} \right)^{2/3}}} = \frac{3}{2}\left(\frac{\alpha^2\hbar^2}{2\pi m}\right)^{1/3}.\]
+Finally,
+\[\frac{3}{2}\left(\frac{\alpha^2 \hbar^2}{2\pi m}\right) \ge E_\text{gs}.\]
+\pagebreak
+\item The expectation value of potential energy, \(\expval{V}\), is given by
+\[\expval{V} = \defint{-\infty}{\infty}{\psi^* V \psi}{x} = \alpha\sqrt{\frac{2b}{\pi}}\defint{-\infty}{\infty}{x^4e^{-2bx^2}}{x}.\]
+Like in part (a), this integrand is symmetric about \(x=0\),
+\[\expval{V} = 2\alpha\sqrt{\frac{2b}{\pi}}\defint{0}{\infty}{x^4e^{-2bx^2}}{x}.\]
+Also like in part (a), \(\expval{V}\) is of the form of Equation~8 of the class Integral Table where \(a=2b\) and \(m=4\). Then, with \(\Gamma\) as the Gamma-function,
+\[\expval{V} = 2\alpha\sqrt{\frac{2b}{\pi}}\frac{\Gamma\left(\frac{5}{2}\right)}{2(2b)^{5/2}} = 2\alpha\sqrt{\frac{2b}{\pi}}\frac{\frac{3\sqrt{\pi}}{4}}{2(2b)^{5/2}} = \frac{3\alpha}{16b^2}.\]
+The expectation value of total energy is then
+\[\expval{H} = \frac{\hbar^2 b}{2m} + \frac{3\alpha}{16b^2}.\]
+The minimum value of \(\expval{H}\) is given by solutions to
+\[\diff{}{b}\expval{H} = 0,\]
 where
-\[\diff[2]{}{x}\psi(x) = \]
+\[\diff{}{b}\expval{H} = \frac{\hbar^2}{2m} - \frac{3\alpha}{8}b^{-3}.\]
+This is satisfied for
+\[b = \left(\frac{3\alpha m}{4\hbar^2}\right)^{1/3}.\]
+Then,
+\[\expval{H}_\text{min} = \frac{\hbar^2 }{2m}\left(\frac{3\alpha m}{4\hbar^2}\right)^{1/3} + \frac{3\alpha}{16}\left(\frac{3\alpha m}{4\hbar^2}\right)^{-2/3}= \frac{3}{4}\left(\frac{3\alpha \hbar^4}{4m^2}\right)^{1/3}.\]
+Finally,
+\[\frac{3}{4}\left(\frac{3\alpha \hbar^4}{4m^2}\right)^{1/3} \ge E_\text{gs}.\]
 \end{enumerate}
 
 \pagebreak
