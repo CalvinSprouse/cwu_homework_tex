@@ -1,0 +1,140 @@
+\documentclass{beamer}
+
+% import packages
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[a0paper]{beamerposter}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{anyfontsize}
+\usepackage{siunitx}
+\usepackage{multicol}
+\usepackage{subcaption}
+
+% configure pgfplots
+\pgfplotsset{compat=1.14}
+
+% specify theme and color theme
+\usetheme{gemini}
+\usecolortheme{earth}
+
+% define poster lengths for columns
+% If you have N columns, choose \sepwidth and \colwidth such that
+% (N+1)*\sepwidth + N*\colwidth = \paperwidth
+\newlength{\sepwidth}
+\newlength{\colwidth}
+\setlength{\sepwidth}{0.025\paperwidth}
+\setlength{\colwidth}{0.3\paperwidth}
+% define the separator column command
+\newcommand{\separatorcolumn}{\begin{column}{\sepwidth}\end{column}}
+
+% configure the author block
+\title{The Knitted Torus}
+\author{Calvin Sprouse \and Nicholas Klein}
+\institute[CWU]{Department of Mathematics, Central Washington University}
+
+% configure the footer
+\footercontent{
+MATH 207 Honors Seminar \hfill
+2024 May 31 \hfill
+\href{mailto:calvin.sprouse@cwu.edu}{calvin.sprouse@cwu.edu}
+}
+
+% setup logo
+\logoright{\includegraphics[height=7cm]{figures/logos/cwu_logo.png}}
+
+
+%-----------------------------------------------------------------------------%
+% begin poster
+\begin{document}
+
+% begin the content framework
+\begin{frame}[t]
+\begin{columns}[t]
+\separatorcolumn%
+
+
+%-----------------------------------------------------------------------------%
+% first column of content
+\begin{column}{\colwidth}
+
+%------------------------------------------------
+% introduction/abstract block
+\begin{block}{Introduction}
+
+A torus is a doughnut. A torus can be knitted. A knitted torus is a doughnut made of yarn. The knitted torus is a mathematical object that can be studied in the context of topology. The knitted torus is a torus that has been knitted. The knitted torus is a torus that has been knitted in a particular way. The knitted torus is a torus that has been knitted in a particular way that is interesting to study. The knitted torus is a torus that has been knitted in a particular way that is interesting to study in the context of topology.
+
+\end{block}
+
+\begin{block}{Background}
+
+What is a torus? A torus is a doughnut. A torus is a doughnut that has been mathematically defined. A torus is a doughnut that has been mathematically defined as a surface of revolution. A torus is a doughnut that has been mathematically defined as a surface of revolution about an axis. A torus is a doughnut that has been mathematically defined as a surface of revolution about an axis that is not the axis of revolution. A torus is a doughnut that has been mathematically defined as a surface of revolution about an axis that is not the axis of revolution that is interesting to study.
+
+\end{block}
+
+\end{column}
+\separatorcolumn%
+
+
+%-----------------------------------------------------------------------------%
+% second column of content
+\begin{column}{\colwidth}
+
+%------------------------------------------------
+% content block
+\begin{block}{Model}
+
+A torus can be modeled as a surface of revolution. A torus can be modeled as a surface of revolution about an axis. A torus can be modeled as a surface of revolution about an axis that is not the axis of revolution. A torus can be modeled as a surface of revolution about an axis that is not the axis of revolution that is interesting to study. A torus can be modeled as a surface of revolution about an axis that is not the axis of revolution that is interesting to study in the context of topology.
+
+\end{block}
+
+%------------------------------------------------
+% content block
+\begin{block}{Results}
+
+A torus can be knitted. A torus can be knitted in a particular way. A torus can be knitted in a particular way that is interesting to study. A torus can be knitted in a particular way that is interesting to study in the context of topology. A torus can be knitted in a particular way that is interesting to study in the context of topology in the context of topology.
+
+\end{block}
+
+\end{column}
+\separatorcolumn%
+
+
+%-----------------------------------------------------------------------------%
+% third column of content
+\begin{column}{\colwidth}
+
+%------------------------------------------------
+% content block
+\begin{block}{Results}
+
+Results are pending.
+
+\end{block}
+
+%------------------------------------------------
+% conclusion block
+\begin{block}{Conclusion}
+
+Conclusion is pending.
+
+\end{block}
+
+%------------------------------------------------
+% reference block
+\begin{block}{References}
+\begin{multicols}{2}
+\fontsize{16pt}{12pt}\selectfont
+\bibliographystyle{plain}
+\bibliography{poster_refs.bib}
+\end{multicols}
+\end{block}
+
+\end{column}
+\separatorcolumn%
+
+\end{columns}
+\end{frame}
+\end{document}
