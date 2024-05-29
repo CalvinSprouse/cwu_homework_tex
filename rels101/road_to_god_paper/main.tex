@@ -2,36 +2,40 @@
 % declare document
 \documentclass[a4paper, 12pt]{article}
 
-% include the titling package
+% import packages
 \usepackage{titling}
 \usepackage{datetime}
 \usepackage{authblk}
 \usepackage{geometry}
 \usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage[style=apa, backend=biber]{biblatex}
+\usepackage[english]{babel}
 \usepackage[bottom]{footmisc}
+
+% import bibliography
+\addbibresource{citations.bib}
 
 % reduce page margins
 \geometry{left=3cm, right=3cm}
 
 % title information
-\title{Peanuts are not a nut, they are legumes}
+\title{Baseball is a Dirt Road to God}
 \author{Calvin Sprouse}
-\affil{Geography 101 World Regional Geography}
-\date{2024 March 13}
-
-% configure the title block
-\setlength{\droptitle}{-7em}
-\pretitle{\begin{flushleft}\LARGE}
-\posttitle{\par\end{flushleft}}
-\preauthor{\begin{flushleft}\large}
-\postauthor{\par\end{flushleft}}
-\predate{\begin{flushleft}\large}
-\postdate{\par\end{flushleft}}
+\affil{RELS 101 World Religions}
+\date{2024 May 29}
 
 % set spacing
 \doublespacing%
 
 \begin{document}
 \maketitle
+
+Test citation~\autocite{sexton_baseball_2013}.
+
+% bibliography
+\pagebreak
+\printbibliography[title={Works Cited}]
 
 \end{document}
