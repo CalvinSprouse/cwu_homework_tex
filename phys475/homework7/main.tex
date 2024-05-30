@@ -111,7 +111,27 @@ to compute the approximate transmission probability for a particle with energy \
 which should reduce to the solution in the WKB regime where \(T\ll 1\).
 
 \bigskip
-Response.
+\(p(x)\) is given by Griffiths Equation~9.3,
+\[p(x) = \sqrt{2m(E-V(x))}.\]
+Substituting given values yields
+\[p(x) = \sqrt{2m(E-V_0)} = i\sqrt{2m(V_0-E)},\]
+which is notably a constant in \(x\) and whose absolute value simply eliminates the \(i\). Thus, \(\gamma\) is found as
+\[\gamma = \frac{2a}{\hbar}\sqrt{2m(V_0-E)}.\]
+Then,
+\[T \approx \exp\left[-\frac{4a}{\hbar}\sqrt{2m(V_0-E)}\right].\]
+The exact result may be expressed as
+\[T^{-1} = 1 + \frac{V_0^2}{4E(V_0-E)}\sinh^2\left(\gamma\right).\]
+Then, \(T \ll 1\) corresponds to the right hand side being much greater than one, in particular \(\gamma \gg 1\). Then,
+\[T^{-1} \approx \frac{V_0^2}{4E(V_0-E)}\sinh^2(\gamma).\]
+The hyperbolic sine function may be expressed in terms of exponential functions,
+\[\sinh(x) = \frac{e^x - e^{-x}}{2}.\]
+Since \(\gamma\gg 1\) we neglect the \(e^{-\gamma}\) term and say
+\[\sinh(\gamma) \approx \frac{1}{2}e^{\gamma}.\]
+Then,
+\[T^{-1} \approx \frac{V_0^2}{16E(V_0-E)}e^{2\gamma}.\]
+The leading coefficient is not significant compared to the exponential; therefore,
+\[T \approx e^{-2\gamma}\]
+as expected.
 
 \end{enumerate}
 \end{document}
