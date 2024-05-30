@@ -83,10 +83,26 @@ V_0, & 0 < x < a/2, \\ 0, & a/2 < x < a, \\ \infty, & \text{else}.
 Express the solution in terms of \(V_0\) and \(E_n^0\), the energy for the \(n\)th state of the infinite-square well. Assume that \(E_1^0 > V_0\), but do not assume \(E_n \gg V_0\).
 
 \bigskip
-Response.
+Equation~9.17 gives the quantization condition which can be solved to determine the approximate allowed energies,
+\[\defint{0}{a}{p(x)}{x}=n\pi\hbar, \quad n\in\nats,\]
+where \(p(x)\) is given by Equation~9.2 to be
+\[p(x) = \sqrt{2m\left(E-V(x)\right)}.\]
+Substituting our potential energy function yields
+\[\defint{0}{a/2}{\sqrt{2mE}}{x} + \defint{a/2}{a}{\sqrt{2m(E-V_0)}}{x} = n\pi\hbar.\]
+Both integrands are constants so are evaluated simply as
+\[\frac{a}{2}\sqrt{2mE} + \frac{a}{2}\sqrt{2m(E-V_0)} = n\pi\hbar.\]
+Then,
+\[\sqrt{E} + \sqrt{E-V_0} = \sqrt{\frac{2}{m}}\frac{n\pi\hbar}{a}.\]
+Equation~2.30 gives the energy levels of the infinite square well to be
+\[E_n^0 = \frac{n^2\pi^2\hbar^2}{2ma^2}.\]
+Then,
+\[\sqrt{E}+\sqrt{E-V_0} = 2\sqrt{E_n^0}.\]
+To solve for the allowed energies, \(E\), both sides must be squared twice and arranged. Indexed by the quantum number \(n\), the allowed energies \(E_n\) are given by
+\[E_n = E_n^0 + \frac{V_0}{2} + \frac{V_0^2}{16 E_n^0}.\]
+
 
 \pagebreak
-Use the WKB approximation result for transmission probability,
+\item Use the WKB approximation result for transmission probability,
 \[T \approx e^{-2\gamma},\]
 where
 \[\gamma \equiv \frac{1}{\hbar}\defint{0}{a}{|p(x)|}{x},\]
