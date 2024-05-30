@@ -30,7 +30,7 @@ Calvin Sprouse \hfill PHYS 342 Homework 7 \hfill 2024 May 31
 \end{enumerate}
 
 \pagebreak\noindent
-\textbf{Problem 5.18.} Imagine that you drop a brick on the ground and it lands with a thud. Apparently the energy of this system tends to spontaneously decrease. Explain why.
+\textbf{Problem 5.18.} Imagine that you drop a brick on the ground and it lands with a thud. Apparently, the energy of this system tends to spontaneously decrease. Explain why.
 
 \bigskip\noindent
 Response.
@@ -38,7 +38,7 @@ Response.
 \pagebreak\noindent
 \textbf{Problem 5.32.} The density of ice is \(\qty{917}{\kg\per\meter\cubed}\).
 \begin{enumerate}[label=\textbf{(\alph*)}]
-\item Use the Clausius-Clapeyron relation to explain why the slope o the phase boundary between water and ice is negative.
+\item Use the Clausius-Clapeyron relation to explain why the slope of the phase boundary between water and ice is negative.
 \item How much pressure would need to be put on an ice cube to make it melt at \(\qty{-1}{\celsius}\)?
 \item Approximately how deep under a glacier would one need to be before the weight of the ice above gives the pressure found in part (b)?
 \item Make a rough estimate of the pressure under the blade of an ice skate, and calculate the melting temperature of ice at this pressure. Some authors have claimed that skaters glide with very little friction because the increased pressure under the blade melts the ice to create a thin layer of water. Is this claim plausible?
@@ -51,5 +51,23 @@ Response.
 \textbf{Problem 5.33.} An inventor proposes to make a heat engine using water/ice as the working substance, taking advantage of the fact that water expands as it freezes. A weight to be lifted is placed on top of a piston over a cylinder of water at \(\qty{1}{\celsius}\). The system is then placed in thermal contact with a low-temperature reservoir at \(\qty{-1}{\celsius}\) until the water freezes into ice, lifting the weight. The weight is then removed and the ice is melted by putting it in contact with a high-temperature reservoir at \(\qty{1}{\celsius}\). The inventor is pleased with this device because it can seemingly preform an unlimited amount of work while absorbing only a finite amount of heat. Explain the flaw in the inventor's reasoning, and use the Clausius-Clapeyron relation to prove that the maximum efficiency of this engine is still given by the Carnot formula, \(1 - T_c/T_h\).
 
 \bigskip\noindent
-Response.
+The inventor fails to consider that the work done on the environment by the freezing of water, lifting the weight, is limited. For a weight of mass \(m\) to be raised a height \(h\) an amount of work \(W=mgh\) is required where \(g\) is the surface gravity of Earth. To reset the engine an amount of heat \(Q_h=L\) is needed. The efficiency of the engine may then be defined as the desired output, \(W\), divided by the required input, \(Q_h\):
+\[e = \frac{W}{Q_h} = \frac{mgh}{L}.\]
+The Clausius-Clapeyron relation is given by Equation~5.47,
+\[\diff{P}{T} = \frac{L}{T\Delta V}.\]
+Let \(T_c\) and \(T_h\) be the temperature of the cold and hot reservoir respectively. Increasing the mass of the weight to be lifted increases the pressure on the water thus lowering the freezing point. The maximum weight which can be lifted, and in turn the maximum work which can be done by the water, is limited by the temperature of the cold reservoir. Suppose the piston as a surface area \(A\). Then, the change in volume, \(\Delta V\), of Equation~5.47 may be expressed as \(\Delta V = Ah\). Then,
+\[\diff{P}{T} = \frac{L}{T_h A h}.\]
+This may be expressed as a differential equation,
+\[\text{d}P = \frac{L}{T_h A h} \text{d}T,\]
+which when integrated could be expressed as
+\[P = \frac{L}{T_h A h} \left(T_h - T_c\right).\]
+The pressure on the water can be found in terms of the weight and surface area to be
+\[P = \frac{mg}{A}.\]
+Then,
+\[\frac{mgh}{L} = 1 - \frac{T_c}{T_h}.\]
+Substituting back into the expression for the efficiency of this ice engine yields
+\[e = 1 - \frac{T_c}{T_h},\]
+the maximum possible weight, or maximum possible efficiency, of the engine as expected. Lifting any weight less than the maximum weight represents a less efficient operating mode of the ice engine.
+
+
 \end{document}
