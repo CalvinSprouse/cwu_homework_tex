@@ -44,7 +44,35 @@ Response.
 \item Make a rough estimate of the pressure under the blade of an ice skate, and calculate the melting temperature of ice at this pressure. Some authors have claimed that skaters glide with very little friction because the increased pressure under the blade melts the ice to create a thin layer of water. Is this claim plausible?
 \end{enumerate}
 \begin{enumerate}[label=\textbf{(\alph*)}]
-\item 
+\item The Clausius-Clapeyron relation is given by Equation~4.67 as
+\[\diff{P}{T} = \frac{L}{T\Delta V}.\]
+Considering the transition from ice to water, the latent heat, \(L\), is positive and temperature, \(T\), is also positive. Since water is more dense than ice the change in volume, \(\Delta V\), is negative. Thus, the boundary line between the solid and liquid states of water is negative.
+\bigskip
+\item The slope of the boundary line between water and ice is given by the Clausius-Clapeyron relation,
+\[\diff{P}{T} = \frac{L}{T\Delta V}.\]
+The latent heat, \(L\), may be expressed in terms of the heat of the phase change, \(Q\), and the mass of the substance \(m\). Then,
+\[\diff{P}{T} = \frac{Qm}{T \left(mD_\text{ice}^{-1} - mD_\text{water}^{-1}\right)},\]
+where \(D_\text{ice}\) and \(D_\text{water}\) represent the density and we have assumed the mass is not changing during the phase change. Expressed in SI, the latent heat of the solid to liquid transition in water is
+\[L = \qty{3.3335e5}{\joule\per\kilogram}.\]
+The density of ice is given above and the density of cold liquid water is
+\[D_\text{water} = \qty{1e3}{\kg\per\meter\cubed}.\]
+Then,
+\[P_\text{melt}(t) = \diff{P}{T}(t-T) = \frac{Q}{T \left(D_\text{ice}^{-1} - D_\text{water}^{-1}\right)}(t-T).\]
+Substituting given quantities yields
+\[P_\text{melt}(\qty{-1}{\celsius}) = \qty{1.35e7}{\pascal} = 133\,\text{atm}.\]
+\bigskip
+\item Consider a volume of glacial ice defined by a constant density \(D\) and height \(z\). The glacial ice under investigation below this column then experiences a pressure
+\[P = Dzg.\]
+Given a particular pressure and constant density the amount of glacial ice needed, expressed in terms of the column height \(z\), is given by
+\[z = \frac{P}{Dg}.\]
+Then, substituting known and given quantities yields
+\[z = \qty{1375}{\meter}.\]
+\bigskip
+\item Consider the most extreme case of an ice skater gliding along the tip of just one of their skates. Suppose the blade is \(\qty{5}{\milli\meter}\) wide and the angled portion at the tip measures \(\qty{10}{\milli\meter}\) long. Then, the area in contact with the ice, \(A\), is
+\[A = \left(\qty{5}{\milli\meter}\right)\left(\qty{10}{\milli\meter}\right) = \qty{50}{\milli\meter\squared}.\]
+Further suppose the skater has a mass of \(m=\qty{70}{\kilogram}\). Let the gravitational acceleration on the surface of the Earth be \(g=\qty{10}{\meter\per\second\squared}\). Then the pressure exerted on the ice by the tip of the skate is approximately
+\[P = \frac{\left(\qty{70}{\kilogram}\right)\left(\qty{10}{\meter\per\second\squared}\right)}{\qty{50e-6}{\meter\squared}} = \qty{14e6}{\pascal} \approx 138\,\text{atm}.\]
+Based on the expression derived above this would lower the freezing point of water to just below \(\qty{-1}{\celsius}\). Supposing the ice skating facility was keeping the water at just below the freezing point then there may be a slight surface melt creating a slight gliding effect. However, as soon as the skater uses the full blade, whose length is on the order of centimeters, the pressure drops by an order of magnitude. Should the skater use both skates the pressure halves. The surface gravity on Earth is slightly less, skaters are often lighter, and it's unlikely that a skating rink is kept so close to the melting point of water to begin with. Which is to say that pressure melting is likely not a significant factor in normal skating.
 \end{enumerate}
 
 \pagebreak\noindent
