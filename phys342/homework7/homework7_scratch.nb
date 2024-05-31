@@ -10,17 +10,121 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[       817,         34]
-NotebookOptionsPosition[       561,         21]
-NotebookOutlinePosition[       957,         37]
-CellTagsIndexPosition[       914,         34]
+NotebookDataLength[      4829,        147]
+NotebookOptionsPosition[      4009,        124]
+NotebookOutlinePosition[      4436,        141]
+CellTagsIndexPosition[      4393,        138]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ClearAll", ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"define", " ", "water", " ", "properties"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Q", "=", 
+   RowBox[{"333.35", "*", "1000"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"T", "=", "273"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Dsolid", "=", "1000"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Dliquid", "=", "917"}], ";"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"Pa", " ", "to", " ", "atm", " ", "conversion"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Pa2atm", "=", 
+    RowBox[{"1", "/", "101325"}]}], ";"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"calculate", " ", "the", " ", "slope"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"dPdT", "=", 
+    FractionBox["Q", 
+     RowBox[{"T", 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["Dsolid", 
+         RowBox[{"-", "1"}]], "-", 
+        SuperscriptBox["Dliquid", 
+         RowBox[{"-", "1"}]]}], ")"}]}]]}], ";"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "define", " ", "the", " ", "melting", " ", "pressure", " ", "function"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Pmelt", "[", "t_", "]"}], ":=", 
+   RowBox[{"dPdT", "*", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"t", "+", "273"}], ")"}], "-", "T"}], ")"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Pmelt", "[", 
+  RowBox[{"-", "1"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Pmelt", "[", 
+   RowBox[{"-", "1"}], "]"}], "*", "Pa2atm"}]}], "Input",
+ CellChangeTimes->{{3.926112058932269*^9, 3.926112109012774*^9}, {
+  3.926112157279241*^9, 3.926112273614375*^9}},
+ CellLabel->"In[21]:=",ExpressionUUID->"333fed67-cbb7-4bbc-ae30-924da08650fb"],
+
+Cell[BoxData["1.3490531356194008`*^7"], "Output",
+ CellChangeTimes->{3.926112232632766*^9, 3.926112274268343*^9},
+ CellLabel->"Out[29]=",ExpressionUUID->"9f4095c1-4dad-459d-8ed4-d8a6b168fbc4"],
+
+Cell[BoxData["133.14119275789793`"], "Output",
+ CellChangeTimes->{3.926112232632766*^9, 3.9261122742740583`*^9},
+ CellLabel->"Out[30]=",ExpressionUUID->"00de127e-8888-4b5b-b78d-f1ab3baa4922"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"define", " ", "physics", " ", "properties"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"g", "=", "9.81"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "calculate", " ", "glacial", " ", "height", " ", "to", " ", "melt", " ", 
+     "at", " ", "P"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"zIce", "[", "t_", "]"}], ":=", 
+     FractionBox[
+      RowBox[{"Pmelt", "[", "t", "]"}], 
+      RowBox[{"Dsolid", "*", "g"}]]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"zIce", "[", 
+    RowBox[{"-", "1"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.926112286034902*^9, 3.926112338431566*^9}},
+ CellLabel->"In[31]:=",ExpressionUUID->"75d4eab6-7bc8-4c74-96bc-a9eb48c4fdca"],
+
+Cell[BoxData["1375.1815857486247`"], "Output",
+ CellChangeTimes->{3.9261123391976852`*^9},
+ CellLabel->"Out[33]=",ExpressionUUID->"373b6b1b-1659-4d34-8996-caae1ff65e9a"]
+}, Open  ]]
 },
-WindowSize->{808, 911},
-WindowMargins->{{4, Automatic}, {Automatic, 4}},
+WindowSize->{866, 1065},
+WindowMargins->{{1, Automatic}, {Automatic, 1}},
+Magnification:>1.5 Inherited,
 FrontEndVersion->"13.1 for Mac OS X x86 (64-bit) (June 16, 2022)",
 StyleDefinitions->"ReverseColor.nb",
 ExpressionUUID->"e4db2253-c7ad-4ad4-8417-49689f19eb42"
@@ -36,9 +140,16 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 1990, 60, 583, "Input",ExpressionUUID->"333fed67-cbb7-4bbc-ae30-924da08650fb"],
+Cell[2573, 84, 192, 2, 52, "Output",ExpressionUUID->"9f4095c1-4dad-459d-8ed4-d8a6b168fbc4"],
+Cell[2768, 88, 191, 2, 52, "Output",ExpressionUUID->"00de127e-8888-4b5b-b78d-f1ab3baa4922"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2996, 95, 825, 22, 236, "Input",ExpressionUUID->"75d4eab6-7bc8-4c74-96bc-a9eb48c4fdca"],
+Cell[3824, 119, 169, 2, 52, "Output",ExpressionUUID->"373b6b1b-1659-4d34-8996-caae1ff65e9a"]
+}, Open  ]]
 }
 ]
 *)
-
-(* End of internal cache information *)
 

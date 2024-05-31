@@ -21,19 +21,44 @@ Calvin Sprouse \hfill PHYS 342 Homework 7 \hfill 2024 May 31
 \begin{enumerate}[label=\textbf{(\alph*)}]
 \item Use the data at the back of this book to determine the values of \(\Delta H\) and \(\Delta G\) for this reaction, for one mole of glucose. Assume that the reaction takes place at room temperature and atmospheric pressure.
 \item What is the maximum amount of work that a muscle can preform, for each mole of glucose consumed, assuming ideal operation?
-\item Still assuming ideal operation, hoe much heat is absorbed or expelled by the chemicals during the metabolism of a mole of glucose?
+\item Still assuming ideal operation, how much heat is absorbed or expelled by the chemicals during the metabolism of a mole of glucose?
 \item Use the concept of entropy to explain why the heat flows in the direction it does.
 \item How would your answers to parts (b) and (c) change, if the operation of the muscle is not ideal?
 \end{enumerate}
 \begin{enumerate}[label=\textbf{(\alph*)}]
-\item 
+\item From Chemistry classes,
+\[\Delta H = H(\text{products}) - H(\text{reactants}),\]
+and likewise for \(\Delta G\). Then,
+\begin{align*}
+\Delta H &= 6\left(\qty{-393.5}{\kilo\joule}\right) + 6\left(\qty{-285.8}{\kilo\joule}\right) - \left(\qty{-1273}{\kilo\joule}\right) = \qty{-2803}{\kilo\joule}, \\
+\Delta G &= 6\left(-\qty{394.4}{\kilo\joule}\right) + 6\left(-\qty{-237.1}{\kilo\joule}\right) - \left(\qty{-910}{\kilo\joule}\right) = \qty{-2879}{\kilo\joule}.
+\end{align*}
+\bigskip
+\item By Equation~5.8,
+\[\Delta G \le W_\text{other}.\]
+Then,
+\[W_\text{other} \le \qty{2879}{\kilo\joule},\]
+where the direction of the inequality has reversed because \(\Delta G\) is negative.
+\bigskip
+\item Equation~5.9 gives the balance of energy changes as
+\[\Delta G = \Delta H - T \Delta S.\]
+Then,
+\[T\Delta S = \Delta H - \Delta G = \qty{76}{\kilo\joule}.\]
+Thus,
+\(\qty{76}{\kilo\joule}\) must be absorbed by the muscle under ideal operation.
+\bigskip
+\item \(\Delta S\) for the reaction may be calculated as in part (a):
+\[\Delta S = 6\left(\qty{214}{\joule\per\kelvin}\right) + 6\left(\qty{70}{\joule\per\kelvin}\right) - \left(\qty{212}{\joule\per\kelvin}\right) - 6\left(\qty{205}{\joule\per\kelvin}\right) = \qty{262}{\joule\per\kelvin}.\]
+The mechanism for increasing the entropy during this reaction is indicated by Equation~5.8 as a flow of temperature or heat energy.
+\bigskip
+\item Outside the ideal operation of engines, new entropy is created. This new entropy reduced the work output. The answer to part (b) is still accurate, in a non-ideal case it would just be impossible to extract that much other work. The amount of heat that must flow into the system, part (c), would be reduced if new entropy is created, and may even result in heat flowing out of the system.
 \end{enumerate}
 
 \pagebreak\noindent
 \textbf{Problem 5.18.} Imagine that you drop a brick on the ground and it lands with a thud. Apparently, the energy of this system tends to spontaneously decrease. Explain why.
 
 \bigskip\noindent
-Response.
+At the instant of contact with the ground, the bricks kinetic energy goes to 0 and it's thermal energy increases proportionally. This sudden increase in thermal energy takes the brick and immediate surroundings out of thermal equilibrium with other points of thermal contact. As the energy dissipates from the site of contact, into the brick or into the ground, the system returns to thermal equilibrium. The flow of thermal energy out of the brick and nearby ground system into the environment is spontaneous. Thus, the energy of the system is decreasing spontaneously.
 
 \pagebreak\noindent
 \textbf{Problem 5.32.} The density of ice is \(\qty{917}{\kg\per\meter\cubed}\).
